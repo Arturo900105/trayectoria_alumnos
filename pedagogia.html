@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <title>Área de Pedagogía</title>
     <link rel="stylesheet" href="css/estilos-pedagogia.css">
+
+    <script src="js/jquery_3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
 </head>
 <body>
     <h1>Área de Pedagogía</h1>
     <form action="enviar.php" method="post" name="formulario-alumnos" id="form_pedagogia">
+
+        <h2 id="ficha"></h2>
+        <h2 id="alumno"></h2>
+        <h2 id="carrera"></h2>
+        <h2 id="generacion"></h2>
+
         <h2>Inventario sobre estilos de aprendizaje</h2>
         <p>
             Cada persona tiene su forma preferida de aprender.
@@ -632,5 +645,6 @@
             <a href="php/cerrar_pedagogia.php"><input type="button" value="REGRESAR" class="boton_pgia" onclick="history.back()"></a>
         </div>
     </form>
+    <script src="js/usuario_alumno.js"></script>
 </body>
 </html>

@@ -145,10 +145,11 @@ $(document).ready(function (){
                 url:"php/login-pedagogia.php",
                 type:'POST',
                 data:$(this).serialize(),
-
-
-                success: function () {
-                    location.href = 'pedagogia.html';},
+                success: function (resultado) {
+                    let Cookies2 = Cookies.noConflict();
+                    Cookies2.set('usuario', resultado);
+                    location.href = 'pedagogia.html';
+                },
                 error: function (error){
                     swal.fire({
                         position: 'top',

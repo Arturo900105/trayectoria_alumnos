@@ -10,8 +10,12 @@
     $filas = mysqli_num_rows($resultado);
 
     if ($filas > 0){
+        http_response_code(200);
         //session_start();
-        echo ($alerta1);
+
+        while($fila = $resultado->fetch_object()){
+            echo json_encode($fila);
+        }
     }
     else{
         http_response_code(404);
