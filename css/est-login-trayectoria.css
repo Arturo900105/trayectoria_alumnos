@@ -1,0 +1,141 @@
+body{
+    font-family: "Gill Sans MT";
+    margin: 0;
+    background-image: url("../img/foto_tutores.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:block;
+}
+h1{
+    text-align: center;
+    color: #000000;
+}
+
+h2{
+    text-align: left;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.fecha_alta{
+    text-align: right;
+}
+
+#f_alta{
+    text-align: center;
+    color: #ff0600;
+    width: 10em;
+    height: 1.5em;
+}
+
+form{
+    color: #FFFFFF;
+    background: rgba(60, 59, 57, 0.7);
+    width: 50em;
+    display:block;
+    margin: 0 auto;
+    padding: 1em 2em;
+    border-radius: 1em;
+
+}
+
+select{
+    text-align: center;
+}
+
+#nombre_tutor, .apellidos_tutor{
+    text-align: center;
+    width: 12em;
+    height: 1.5em;
+}
+
+#tipo-tutoria{
+    text-align: center;
+    width: 15em;
+    height: 2em;
+}
+
+#area_de{
+    text-align: center;
+    width: 25em;
+    height: 2em;
+}
+
+.email{
+    text-align: center;
+}
+
+#email{
+    width: 20em;
+    text-align: center;
+}
+
+.boton_trayectoria{
+    width: 10em;
+    height: 2em;
+    background-color: #453d3d;
+    color: #FFFFFF;
+}
+
+.botones{
+    text-align: center;
+}
+
+#carpetas div{
+    display: none;
+    width: 50em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+img{
+    height: 20em;
+}
+
+.modal-acceso{
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#m_acceso{
+    background: rgba(85, 5, 4, 0.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 30em;
+    height: 15em;
+    text-align: center;
+    margin: auto;
+    border-radius: 1.5em;
+    position: absolute;
+}
+
+#contenido_m_acceso{
+    padding: 2em;
+    width: auto;
+    margin: auto;
+}
+
+.login_acceso{
+    text-align: center;
+    background-color: white;
+    width: 15em;
+    height: 2em;
+    font-size: 20px;
+}
+
+.botones_login_acceso{
+    text-align: center;
+    font-size: 15px;
+    width: 8em;
+    height: 2.5em;
+    font-family: "Britannic Bold";
+}

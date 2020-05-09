@@ -1,0 +1,69 @@
+body{
+    font-family: "Gill Sans MT";
+}
+h1{
+    text-align: center;
+}
+
+table, th, td{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #000000;
+}
+
+.no_escala{
+    width: 3.5em;
+    text-align: center;
+}
+
+#no_escala{
+    width: 5em;
+}
+
+#aadd{
+    width: 25em;
+}
+
+#escala{
+    width: 20em;
+}
+
+#post-test{
+    width: 7em;
+}
+
+.resultado_escala{
+    text-align: center;
+}
+
+.escala_posttest{
+    width: 3em;
+    height: 2em;
+    text-align: center;
+    font-family: Arial;
+    font-size: 30px;
+}
+
+form{
+    display:block;
+    align-content: center;
+    width: 62em;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 10px;
+    border: 5px solid #000000;
+}
+
+#botones_post-test{
+    text-align: center;
+}
+
+.boton_posttest{
+    width: 8em;
+    height: 2em;
+    margin: 0 auto;
+    display:inline;
+    color: #000000;
+}

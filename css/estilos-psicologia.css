@@ -1,0 +1,93 @@
+body{
+    font-family: "Gill Sans MT";
+}
+
+h1{
+    text-align: center;
+}
+table, th, td{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #000000;
+}
+
+#cual, #porque{
+    width: 25em;
+    height: 4em;
+    text-align: justify;
+    font-size: 14px;
+    padding: 0;
+    font-family: "Gill Sans MT";
+}
+
+form{
+    display:block;
+    align-content: center;
+    width: 62em;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 10px;
+    border: 5px solid #000000;
+}
+
+#aadd{
+    width: 25em;
+}
+
+#escala{
+    width: 20em;
+}
+
+#pre-test{
+    width: 7em;
+}
+
+.resultado_escala{
+    text-align: center;
+}
+
+.escala_pretest{
+    width: 3em;
+    height: 2em;
+    text-align: center;
+    font-family: Arial;
+    font-size: 30px;
+}
+
+.no_escala, .no_bloques{
+    width: 3.5em;
+    text-align: center;
+}
+
+.preguntas{
+    width: 20em;
+    height: 4em;
+    text-align: justify;
+}
+
+.respuesta{
+    width: 5em;
+    text-align: center;
+}
+
+.valor{
+    width: 7.5em;
+}
+
+.bloques{
+    width: 50em;
+}
+
+#botones_psicologia{
+    text-align: center;
+}
+
+.boton_psico{
+    width: 8em;
+    height: 2em;
+    margin: 0 auto;
+    display:inline;
+    color: #000000;
+}

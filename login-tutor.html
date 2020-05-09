@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Trayectorias de Alumnos</title>
+    <link rel="stylesheet" href="css/est-login-trayectoria.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <script src="js/fecha-trayectoria.js"></script>
+    <script src="js/area_dinamica.js"></script>
+    <script src="js/alertas.js"></script>
+</head>
+<body>
+    <h1>Trayectoria escolar de Alumnos</h1>
+    <form action="" method="post">
+        <h2>Formulario para el Tutor;
+            <br>para seguir con las trayectorias, llena lo que se te pide a continuación:</h2>
+        <br>
+        <div class="fecha_alta">
+            <label for="f_alta">Fecha de Alta:&nbsp;&nbsp;<input type="text" id="f_alta" name="f_alta" value="" readonly required></label>
+        </div>
+        <br>
+        <label for="nombre_tutor">Nombre del Tutor:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="nombre_tutor" placeholder="Nombre(s)" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="apellidos_tutor" placeholder="Apellido Paterno" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="apellidos_tutor" placeholder="Apellido Materno" required>
+        <br><br>
+
+        <select name="" id="tipo-tutoria" required>
+            <option value=""> --- Tipo de Tutoría: --- </option>
+            <option value="Tutoría Grupa">1. Tutoría Grupal</option>
+            <option value="Tutoría Generacional">2. Tutoría Generacional</option>
+            <option value="Tutoría de Salida">3. Tutoría de Salida</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="area" id="area_de" title="A continuación, se mostrará la carpeta del área seleccionada" required>
+            <option value=""> --- Área de: --- </option>
+            <option value="IGEM">Ingeniería en Gestión Empresarial</option>
+            <option value="IIND">Ingeniería Industrial</option>
+            <option value="ISIC">Ingeniería en Sistemas Computacionales</option>
+            <option value="IBIO">Ingeniería Biomédica</option>
+            <option value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
+            <option value="IENR">Ingeniería en Energías Renovables</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" id="generar-login" value="Generar Usuario">
+        <br><br>
+        <label>Usuario:&nbsp;&nbsp;&nbsp;<input type="text" id="usu-tutor" name="usu-tutor" readonly></label>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Contraseña:&nbsp;&nbsp;&nbsp;<input type="text" id="pass-tutor" name="pass-tutor" readonly></label>
+        <br><br>
+        
+        <label>Se te enviará un Usuario y Contraseña al correo que proporciones.</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Email:&nbsp;&nbsp;<input type="email" required id="email" placeholder="¡¡¡Asegurate de escribirlo bien!!!"></label>
+        <br><br>
+
+        <div class="botones">
+            <input type="submit" value="REGISTRAR" class="boton_trayectoria">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="SALIR" class="boton_trayectoria" onclick="history.back()">
+        </div>
+        <br>
+        <div id="carpetas">
+            <div id="IGEM">
+                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_igem.png" alt="" title="Ingeniería en Gestión Empresarial"></a>
+            </div>
+            <div id="IIND">
+                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iind.png" alt="" title="Ingeniería Industrial"></a>
+            </div>
+            <div id="ISIC">
+                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_isic.png" alt="" title="Ingeniería en Sistemas Computacionales"></a>
+            </div>
+            <div id="IBIO">
+                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ibio.png" alt="" title="Ingeniería Biomédica"></a>
+            </div>
+            <div id="IIAS">
+                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iias.png" alt="" title="Ingeniería en Innovación Agrícola Sustentable"></a>
+            </div>
+            <div id="IENR">
+                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ienr.png" alt="" title="Ingeniería en Energías Renovables"></a>
+            </div>
+        </div>
+    </form>
+    <br><br>
+    <div class="modal-acceso" id="modal-acceso">
+        <div id="m_acceso">
+            <div id="contenido_m_acceso">
+                <input type="text" placeholder="Ingresa tu Usuario" class="login_acceso">
+                <br><br>
+                <input type="password" placeholder="Ingresa tu Contraseña" class="login_acceso">
+                <br><br>
+                <input type="button" value="ENTRAR" class="botones_login_acceso">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" value="CANCELAR" class="botones_login_acceso" onclick="Cerrar_M_Accesol()">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

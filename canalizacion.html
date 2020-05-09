@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CANALIZACIÓN</title>
+    <link rel="stylesheet" href="css/esitlo-canalizacion.css">
+    <script src="js/fecha-canalizacion.js"></script>
+    <script src="js/ciclo_escolar.js"></script>
+</head>
+<body>
+    <div id="logos_canalizacion">
+        <img src="img/logo_itsp.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/logo_tecnm.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/escudo_michoacan.png" class="logos">
+    </div>
+    <h1>PROGRAMA DE TUTORÍA ACADÉMICA</h1>
+    <h2>CANALIZACIÓN DE TUTORADO</h2>
+
+    <form action="" method="post" name="canalizacion">
+        <label>Folio:&nbsp;&nbsp;<input type="text" id="no-folio" value="" readonly required></label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Fecha:&nbsp;&nbsp;<input type="text" id="fecha-hoy" value="" readonly required></label>
+        <br><br>
+
+        <label>Nombre del Estudiante:&nbsp;&nbsp;<input type="text" class="nom_alumno" name="nom_alumno" required></label>
+        <br><br>
+        Carrera:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería en Gestión Empresarial"><input type="radio" name="can-carr" value="IGEM">IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería Industrial"><input type="radio" name="can-carr" value="Ingeniería Industrial">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería en Sistemas Computacionales"><input type="radio" name="can-carr" value="ISIC">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería Biomédica"><input type="radio" name="can-carr" value="IBIO">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería en Innovación Agrícola Sustentable"><input type="radio" name="can-carr" value="IIAS">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería en Energías Renovables"><input type="radio" name="can-carr" value="IENR">IENR</label>
+        <br><br>
+        <label>No. de Control:&nbsp;&nbsp;<input type="text" id="no_control" maxlength="7" minlength="7" required></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <select class="seleccion" name="semestre" id="semestre" onchange="cambia()" required>
+            <option value="">-- Semestre --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="ciclo_escolar" name="ciclo_escolar" required>
+            <option value="">-- Ciclo Escolar: --</option>
+        </select>
+        <br><br>
+
+        Tipo de Canalización:&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="tipo_canalizacion" value="Psicológica">Psicológica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="tipo_canalizacion" value="Pedagógica">Pedagógica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="tipo_canalizacion" value="Asesoría Académica">Asesoría Académica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="tipo_canalizacion" value="Médica">Médica</label>
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="tipo_canalizacion" value="">Otra:</label>&nbsp;&nbsp;
+        <input type="text" name="tipo_canalizacion" id="otra_canalizacion">
+        <br><br>
+        Descripción de la Problemática:
+        <br>
+        <label for="problematica"></label>
+        <textarea name="problematica" id="problematica" cols="75" rows="9" required></textarea>
+        <br>
+
+        <table>
+            <tr>
+                <td class="td1">
+                    <label for="firma1">Firma del Tutor/Profesor:</label>
+                </td>
+                <td class="td1">
+                    <label for="firma2">Firma de Coordinación de Tutorías <br> por programa educativo:</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td2">
+                    <input class="firmas" type="text" name="firma_tutor-profesor" id="firma1" title="Nombre del Tutor/Profesor que firmará" required>
+                </td>
+                <td class="td2">
+                    <input class="firmas" type="text" name="firma_coor-tutoria" id="firma2" title="Nombre de la persona que firmará" required>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        <table>
+            <tr>
+                <td class="td1">
+                    <label for="firma3">Firma del encargado del área canalizada:</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td2">
+                    <input class="firmas" type="text" name="firma_encargado" id="firma3" title="Nombre del encargado que firmará" required>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+
+        <div id="botones_canalizacion">
+            <input type="submit" value="GUARDAR" class="boton_cana">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="documentos/canalizacion.php"><input type="button" value="IMPRIMIR" class="boton_cana"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="REGRESAR" class="boton_cana" onclick="history.back()">
+        </div>
+    </form>
+    <br><br>
+    <div id="base">
+        Carretera: Uruapan–Carapan; Km. 31.5; CP. 60270; Cherán, Mich.
+        <br>Tels. 01(443) 292 1023 y (443) 292 1026; e-mail: its-purhepecha@its-purhepecha.edu.mx
+        <br><b>www.tecnm.mx | www.its-purhepecha.edu.mx</b>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+body{
+    font-family: "Arial";
+}
+
+#logos_canalizacion{
+    text-align: center;
+}
+
+.logos{
+    height: 7em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+form{
+    display:block;
+    align-content: center;
+    width: 46.5em;
+    margin: 0 auto;
+    padding: 2em ;
+    border-radius: 10px;
+    border: 3px solid #000000;
+}
+
+table, td{
+    border-collapse: collapse;
+    color: #000000;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+.td1{
+    width: 30em;
+    height: 3em;
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.td2{
+    height: 2em;
+}
+
+#no-folio{
+    text-align: center;
+    color: #ff0200;
+    width: 10em;
+    height: 1.5em;
+}
+
+#fecha-hoy{
+    text-align: center;
+    color: #000000;
+    width: 10em;
+    height: 1.5em;
+}
+
+.nom_alumno{
+    text-align: center;
+    width: 25em;
+}
+
+#semestre{
+    text-align: center;
+    width: 10em;
+}
+
+#ciclo_escolar{
+    width: 15em;
+    text-align: center;
+}
+
+#no_control{
+    width: 7em;
+    text-align: center;
+}
+
+#otra_canalizacion{
+    text-align: center;
+    width: 15em;
+}
+
+textarea{
+    display:block;
+    align-content: center;
+    margin: 10px auto;
+    text-align: justify;
+    font-family: "Arial";
+    font-size: 20px;
+    padding: 12px;
+}
+
+.firmas{
+    text-align: center;
+    width: 26em;
+    height: 1.5em;
+    margin: 5px auto 0;
+    display: block;
+}
+
+#botones_canalizacion{
+    text-align: center;
+}
+
+.boton_cana{
+    background-color: #453d3d;
+    width: 8em;
+    height: 2em;
+    color: white;
+    margin: 0 auto;
+    display:inline;
+}
+
+#base{
+    text-align: center;
+}

@@ -1,0 +1,143 @@
+body{
+    font-family: "Gill Sans MT";
+    margin: 0;
+    text-align: center;
+    background-image: url("../img/foto_cita4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:block;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+}
+
+#itsp_logo{
+    height: 25em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:none;
+}
+p{
+    text-align: justify;
+    color: white;
+    font-size: 25px;
+    width: 50em;
+    display: block;
+    margin: 0 auto;
+}
+
+.boton_acceso{
+    width: 15em;
+    height: 3em;
+    font-family: "Britannic Bold";
+    font-size: 1em;
+    color: #000000;
+    border-radius: 1em;
+}
+
+
+.modal-fondo{
+    background: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#v_modal{
+    background: rgba(85, 5, 4, 0.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 30em;
+    height: 18em;
+    margin: auto;
+    border-radius: 1.5em;
+    position: absolute;
+}
+
+#contenido_modal{
+    padding: 2em;
+    width: auto;
+    margin: auto;
+}
+
+.login{
+    text-align: center;
+    background-color: white;
+    width: 15em;
+    height: 2em;
+    font-size: 20px;
+}
+
+.botones_login{
+    text-align: center;
+    font-size: 15px;
+    width: 8em;
+    height: 2.5em;
+    font-family: "Britannic Bold";
+}
+
+#v_modal_reportes{
+    background: rgba(0, 1, 85, 0.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 20em;
+    height: 15em;
+    margin: auto;
+    border-radius: 1.5em;
+    position: absolute;
+}
+
+#contenido_modal_reportes{
+    padding: 2em;
+    width: auto;
+    margin: auto;
+}
+
+.login_reportes{
+    text-align: center;
+    font-size: 15px;
+    width: 15em;
+    height: 3em;
+    font-family: "Britannic Bold";
+}
+
+#v_modal_nip{
+    background: rgba(255, 124, 16, 0.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 22em;
+    height: 10em;
+    margin: auto;
+    border-radius: 1.5em;
+    position: absolute;
+}
+
+#contenido_modal_nip{
+    padding: 2em;
+    width: auto;
+    margin: auto;
+}
+
+.login_nip{
+    text-align: center;
+    background-color: white;
+    color: #ff0200;
+    width: 10em;
+    height: 2em;
+    font-size: 20px;
+}

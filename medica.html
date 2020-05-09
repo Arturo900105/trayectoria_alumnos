@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Área Médica</title>
+    <link rel="stylesheet" href="css/estilos-medica.css">
+    <script src="js/jquery_3.4.1.js"></script>
+    <script src="js/numeros.js"></script>
+    <script src="js/decimales.js"></script>
+    <script src="js/nodes.js"></script>
+</head>
+<body onload="onInputLoad()">
+    <h1>ÁREA MÉDICA</h1>
+    <form action="enviar.php" method="post" name="medica-alumno" id="medica-alumno">
+        <label>Teléfonos de Emergencia:</label>
+        <input type="tel" name="" class="tel_em" pattern="[0-9]{10}"
+               onkeypress="return solo_tel(event);"
+               maxlength="10"
+               placeholder="Obligatorio"
+               title="sin colocar: espacios, ( ) ni '-' "
+               required>&nbsp;ó&nbsp;<input type="tel" name="" class="tel_em" pattern="[0-9]{10}"
+                                            onkeypress="return solo_tel(event);"
+                                            maxlength="10"
+                                            placeholder="Opcional"
+                                            title="sin colocar: espacios, ( ) ni - ">
+        <div>
+            <h2>1- Exploración física:</h2>
+            <table class="ex_fisica">
+                <tr>
+                    <td class="columna1">1.- Peso:</td>
+                    <td class="columna2">&nbsp;<input
+                            type="text"
+                            id="peso"
+                            maxlength="5"
+                            min="40"
+                            max="150"
+                            onkeypress="return NumDecimal(event);"
+                            required>&nbsp;Kg.</td>
+                </tr>
+                <tr>
+                    <td class="columna1">2.- Talla (estatura):</td>
+                    <td class="columna2">&nbsp;<input
+                            type="text"
+                            step="any"
+                            id="talla"
+                            min="1.30"
+                            max="2.00"
+                            maxlength="4"
+                            onkeypress="return NumDecimal(event);"
+                            required>&nbsp;M.</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div>
+            <h2>2- Antecedentes Heredofamiliares:</h2>
+            ¿Alguno de sus familiares ha sido diagnósticado con...?
+            <br><br>
+            <label>Diabetes:&nbsp;<input type="checkbox" name="ante_hered" value="Diabetes"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Hipertensión:&nbsp;<input type="checkbox" name="ante_hered" value="Hipertención"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Cancer:&nbsp;<input type="checkbox" name="ante_hered" value="Cancer"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Enfermedad del Corazón:&nbsp;<input type="checkbox" name="ante_hered" value="Enfermedad del Corazón"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Convulsión:&nbsp;<input type="checkbox" name="ante_hered" value="Convulsión"></label>
+            <br><br>
+
+            <label><input type="checkbox" name="ante_hered" value="" onchange="onChangeCheckBox(event,'otro_hered')">&nbsp;Otro:</label>&nbsp;&nbsp;&nbsp;
+            <input id="otro_hered" type="text" name="ante_hered" placeholder="Especifíca!!!">
+        </div>
+        <br>
+        <div>
+            <h2>3- Antecedentes personales no patológicos:</h2>
+            <table>
+                <tr>
+                    <td>Toxicomanías:</td>
+                    <td><label>SÍ:<input type="radio" name="toxicomanias" value="Sí" onchange="onChangeRadio('show-toxicomanias')"></label></td>
+                    <td><label>NO:<input type="radio" name="toxicomanias" value="No" onchange="onChangeRadio('hide-toxicomanias')"></label></td>
+                    <td>
+                        <label class="toxicomanias">Drogas:&nbsp;<input type="checkbox" name="toxicomanias" value="Drogas"></label>
+                        <br>
+                        <label class="toxicomanias">Alcoholismo:&nbsp;<input type="checkbox" name="toxicomanias" value="Alcoholismo"></label>
+                        <br>
+                        <label class="toxicomanias">Tabaquismo:&nbsp;<input type="checkbox" name="toxicomanias" value="Tabaquismo"></label>
+                    </td>
+                    <td><input class="toxicomanias" name="tox_frecuencia" type="text" placeholder="¿Frecuancia?"></td>
+                </tr>
+                <tr>
+                    <td>Embarazo:</td>
+                    <td><label>SÍ:<input type="radio" name="embarazo" value="Sí" onchange="onChangeRadio('show-embarazo')"></label></td>
+                    <td><label>NO:<input type="radio" name="embarazo" value="No" onchange="onChangeRadio('hide-embarazo')"></label></td>
+                    <td colspan="2"><input class="embarazo" type="text" placeholder="¿Cuántos meses o semanas?"></td>
+                </tr>
+                <tr>
+                    <td>Actividad Fisica:</td>
+                    <td><label>SÍ:<input type="radio" name="act_fisica" value="Sí" onchange="onChangeRadio('show-ejercicio')"></label></td>
+                    <td><label>NO:<input type="radio" name="act_fisica" value="No" onchange="onChangeRadio('hide-ejercicio')"></label></td>
+                    <td><input type="text" class="ejercicio"  placeholder="Especifica!!!"></td>
+                    <td><input type="text" class="ejercicio" placeholder="¿Cuántas Horas?"></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <div>
+            <h2>4- Antecedentes personales patológicos:</h2>
+            <table>
+                <tr>
+                    <td>Alergias:</td>
+                    <td><label>SÍ:<input type="radio" name="alergias" value="Sí" onchange="onChangeRadio('show-alergias')"></label></td>
+                    <td><label>NO:<input type="radio" name="alergias" value="No" onchange="onChangeRadio('hide-alergias')"></label></td>
+                    <td><textarea class="alergias" placeholder="Especifica!!!"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Quirúrgicos/Cirugías:</td>
+                    <td><label>SÍ:<input type="radio" name="qui_cir" value="Sí"></label></td>
+                    <td><label>NO:<input type="radio" name="qui_cir" value="No"></label></td>
+                </tr>
+                <tr>
+                    <td>Transfusionales:</td>
+                    <td><label>SÍ:<input type="radio" name="transfusionales" value="Sí"></label></td>
+                    <td><label>NO:<input type="radio" name="transfusionales" value="No"></label></td>
+                </tr>
+                <tr>
+                    <td>Diabetes:</td>
+                    <td><label>SÍ:<input type="radio" name="diabetes" value="Sí" onchange="onChangeRadio('show-diab_tipo')"></label></td>
+                    <td><label>NO:<input type="radio" name="diabetes" value="No" onchange="onChangeRadio('hide-diab_tipo')"></label></td>
+                    <td><textarea class="diab_tipo" placeholder="¿Tipo?"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Hipertensión:</td>
+                    <td><label>SÍ:<input type="radio" name="hipertension" value="Sí"></label></td>
+                    <td><label>NO:<input type="radio" name="hipertension" value="No"></label></td>
+                </tr>
+                <tr>
+                    <td>Convulsiones:</td>
+                    <td><label>SÍ:<input type="radio" name="convulsiones" value="Sí"></label></td>
+                    <td><label>NO:<input type="radio" name="convulsiones" value="No"></label></td>
+                </tr>
+                <tr>
+                    <td>Asma:</td>
+                    <td><label>SÍ:<input type="radio" name="asma" value="Sí"></label></td>
+                    <td><label>NO:<input type="radio" name="asma" value="No"></label></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div id="botones_medicos">
+            <input type="submit" value="GUARDAR" class="bot-med">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="REGRESAR" class="bot-med" onclick="history.back()">
+        </div>
+    </form>
+</body>
+</html>

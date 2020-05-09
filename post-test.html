@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Escala Hospitalaria POST-TEST</title>
+    <link rel="stylesheet" href="css/estilos-post_test.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="js/numeros.js"></script>
+</head>
+<body>
+    <h1>Escala Hospitalaria de Ansiedad y Depresión</h1>
+    <form action="" method="post" name="posttest-alumnos">
+        <h2>A continuación, escribe en le columna de [POST-TEST] el número que más se acerque a lo que sientes, percibes o pienses:</h2>
+        <table>
+            <tr>
+                <th id="no_escala">#</th>
+                <th id="aadd">Ansiedad/Depresión</th>
+                <th id="escala">Escala</th>
+                <th id="post-test">POST-TEST</th>
+            </tr>
+            <tr>
+                <td class="no_escala">A.1.</td>
+                <td>Me siento tensa(o) o nerviosa(o):</td>
+                <td>
+                    <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Casi todo el día.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Gran parte del día.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; De vez en cuando.</label>
+                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">D.1.</td>
+                <td>Sigo disfrutando de las cosas siempre:</td>
+                <td>
+                    <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Ciertamente. Igual que antes.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; No tanto como antes.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Solamente un poco.</label>
+                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Ya no disfruto nada.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">A.2.</td>
+                <td>Siento una especie de temor como si algo malo fuera a suceder:</td>
+                <td>
+                    <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Sí, y muy intenso.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Sí, pero no muy intenso.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Sí, pero no me preocupa.</label>
+                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; No siento nada de eso.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">D.2.</td>
+                <td>Soy capaz de reírme y ver el lado gracioso de las cosas:</td>
+                <td>
+                    <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Igual que siempre.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Actualmente, algo menos.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Actualmente, mucho menos.</label>
+                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Actualmente, en absoluto.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">A.3.</td>
+                <td>Tengo la cabeza llena de preocupaciones:</td>
+                <td>
+                    <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Casi todo el día.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Gran parte del día.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; De vez en cuando.</label>
+                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">D.3.</td>
+                <td>Me siento alegre:</td>
+                <td>
+                    <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Nunca.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Muy pocas veces.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; En algunas ocaciones.</label>
+                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Gran parte del día.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">A.4.</td>
+                <td>Soy capaz de permanecer sentada(o), tanquila(o) y relajada(o):</td>
+                <td>
+                    <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Siempre.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; A menudo.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Raras veces.</label>
+                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Nunca.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">D.4.</td>
+                <td>Me siento lenta(o) y torpe:</td>
+                <td>
+                    <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Gran parte del día.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; A menudo.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; A veces.</label>
+                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">A.5.</td>
+                <td>Experimento una desagradable sensación de nervios y hormigueos en el estómago:</td>
+                <td>
+                    <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Sólo en algunas ocasiones.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; A menudo.</label>
+                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Muy a menudo.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">D.5.</td>
+                <td>He perdido el interés por mi aspecto persona:</td>
+                <td>
+                    <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Completamente.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; No me cuido como debiera hacerlo.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Es posible que no me cuide como debiera.</label>
+                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Me cuido como siempre lo he hecho.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">A.6.</td>
+                <td>Me siento inquieta(o) como si no pudiera parar de moverme:</td>
+                <td>
+                    <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Realmente mucho.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Bastante.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; No mucho.</label>
+                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; En absoluto.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">D.6.</td>
+                <td>Espero las cosas con ilusión:</td>
+                <td>
+                    <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Como siempre.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Algo menos que antes.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Mucho menos que antes.</label>
+                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; En absoluto.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">A.7.</td>
+                <td>Experimento de repente sensaciones de gran angustia o temor:</td>
+                <td>
+                    <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Muy a menudo.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Con cierta frecuencia.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Raramente.</label>
+                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="no_escala">D.7.</td>
+                <td>Soy capaz de disfrutar con un buen libro o con un buen programa de radio o televisión:</td>
+                <td>
+                    <label>&nbsp;&nbsp;0.&nbsp;&nbsp; A menudo.</label>
+                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Algunas veces.</label>
+                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Pocas veces.</label>
+                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Casi nunca.</label>
+                </td>
+                <td class="resultado_escala">
+                    <input type="text" class="escala_posttest" name="escala_posttes" maxlength="1" required>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div id="botones_post-test">
+            <input type="submit" value="GUARDAR" class="boton_posttest">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="REGRESAR" class="boton_posttest" onclick="history.back()">
+        </div>
+    </form>
+</body>
+</html>
