@@ -1,12 +1,13 @@
-function Confirmar_Acceso_Pedagogia() {
+function Confirmar_Acceso_Pedagogia(pagina) {
     document.getElementById('acceso_pedagogia').style.display = "block";
+    paginaAbrir = pagina;
+    console.log(paginaAbrir)
 }
 
 let paginaAbrir = '';
 
-function Cerrar_Accesol_Pedagogia(pagina) {
+function Cerrar_Accesol_Pedagogia() {
     document.getElementById('acceso_pedagogia').style.display = "none";
-    paginaAbrir = pagina;
 }
 
 $(document).ready(function () {
