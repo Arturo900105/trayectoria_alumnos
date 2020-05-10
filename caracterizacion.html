@@ -218,9 +218,9 @@
         <h2>Has click en una de las siguientes carpetas, y para acceder utiliza tu Núm. de Ficha:</h2>
         <br><br>
         <div class="areas">
-            <a href="javascript:Confirmar_Acceso_Pedagogia()"><img src="img/area_pedagogia.png" title="Área de Pedagogía" class="carpetas" id="carpeta1"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:Confirmar_Acceso_Psicologia()"><img src="img/area_psicologia.png" title="Área de Psicología" class="carpetas" id="carpeta2"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:Confirmar_Acceso_Medica()"><img src="img/area_medica.png" title="Área Médica" class="carpetas" id="carpeta3"></a>
+            <a href="javascript:Confirmar_Acceso_Pedagogia('pedagogia.html')"><img src="img/area_pedagogia.png" title="Área de Pedagogía" class="carpetas" id="carpeta1"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:Confirmar_Acceso_Pedagogia('psicologia.html')"><img src="img/area_psicologia.png" title="Área de Psicología" class="carpetas" id="carpeta2"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:Confirmar_Acceso_Pedagogia('medica.html')"><img src="img/area_medica.png" title="Área Médica" class="carpetas" id="carpeta3"></a>
             <br><br>
             <a href="javascript:Acceso_Post_Test()"><img src="img/area_pspost-test.png" title="Escala Hospitalaria de Ansiedad y Depresión" class="carpetas" id="carpeta4"></a>
         </div>
@@ -231,58 +231,21 @@
     <div class="areas-acceso" id="acceso_pedagogia">
         <div id="area_pedagogia">
             <form id="contenido_pedagogia" name="contenido_pedagogia">
-                <input type="text"
+                <input type="password"
                        placeholder="Ingresa Núm. de Ficha"
                        onkeypress="return nip(event);"
-                       onclick="javascript:loginPedagogia();"
                        onblur="Poner_Ceros(this)"
                        maxlength="4"
                        id="login_pedagogia"
-                       name="login_pedagogia"
+                       name="login"
                        class="area_acceso">
                 <br><br>
-                <input type="submit" value="ENTRAR" class="botones_acceso">
-                <input type="button" value="CANCELAR" class="botones_acceso" onclick="Cerrar_Accesol_Pedagogia()">
+                <button class="botones_acceso" onclick="setLogin();">ENTRAR</button>>
+                <button class="botones_acceso" onclick="Cerrar_Accesol_Pedagogia()">CANCELAR</button>>
             </form>
         </div>
     </div>
-    <div class="areas-acceso" id="acceso_psicologia">
-        <div id="area_psicologia">
-            <form id="contenido_psicologia" name="contenido_psicologia">
-                <input type="text"
-                       placeholder="Ingresa Núm. de Ficha"
-                       onkeypress="return nip(event);"
-                       onclick="javascript:loginPsicologia();"
-                       onblur="Poner_Ceros(this)"
-                       maxlength="4"
-                       id="login_psicologia"
-                       name="login_psicologia"
-                       class="area_acceso">
-                <br><br>
-                <input type="submit" value="ENTRAR" class="botones_acceso" id="entrar">&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" value="CANCELAR" class="botones_acceso" onclick="Cerrar_Accesol_Psicologia()">
-            </form>
-        </div>
-    </div>
-    <div class="areas-acceso" id="acceso_medica">
-        <div id="area_medica">
-            <form id="contenido_medica" name="contenido_medica">
-                <input type="text"
-                       placeholder="Ingresa Núm. de Ficha"
-                       onkeypress="return nip(event);"
-                       onclick="javascript:loginMedica();"
-                       onblur="Poner_Ceros(this)"
-                       maxlength="4"
-                       id="login_medica"
-                       name="login_medica"
-                       class="area_acceso"
-                       required>
-                <br><br>
-                <a href="medica.html"><input type="button" value="ENTRAR" class="botones_acceso">&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <input type="button" value="CANCELAR" class="botones_acceso" onclick="Cerrar_Accesol_Medica()">
-            </form>
-        </div>
-    </div>
+
     <div class="areas-acceso" id="acceso_posttest">
         <div id="aadd_posttest">
             <form id="contenido_posttest">

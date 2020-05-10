@@ -16,12 +16,12 @@
     <h1>Área de Pedagogía</h1>
     <form action="enviar.php" method="post" name="formulario-alumnos" id="form_pedagogia">
 
-        <h2 id="ficha"></h2>
-        <h2 id="alumno"></h2>
-        <h2 id="carrera"></h2>
-        <h2 id="generacion"></h2>
+        <h2 class="dato" id="ficha"></h2>
+        <h2 class="dato" id="alumno"></h2>
+        <h2 class="dato" id="carrera"></h2>
+        <h2 class="dato" id="generacion"></h2>
 
-        <h2>Inventario sobre estilos de aprendizaje</h2>
+        <h2 class="subtema">Inventario sobre estilos de aprendizaje</h2>
         <p>
             Cada persona tiene su forma preferida de aprender.
             <br>
@@ -243,7 +243,7 @@
         </table>
         <br>
 
-        <h2>Habilidades de Estudio</h2>
+        <h2 class="subtema">Habilidades de Estudio</h2>
         <p>
             Marca el círculo al finalizar cada pregunta, según corresponda tu respuesta a SÍ o NO
         </p>
@@ -642,7 +642,7 @@
         <div id="botones_pedagogia">
             <input type="submit" value="GUARDAR" class="boton_pgia">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="php/cerrar_pedagogia.php"><input type="button" value="REGRESAR" class="boton_pgia" onclick="history.back()"></a>
+            <input type="button" id="cerrar" value="REGRESAR" class="boton_pgia" onclick="borrarCoockie();">
         </div>
     </form>
     <script src="js/usuario_alumno.js"></script>
