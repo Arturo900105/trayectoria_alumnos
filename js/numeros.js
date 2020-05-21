@@ -2,9 +2,8 @@ function Poner_Ceros(num){while (num.value.length<4){num.value = '0'+num.value;}
 function borrarFicha() {document.getElementById("no_ficha").value = "";}
 function borrarProm_Bach() {document.getElementById("prom_prepa").value = "";}
 function borrarProm_Secun() {document.getElementById("prom_secun").value = "";}
-function loginPedagogia() {document.getElementById("login_pedagogia").value = "";}
-function loginPsicologia() {document.getElementById("login_psicologia").value = "";}
-function loginMedica() {document.getElementById("login_medica").value = "";}
+function loginArea() {document.getElementById("login_areas").value = "";}
+
 
 let alertaEdad = 'Número no válido!!!';
 let alertaTel = 'Ingresa solo número sin:\nespacios, "( )" ni " - "';
@@ -43,7 +42,6 @@ function solo_numero(evt) {
     if(code == 8) {return true;}
     else if (code>=48 && code<=57) {return true;}
     else {return false;}}
-
 
 
 $(document).ready(function () {

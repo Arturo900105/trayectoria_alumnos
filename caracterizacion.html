@@ -175,28 +175,29 @@
         <h2>Escuela de Procedencia:</h2>
         <br>
 
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTIS">CBTIS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTa">CBTa</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="COBACH">COBACH</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Cecyte">Cecyte</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Preparatoria">Preparatoria</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Sistema Abierto">Sistema Abierto</label>
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTIS">&nbsp;CBTIS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTa">&nbsp;CBTa</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="COBACH">&nbsp;COBACH</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Cecyte">&nbsp;Cecyte</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Preparatoria">&nbsp;Preparatoria</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Sistema Abierto">&nbsp;Sistema Abierto</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" value="otro" onchange="onChangeRadio('show-otra_prepa')">&nbsp;Otro:</label>&nbsp;
+
+        <input type="text" name="otro_bach" placeholder="Especifique..." id="otro_bach" class="otra_prepa">
         <br><br>
 
-        <label><input type="radio" name="preparatoria" value="otro" onchange="onChangeRadio('show-otra_prepa')">Otro:</label>&nbsp;&nbsp;
-
-        <input type="text" name="otro_tipo_prepa" placeholder="Especifique..." id="otro_tipo_prepa" class="otra_prepa">
+        <b>Tipo de Bachillerato:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Económico-Administrativo">&nbsp;Económico-Administrativo</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Físico-Matemático">&nbsp;Físico-Matemático</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Histórico-Social">&nbsp;Histórico-Social</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Químico-Biológico">&nbsp;Químico-Biológico</label>
         <br><br>
 
-        <input type="text" class="escuelas" name="nom_prepa" placeholder="Nombre del Bachillerato:" id="preparatoria" onkeypress="return soloValidos(event);" onpaste="return false;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Promedio:&nbsp;&nbsp;
+        <label><b>Nombre de la Escuela:</b>&nbsp;&nbsp;
+            <input type="text" class="escuelas" name="nom_prepa" id="preparatoria" onkeypress="return soloValidos(event);" onpaste="return false;">
+        </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><b>Promedio:</b>&nbsp;&nbsp;
             <input type="text" class="promedio" id="prom_prepa" name="prom_prepa" step="any" min="6.0" max="10" maxlength="3" onclick="javascript:borrarProm_Bach();" onkeypress="return NumDecimal(event);">
-        </label>
-        <br><br>
-
-        <input type="text" class="escuelas" name="nom_secun"  placeholder="Secundaria donde estudió:" id="secundaria" onkeypress="return soloValidos(event);" onpaste="return false;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Promedio:&nbsp;&nbsp;
-            <input type="text" class="promedio" id="prom_secun" name="prom_secun" step="any" min="6.0" max="10" maxlength="3" onclick="javascript:borrarProm_Secun();" onkeypress="return NumDecimal(event);">
         </label>
         <br><br><br><br>
 
@@ -218,30 +219,30 @@
         <h2>Has click en una de las siguientes carpetas, y para acceder utiliza tu Núm. de Ficha:</h2>
         <br><br>
         <div class="areas">
-            <a href="javascript:Confirmar_Acceso_Pedagogia('pedagogia.html')"><img src="img/area_pedagogia.png" title="Área de Pedagogía" class="carpetas" id="carpeta1"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:Confirmar_Acceso_Pedagogia('psicologia.html')"><img src="img/area_psicologia.png" title="Área de Psicología" class="carpetas" id="carpeta2"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:Confirmar_Acceso_Pedagogia('medica.html')"><img src="img/area_medica.png" title="Área Médica" class="carpetas" id="carpeta3"></a>
+            <a href="javascript:Confirmar_Acceso('pedagogia.html')"><img src="img/area_pedagogia.png" title="Área de Pedagogía" class="carpetas" id="carpeta1"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:Confirmar_Acceso('psicologia.html')"><img src="img/area_psicologia.png" title="Área de Psicología" class="carpetas" id="carpeta2"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:Confirmar_Acceso('medica.html')"><img src="img/area_medica.png" title="Área Médica" class="carpetas" id="carpeta3"></a>
             <br><br>
             <a href="javascript:Acceso_Post_Test()"><img src="img/area_pspost-test.png" title="Escala Hospitalaria de Ansiedad y Depresión" class="carpetas" id="carpeta4"></a>
         </div>
     </form>
-
     <br><br>
 
-    <div class="areas-acceso" id="acceso_pedagogia">
-        <div id="area_pedagogia">
-            <form id="contenido_pedagogia" name="contenido_pedagogia">
+    <div class="areas-acceso" id="acceso_area">
+        <div id="areas">
+            <form action="" id="contenido_area" name="contenido_area">
                 <input type="password"
                        placeholder="Ingresa Núm. de Ficha"
                        onkeypress="return nip(event);"
                        onblur="Poner_Ceros(this)"
+                       onclick="javascript:loginArea();"
                        maxlength="4"
-                       id="login_pedagogia"
+                       id="login_areas"
                        name="login"
                        class="area_acceso">
                 <br><br>
-                <button class="botones_acceso" onclick="setLogin();">ENTRAR</button>>
-                <button class="botones_acceso" onclick="Cerrar_Accesol_Pedagogia()">CANCELAR</button>>
+                <button class="botones_acceso" onclick="setLogin(event);">ENTRAR</button>
+                <button class="botones_acceso" onclick="Cerrar_Acceso(event);">CANCELAR</button>
             </form>
         </div>
     </div>

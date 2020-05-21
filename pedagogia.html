@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-
 </head>
 <body>
     <h1>Área de Pedagogía</h1>
-    <form action="enviar.php" method="post" name="formulario-alumnos" id="form_pedagogia">
+    <form action="php/datos_pedagogia.php" method="POST" name="alumno-pedagogia" id="alumno-pedagogia">
 
-        <h2 class="dato" id="ficha"></h2>
+        <h2 class="dato" id="ficha" ></h2>
         <h2 class="dato" id="alumno"></h2>
         <h2 class="dato" id="carrera"></h2>
         <h2 class="dato" id="generacion"></h2>
+        <input type="hidden" value="" id="ficha_alumno" name="ficha_alumno">
 
         <h2 class="subtema">Inventario sobre estilos de aprendizaje</h2>
         <p>
@@ -53,192 +53,192 @@
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;1</td>
                 <td>Me ayuda trazar o escribir a mano las palabras cuando tengo que aprenderlas de memoria.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta1" id="n1" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta1" id="r1" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta1" id="o1" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta1" id="u1" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta1" id="s1" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta1" id="n1" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta1" id="r1" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta1" id="o1" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta1" id="u1" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta1" id="s1" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;2</td>
                 <td>Recuerdo mejor un tema al escuchar una conferencia, en vez de leer un libro de texto.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta2" id="n2" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta2" id="r2" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta2" id="o2" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta2" id="u2" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta2" id="s2" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta2" id="n2" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta2" id="r2" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta2" id="o2" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta2" id="u2" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta2" id="s2" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;3</td>
                 <td>Prefiero las clases que requieren una prueba sobre lo que se lee en el libro de texto.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta3" id="n3" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta3" id="r3" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta3" id="o3" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta3" id="u3" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta3" id="s3" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta3" id="n3" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta3" id="r3" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta3" id="o3" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta3" id="u3" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta3" id="s3" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;4</td>
                 <td>Me gusta comer bocados y mascar chicle cuando estudio.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta4" id="n4" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta4" id="r4" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta4" id="o4" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta4" id="u4" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta4" id="s4" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta4" id="n4" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta4" id="r4" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta4" id="o4" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta4" id="u4" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta4" id="s4" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;5</td>
                 <td>Al prestar atención a una conferencia, puedo recordar las ideas principales sin anotarlas.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta5" id="n5" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta5" id="r5" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta5" id="o5" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta5" id="u5" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta5" id="s5" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta5" id="n5" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta5" id="r5" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta5" id="o5" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta5" id="u5" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta5" id="s5" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;6</td>
                 <td>Prefiero las instrucciones escritas sobre las orales.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta6" id="n6" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta6" id="r6" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta6" id="o6" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta6" id="u6" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta6" id="s6" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta6" id="n6" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta6" id="r6" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta6" id="o6" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta6" id="u6" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta6" id="s6" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;7</td>
                 <td>Yo resuelvo bien los rompecabezas y los laberintos.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta7" id="n7" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta7" id="r7" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta7" id="o7" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta7" id="u7" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta7" id="s7" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta7" id="n7" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta7" id="r7" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta7" id="o7" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta7" id="u7" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta7" id="s7" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;8</td>
                 <td>Prefiero las clases que requieran una prueba sobre lo que se presenta durante una conferencia.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta8" id="n8" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta8" id="r8" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta8" id="o8" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta8" id="u8" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta8" id="s8" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta8" id="n8" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta8" id="r8" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta8" id="o8" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta8" id="u8" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta8" id="s8" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">&nbsp;&nbsp;9</td>
                 <td>Me ayuda ver diapositivas y videos para comprender un tema.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta9" id="n9" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta9" id="r9" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta9" id="o9" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta9" id="u9" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta9" id="s9" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta9" id="n9" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta9" id="r9" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta9" id="o9" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta9" id="u9" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta9" id="s9" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">10</td>
                 <td>Recuerdo más cuando leo un libro que cuando escucho una conferencia.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta10" id="n10" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta10" id="r10" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta10" id="o10" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta10" id="u10" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta10" id="s10" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta10" id="n10" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta10" id="r10" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta10" id="o10" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta10" id="u10" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta10" id="s10" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">11</td>
                 <td>Por lo general, tengo que escribir los números de teléfono para recordarlos bien.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta11" id="n11" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta11" id="r11" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta11" id="o11" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta11" id="u11" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta11" id="s11" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta11" id="n11" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta11" id="r11" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta11" id="o11" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta11" id="u11" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta11" id="s11" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">12</td>
                 <td>Prefiero recibir las noticias escuchando la radio en vez de leerlas en un periódico.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta12" id="n12" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta12" id="r12" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta12" id="o12" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta12" id="u12" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta12" id="s12" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta12" id="n12" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta12" id="r12" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta12" id="o12" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta12" id="u12" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta12" id="s12" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">13</td>
                 <td>Me gusta tener algo como un bolígrafo o un lápiz en la mano cuando estudio.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta13" id="n13" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta13" id="r13" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta13" id="o13" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta13" id="u13" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta13" id="s13" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta13" id="n13" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta13" id="r13" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta13" id="o13" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta13" id="u13" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta13" id="s13" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">14</td>
                 <td>Necesito copiar los ejemplos de la pizarra del maestro para examinarlos más tarde.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta14" id="n14" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta14" id="r14" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta14" id="o14" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta14" id="u14" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta14" id="s14" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta14" id="n14" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta14" id="r14" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta14" id="o14" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta14" id="u14" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta14" id="s14" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">15</td>
                 <td>Prefiero las instrucciones orales del maestro a aquellas escritas en un examen o en una pizarra.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta15" id="n15" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta15" id="r15" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta15" id="o15" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta15" id="u15" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta15" id="s15" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta15" id="n15" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta15" id="r15" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta15" id="o15" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta15" id="u15" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta15" id="s15" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">16</td>
                 <td>Me gusta escuchar música al estudiar una obra, novela, etc.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta16" id="n16" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta16" id="r16" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta16" id="o16" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta16" id="u16" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta16" id="s16" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta16" id="n16" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta16" id="r16" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta16" id="o16" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta16" id="u16" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta16" id="s16" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">17</td>
                 <td>Puedo corregir mi tarea examinándola y encontrando la mayoría de mis errores.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta17" id="n17" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta17" id="r17" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta17" id="o17" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta17" id="u17" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta17" id="s17" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta17" id="n17" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta17" id="r17" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta17" id="o17" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta17" id="u17" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta17" id="s17" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">18</td>
                 <td>Puedo recordar los números de teléfonos cuando los oigo.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta18" id="n18" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta18" id="r18" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta18" id="o18" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta18" id="u18" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta18" id="s18" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta18" id="n18" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta18" id="r18" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta18" id="o18" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta18" id="u18" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta18" id="s18" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">19</td>
                 <td>Gozo los trabajos que me exige usar la mano o herramientas.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta19" id="n19" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta19" id="r19" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta19" id="o19" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta19" id="u19" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta19" id="s19" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta19" id="n19" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta19" id="r19" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta19" id="o19" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta19" id="u19" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta19" id="s19" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">20</td>
                 <td>Cuando escribo algo, necesito leerlo en voz para oír cómo suena.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta20" id="n20" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta20" id="r20" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta20" id="o20" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta20" id="u20" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta20" id="s20" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta20" id="n20" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta20" id="r20" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta20" id="o20" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta20" id="u20" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta20" id="s20" value="5"></label></td>
             </tr>
             <tr>
                 <td class="no_pregunta">21</td>
                 <td>Puedo recordar mejor las cosas cuando puedo moverme mientras estoy aprendiéndolas,
                     <br> por ej: Caminar al estudiar, o participar en una actividad que me permita moverme, etc.</td>
-                <td class="opciones"><label>1<input type="radio" name="pregunta21" id="n21" value="Nunca"></label></td>
-                <td class="opciones"><label>2<input type="radio" name="pregunta21" id="r21" value="Raramente"></label></td>
-                <td class="opciones"><label>3<input type="radio" name="pregunta21" id="o21" value="Ocacionalmente"></label></td>
-                <td class="opciones"><label>4<input type="radio" name="pregunta21" id="u21" value="Usualmente"></label></td>
-                <td class="opciones"><label>5<input type="radio" name="pregunta21" id="s21" value="Siempre"></label></td>
+                <td class="opciones"><label>1<input type="radio" name="pregunta21" id="n21" value="1"></label></td>
+                <td class="opciones"><label>2<input type="radio" name="pregunta21" id="r21" value="2"></label></td>
+                <td class="opciones"><label>3<input type="radio" name="pregunta21" id="o21" value="3"></label></td>
+                <td class="opciones"><label>4<input type="radio" name="pregunta21" id="u21" value="4"></label></td>
+                <td class="opciones"><label>5<input type="radio" name="pregunta21" id="s21" value="5"></label></td>
             </tr>
         </table>
         <br>
@@ -257,122 +257,122 @@
             <tr>
                 <td class="no_pregunta">A.-</td>
                 <td>¿Sueles dejar para el último la preparación de tus trabajos?</td>
-                <td><input type="radio" name="marcaxA" class="marca_x"></td>
-                <td><input type="radio" name="marcaxA" class="marca_x"></td>
+                <td><input type="radio" name="marcaXA1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXA1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">B.-</td>
                 <td>¿Crees que el sueño o el cansancio te impidan estudiar eficazmente en muchas ocasiones?</td>
-                <td><input type="radio" name="marcaXB" class="marca_x"></td>
-                <td><input type="radio" name="marcaXB" class="marca_x"></td>
+                <td><input type="radio" name="marcaXB1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXB1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">C.-</td>
                 <td>¿Es frecuente que no termines tu tarea a tiempo?</td>
-                <td><input type="radio" name="marcaXC" class="marca_x"></td>
-                <td><input type="radio" name="marcaXC" class="marca_x"></td>
+                <td><input type="radio" name="marcaXC1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXC1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">D.-</td>
                 <td>¿Tiendes a emplear tiempo en leer revistas, ver televisión o charlar cuando debieras dedicarlos a estudiar?</td>
-                <td><input type="radio" name="marcaXD" class="marca_x"></td>
-                <td><input type="radio" name="marcaXD" class="marca_x"></td>
+                <td><input type="radio" name="marcaXD1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXD1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">E.-</td>
                 <td>Tus actividades sociales o deportivas, ¿Te llevan a descuidar, a menudo, tus tareas escolares?</td>
-                <td><input type="radio" name="marcaXE" class="marca_x"></td>
-                <td><input type="radio" name="marcaXE" class="marca_x"></td>
+                <td><input type="radio" name="marcaXE1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXE1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">F.-</td>
                 <td>¿Sueles dejar pasar un día o más antes de repasarlos apuntes tomados en clase?</td>
-                <td><input type="radio" name="marcaXF" class="marca_x"></td>
-                <td><input type="radio" name="marcaXF" class="marca_x"></td>
+                <td><input type="radio" name="marcaXF1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXF1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">G.-</td>
                 <td>¿Sueles dedicar tu tiempo libre entre las 4:00 p.m. y las 9:00 p.m. a otras actividades que no sean estudiar?</td>
-                <td><input type="radio" name="marcaXG" class="marca_x"></td>
-                <td><input type="radio" name="marcaXG" class="marca_x"></td>
+                <td><input type="radio" name="marcaXG1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXG1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">H.-</td>
                 <td>¿Descubres algunas veces de pronto, que debes entregar una tarea antes de lo que creías?</td>
-                <td><input type="radio" name="marcaXH" class="marca_x"></td>
-                <td><input type="radio" name="marcaXH" class="marca_x"></td>
+                <td><input type="radio" name="marcaXH1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXH1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">I.-</td>
                 <td>¿Te retrasas, con frecuencia, en una asignatura debido a que tienes que estudiar otra?</td>
-                <td><input type="radio" name="marcaXI" class="marca_x"></td>
-                <td><input type="radio" name="marcaXI" class="marca_x"></td>
+                <td><input type="radio" name="marcaXI1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXI1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">J.-</td>
                 <td>¿Te parece que tu rendimiento es muy bajo, en relación con el tiempo que dedicas al estudio?</td>
-                <td><input type="radio" name="marcaXJ" class="marca_x"></td>
-                <td><input type="radio" name="marcaXJ" class="marca_x"></td>
+                <td><input type="radio" name="marcaXJ1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXJ1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">K.-</td>
                 <td>¿Está situado tu escritorio directamente frente a una ventana, puerta u otra fuente de distracción?</td>
-                <td><input type="radio" name="marcaXK" class="marca_x"></td>
-                <td><input type="radio" name="marcaXK" class="marca_x"></td>
+                <td><input type="radio" name="marcaXK1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXK1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">L.-</td>
                 <td>¿Sueles tener fotografías, trofeos o recuerdos sobre tu mesa de escritorio?</td>
-                <td><input type="radio" name="marcaXL" class="marca_x"></td>
-                <td><input type="radio" name="marcaXL" class="marca_x"></td>
+                <td><input type="radio" name="marcaXL1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXL1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">M.-</td>
                 <td>¿Sueles estudiar recostado en la cama o arrellanado en un asiento cómodo?</td>
-                <td><input type="radio" name="marcaXM" class="marca_x"></td>
-                <td><input type="radio" name="marcaXM" class="marca_x"></td>
+                <td><input type="radio" name="marcaXM1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXM1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">N.-</td>
                 <td>¿Produce resplandor la lámpara que utilizas al estudiar?</td>
-                <td><input type="radio" name="marcaXN" class="marca_x"></td>
-                <td><input type="radio" name="marcaXN" class="marca_x"></td>
+                <td><input type="radio" name="marcaXN1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXN1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">O.-</td>
                 <td>Tu mesa de estudio, ¿Está tan desordenada y llena de objetos, que no dispones de sitio suficiente para estudiar con eficacia?</td>
-                <td><input type="radio" name="marcaXO" class="marca_x"></td>
-                <td><input type="radio" name="marcaXO" class="marca_x"></td>
+                <td><input type="radio" name="marcaXO1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXO1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">P.-</td>
                 <td>¿Sueles interrumpir tu estudio, por personas que vienen a visitarte?</td>
-                <td><input type="radio" name="marcaXP" class="marca_x"></td>
-                <td><input type="radio" name="marcaXP" class="marca_x"></td>
+                <td><input type="radio" name="marcaXP1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXP1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">Q.-</td>
                 <td>¿Estudias, con frecuencia, mientras tienes puesta la televisión y/o la radio?</td>
-                <td><input type="radio" name="marcaXQ" class="marca_x"></td>
-                <td><input type="radio" name="marcaXQ" class="marca_x"></td>
+                <td><input type="radio" name="marcaXQ1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXQ1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">R.-</td>
                 <td>En el lugar donde estudias, ¿Se pueden ver con facilidad revistas, fotos de jóvenes o materiales pertenecientes a tu afición?</td>
-                <td><input type="radio" name="marcaXR" class="marca_x"></td>
-                <td><input type="radio" name="marcaXR" class="marca_x"></td>
+                <td><input type="radio" name="marcaXR1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXR1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">S.-</td>
                 <td>¿Con frecuencia, interrumpen tu estudio, actividades o ruidos que provienen del exterior?</td>
-                <td><input type="radio" name="marcaXS" class="marca_x"></td>
-                <td><input type="radio" name="marcaXS" class="marca_x"></td>
+                <td><input type="radio" name="marcaXS1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXS1" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">T.-</td>
                 <td>¿Suele hacerse lento tu estudio debido a que no tienes a la mano los libros y los materiales necesarios?</td>
-                <td><input type="radio" name="marcaXT" class="marca_x"></td>
-                <td><input type="radio" name="marcaXT" class="marca_x"></td>
+                <td><input type="radio" name="marcaXT1" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXT1" class="marca_x" value="1"></td>
             </tr>
         </table>
         <br>
@@ -388,122 +388,122 @@
             <tr>
                 <td class="no_pregunta">A.-</td>
                 <td>¿Tiendes a comenzar la lectura de un libro de texto sin hojear previamente los subtítulos y las ilustraciones?</td>
-                <td><input type="radio" name="marcaXA2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXA2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXA2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXA2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">B.-</td>
                 <td>¿Te saltas por lo general las figuras, gráficas y tablas cuando estudias un tema?</td>
-                <td><input type="radio" name="marcaXB2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXB2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXB2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXB2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">C.-</td>
                 <td>¿Suele serte difícil seleccionar los puntos de los temas de estudio?</td>
-                <td><input type="radio" name="marcaXC2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXC2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXC2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXC2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">D.-</td>
                 <td>¿Te sorprendes con cierta frecuencia, pensando en algo que no tiene nada que ver con lo que estudias?</td>
-                <td><input type="radio" name="marcaXD2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXD2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXD2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXD2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">E.-</td>
                 <td>¿Sueles tener dificultad en entender tus apuntes de clase cuando tratas de repasarlos, después de cierto tiempo?</td>
-                <td><input type="radio" name="marcaXE2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXE2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXE2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXE2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">F.-</td>
                 <td>Al tomar notas, ¿Te sueles quedar atrás con frecuencia debido a que no puedes escribir con suficiente rapidez?</td>
-                <td><input type="radio" name="marcaXF2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXF2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXF2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXF2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">G.-</td>
                 <td>Poco después de comenzar un curso, ¿Sueles encontrarte con tus apuntes formando un “revoltijo"?</td>
-                <td><input type="radio" name="marcaXG2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXG2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXG2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXG2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">H.-</td>
                 <td>¿Tomas normalmente tus apuntes tratando de escribir las palabras exactas del docente?</td>
-                <td><input type="radio" name="marcaXH2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXH2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXH2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXH2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">I.-</td>
                 <td>Cuando tomas notas de un libro, ¿Tienes la costumbre de copiar el material necesario, palabra por Palabra?</td>
-                <td><input type="radio" name="marcaXI2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXI2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXI2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXI2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">J.-</td>
                 <td>¿Te es difícil preparar un temario apropiado para una evaluación?</td>
-                <td><input type="radio" name="marcaXJ2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXJ2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXJ2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXJ2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">K.-</td>
                 <td>¿Tienes problemas para organizar los datos o el contenido de una evaluación?</td>
-                <td><input type="radio" name="marcaXK2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXK2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXK2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXK2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">L.-</td>
                 <td>¿Al repasar el temario de una evaluación formulas un resumen de este?</td>
-                <td><input type="radio" name="marcaXL2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXL2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXL2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXL2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">M.-</td>
                 <td>¿Te preparas a veces para un evaluación memorizando fórmulas, definiciones o reglas que no entiendes con claridad?</td>
-                <td><input type="radio" name="marcaXM2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXM2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXM2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXM2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">N.-</td>
                 <td>¿Te resulta difícil decidir qué estudiar y cómo estudiarlo cuando preparas una evaluación?</td>
-                <td><input type="radio" name="marcaXN2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXN2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXN2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXN2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">O.-</td>
                 <td>¿Sueles tener dificultades para organizar, en un orden lógico, las asignaturas que debes estudiar por temas?</td>
-                <td><input type="radio" name="marcaXO2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXO2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXO2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXO2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">P.-</td>
                 <td>Al preparar evaluación, ¿Sueles estudiar toda la asignatura, en el último momento?</td>
-                <td><input type="radio" name="marcaXP2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXP2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXP2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXP2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">Q.-</td>
                 <td>¿Sueles entregar tus exámenes sin revisarlos detenidamente, para ver si tienen algún error cometido por descuido?</td>
-                <td><input type="radio" name="marcaXQ2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXQ2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXQ2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXQ2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">R.-</td>
                 <td>¿Te es posible con frecuencia terminar una evaluación de exposición de un tema en el tiempo prescrito?</td>
-                <td><input type="radio" name="marcaXR2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXR2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXR2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXR2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">S.-</td>
                 <td>¿Sueles perder puntos en exámenes con preguntas de “Verdadero - Falso", debido a que no lees detenidamente?</td>
-                <td><input type="radio" name="marcaXS2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXS2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXS2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXS2" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">T.-</td>
                 <td>¿Empleas normalmente mucho tiempo en contestar la primera mitad de la prueba y tienes que apresurarte en la segunda?</td>
-                <td><input type="radio" name="marcaXT2" class="marca_x"></td>
-                <td><input type="radio" name="marcaXT2" class="marca_x"></td>
+                <td><input type="radio" name="marcaXT2" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXT2" class="marca_x" value="1"></td>
             </tr>
         </table>
         <br>
@@ -519,123 +519,123 @@
             <tr>
                 <td class="no_pregunta">A.-</td>
                 <td>Después de los primeros días o semanas del curso, ¿Tiendes a perder interés por el estudio?</td>
-                <td><input type="radio" name="marcaXA3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXA3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXA3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXA3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">B.-</td>
                 <td>¿Crees que en general, basta estudiar lo necesario para obtener un “aprobado” en las asignaturas?</td>
-                <td><input type="radio" name="marcaXB3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXB3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXB3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXB3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">C.-</td>
                 <td>¿Te sientes frecuentemente confuso o indeciso sobre cuáles deben ser tus metas formativas y profesionales?</td>
-                <td><input type="radio" name="marcaXC3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXC3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXC3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXC3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">D.-</td>
                 <td>¿Sueles pensar que no vale la pena el tiempo y el esfuerzo que son necesarios para lograr una educación universitaria?</td>
-                <td><input type="radio" name="marcaXD3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXD3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXD3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXD3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">E.-</td>
                 <td>¿Crees que es más importante divertirte y disfrutar de la vida, que estudiar?</td>
-                <td><input type="radio" name="marcaXE3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXE3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXE3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXE3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">F.-</td>
                 <td>¿Sueles pasar el tiempo de clase en divagaciones o soñando despierto en lugar de atender al docente?</td>
-                <td><input type="radio" name="marcaXF3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXF3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXF3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXF3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">G.-</td>
                 <td>¿Te sientes habitualmente incapaz de concentrarte en tus estudios debido a que estas inquieto, aburrido o de mal humor?</td>
-                <td><input type="radio" name="marcaXG3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXG3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXG3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXG3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">H.-</td>
                 <td>¿Piensas con frecuencia que las asignaturas que estudias tienen poco valor practico para ti?</td>
-                <td><input type="radio" name="marcaXH3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXH3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXH3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXH3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">I.-</td>
                 <td>¿Sientes, frecuentes deseos de abandonar la escuela y conseguir un trabajo?</td>
-                <td><input type="radio" name="marcaXI3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXI3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXI3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXI3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">J.-</td>
                 <td>¿Sueles tener la sensación de lo que se enseña en los centros docentes no te prepara para afrontar los problemas de la vida adulta?</td>
-                <td><input type="radio" name="marcaXJ3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXJ3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXJ3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXJ3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">K.-</td>
                 <td>¿Sueles dedicarte de modo casual, según el estado de ánimo en que te encuentres?</td>
-                <td><input type="radio" name="marcaXK3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXK3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXK3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXK3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">L.-</td>
                 <td>¿Te horroriza estudiar libros de textos porque son insípidos y aburridos?</td>
-                <td><input type="radio" name="marcaXL3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXL3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXL3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXL3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">M.-</td>
                 <td>¿Esperas normalmente a que te fijen la fecha de una evaluación para comenzar a estudiar los textos o repasar tus apuntes de clases?</td>
-                <td><input type="radio" name="marcaXM3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXM3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXM3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXM3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">N.-</td>
                 <td>¿Sueles pensar que los exámenes son pruebas penosas de las que no se puede escapar
                     <br> y respecto a las cuales lo que debe hacerse es sobrevivir, del modo que sea?</td>
-                <td><input type="radio" name="marcaXN3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXN3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXN3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXN3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">O.-</td>
                 <td>¿Sientes con frecuencia que tus docentes no comprenden las necesidades de los estudiantes?</td>
-                <td><input type="radio" name="marcaXO3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXO3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXO3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXO3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">P.-</td>
                 <td>¿Tienes normalmente la sensación de que tus docentes exigen demasiadas horas de estudio fuera de clase?</td>
-                <td><input type="radio" name="marcaXP3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXP3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXP3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXP3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">Q.-</td>
                 <td>¿Dudas por lo general, en pedir ayuda a tus docentes en tareas que te son difíciles?</td>
-                <td><input type="radio" name="marcaXQ3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXQ3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXQ3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXQ3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">R.-</td>
                 <td>¿Sueles pensar que tus docentes no tienen contacto con los temas y sucesos de actualidad?</td>
-                <td><input type="radio" name="marcaXR3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXR3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXR3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXR3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">S.-</td>
                 <td>¿Te sientes reacio, por lo general, a hablar con tus docentes de tus proyectos futuros, de estudio o profesionales?</td>
-                <td><input type="radio" name="marcaXS3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXS3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXS3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXS3" class="marca_x" value="1"></td>
             </tr>
             <tr>
                 <td class="no_pregunta">T.-</td>
                 <td>¿Criticas con frecuencia a tus docentes cuando charlas con tus compañeros?</td>
-                <td><input type="radio" name="marcaXT3" class="marca_x"></td>
-                <td><input type="radio" name="marcaXT3" class="marca_x"></td>
+                <td><input type="radio" name="marcaXT3" class="marca_x" value="0"></td>
+                <td><input type="radio" name="marcaXT3" class="marca_x" value="1"></td>
             </tr>
         </table>
         <br>

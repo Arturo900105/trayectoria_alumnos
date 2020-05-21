@@ -58,9 +58,8 @@ $(document).ready(function () {
     $('#estado').val("");
     $('#nom_estado').val("");
     $('#nom_municipio').val("");
-});
 
-$(document).ready(function () {
+
     $('#estado').on('change',function () {
         var SelectValor = '#' + $(this).val();
         $('#estados').children('div').hide();

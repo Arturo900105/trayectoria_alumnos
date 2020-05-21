@@ -1,4 +1,3 @@
-
 function careerHandler(event) {
     console.log(event.target.value);
     let option = event.target.value;
@@ -38,15 +37,5 @@ function onChangeCheckBox(event, nodeId) {
         careers.style.display = 'unset'
     } else {
         careers.style.display = 'none'
-    }
-}
-
-function onInputLoad() {
-    console.log('onInputLoad');
-    //document.getElementById("medica-alumno").reset(); -> para borrar contenido
-    const event = new Event('change');
-    const inputs = document.getElementsByTagName('input');
-    for (let index = 0; index < inputs.length; ++index) {
-        inputs[index].dispatchEvent(event);
     }
 }

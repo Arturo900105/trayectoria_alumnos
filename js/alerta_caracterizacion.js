@@ -1,16 +1,69 @@
-function Confirmar_Acceso_Pedagogia(pagina) {
-    document.getElementById('acceso_pedagogia').style.display = "block";
-    paginaAbrir = pagina;
-    console.log(paginaAbrir)
-}
-
 let paginaAbrir = '';
 
-function Cerrar_Accesol_Pedagogia() {
-    document.getElementById('acceso_pedagogia').style.display = "none";
+function Confirmar_Acceso(pagina) {
+    document.getElementById('acceso_area').style.display = "block";
+    paginaAbrir = pagina;
+    //console.log(paginaAbrir)
+}
+
+function Cerrar_Acceso(e) {
+    e.preventDefault();
+    document.getElementById('acceso_area').style.display = "none";
+}
+
+function setLogin(e){
+    e.preventDefault();
+    let alertArea1 = "Debes ingresar tu\nNúm. de Ficha";
+    let alertArea2 = "Ficha no válida";
+
+    if ($('#login_areas').val().trim() == '') {
+        Swal.fire({
+            title: alertArea1,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 1500,
+            icon: "warning",
+            backdrop: "rgba(0,0,0,0)"
+        });
+        return false;
+    } else if ($('#login_areas').val().trim() == '0000') {
+        Swal.fire({
+            title: alertArea2,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 700,
+            icon: "warning",
+            backdrop: "rgba(0,0,0,0)"
+        });
+        return false;
+    } else {
+        $.ajax({
+            url: "php/login-alumno.php",
+            type: 'POST',
+            data: $("#contenido_area").serialize(),
+            success: function (resultado) {
+                let Cookies2 = Cookies.noConflict();
+                Cookies2.set('usuario', resultado);
+                //console.log(paginaAbrir);
+                location.href = paginaAbrir;
+            },
+            error: function (error) {
+                swal.fire({
+                    position: 'top',
+                    icon: 'question',
+                    title: (error.responseText),
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        });
+    }
 }
 
 $(document).ready(function () {
+    $("input[name = indigena], [name = estado_civil], [name = preparatoria], [name = carrera]").prop( "checked", false );
+    $(".tipo_area").prop( "checked", false );
+
     $('#form_alumno').submit(function (e) {
         e.preventDefault();
 
@@ -25,9 +78,9 @@ $(document).ready(function () {
         let alerta6 = "Debes seleccionar\nnombre del Estado";
         let alerta7 = "Debes ingresar un\nMunicipio";
         let alerta8 = "Seleccione la\nescuela de procedencia";
-        let alerta9 = "Por favor,\nIngrese el tipo de\nBachillerato";
-        let alerta10 = "Por favor,\nIngrese el nombre del\nBachillerato";
-        let alerta11 = "Por favor,\nIngrese el nombre de la\nSecundaria";
+        let alerta9 = "Por favor, Ingrese la\nescuela de procedencia";
+        let alerta10 = "Por favor,\nSeleccione el tipo de\nBachillerato";
+        let alerta11 = "Por favor,\nIngrese el nombre del\nBachillerato";
         let alert_carrera = "Seleccione una Carrera";
         let tittle_confir = "¿Registrar?";
         let texto_confir = "Después, para modificar errores, tendrá que acudir con el(la) encargado(a) de Tutoría Académica.";
@@ -102,7 +155,7 @@ $(document).ready(function () {
         }
 
         if ($("input[value='otro']:radio").is(":checked")) {
-            if ($('#otro_tipo_prepa').val().trim() == '') {
+            if ($('#otro_bach').val().trim() == '') {
                 Swal.fire({
                     title: alerta9,
                     icon: "warning",
@@ -113,12 +166,12 @@ $(document).ready(function () {
             }
         }
 
-        if ($('#preparatoria').val().trim() == '') {
+        if (!$('.tipo_area').is(":checked")) {
             Swal.fire({title: alerta10, icon: "warning", confirmButtonColor: '#000155', backdrop: "rgba(0,1,85,0.7)"});
             return false;
         }
 
-        if ($('#secundaria').val().trim() == '') {
+        if ($('#preparatoria').val().trim() == '') {
             Swal.fire({title: alerta11, icon: "warning", confirmButtonColor: '#000155', backdrop: "rgba(0,1,85,0.7)"});
             return false;
         }
@@ -176,109 +229,6 @@ $(document).ready(function () {
         });
     });
 });
-
-function setLogin(){
-    let alertPedagogia = "Debes ingresar tu\nNúm. de Ficha";
-    let alertPedagogia2 = "Ficha no válida";
-
-    if ($('#login_pedagogia').val().trim() == '') {
-        Swal.fire({
-            title: alertPedagogia,
-            position: 'top',
-            showConfirmButton: false,
-            timer: 1500,
-            icon: "warning",
-            backdrop: "rgba(0,0,0,0)"
-        });
-        return false;
-    } else if ($('#login_pedagogia').val().trim() == '0000') {
-        Swal.fire({
-            title: alertPedagogia2,
-            position: 'top',
-            showConfirmButton: false,
-            timer: 700,
-            icon: "warning",
-            backdrop: "rgba(0,0,0,0)"
-        });
-        return false;
-    } else {
-        $.ajax({
-            url: "php/login-pedagogia.php",
-            type: 'POST',
-            data: $("#contenido_pedagogia").serialize(),
-            success: function (resultado) {
-                let Cookies2 = Cookies.noConflict();
-                Cookies2.set('usuario', resultado);
-                location.href = paginaAbrir;
-            },
-            error: function (error) {
-                swal.fire({
-                    position: 'top',
-                    icon: 'question',
-                    title: (error.responseText),
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
-        });
-    }
-}
-
-$(document).ready(function () {
-
-
-    $('#contenido_pedagogia').submit(function (e) {
-        e.preventDefault();
-
-    });
-
-    $('#contenido_psicologia').submit(function (e) {
-        e.preventDefault();
-        if ($('#login_psicologia').val().trim() == '') {
-            Swal.fire({
-                title: alertPedagogia,
-                position: 'top',
-                showConfirmButton: false,
-                timer: 1500,
-                icon: "warning",
-                backdrop: "rgba(0,0,0,0)"
-            });
-            return false;
-        } else if ($('#login_psicologia').val().trim() == '0000') {
-            Swal.fire({
-                title: alertPedagogia2,
-                position: 'top',
-                showConfirmButton: false,
-                timer: 700,
-                icon: "warning",
-                backdrop: "rgba(0,0,0,0)"
-            });
-            return false;
-        } else {
-            $.ajax({
-                url: "php/login-pedagogia.php",
-                type: 'POST',
-                data: $(this).serialize(),
-                success: function (resultado) {
-                    let Cookies2 = Cookies.noConflict();
-                    Cookies2.set('usuario', resultado);
-                    location.href = 'psicologia.html';
-                },
-                error: function (error) {
-                    swal.fire({
-                        position: 'top',
-                        icon: 'question',
-                        title: (error.responseText),
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-            });
-        }
-    });
-
-});
-
 
 function Acceso_Post_Test() {
     document.getElementById('acceso_posttest').style.display = "block";

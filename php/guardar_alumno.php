@@ -3,7 +3,8 @@
 require "conectar.php";
 
     $ficha = $_POST['no_ficha'];
-    $nombre = $_POST['apat'] . ' ' . $_POST['amat'] . ' ' . $_POST['nombre'];
+    $nombre = $_POST['nombre'];
+    $apellidos = $_POST['apat'] . ' ' . $_POST['amat'];
     $fecha_nacimiento = $_POST['fnacimiento'];
 
 
@@ -57,39 +58,28 @@ require "conectar.php";
         $procedencia = $_POST['nom_municipio']."; ".$_POST['nom_estado'];
     }
 
-    $tipo_bach = $_POST['preparatoria'];
-    if ($tipo_bach == "otro") {
-        $tipo_bach = $_POST['otro_tipo_prepa'];
+    $tipo_bach = $_POST['tipo_area'];
+    if (isset($tipo_bach)){
+        $tipo_bach = "─> ".implode(".\n─> ", $tipo_bach).".";
+    }
+
+    $bach = $_POST['preparatoria'];
+    if ($bach == "otro") {
+        $bach = $_POST['otro_bach'];
     }
 
     $nom_bach = $_POST['nom_prepa'];
     $prom_bach = $_POST['prom_prepa'];
-    $nom_secun = $_POST['nom_secun'];
-    $prom_secun = $_POST['prom_secun'];
 
-    $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_registro','$carrera','$generacion')";
+    $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$apellidos','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_registro','$carrera','$generacion')";
     $query = mysqli_query($conectar, $guardar_alumno);
 
     if ($query) {
         $domicilio = "INSERT INTO domicilio VALUES ('$ficha','$domicilio','$colonia','$codigo_postal','$localidad','$procedencia')";
         $query2 = mysqli_query($conectar, $domicilio);
 
-        $procedencia = "INSERT INTO procedencia VALUES ('$ficha','$tipo_bach','$nom_bach','$prom_bach','$nom_secun','$prom_secun')";
+        $procedencia = "INSERT INTO procedencia VALUES ('$ficha','$bach','$tipo_bach','$nom_bach','$prom_bach')";
         $query3 = mysqli_query($conectar, $procedencia);
-
-
-        //$pedagogia = "INSERT INTO pedagogia VALUES()";
-        //$query4 = mysqli_query($conectar, $pedagogia);
-
-        //$psicologia = "INSERT INTO psicologia VALUES()";
-        //$query5 = mysqli_query($conectar, $psicologia);
-
-        //$medica = "INSERT INTO medica VALUES()";
-        //$query6 = mysqli_query($conectar, $medica);
-
-
-        $ficha_control = "INSERT INTO control_trayectoria (num_ficha) VALUES ('$ficha')";
-        $query7 = mysqli_query($conectar, $ficha_control);
 
         echo "REGISTRO EXITOSO!!!";
 

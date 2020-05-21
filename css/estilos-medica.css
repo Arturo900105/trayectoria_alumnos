@@ -1,5 +1,5 @@
 body{
-    font-family: "Gill Sans MT";
+    font-family: Arial;
     margin: 0;
 }
 
@@ -7,28 +7,101 @@ h1{
     text-align: center;
 }
 
-form{
+h2{
+    margin: 0;
+}
+
+#medica-alumno{
     display:block;
     align-content: center;
-    width: 45em;
+    width: 60em;
     margin: 0 auto;
     padding: 1em 2em;
     border-radius: 10px;
     border: 5px solid #000000;
 }
 
+.tel_em{
+    text-align: center;
+}
+
+.columna1{
+    width: 10em;
+    height: 2em;
+    border: none;
+}
+
+.columna2{
+    width: 10em;
+    border: none;
+}
+
+.cont1{
+    display:inline-table;
+    width: 25em;
+    margin-right: 2em;
+    padding-bottom: 1em;
+}
+
+#tabla1, #tabla2, #tabla3{
+    margin: auto;
+    border: none;
+}
+
+.cont2{
+    display:inline-table;
+    width: 30em;
+    margin-left: 1em;
+    padding-bottom: 1em;
+}
+
+.preg_enfer{
+    text-align: center;
+}
+
+.enfermedades{
+    margin-left: 4em;
+}
+
+.columna3_1{
+    height: 3.7em;
+    width: 10em;
+}
+
+.columna3_2{
+    width: 5em;
+    text-align: center;
+}
+
+.columna3_3{
+    width: 10em;
+}
+
+.columna3_4{
+    width: 15em;
+    text-align: center;
+}
+
+.colum_comb{
+    text-align: center;
+}
+
 table, th, td{
     border: 1px solid #000000;
     border-collapse: collapse;
     margin: 0;
-    font-family: "Arial";
-    font-size: 15px;
+    font-size: 16px;
     color: #000000;
 }
 
 #peso, #talla{
-    width: 4em;
+    width: 5em;
     text-align: center;
+}
+
+#sangre{
+    width: 9em;
+    text-align: left;
 }
 
 #otro_hered{
@@ -41,27 +114,63 @@ table, th, td{
     text-align: center;
 }
 
-.columna1{
-    width: 9em;
-}
-
-.columna2{
-    width: 7em;
-}
-
-.embarazo, .toxicomanias, .ejercicio, .tel_em{
-    text-align: center;
-}
-
 .embarazo{
-    width: 15em;
+    text-align: center;
+    width: 25em;
+    height: 2em;
 }
 
-.alergias, .diab_tipo{
-    height: 1.2em;
+.toxicomanias{
     text-align: center;
+    width: 15em;
+    height: 2em;
+}
+
+.ejercicio{
+    text-align: center;
+    width: 13em;
+    height: 1.5em;
+}
+
+.columna4_1{
+    width: 10em;
+    height: 2em;
+}
+
+.columna4_2{
+    width: 4em;
+    text-align: center;
+    height: auto;
+}
+
+.columna4_3{
+    width: 21em;
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 10px;
+    border: none;
+}
+
+.alergias{
+    height: 5em;
+    width: 19em;
+    text-align: left;
     font-family: "Gill Sans MT";
     font-size: 14px;
+}
+
+.diab_tipo{
+    width: 15em;
+    height: 2em;
+    display: none;
+    text-align: center;
+}
+
+.tipos{
+    width: auto;
+    height: auto;
+    display: none;
+    font-size: 12px;
 }
 
 .bot-med{
