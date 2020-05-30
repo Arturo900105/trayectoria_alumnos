@@ -1,16 +1,12 @@
 <?php
+$connect = mysqli_connect("localhost", "root", "", "trayectoria_alumnos");
 
-    $host = "localhost";
-    $usuario = "root";
-    $pass = "";
-    $b_datos = "trayectoria_alumnos";
-    $caracteres = "utf8";
+if (!$connect) {
+    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
+    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+} else {
+    echo "Success: Ya estas conectado" . PHP_EOL;
+}
 
-    $conectar = @mysqli_connect($host, $usuario, $pass, $b_datos);
-    $conectar -> set_charset($caracteres);
-
-    if(!$conectar) {
-        $mensaje = "Error al conectar a la base de datos!!!\n";
-        echo $mensaje;
-    }
-?>

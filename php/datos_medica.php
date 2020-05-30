@@ -74,4 +74,3 @@ require "conectar.php";
         echo "\n\nNO SE GUARDÓ NADA!!!";
     }
 
-?>

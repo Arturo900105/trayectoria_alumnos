@@ -1,3 +1,6 @@
+<?php
+require "php/BD_Connect.php";
+?>
 <!doctype html>
 <html lang="es">
     <head>
