@@ -7,6 +7,13 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Trayectoria ITSP</title>
         <link rel="stylesheet" href="css/estilos-index.css">
+        <script src="js/jquery_3.4.1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+        <script src="js/jquery_3.4.1.js"></script>
         <script src="js/alertas.js"></script>
         <script src="js/numeros.js"></script>
     </head>
@@ -53,7 +60,7 @@
                 <div id="contenido_modal_reportes">
                     <a href="reporte_parcial.html"><input type="button" value="REPORTE PARCIAL" class="login_reportes"></a>
                     <br><br>
-                    <a href=""><input type="button" value="REPORTE FINAL" class="login_reportes"></a>
+                    <a href="reporte_final.html"><input type="button" value="REPORTE FINAL" class="login_reportes"></a>
                     <br><br>
                     <input type="button" value="SALIR" class="login_reportes" onclick="Cerrar_Accesol_Reportes()">
                 </div>
@@ -64,15 +71,23 @@
             <div id="v_modal_nip">
                 <div id="contenido_modal_nip">
                     <input type="password"
-                           placeholder="Escribir NIP"
+                           placeholder="Ingrese su Usuario"
+                           title="Ingresa el NIP de seguridad"
+                           maxlength="4"
+                           class="login_nip"
+                           required>
+                    <br><br>
+                    <input type="password"
+                           placeholder="Ingrese su NIP"
                            onkeypress="return nip(event);"
                            title="Ingresa el NIP de seguridad"
-                           maxlength="7"
+                           maxlength="4"
                            class="login_nip"
                            required>
                     <br><br>
                     <input type="button" value="ENTRAR" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" value="CANCELAR" class="botones_login" onclick="Cerrar_Accesol_Nip()">
+                    <input type="button" value="Nuevo Usuario" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="CANCELAR" class="botones_login" onclick="Cerrar_Acceso_Nip()">
                 </div>
             </div>
         </div>

@@ -27,9 +27,13 @@
                   $_POST['marcaXK3'] + $_POST['marcaXL3'] + $_POST['marcaXM3'] + $_POST['marcaXN3'] + $_POST['marcaXO3'] +
                   $_POST['marcaXP3'] + $_POST['marcaXQ3'] + $_POST['marcaXR3'] + $_POST['marcaXS3'] + $_POST['marcaXT3'];
 
+
     $pregutas1 = "Pregutas1";
+
     $pregutas2 = "Pregutas2";
+
     $pregutas3 = "Pregutas3";
+
 
     $pedagogia = "INSERT INTO tabla_pedagogia VALUES ('$fichaAlumno','$sumaVisual','$sumaAuditiva','$sumaKinestesica','$sumatoria1','$sumatoria2','$sumatoria3','$pregutas1','$pregutas2','$pregutas3')";
     $q4 = mysqli_query($conectar, $pedagogia);

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>REPORTE FINAK</title>
+    <link rel="stylesheet" href="css/esitlo-reporte_parcial.css">
+
+    <script src="js/jquery_3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <script src="js/numeros.js"></script>
+    <script src="js/decimales.js"></script>
+</head>
+<body>
+<div class="logos_reporte">
+    <img src="img/logo_itsp.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="img/logo_tecnm.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="img/escudo_michoacan.png" class="logos">
+</div>
+<h1>INSTITUTO TECNOLÓGICO SUPERIOR P’URHÉPECHA
+    <br>DIRECCIÓN ACADÉMICA
+    <br>PROGRAMA INSTITUCIONAL DE TUTORÍAS
+    <br><br>REPORTE FINAL
+</h1>
+
+<form action="" method="get" id="reporte1">
+    <div class="primer">
+        <label for="periodo"><b>PERIODO A EVALUAR:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="periodo" id="periodo">
+            <option value="Agosto - Diciembre">Agosto - Diciembre</option>
+            <option value="Enero - Junio">Enero - Junio</option>
+        </select>
+        <br><br>
+
+        <b>REPORTE FINAL DE TUTORÍAS</b>
+    </div>
+    <br><br>
+
+    <label>Nombre del Tutor:&nbsp;&nbsp;<input type="text" id="nom-tutor"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label>Semestre/Grupo:&nbsp;&nbsp;<input type="text" id="sem-grup"></label>
+    <br><br>
+
+    <label>Programa:&nbsp;&nbsp;<input type="text" id="programa"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label>Núm. total de tutorados asignados:&nbsp;&nbsp;<input type="text" id="num-tutorado"></label>
+    <p>Núm./Porcentaje de estudiantes no acreditados (Por asignatura):</p>
+    <table>
+        <tr>
+            <th class="num_materia">#</th>
+            <th class="nom_materia">Nombre de la Asignatura:</th>
+            <th class="materia_reprobada">Núm.</th>
+            <th class="porcentaje_reprobado">%</th>
+        </tr>
+        <tr>
+            <td class="num_materia">1.-</td>
+            <td class="nom_materia"><input type="text" class="materia"></td>
+            <td class="materia_reprobada"><input type="text"
+                                                 class="num-materia"
+                                                 pattern="[0-9]{1}{2}"
+                                                 onkeypress="return solo_numero(event);"
+                                                 minlength="1"
+                                                 maxlength="2"></td>
+            <td class="porcentaje_reprobado"><input type="text"
+                                                    class="por-materia"
+                                                    maxlength="5"
+                                                    onkeypress="return NumDecimal(event);"></td>
+        </tr>
+        <tr>
+            <td class="num_materia">2.-</td>
+            <td class="nom_materia"><input type="text" class="materia"></td>
+            <td class="materia_reprobada"><input type="text"
+                                                 class="num-materia"
+                                                 pattern="[0-9]{1}{2}"
+                                                 onkeypress="return solo_numero(event);"
+                                                 minlength="1"
+                                                 maxlength="2"></td>
+            <td class="porcentaje_reprobado"><input type="text"
+                                                    class="por-materia"
+                                                    maxlength="5"
+                                                    onkeypress="return NumDecimal(event);"></td></td>
+        </tr>
+        <tr>
+            <td class="num_materia">3.-</td>
+            <td class="nom_materia"><input type="text" class="materia"></td>
+            <td class="materia_reprobada"><input type="text"
+                                                 class="num-materia"
+                                                 pattern="[0-9]{1}{2}"
+                                                 onkeypress="return solo_numero(event);"
+                                                 minlength="1"
+                                                 maxlength="2"></td>
+            <td class="porcentaje_reprobado"><input type="text"
+                                                    class="por-materia"
+                                                    maxlength="5"
+                                                    onkeypress="return NumDecimal(event);"></td></td>
+        </tr>
+        <tr>
+            <td class="num_materia">4.-</td>
+            <td class="nom_materia"><input type="text" class="materia"></td>
+            <td class="materia_reprobada"><input type="text"
+                                                 class="num-materia"
+                                                 pattern="[0-9]{1}{2}"
+                                                 onkeypress="return solo_numero(event);"
+                                                 minlength="1"
+                                                 maxlength="2"></td>
+            <td class="porcentaje_reprobado"><input type="text"
+                                                    class="por-materia"
+                                                    maxlength="5"
+                                                    onkeypress="return NumDecimal(event);"></td></td>
+        </tr>
+        <tr>
+            <td class="num_materia">5.-</td>
+            <td class="nom_materia"><input type="text" class="materia"></td>
+            <td class="materia_reprobada"><input type="text"
+                                                 class="num-materia"
+                                                 pattern="[0-9]{1}{2}"
+                                                 onkeypress="return solo_numero(event);"
+                                                 minlength="1"
+                                                 maxlength="2"></td>
+            <td class="porcentaje_reprobado"><input type="text"
+                                                    class="por-materia"
+                                                    maxlength="5"
+                                                    onkeypress="return NumDecimal(event);"></td></td>
+        </tr>
+        <tr>
+            <td class="num_materia">6.-</td>
+            <td class="nom_materia"><input type="text" class="materia"></td>
+            <td class="materia_reprobada"><input type="text"
+                                                 class="num-materia"
+                                                 pattern="[0-9]{1}{2}"
+                                                 onkeypress="return solo_numero(event);"
+                                                 minlength="1"
+                                                 maxlength="2"></td>
+            <td class="porcentaje_reprobado"><input type="text"
+                                                    class="por-materia"
+                                                    maxlength="5"
+                                                    onkeypress="return NumDecimal(event);"></td></td>
+        </tr>
+    </table>
+    <br>
+
+    <label>Reuniones efectuadas en el periodo:&nbsp;&nbsp;&nbsp;<input type="text" class="reuniones"></label>
+    <br><br>
+
+    <label>Número de estudiantes becarios y tipo de beca:&nbsp;&nbsp;&nbsp;<input type="text" class="becarios"></label>
+    <br><br>
+
+    <label>Número de estudiantes que desertaron:&nbsp;&nbsp;&nbsp;<input type="text" class="desertaron"></label>
+    <br><br>
+
+    <table>
+        <tr>
+            <td class="nom_canalizaciones">Número de canalizaciones a asesoría pares:</td>
+            <td class="num_canalizaciones"><input type="text"
+                                                  class="canalizacion"
+                                                  pattern="[0-9]{1}{2}"
+                                                  onkeypress="return solo_numero(event);"
+                                                  minlength="1"
+                                                  maxlength="2"></td>
+        </tr>
+        <tr>
+            <td class="nom_canalizaciones">Número de canalizaciones al área de psicología:</td>
+            <td class="num_canalizaciones"><input type="text"
+                                                  class="canalizacion"
+                                                  pattern="[0-9]{1}{2}"
+                                                  onkeypress="return solo_numero(event);"
+                                                  minlength="1"
+                                                  maxlength="2"></td>
+        </tr>
+        <tr>
+            <td class="nom_canalizaciones">Número de canalizaciones al consultorio médico:</td>
+            <td class="num_canalizaciones"><input type="text"
+                                                  class="canalizacion"
+                                                  pattern="[0-9]{1}{2}"
+                                                  onkeypress="return solo_numero(event);"
+                                                  minlength="1"
+                                                  maxlength="2"></td>
+        </tr>
+        <tr>
+            <td class="nom_canalizaciones">Número de canalizaciones al área de pedagogía:</td>
+            <td class="num_canalizaciones"><input type="text"
+                                                  class="canalizacion"
+                                                  pattern="[0-9]{1}{2}"
+                                                  onkeypress="return solo_numero(event);"
+                                                  minlength="1"
+                                                  maxlength="2"></td>
+        </tr>
+    </table>
+    <br>
+
+    <label for="problematica">Problemática general detectada en el periodo:</label>
+    <br><textarea class="area_texto" name="" id="problematica" cols="70" rows="2"></textarea>
+    <br><br>
+
+    <label for="necesidades">Necesidades tutoriales específicas:</label>
+    <br><textarea class="area_texto" name="" id="necesidades" cols="70" rows="2"></textarea>
+    <br><br>
+
+    <label for="desertores">En caso de existir desertores describir el motivo:</label>
+    <br><textarea class="area_texto" name="" id="desertores" cols="70" rows="2"></textarea>
+    <br><br>
+
+    <label for="rec_obs">Recomendaciones/Observaciones:</label>
+    <br><textarea class="area_texto" name="" id="rec_obs" cols="70" rows="2"></textarea>
+    <br><br>
+
+    <div class="botones_reporte">
+        <input type="button" value="GUARDAR" class="bot-generadores">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="documentos/reporte_final.php"><input type="button" value="IMPRIMIR" class="bot-generadores"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="SALIR" class="bot-generadores" onclick="history.back()">
+    </div>
+</form>
+<br>
+
+<div id="base_reporte">
+    Carretera: Uruapan–Carapan; Km. 31.5; CP. 60270; Cherán, Mich.
+    <br>Tels. 01(443) 292 1023 y (443) 292 1026; e-mail: its-purhepecha@its-purhepecha.edu.mx
+    <br><b>www.tecnm.mx | www.its-purhepecha.edu.mx</b>
+</div>
+</body>
+</html>

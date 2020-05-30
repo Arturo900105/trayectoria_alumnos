@@ -3,35 +3,35 @@ require('fpdf/fpdf.php');
 $pdf = new FPDF();
 $pdf->AddPage();
 
-    class PDF extends FPDF{
+class PDF extends FPDF{
 
-        function Header(){
-            $this->SetTopMargin(1);
-            $this->SetLeftMargin(2);
-            $this->SetRightMargin(2);
-            $this->Image("../img/logo_ITSP.png",2.6,1,0, 2);
-            $this->Cell(4,2,"",1,0,"C");
+    function Header(){
+        $this->SetTopMargin(1);
+        $this->SetLeftMargin(2);
+        $this->SetRightMargin(2);
+        $this->Image("../img/logo_ITSP.png",2.6,1,0, 2);
+        $this->Cell(4,2,"",1,0,"C");
 
-            $this->SetFont("Times","B",10);
-            $this->MultiCell(7,0.5,utf8_decode('Formato para el Reporte Parcial del Programa Institucional de Tutorías'),1,"L",0);
+        $this->SetFont("Times","B",10);
+        $this->MultiCell(7,0.5,utf8_decode('Formato para el Reporte Final del Programa Institucional de Tutorías'),1,"L",0);
 
-            $this->SetXY(13,1);
-            $this->SetFont('Times',"B",10);
-            $this->Cell(6.6,0.5,utf8_decode("Código: TecNM-AC-PO-003-02"),1,0, "C");
+        $this->SetXY(13,1);
+        $this->SetFont('Times',"B",10);
+        $this->Cell(6.6,0.5,utf8_decode("Código: TecNM-AC-PO-003-02"),1,0, "C");
 
-            $this->SetXY(13,1.5);
-            $this->SetFont('Times',"B",10);
-            $this->Cell(6.6,0.5,utf8_decode("Revisión: 0"),1,0, "C");
+        $this->SetXY(13,1.5);
+        $this->SetFont('Times',"B",10);
+        $this->Cell(6.6,0.5,utf8_decode("Revisión: 0"),1,0, "C");
 
-            $this->SetXY(6,2);
-            $this->SetFont('Times',"B",10);
-            $this->MultiCell(7,0.5,utf8_decode("Referencia a la Norma ISO 9001:2008 7.1, 7.2.1, 7.5.1, 7.6, 8.1, 8.2.4"),1,"L",0);
+        $this->SetXY(6,2);
+        $this->SetFont('Times',"B",10);
+        $this->MultiCell(7,0.5,utf8_decode("Referencia a la Norma ISO 9001:2008 7.1, 7.2.1, 7.5.1, 7.6, 8.1, 8.2.4"),1,"L",0);
 
-            $this->SetXY(13,2);
-            $this->SetFont('Times',"B",14);
-            $this->Cell(6.6,1,utf8_decode("Página ").$this->PageNo().' de 1',1,1, "C");
-        }
+        $this->SetXY(13,2);
+        $this->SetFont('Times',"B",14);
+        $this->Cell(6.6,1,utf8_decode("Página ").$this->PageNo().' de 1',1,1, "C");
     }
+}
 
 $pdf = new PDF("P", "cm","letter");
 $pdf->AddPage();
@@ -54,20 +54,12 @@ $pdf->SetX(4.2);
 $pdf->Cell(6, 0.7, utf8_decode('PERIODO A EVALUAR:'), 0, 0,"R");
 $pdf->SetFont('Arial', '', 12);
 $pdf->Cell(6, 0.7, utf8_decode(''), "B", 1,"C");
-$pdf->Ln(.3);
 
+$pdf->Ln(0.5);
 $pdf->SetFont('Arial', 'B', 12);
-$pdf->SetX(5.6);
-$pdf->Cell(3, 0.8, utf8_decode('REPORTE:'), 0, 0,"L");
-$pdf->SetFont('Arial', '', 12);
-$pdf->Cell(0.9, 0.8, utf8_decode(''), 1, 0,"C");
-$pdf->Cell(0.4, 0.8, "", 0, 0,"C");
-$pdf->Cell(0.9, 0.8, utf8_decode(''), 1, 0,"C");
-$pdf->Cell(0.4, 0.8, "", 0, 0,"C");
-$pdf->Cell(0.9, 0.8, utf8_decode(''), 1, 0,"C");
-$pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(3.7, 0.8, utf8_decode('DE TUTORÍAS'), 0, 1,"R");
-$pdf->Ln(1);
+$pdf->Cell(0, 0.8, utf8_decode('REPORTE FINAL DE TUTORÍAS'), 0, 0,"C");
+
+$pdf->Ln(1.6);
 
 $pdf->SetFont('Arial', '', 12);
 $pdf->Cell(3.7, 0.6, utf8_decode("Nombre del Tutor:"), 1, 0,"L");

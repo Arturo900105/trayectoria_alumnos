@@ -2,51 +2,74 @@
 require "conectar.php";
 
     $fichaAlumno = $_POST['ficha_alumno'];
+    $peso = $_POST['peso']." kg.";
+    $estatura = $_POST['talla']." m.";
+    $tipo_sangre = $_POST['sangre'];
 
-    $parte1 = "Peso: ".$_POST['peso']."kg.".
-            "\nEstatura: ".$_POST['talla']."m.".
-            "\nSangre: ".$_POST['sangre'].".";
-
-    $parte2 = $_POST['ante_hered'];
-    if (isset($parte2)){
-        $parte2 = "─> ".implode(".\n─> ", $parte2).".";
+    $anteHeredofamiliar = "";
+    if (isset($_POST['ante_hered'])){
+        $anteHeredofamiliar = implode("\n", $_POST['ante_hered']);
+        if ($anteHeredofamiliar == ""){
+            $anteHeredofamiliar = "----------";
+        }
     }
 
     $toxicomanias = $_POST['toxi'];
-    if ($toxicomanias == "Sí"){
-        $toxicomanias = "Toxicomanías: ".implode(", ", $_POST['toxicomanias'])."; Cada: ".$_POST['tox_frecuencia'].".";
-    }else{
-        $toxicomanias = "Toxicomanías: NO.";
+    $tipo_toxi = "----------";
+    if (isset($_POST['toxicomanias'])){
+        $tipo_toxi = implode("\n", $_POST['toxicomanias']);
+    }
+    $frecuencia = $_POST['tox_frecuencia'];
+
+    if ($toxicomanias == "NO"){
+        $frecuencia = "----------";
     }
 
-    $embarazo = $_POST['embarazo'];
-    if ($embarazo == "Sí"){
-        $embarazo = "Embarazo: lleva ".$_POST['tiempo_embarazo'].".";
-    }else{
-        $embarazo = "Embarazo: NO.";
+    $embarazo = "----------";
+    if ($embarazo == "SÍ"){
+        $embarazo = "SÍ\n".$_POST['tiempo_embarazo'].".";
     }
 
     $act_fisica = $_POST['act_fisica'];
-    if ($act_fisica == "Sí"){
-        $act_fisica = "Actividad Física: ".$_POST['esp_act']."; Tiempo: ".$_POST['tiempo_act'].".";
-    }else{
-        $act_fisica = "Actividad Física: NO.";
+    $actividad = $_POST['esp_act'];
+    $tiempo = $_POST['tiempo_act'];
+    if ($act_fisica == "NO"){
+        $actividad = "----------";
+        $tiempo = "----------";
     }
 
-    $parte3 = $toxicomanias."\n".$embarazo."\n".$act_fisica;
+    $alergia = $_POST['alergias'];
+    if ($alergia == "SÍ"){
+        $alergia = "SÍ:\n".$_POST['esp_alergia'].".";
+    }
 
-    $parte4 = $_POST[''];
+    $transfusionales = $_POST['transfusionales'];
+    $quir_cir = $_POST['qui_cir'];
+    $diabetes = $_POST['diabetes'];
+    if ($diabetes == "SÍ"){
+        $diabetes = "SÍ:\n".$_POST['diab_tipo'].".";
+    }
 
-    $emergencia = $_POST[''];
+    $hipertencion = $_POST['hipertension'];
+    $convulsiones = $_POST['convulsiones'];
+    $asma = $_POST['asma'];
 
-    $medica = "INSERT INTO tabla_medica VALUES ('$fichaAlumno','$parte1','$parte2','$parte3','$parte4','$emergencia')";
+    $tel_obligatorio = $_POST['tel_obligatorio'];
+    $tel_opcional = $_POST['tel_opcional'];
+
+    $tels_emergencia = $tel_obligatorio."\n".$tel_opcional;
+
+    $medica = "INSERT INTO tabla_medica VALUES ('$fichaAlumno','$peso','$estatura','$tipo_sangre','$anteHeredofamiliar',
+                                                '$toxicomanias','$tipo_toxi','$frecuencia','$embarazo','$act_fisica',
+                                                '$actividad','$tiempo','$alergia','$quir_cir','$transfusionales',
+                                                '$diabetes','$hipertencion','$convulsiones','$asma','$tels_emergencia')";
     $q6 = mysqli_query($conectar, $medica);
 
     if ($q6){
         echo "Datos Guardados Correctamente!!!";
     }
     else{
-        //printf("Errormessage: \n%s", mysqli_error($conectar));
+        printf("Errormessage: \n%s", mysqli_error($conectar));
         http_response_code(404);
         echo "\n\nNO SE GUARDÓ NADA!!!";
     }

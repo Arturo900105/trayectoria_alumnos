@@ -45,7 +45,7 @@ table, td{
     height: 2em;
 }
 
-#no-folio{
+#folio{
     text-align: center;
     color: #ff0200;
     width: 10em;
@@ -82,6 +82,7 @@ table, td{
 #otra_canalizacion{
     text-align: center;
     width: 15em;
+    display: none;
 }
 
 textarea{

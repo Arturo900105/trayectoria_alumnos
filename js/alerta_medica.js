@@ -1,35 +1,53 @@
-function hideByClassName(className) {
-    let careers = document.getElementsByClassName(className);
-    for (let i = 0; i < careers.length; i++) {
-        careers[i].style.display = 'none';
+let parametro, radio, caja;
+
+function ocultarRadio(className) {
+    radio = document.getElementsByClassName(className);
+    for (let i = 0; i < radio.length; i++) {
+        radio[i].style.display = 'none';
     }
 }
 
-function showByClassName(className) {
-    let careers = document.getElementsByClassName(className);
-    for (let i = 0; i < careers.length; i++) {
-        careers[i].style.display = 'unset';
+function mostrarRadio(className) {
+    radio = document.getElementsByClassName(className);
+    for (let i = 0; i < radio.length; i++) {
+        radio[i].style.display = 'unset';
     }
 }
 
-function onChangeRadio(className) {
-    let parameters = className.split('-');
-    switch (parameters[0]) {
+function cambioRadio(className) {
+    parametro = className.split('-');
+    switch (parametro[0]) {
         case 'hide':
-            hideByClassName(parameters[1]);
+            ocultarRadio(parametro[1]);
             break;
         case 'show':
-            showByClassName(parameters[1]);
+            mostrarRadio(parametro[1]);
             break;
+    }
+}
+
+function cambioCaja(event, nodeId) {
+    caja = document.getElementById(nodeId);
+    if(event.target.checked){
+        caja.style.display = 'unset'
+    } else {
+        caja.style.display = 'none'
     }
 }
 
 function onInputLoad() {
-    console.log('onInputLoad');
-    //document.getElementById("medica-alumno").reset(); -> para borrar contenido
+    //console.log('onInputLoad');
+    document.getElementById("medica-alumno").reset(); //-> para borrar contenido
     const event = new Event('change');
     const inputs = document.getElementsByTagName('input');
     for (let index = 0; index < inputs.length; ++index) {
         inputs[index].dispatchEvent(event);
     }
 }
+
+$(document).ready(function () {
+    $(".ante_hered").prop( "checked", false );
+    $("input[name = toxi], [name = embarazo], [name = act_fisica], [name = alergias]").prop( "checked", false );
+    $("input[name = qui_cir], [name = transfusionales], [name = diabetes], [name = hipertension]").prop( "checked", false );
+    $("input[name = convulsiones], [name = asma]").prop( "checked", false );
+})

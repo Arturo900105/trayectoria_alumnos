@@ -61,6 +61,15 @@ select{
     height: 2em;
 }
 
+#usu-tutor, #pass-tutor{
+    text-align: center;
+}
+
+#generar-login{
+    width: 10em;
+    height: 2.1em;
+}
+
 .email{
     text-align: center;
 }

@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <title>Trayectorias de Alumnos</title>
     <link rel="stylesheet" href="css/est-login-trayectoria.css">
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous">
-    </script>
+
+    <script src="js/jquery_3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
     <script src="js/fecha-trayectoria.js"></script>
     <script src="js/area_dinamica.js"></script>
     <script src="js/alertas.js"></script>
 </head>
 <body>
     <h1>Trayectoria escolar de Alumnos</h1>
-    <form action="" method="post">
+    <form action="" method="" id="formulario_tutor">
         <h2>Formulario para el Tutor;
             <br>para seguir con las trayectorias, llena lo que se te pide a continuación:</h2>
         <br>
@@ -24,19 +26,19 @@
         </div>
         <br>
         <label for="nombre_tutor">Nombre del Tutor:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="nombre_tutor" placeholder="Nombre(s)" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" class="apellidos_tutor" placeholder="Apellido Paterno" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" class="apellidos_tutor" placeholder="Apellido Materno" required>
+        <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre(s)" onclick="borrarNombre()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="apepat_tutor" name="apepat_tutor" class="apellidos_tutor" placeholder="Apellido Paterno" onclick="borrarApePat()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="apemat_tutor" name="apemat_tutor" class="apellidos_tutor" placeholder="Apellido Materno" onclick="borrarApeMat()">
         <br><br>
 
-        <select name="" id="tipo-tutoria" required>
+        <select name="tipo_tutoria" id="tipo-tutoria" >
             <option value=""> --- Tipo de Tutoría: --- </option>
-            <option value="Tutoría Grupa">1. Tutoría Grupal</option>
+            <option value="Tutoría Grupal">1. Tutoría Grupal</option>
             <option value="Tutoría Generacional">2. Tutoría Generacional</option>
             <option value="Tutoría de Salida">3. Tutoría de Salida</option>
         </select>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <select name="area" id="area_de" title="A continuación, se mostrará la carpeta del área seleccionada" required>
+        <select name="area_de" id="area_de" title="A continuación, se mostrará la carpeta del área seleccionada">
             <option value=""> --- Área de: --- </option>
             <option value="IGEM">Ingeniería en Gestión Empresarial</option>
             <option value="IIND">Ingeniería Industrial</option>
@@ -46,17 +48,18 @@
             <option value="IENR">Ingeniería en Energías Renovables</option>
         </select>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" id="generar-login" value="Generar Usuario">
+        <input type="button" id="generar-login" value="Generar Login" onclick="crearUsuario()">
         <br><br>
-        <label>Usuario:&nbsp;&nbsp;&nbsp;<input type="text" id="usu-tutor" name="usu-tutor" readonly></label>
 
+        <label>Email:&nbsp;&nbsp;<input type="email" name="email" id="email" placeholder="¡¡¡Asegurate de escribirlo bien!!!"></label>
+        <br><br>
+
+        <label>Usuario:&nbsp;&nbsp;&nbsp;<input type="text" id="usu-tutor" name="usu_tutor" readonly></label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Contraseña:&nbsp;&nbsp;&nbsp;<input type="text" id="pass-tutor" name="pass-tutor" readonly></label>
-        <br><br>
-        
-        <label>Se te enviará un Usuario y Contraseña al correo que proporciones.</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Email:&nbsp;&nbsp;<input type="email" required id="email" placeholder="¡¡¡Asegurate de escribirlo bien!!!"></label>
-        <br><br>
+        <label>Contraseña:&nbsp;&nbsp;&nbsp;<input type="text" id="pass-tutor" name="pass_tutor" readonly></label>
+        <p>
+            Se te enviará el Usuario y Contraseña que registres, al correo que proporcionaste.
+        </p>
 
         <div class="botones">
             <input type="submit" value="REGISTRAR" class="boton_trayectoria">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -94,15 +97,16 @@
     <div class="modal-acceso" id="modal-acceso">
         <div id="m_acceso">
             <div id="contenido_m_acceso">
-                <input type="text" placeholder="Ingresa tu Usuario" class="login_acceso">
+                <input type="text" name="usuario" placeholder="Ingresa tu Usuario" class="login_acceso">
                 <br><br>
-                <input type="password" placeholder="Ingresa tu Contraseña" class="login_acceso">
+                <input type="password" name="pass" placeholder="Ingresa tu Contraseña" class="login_acceso">
                 <br><br>
                 <input type="button" value="ENTRAR" class="botones_login_acceso">&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" value="CANCELAR" class="botones_login_acceso" onclick="Cerrar_M_Accesol()">
+                <input type="button" value="CANCELAR" class="botones_login_acceso" onclick="Cerrar_M_Acceso()">
             </div>
         </div>
     </div>
-
+    <script src="js/login_tutor.js"></script>
+    <script src="js/pass_tutor.js"></script>
 </body>
 </html>

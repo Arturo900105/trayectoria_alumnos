@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <title>CANALIZACIÓN</title>
     <link rel="stylesheet" href="css/esitlo-canalizacion.css">
-    <script src="js/fecha-canalizacion.js"></script>
-    <script src="js/ciclo_escolar.js"></script>
+
+    <script src="js/jquery_3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <script src="js/alerta_canalizacion.js"></script>
 </head>
 <body>
     <div id="logos_canalizacion">
@@ -16,8 +22,8 @@
     <h1>PROGRAMA DE TUTORÍA ACADÉMICA</h1>
     <h2>CANALIZACIÓN DE TUTORADO</h2>
 
-    <form action="" method="post" name="canalizacion">
-        <label>Folio:&nbsp;&nbsp;<input type="text" id="no-folio" value="" readonly required></label>
+    <form action="" method="post" name="canalizacion" id="canalizaciones">
+        <label>Folio:&nbsp;&nbsp;<input type="text" id="folio" name="folio" value="" readonly required></label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label>Fecha:&nbsp;&nbsp;<input type="text" id="fecha-hoy" value="" readonly required></label>
         <br><br>
@@ -25,16 +31,22 @@
         <label>Nombre del Estudiante:&nbsp;&nbsp;<input type="text" class="nom_alumno" name="nom_alumno" required></label>
         <br><br>
         Carrera:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Gestión Empresarial"><input type="radio" name="can-carr" value="IGEM">IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería Industrial"><input type="radio" name="can-carr" value="Ingeniería Industrial">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Sistemas Computacionales"><input type="radio" name="can-carr" value="ISIC">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería Biomédica"><input type="radio" name="can-carr" value="IBIO">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Innovación Agrícola Sustentable"><input type="radio" name="can-carr" value="IIAS">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Energías Renovables"><input type="radio" name="can-carr" value="IENR">IENR</label>
+        <label title="Ingeniería en Gestión Empresarial">
+            <input type="radio" id="igem" name="carrera" value="IGEM">IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería Industrial">
+            <input type="radio" id="iind" name="carrera" value="IIND">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería en Sistemas Computacionales">
+            <input type="radio" id="isic" name="carrera" value="ISIC">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería Biomédica">
+            <input type="radio" id="ibio" name="carrera" value="IBIO">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería en Innovación Agrícola Sustentable">
+            <input type="radio" id="iias" name="carrera" value="IIAS">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label title="Ingeniería en Energías Renovables">
+            <input type="radio" id="ienr" name="carrera" value="IENR">IENR</label>
         <br><br>
         <label>No. de Control:&nbsp;&nbsp;<input type="text" id="no_control" maxlength="7" minlength="7" required></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <select class="seleccion" name="semestre" id="semestre" onchange="cambia()" required>
+        <select class="seleccion" name="semestre" id="semestre" onclick="cambiarCiclo()" required>
             <option value="">-- Semestre --</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -50,20 +62,18 @@
             <option value="12">12</option>
         </select>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <select id="ciclo_escolar" name="ciclo_escolar" required>
-            <option value="">-- Ciclo Escolar: --</option>
-        </select>
+        <input type="text" id="ciclo_escolar" name="ciclo_escolar" placeholder="-- Ciclo Escolar --" required readonly>
         <br><br>
 
         Tipo de Canalización:&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="Psicológica">Psicológica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="Pedagógica">Pedagógica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="Asesoría Académica">Asesoría Académica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="Médica">Médica</label>
+        <label><input type="radio" onchange="onChangeRadio('hide-otra_canalizacion')" name="tipo_canalizacion" value="Psicológica">Psicológica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" onchange="onChangeRadio('hide-otra_canalizacion')" name="tipo_canalizacion" value="Pedagógica">Pedagógica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" onchange="onChangeRadio('hide-otra_canalizacion')" name="tipo_canalizacion" value="Asesoría Académica">Asesoría Académica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" onchange="onChangeRadio('hide-otra_canalizacion')" name="tipo_canalizacion" value="Médica">Médica</label>
         <br><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="">Otra:</label>&nbsp;&nbsp;
-        <input type="text" name="tipo_canalizacion" id="otra_canalizacion">
+        <label><input type="radio" onchange="onChangeRadio('show-otra_canalizacion')" name="tipo_canalizacion" value="">Otra:</label>&nbsp;&nbsp;
+        <input type="text" name="tipo_canalizacion" id="otra_canalizacion" class="otra_canalizacion">
         <br><br>
         Descripción de la Problemática:
         <br>

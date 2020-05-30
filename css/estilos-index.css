@@ -115,13 +115,13 @@ p{
 }
 
 #v_modal_nip{
-    background: rgba(255, 124, 16, 0.8);
+    background: rgba(1, 23, 180, 0.8);
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 22em;
-    height: 10em;
+    width: 30em;
+    height: 13em;
     margin: auto;
     border-radius: 1.5em;
     position: absolute;
@@ -130,14 +130,15 @@ p{
 #contenido_modal_nip{
     padding: 2em;
     width: auto;
+    height: auto;
     margin: auto;
 }
 
 .login_nip{
     text-align: center;
     background-color: white;
-    color: #ff0200;
-    width: 10em;
-    height: 2em;
+    color: #000f49;
+    width: 15em;
+    height: 1.5em;
     font-size: 20px;
 }
