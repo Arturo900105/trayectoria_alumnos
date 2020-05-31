@@ -15,7 +15,9 @@
     <script src="js/decimales.js"></script>
     <script src="js/alerta_medica.js"></script>
 </head>
+
 <body onload="onInputLoad()">
+
     <h1>ÁREA MÉDICA</h1>
     <form action="php/datos_medica.php" method="post" name="medica-alumno" id="medica-alumno">
 
@@ -26,9 +28,11 @@
         <h2 class="dato" id="edo_civil"></h2>
         <h2 class="dato" id="sexo"></h2>
         <h2 class="dato" id="indigena"></h2>
+        <br><br>
+
         <input type="hidden" value="" id="ficha_alumno" name="ficha_alumno">
         <input type="hidden" value="" id="sexo_alumno" name="sexo_alumno">
-        <br><br>
+
 
         <label><b>Teléfonos de Emergencia:</b>&nbsp;&nbsp;&nbsp;
             <input type="tel"
@@ -143,7 +147,8 @@
                         <input class="toxicomanias" name="tox_frecuencia" type="text" placeholder="¿Frecuancia?">
                     </td>
                 </tr>
-                <tr>
+
+                <tr id="solo-femenino">
                     <td class="columna3_1">Embarazo:</td>
                     <td class="columna3_2">
                         &nbsp;&nbsp;<label>SÍ:<input type="radio" name="embarazo" value="SÍ" onchange="cambioRadio('show-embarazo')"></label>
@@ -154,6 +159,7 @@
                         <input class="embarazo" name="tiempo_embarazo" type="text" placeholder="¿Cuántos meses o semanas?">
                     </td>
                 </tr>
+
                 <tr>
                     <td class="columna3_1">Actividad Fisica:</td>
                     <td class="columna3_2">

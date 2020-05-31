@@ -1,6 +1,6 @@
 <?php
 
-require "conectar.php";
+require "BD_Connect.php";
 
     $ficha = $_POST['no_ficha'];
     $nombre = $_POST['nombre'];
@@ -72,14 +72,14 @@ require "conectar.php";
     $prom_bach = $_POST['prom_prepa'];
 
     $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$apellidos','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_registro','$carrera','$generacion')";
-    $query = mysqli_query($conectar, $guardar_alumno);
+    $query = mysqli_query($connect, $guardar_alumno);
 
     if ($query) {
         $domicilio = "INSERT INTO domicilio VALUES ('$ficha','$domicilio','$colonia','$codigo_postal','$localidad','$procedencia')";
-        $query2 = mysqli_query($conectar, $domicilio);
+        $query2 = mysqli_query($connect, $domicilio);
 
         $procedencia = "INSERT INTO procedencia VALUES ('$ficha','$bach','$tipo_bach','$nom_bach','$prom_bach')";
-        $query3 = mysqli_query($conectar, $procedencia);
+        $query3 = mysqli_query($connect, $procedencia);
 
         echo "REGISTRO EXITOSO!!!";
 

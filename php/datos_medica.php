@@ -1,5 +1,5 @@
 <?php
-require "conectar.php";
+require "BD_Connect.php";
 
     $fichaAlumno = $_POST['ficha_alumno'];
     $peso = $_POST['peso']." kg.";
@@ -63,13 +63,13 @@ require "conectar.php";
                                                 '$toxicomanias','$tipo_toxi','$frecuencia','$embarazo','$act_fisica',
                                                 '$actividad','$tiempo','$alergia','$quir_cir','$transfusionales',
                                                 '$diabetes','$hipertencion','$convulsiones','$asma','$tels_emergencia')";
-    $q6 = mysqli_query($conectar, $medica);
+    $q6 = mysqli_query($connect, $medica);
 
     if ($q6){
         echo "Datos Guardados Correctamente!!!";
     }
     else{
-        printf("Errormessage: \n%s", mysqli_error($conectar));
+        printf("Errormessage: \n%s", mysqli_error($connect));
         http_response_code(404);
         echo "\n\nNO SE GUARDÓ NADA!!!";
     }

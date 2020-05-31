@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
     <script src="js/numeros.js"></script>
     <script src="js/nodes.js"></script>
+    <script src="js/alerta_psicologia.js"></script>
 
 </head>
 <body>
     <h1>Área de Psicología</h1>
-    <form action="" method="" name="alumno-psicologia" id="alumno-psicologia">
+    <form action="php/datos_psicologia.php" method="POST" name="alumno-psicologia" id="alumno-psicologia">
 
         <h2 class="dato" id="ficha"></h2>
         <h2 class="dato" id="alumno"></h2>
@@ -246,6 +248,15 @@
         <h2>Test de orientación vocacional.</h2>
         <p>
             Contesta Sí o No, según corresponda:
+            <input type="hidden" id="bloque1v">
+            <input type="hidden" id="bloque2v">
+            <input type="hidden" id="bloque3v">
+            <input type="hidden" id="bloque4v">
+
+            <input type="hidden" id="bloque1v_bd" name="bloque1v_bd">
+            <input type="hidden" id="bloque2v_bd" name="bloque2v_bd">
+            <input type="hidden" id="bloque3v_bd" name="bloque3v_bd">
+            <input type="hidden" id="bloque4v_bd" name="bloque4v_bd">
         </p>
         <table>
             <tr>
@@ -255,63 +266,63 @@
             <tr>
                 <td class="no_bloques">01</td>
                 <td class="bloques">¿Te gustaría inventar nuevas formas para hacer las cosas?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_1" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_1" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_01" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_01" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">02</td>
                 <td class="bloques">¿Descubrir nuevas analogías es tu pasión?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_2" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_2" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_02" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_02" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">03</td>
                 <td class="bloques">¿Te gusta arreglar o construir cosas y sientes gran curiosidad por saber cómo funciona todo?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_3" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_3" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_03" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_03" value="0"></label></td>
             </tr>
 
             <tr>
                 <td class="no_bloques">04</td>
                 <td class="bloques">¿Siempre quieres saber de qué está hecho todo?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_4" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_4" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_04" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_04" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">05</td>
                 <td class="bloques">¿Siempre te has preguntado cuántas estrellas habrá en el universo?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_5" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_5" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_05" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_05" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">06</td>
                 <td class="bloques">¿Disfrutas la tecnología?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_6" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_6" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_06" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_06" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">07</td>
                 <td class="bloques">¿Te gustaría medir el infinito?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_7" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_7" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_07" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_07" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">08</td>
                 <td class="bloques">¿Te has preguntado si la tierra y el sistema solar no serán sino partes de un mecanismo mayor?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_8" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_8" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_08" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_08" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">09</td>
                 <td class="bloques">¿Sientes que el tiempo no te alcanza para saber todo lo que te gustaría?</td>
-                <td><label>Sí:<input type="radio" name="bloque1_9" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_9" value="2"></label></td>
+                <td><label>Sí:<input type="radio" name="bloque1_09" value="1"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_09" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">10</td>
                 <td class="bloques">¿Eres practica(o) para encontrar la solución a los problemas que enfrentas?</td>
                 <td><label>Sí:<input type="radio" name="bloque1_10" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque1_10" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque1_10" value="0"></label></td>
             </tr>
         </table>
         <br>
@@ -326,61 +337,61 @@
                 <td class="no_bloques">11</td>
                 <td class="bloques">¿Te identificas plenamente con la naturaleza?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_11" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_11" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_11" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">12</td>
                 <td class="bloques">¿Sientes amor por los animales, las plantas y en general por todos los seres vivos?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_12" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_12" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_12" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">13</td>
                 <td class="bloques">¿Te gusta e interesa la investigación y los laboratorios?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_13" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_13" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_13" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">14</td>
                 <td class="bloques">¿Te encantaría trabajar en medios rurales y en contacto con la naturaleza?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_14" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_14" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_14" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">15</td>
                 <td class="bloques">¿Consideras que tienes buena memoria?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_15" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_15" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_15" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">16</td>
                 <td class="bloques">¿Siempre te preguntas cómo somos los seres vivos, cómo estamos formados, cómo logramos subsistir?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_16" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_16" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_16" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">17</td>
                 <td class="bloques">¿Te gustaría trabajar en algo relacionado con la salud y la lucha contra las enfermedades?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_17" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_17" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_17" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">18</td>
                 <td class="bloques">¿Te adaptas fácilmente a distintos medios, distintos de los que estás acostumbrado?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_18" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_18" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_18" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">19</td>
                 <td class="bloques">¿Acampar para ti es mucho más que unas simples vacaciones?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_19" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_19" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_19" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">20</td>
                 <td class="bloques">¿El funcionamiento del cerebro y todo lo relacionado con él te mantienen interesado y ocupado?</td>
                 <td><label>Sí:<input type="radio" name="bloque2_20" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque2_20" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque2_20" value="0"></label></td>
             </tr>
         </table>
         <br>
@@ -395,61 +406,61 @@
                 <td class="no_bloques">21</td>
                 <td class="bloques">¿Te consideras un(a) líder?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_21" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_21" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_21" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">22</td>
                 <td class="bloques">¿Eres buena(o) para dirigir grupos grandes de personas?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_22" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_22" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_22" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">23</td>
                 <td class="bloques">¿Eres de las(os) primeras(os) en encontrar una buena solución a cualquier problema de tipo social?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_23" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_23" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_23" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">24</td>
                 <td class="bloques">¿Eres buena(o) para negociar y casi siempre consigues lo que quieres y tal y como lo quieres?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_24" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_24" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_24" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">25</td>
                 <td class="bloques">¿Serias capaz de venderle hielo a un esquimal, influir en los demás y crearles una necesidad de consumo?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_25" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_25" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_25" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">26</td>
                 <td class="bloques">Si se quiere un viaje, ¿tú eres elegida(o) para encargarte de la organización pues tu planeas mejor los viajes?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_26" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_26" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_26" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">27</td>
                 <td class="bloques">¿Podríamos decir que tu fuerte es todo aquello que afecte directamente o indirectamente a la sociedad?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_27" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_27" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_27" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">28</td>
                 <td class="bloques">¿Te gustaría enseñar lo que sabes a los demás e investigar lo que no sabes cuando alguien lo necesita?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_28" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_28" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_28" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">29</td>
                 <td class="bloques">¿No puedes terminar el día sin saber exactamente qué está pasando en el mundo?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_29" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_29" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_29" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">30</td>
                 <td class="bloques">¿Te da miedo y vergüenza hablar en público?</td>
                 <td><label>Sí:<input type="radio" name="bloque3_30" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque3_30" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque3_30" value="0"></label></td>
             </tr>
         </table>
         <br>
@@ -464,61 +475,61 @@
                 <td class="no_bloques">31</td>
                 <td class="bloques">¿Te interesa todo lo que tiene que ver con el pasado?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_31" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_31" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_31" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">32</td>
                 <td class="bloques">¿Tienes curiosidad y te encanta saber lo que ha pasado en la historia de la humanidad y porqué ha pasado?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_32" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_32" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_32" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">33</td>
                 <td class="bloques">¿Tienes tantos libros que ya no sabes qué hacer con todos?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_33" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_33" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_33" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">34</td>
                 <td class="bloques">¿Te gusta el arte en todas sus expresiones?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_34" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_34" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_34" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">35</td>
                 <td class="bloques">¿Te gusta crear nuevas formas, sensaciones, texturas y formas de vida?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_35" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_35" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_35" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">36</td>
                 <td class="bloques">¿En cada lugar no puedes dejar de admirar su decoración o sugerir lo que se vería mejor en cierto lugar?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_36" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_36" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_36" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">37</td>
                 <td class="bloques">¿Los museos para ti son algo así como un segundo hogar?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_37" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_37" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_37" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">38</td>
                 <td class="bloques">¿La mejor forma que tiene el ser humano para expresar es la música?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_38" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_38" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_38" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">39</td>
                 <td class="bloques">¿Te interesa saber lo que les pasa a los demás, la raíz de sus problemas, y por qué les cuesta adaptarse?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_39" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_39" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_39" value="0"></label></td>
             </tr>
             <tr>
                 <td class="no_bloques">40</td>
                 <td class="bloques">¿Te llama la atención el comportamiento humano?</td>
                 <td><label>Sí:<input type="radio" name="bloque4_40" value="1"></label></td>
-                <td><label>No:<input type="radio" name="bloque4_40" value="2"></label></td>
+                <td><label>No:<input type="radio" name="bloque4_40" value="0"></label></td>
             </tr>
         </table>
         <br>

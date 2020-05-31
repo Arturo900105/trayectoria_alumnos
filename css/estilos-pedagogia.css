@@ -70,3 +70,13 @@ form{
     display:inline;
     color: #000000;
 }
+
+#validados1,#validados2,#validados3{
+    text-align: center;
+    width: 15em;
+}
+
+#cadena1,#cadena2,#cadena3{
+    text-align: center;
+    width: 20em;
+}

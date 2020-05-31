@@ -1,5 +1,5 @@
 <?php
-    require "conectar.php";
+require "BD_Connect.php";
 
     $registro = date('Y-m-d');
     $nombre = $_POST['nombre_tutor'];
@@ -11,7 +11,7 @@
     $password = password_hash($_POST['pass_tutor'], PASSWORD_BCRYPT);
 
     $t_tutor = "INSERT INTO tutor VALUES ('$usuario','$apellido','$nombre','$tutoria','$area','$correo','$registro','$password')";
-    $qt = mysqli_query($conectar, $t_tutor);
+    $qt = mysqli_query($connect, $t_tutor);
 
     if (!$qt){
         //printf("Errormessage: \n%s", mysqli_error($conectar));

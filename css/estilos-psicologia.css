@@ -91,3 +91,8 @@ form{
     display:inline;
     color: #000000;
 }
+
+#bloque1v_bd,#bloque2v_bd,#bloque3v_bd,#bloque4v_bd{
+    width: 15em;
+    text-align: center;
+}

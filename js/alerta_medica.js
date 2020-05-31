@@ -35,6 +35,10 @@ function cambioCaja(event, nodeId) {
     }
 }
 
+
+
+
+
 function onInputLoad() {
     //console.log('onInputLoad');
     document.getElementById("medica-alumno").reset(); //-> para borrar contenido
@@ -44,6 +48,8 @@ function onInputLoad() {
         inputs[index].dispatchEvent(event);
     }
 }
+
+
 
 $(document).ready(function () {
     $(".ante_hered").prop( "checked", false );

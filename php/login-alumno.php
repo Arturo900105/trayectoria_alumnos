@@ -1,12 +1,12 @@
 <?php
-    require "conectar.php";
+require "BD_Connect.php";
 
     $alerta1 = "Ficha encontrada!!!";
     $alerta2 = "Ficha no encontrada!!!";
 
     $acceso = $_POST['login'];
     $consulta = "SELECT * FROM alumno WHERE num_ficha = '$acceso'";
-    $resultado = mysqli_query($conectar, $consulta);
+    $resultado = mysqli_query($connect, $consulta);
     $filas = mysqli_num_rows($resultado);
 
     if ($filas > 0){

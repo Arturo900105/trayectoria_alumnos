@@ -1,5 +1,5 @@
 <?php
-    require "conectar.php";
+require "BD_Connect.php";
 
     $alerta1 = "Usuario encontrado!!!";
     $alerta2 = "Usuario no encontrado!!!";
@@ -8,7 +8,7 @@
     $password = $_POST['pass'];
 
     $consulta = "SELECT * FROM tutor WHERE usuario = '$usuario' and password = '$password'";
-    $resultado = mysqli_query($conectar, $consulta);
+    $resultado = mysqli_query($connect, $consulta);
     $filas = mysqli_num_rows($resultado);
 
     if ($filas > 0){

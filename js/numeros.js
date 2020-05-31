@@ -1,4 +1,9 @@
-function Poner_Ceros(num){while (num.value.length<4){num.value = '0'+num.value;}}
+function Poner_Ceros(num) {
+    while (num.value.length<4) {
+        num.value = '0'+num.value;
+    }
+}
+
 function borrarFicha() {document.getElementById("no_ficha").value = "";}
 function borrarProm_Bach() {document.getElementById("prom_prepa").value = "";}
 function borrarProm_Secun() {document.getElementById("prom_secun").value = "";}
