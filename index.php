@@ -88,8 +88,8 @@ require "php/BD_Connect.php";
                            class="login_nip"
                            required>
                     <br><br>
-                    <input type="button" value="ENTRAR" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="button" value="Nuevo Usuario" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="ENTRAR" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="button" value="CANCELAR" class="botones_login" onclick="Cerrar_Acceso_Nip()">
                 </div>
             </div>

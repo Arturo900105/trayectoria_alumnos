@@ -10,22 +10,22 @@ require "BD_Connect.php";
     if (isset($_POST['ante_hered'])){
         $anteHeredofamiliar = implode("\n", $_POST['ante_hered']);
         if ($anteHeredofamiliar == ""){
-            $anteHeredofamiliar = "----------";
+            $anteHeredofamiliar = "---------------";
         }
     }
 
     $toxicomanias = $_POST['toxi'];
-    $tipo_toxi = "----------";
+    $tipo_toxi = "---------------";
     if (isset($_POST['toxicomanias'])){
         $tipo_toxi = implode("\n", $_POST['toxicomanias']);
     }
     $frecuencia = $_POST['tox_frecuencia'];
 
     if ($toxicomanias == "NO"){
-        $frecuencia = "----------";
+        $frecuencia = "---------------";
     }
 
-    $embarazo = "----------";
+    $embarazo = "---------------";
     if ($embarazo == "SÍ"){
         $embarazo = "SÍ\n".$_POST['tiempo_embarazo'].".";
     }
@@ -34,8 +34,8 @@ require "BD_Connect.php";
     $actividad = $_POST['esp_act'];
     $tiempo = $_POST['tiempo_act'];
     if ($act_fisica == "NO"){
-        $actividad = "----------";
-        $tiempo = "----------";
+        $actividad = "---------------";
+        $tiempo = "---------------";
     }
 
     $alergia = $_POST['alergias'];

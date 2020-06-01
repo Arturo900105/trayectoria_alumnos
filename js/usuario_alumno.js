@@ -31,12 +31,10 @@ function borrarCoockie() {
 try {
     document.getElementById("edo_civil").innerText = "Estado Civil: " + mostrar.edo_civil + ".";
 
-
     document.getElementById("sexo").innerText = "Sexo: " + mostrar.sexo + ".";
     if (mostrar.sexo === "Masculino"){
         document.getElementById('solo-femenino').style.display="none";
     }
-
 
     document.getElementById("indigena").innerText = "Indígena: " + mostrar.indigena + ".";
 }
