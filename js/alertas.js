@@ -30,3 +30,14 @@ function Cerrar_Acceso_Nip() {
 }
 
 
+
+
+
+function confirmarLoginNip() {
+    document.getElementById('').style.display="block";
+}
+function cerrarLoginNip() {
+    document.getElementById('').style.display="none";
+}
+
+
