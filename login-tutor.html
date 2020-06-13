@@ -11,24 +11,20 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
-    <script src="js/fecha-trayectoria.js"></script>
     <script src="js/area_dinamica.js"></script>
     <script src="js/alertas.js"></script>
 </head>
 <body>
-    <h1>Trayectoria escolar de Alumnos</h1>
+    <h1>Formulario para el Tutor</h1>
     <form action="" method="" id="formulario_tutor">
-        <h2>Formulario para el Tutor;
-            <br>para seguir con las trayectorias, llena lo que se te pide a continuación:</h2>
-        <br>
-        <div class="fecha_alta">
-            <label for="f_alta">Fecha de Alta:&nbsp;&nbsp;<input type="text" id="f_alta" name="f_alta" value="" readonly required></label>
-        </div>
-        <br>
-        <label for="nombre_tutor">Nombre del Tutor:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre(s)" onclick="borrarNombre()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="apepat_tutor" name="apepat_tutor" class="apellidos_tutor" placeholder="Apellido Paterno" onclick="borrarApePat()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="apemat_tutor" name="apemat_tutor" class="apellidos_tutor" placeholder="Apellido Materno" onclick="borrarApeMat()">
+
+        <h2>Para seguir con el registro de las trayectorias,
+            <br>llena lo que se te pide a continuación:</h2>
+        <br><br>
+
+        <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre(s):" onclick="borrarNombre()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="apepat_tutor" name="apepat_tutor" class="apellidos_tutor" placeholder="Apellido Paterno:" onclick="borrarApePat()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="apemat_tutor" name="apemat_tutor" class="apellidos_tutor" placeholder="Apellido Materno:" onclick="borrarApeMat()">
         <br><br>
 
         <select name="tipo_tutoria" id="tipo-tutoria" >
@@ -47,19 +43,25 @@
             <option value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
             <option value="IENR">Ingeniería en Energías Renovables</option>
         </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" id="generar-login" value="Generar Login" onclick="crearUsuario()">
         <br><br>
 
-        <label>Email:&nbsp;&nbsp;<input type="email" name="email" id="email" placeholder="¡¡¡Asegurate de escribirlo bien!!!"></label>
+        <div class="alerta-email">
+            <label for="email"><b>Se te enviará el Usuario y Contraseña que generes, al correo que proporciones;
+                <br>Así que:
+                <br><br>¡¡¡ASEGURATE DE ESCRIBIRLO BIEN!!!</b>
+            </label>
+        </div>
+        <br>
+
+        <input type="email" name="email" id="email" placeholder="E-mail:">
         <br><br>
 
-        <label>Usuario:&nbsp;&nbsp;&nbsp;<input type="text" id="usu-tutor" name="usu_tutor" readonly></label>
+        <input type="button" class="boton_trayectoria" id="generar-login" value="Generar Login" onclick="crearUsuario()">
+        <br><br>
+        <input type="text" id="usu-tutor" name="usu_tutor" placeholder="Usuario:" readonly>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Contraseña:&nbsp;&nbsp;&nbsp;<input type="text" id="pass-tutor" name="pass_tutor" readonly></label>
-        <p>
-            Se te enviará el Usuario y Contraseña que registres, al correo que proporcionaste.
-        </p>
+        <input type="text" id="pass-tutor" name="pass_tutor" placeholder="Contraseña:" readonly>
+        <br><br>
 
         <div class="botones">
             <input type="submit" value="REGISTRAR" class="boton_trayectoria">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -68,34 +70,35 @@
         <br>
         <div id="carpetas">
             <div id="IGEM">
-                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_igem.png" alt="" title="Ingeniería en Gestión Empresarial"></a>
+                <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_igem.png" title="Ingeniería en Gestión Empresarial"></a>
             </div>
             <div id="IIND">
-                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iind.png" alt="" title="Ingeniería Industrial"></a>
+                <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iind.png" title="Ingeniería Industrial"></a>
             </div>
             <div id="ISIC">
-                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_isic.png" alt="" title="Ingeniería en Sistemas Computacionales"></a>
+                <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_isic.png" title="Ingeniería en Sistemas Computacionales"></a>
             </div>
             <div id="IBIO">
-                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ibio.png" alt="" title="Ingeniería Biomédica"></a>
+                <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ibio.png" title="Ingeniería Biomédica"></a>
             </div>
             <div id="IIAS">
-                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iias.png" alt="" title="Ingeniería en Innovación Agrícola Sustentable"></a>
+                <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iias.png" title="Ingeniería en Innovación Agrícola Sustentable"></a>
             </div>
             <div id="IENR">
-                <h2>Accede a la siguiente carpeta utilizando tu Usuario y Contraseña que proporcionaste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ienr.png" alt="" title="Ingeniería en Energías Renovables"></a>
+                <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
+                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ienr.png" title="Ingeniería en Energías Renovables"></a>
             </div>
         </div>
     </form>
     <br><br>
     <div class="modal-acceso" id="modal-acceso">
         <div id="m_acceso">
+            <img src="img/candado.png" id="candadito">
             <div id="contenido_m_acceso">
                 <input type="text" name="usuario" placeholder="Ingresa tu Usuario" class="login_acceso">
                 <br><br>

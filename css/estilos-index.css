@@ -8,10 +8,33 @@ body{
     display:block;
 }
 
+/*Para pantalla con poco tamaño*/
+@media only screen and (max-width: 700px) {
+    h1{
+        text-align: center;
+        color: #fff;
+        font-size: 10px !important;
+    }
+}
+
+/*Para Celular*/
+@media only screen and (max-width: 700px) {
+    h1{
+        text-align: center;
+        color: #fff;
+        font-size: 10px !important;
+    }
+}
+
 h1{
     text-align: center;
     color: #fff;
     font-size: 2.5em;
+}
+
+h2{
+    color: #fff;
+    text-align: center;
 }
 
 #itsp_logo{
@@ -58,17 +81,30 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
-    width: 30em;
-    height: 18em;
+    width: 33em;
+    height: 13em;
     margin: auto;
     border-radius: 1.5em;
     position: absolute;
+    padding: 2em;
+    text-align: center;
+}
+
+#candado{
+    width: 7em;
+    display:inline-block;
+    vertical-align:middle;
+    margin-right: 1em;
 }
 
 #contenido_modal{
-    padding: 2em;
-    width: auto;
-    margin: auto;
+    display:inline-block;
+    vertical-align:middle;
+    margin-left: 2em;
+}
+
+#contenido_modal2{
+    text-align: center;
 }
 
 .login{
@@ -82,7 +118,7 @@ p{
 .botones_login{
     text-align: center;
     font-size: 15px;
-    width: 8em;
+    width: 10em;
     height: 2.5em;
     font-family: "Britannic Bold";
 }
@@ -120,18 +156,30 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
-    width: 30em;
-    height: 13em;
+    width: 32em;
+    height: 12em;
     margin: auto;
+    padding: 2em;
     border-radius: 1.5em;
     position: absolute;
+    text-align: center;
+}
+
+#candado2{
+    width: 7em;
+    display:inline-block;
+    vertical-align:middle;
+    margin-right: 1em;
 }
 
 #contenido_modal_nip{
-    padding: 2em;
-    width: auto;
-    height: auto;
-    margin: auto;
+    display:inline-block;
+    vertical-align:middle;
+    margin-left: 2em;
+}
+
+#contenido_modal_nip2{
+    text-align: center;
 }
 
 .login_nip{
@@ -141,4 +189,103 @@ p{
     width: 15em;
     height: 1.5em;
     font-size: 20px;
+}
+
+#fondo_nip{
+    background: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#solo_nip{
+    text-align: center;
+    background: rgba(135, 1, 1, 0.8);
+    padding: 2em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 20em;
+    height: 5em;
+    margin: auto;
+    border-radius: 2em;
+    position: absolute;
+    align-content: center;
+}
+
+#pass-nip{
+    width: 20em;
+    height: 2.5em;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 1em;
+}
+
+#ventana_modal_cita{
+    background: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#v_modal_cita{
+    text-align: center;
+    background: rgba(1, 23, 180, 0.8);
+    padding: 1em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 40em;
+    height: 17em;
+    margin: auto;
+    border-radius: 2em;
+    position: absolute;
+}
+
+.cita_nombre{
+    width: 15em;
+    height: 1.5em;
+    text-align: center;
+}
+
+.cita_apellidos{
+    width: 12em;
+    height: 1.5em;
+    text-align: center;
+}
+
+#cita_tutoria{
+    width: 23em;
+    height: 2em;
+    text-align: center;
+}
+
+#cita_email{
+    width: 20em;
+    height: 1.5em;
+    text-align: center;
+}
+
+.cita_login{
+    width: 11em;
+    height: 1.5em;
+    text-align: center;
+}
+
+.boton_formcita{
+    width: 10em;
+    height: 2em;
+    text-align: center;
 }

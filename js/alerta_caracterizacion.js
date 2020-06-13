@@ -1,4 +1,5 @@
 let paginaAbrir = '';
+let alertArea1, alertArea2;
 
 function Confirmar_Acceso(pagina) {
     document.getElementById('acceso_area').style.display = "block";
@@ -13,10 +14,10 @@ function Cerrar_Acceso(e) {
 
 function setLogin(e){
     e.preventDefault();
-    let alertArea1 = "Debes ingresar tu\nNúm. de Ficha";
-    let alertArea2 = "Ficha no válida";
+    alertArea1 = "Debes ingresar tu\nNúm. de Ficha";
+    alertArea2 = "Ficha no válida";
 
-    if ($('#login_areas').val().trim() == '') {
+    if ($('#login_areas').val().trim() === '') {
         Swal.fire({
             title: alertArea1,
             position: 'top',
@@ -26,7 +27,7 @@ function setLogin(e){
             backdrop: "rgba(0,0,0,0)"
         });
         return false;
-    } else if ($('#login_areas').val().trim() == '0000') {
+    } else if ($('#login_areas').val().trim() === '0000') {
         Swal.fire({
             title: alertArea2,
             position: 'top',
@@ -93,12 +94,12 @@ $(document).ready(function () {
                 backdrop: "rgba(85,0,0,0.7)"
             });
             return false;
-        } else if ($('#no_ficha').val().trim() == '0000') {
+        } else if ($('#no_ficha').val().trim() === '0000') {
             Swal.fire({title: alerta1, icon: "warning", confirmButtonColor: '#550100', backdrop: "rgba(85,0,0,0.7)"});
             return false;
         }
 
-        if ($('#sexo').val().trim() == '') {
+        if ($('#sexo').val().trim() === '') {
             Swal.fire({
                 title: alertaSexo,
                 icon: "warning",
@@ -118,18 +119,18 @@ $(document).ready(function () {
             return false;
         }
 
-        if ($('#estado').val().trim() == '') {
+        if ($('#estado').val().trim() === '') {
             Swal.fire({title: alerta4, icon: "warning", confirmButtonColor: '#000155', backdrop: "rgba(0,1,85,0.7)"});
             return false;
         }
 
-        if ($('#municipio').val().trim() == '--- Seleccione: ---') {
+        if ($('#municipio').val().trim() === '--- Seleccione: ---') {
             Swal.fire({title: alerta5, icon: "warning", confirmButtonColor: '#000155', backdrop: "rgba(0,1,85,0.7)"});
             return false;
         }
 
-        if ($('#estado').val().trim() == '2') {
-            if ($('#nom_estado').val().trim() == '') {
+        if ($('#estado').val().trim() === '2') {
+            if ($('#nom_estado').val().trim() === '') {
                 Swal.fire({
                     title: alerta6,
                     icon: "warning",
@@ -138,7 +139,7 @@ $(document).ready(function () {
                 });
                 return false;
             }
-            if ($('#nom_municipio').val().trim() == '') {
+            if ($('#nom_municipio').val().trim() === '') {
                 Swal.fire({
                     title: alerta7,
                     icon: "warning",
@@ -155,7 +156,7 @@ $(document).ready(function () {
         }
 
         if ($("input[value='otro']:radio").is(":checked")) {
-            if ($('#otro_bach').val().trim() == '') {
+            if ($('#otro_bach').val().trim() === '') {
                 Swal.fire({
                     title: alerta9,
                     icon: "warning",
@@ -171,7 +172,7 @@ $(document).ready(function () {
             return false;
         }
 
-        if ($('#preparatoria').val().trim() == '') {
+        if ($('#preparatoria').val().trim() === '') {
             Swal.fire({title: alerta11, icon: "warning", confirmButtonColor: '#000155', backdrop: "rgba(0,1,85,0.7)"});
             return false;
         }

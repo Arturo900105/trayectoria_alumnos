@@ -16,7 +16,6 @@ require "php/BD_Connect.php";
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
-        <script src="js/jquery_3.4.1.js"></script>
         <script src="js/alertas.js"></script>
         <script src="js/numeros.js"></script>
     </head>
@@ -29,7 +28,7 @@ require "php/BD_Connect.php";
         <a href="javascript:Confirmar_Acceso()"><input type="button" value="TRAYECTORIAS" class="boton_acceso" title="Acceso para Tutores"></a>&nbsp;&nbsp;&nbsp;
         <a href="canalizacion.html"><input type="button" value="CANALIZACIÓN" class="boton_acceso" title="Canalizar Problema Presentado"></a>&nbsp;&nbsp;&nbsp;
         <a href="javascript:Confirmar_Accesol_Reportes()"><input type="button" value="REALIZAR REPORTES" class="boton_acceso" title="Generar Reporte Parcial o Final"></a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:Confirmar_Acceso_Nip()"><input type="button" value="PERSONAL DE LA CITA" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
+        <a href="javascript:accesoCITA()"><input type="button" value="PERSONAL DE LA CITA" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
         <br><br><br>
 
         <p>
@@ -45,15 +44,17 @@ require "php/BD_Connect.php";
         <br><br>
         <div class="modal-fondo" id="ventana_modal">
             <div id="v_modal">
+                <img src="img/candado.png" id="candado">
                 <div id="contenido_modal">
                     <input type="text" placeholder="Ingresa tu Usuario" class="login">
                     <br><br>
                     <input type="password" placeholder="Ingresa tu Contraseña" class="login">
-                    <br><br>
+                </div>
+                <br><br>
+                <div id="contenido_modal2">
+                    <a href="login-tutor.html"><input type="button" value="Nuevo Usuario" class="botones_login"></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="button" value="ENTRAR" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="button" value="CANCELAR" class="botones_login" onclick="Cerrar_Accesol()">
-                    <br><br>
-                    <a href="login-tutor.html"><input type="button" value="Nuevo Usuario" class="botones_login"></a>
                 </div>
             </div>
         </div>
@@ -72,28 +73,79 @@ require "php/BD_Connect.php";
 
         <div class="modal-fondo" id="ventana_modal_nip">
             <div id="v_modal_nip">
+                <img src="img/candado2.png" id="candado2">
                 <div id="contenido_modal_nip">
-                    <input type="password"
-                           placeholder="Ingrese su Usuario"
+                    <input type="text"
+                           id="log_usu"
+                           placeholder="Ingrese su Usuario:"
                            title="Ingresa el NIP de seguridad"
-                           maxlength="4"
                            class="login_nip"
                            required>
                     <br><br>
                     <input type="password"
-                           placeholder="Ingrese su NIP"
+                           id="log_pass"
+                           placeholder="Ingrese su NIP:"
                            onkeypress="return nip(event);"
                            title="Ingresa el NIP de seguridad"
                            maxlength="4"
                            class="login_nip"
                            required>
-                    <br><br>
-                    <input type="button" value="Nuevo Usuario" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" value="ENTRAR" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" value="CANCELAR" class="botones_login" onclick="Cerrar_Acceso_Nip()">
+                </div>
+                <br><br>
+
+                <div id="contenido_modal_nip2">
+                    <a href="javascript:LogNipCITA()"><input type="button" value="Nuevo Usuario" class="botones_login"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" id="logarUsuario" value="ENTRAR" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="CANCELAR" class="botones_login" onclick="cerrarCITA()">
                 </div>
             </div>
         </div>
 
+        <div id="fondo_nip">
+            <div id="solo_nip">
+                <input type="password" placeholder="Ingrese NIP autorizado" id="pass-nip" maxlength="10">
+                <br><br>
+                <a href="javascript:confirmarLoginNip()">
+                    <input type="button" value="ENTRAR" class="boton_formcita">
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" value="CANCELAR" class="boton_formcita" onclick="cerrarNipCITA()">
+            </div>
+        </div>
+
+        <div id="ventana_modal_cita">
+            <div id="v_modal_cita">
+                <form id="formulario_cita">
+                    <h2>Formulario para el Personal de la
+                        <br>Coordinación Institucional de Tutoría Académica</h2>
+                    <input type="text" name="nombreCoord" id="nombreCoord" placeholder="Nombre(s):" class="cita_nombre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="apePat" id="apePat" placeholder="Apellido Paterno:" class="cita_apellidos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="apeMat" id="apeMat" placeholder="Apellido Materno:" class="cita_apellidos">
+                    <br><br>
+
+                    <select name="cita_tutoria" id="cita_tutoria">
+                        <option value="">--- Coordinación de Tutoría: ---</option>
+                        <option value="IGEM">Ingeniería en Gestión Empresarial</option>
+                        <option value="IIND">Ingeniería Industrial</option>
+                        <option value="ISIC">Ingeniería en Sistemas Computacionales</option>
+                        <option value="IBIO">Ingeniería Biomédica</option>
+                        <option value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
+                        <option value="IENR">Ingeniería en Energías Renovables</option>
+                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="email" placeholder="E-mail:" name="cita_email" id="cita_email">
+                    <br><br>
+
+                    <input type="button" id="generarLogin" value="Generar Login" class="boton_formcita">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="usuarioCoord" id="usuarioCoord" placeholder="Usuario:" class="cita_login" readonly>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="passCoord" id="passCoord" placeholder="Contraseña:" class="cita_login" readonly>
+                    <br><br>
+
+                    <input type="submit" value="REGISTRAR" class="boton_formcita">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="javascript:cerrarLoginNip()">
+                        <input type="button" value="CANCELAR" class="boton_formcita" onclick="cerrarLoginNip()">
+                    </a>
+                </form>
+            </div>
+        </div>
+        <script src="js/pass_tutor.js"></script>
     </body>
 </html>

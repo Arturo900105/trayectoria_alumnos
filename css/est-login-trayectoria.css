@@ -12,9 +12,9 @@ h1{
 }
 
 h2{
-    text-align: left;
-    color: #FFFFFF;
+    text-align: center;
     margin: 0;
+    color: #FFFFFF;
 }
 
 .fecha_alta{
@@ -31,21 +31,27 @@ h2{
 form{
     color: #FFFFFF;
     background: rgba(60, 59, 57, 0.7);
-    width: 50em;
+    width: 45em;
     display:block;
     margin: 0 auto;
     padding: 1em 2em;
     border-radius: 1em;
-
+    text-align: center;
 }
 
 select{
     text-align: center;
 }
 
-#nombre_tutor, .apellidos_tutor{
+#nombre_tutor{
     text-align: center;
     width: 12em;
+    height: 1.5em;
+}
+
+.apellidos_tutor{
+    text-align: center;
+    width: 15em;
     height: 1.5em;
 }
 
@@ -61,22 +67,31 @@ select{
     height: 2em;
 }
 
-#usu-tutor, #pass-tutor{
+.alerta-email{
+    background: rgba(224, 1, 1, 0.5);
+    border-radius: 20px;
+    border: 5px solid #390202;
+    width: 40em;
+    height: 7em;
+    display: flex;
+    margin:0px auto;
+    justify-content: center;
     text-align: center;
-}
-
-#generar-login{
-    width: 10em;
-    height: 2.1em;
-}
-
-.email{
-    text-align: center;
+    align-items: center;
 }
 
 #email{
     width: 20em;
     text-align: center;
+    height: 1.5em;
+    font-size: 20px;
+}
+
+#usu-tutor, #pass-tutor{
+    width: 15em;
+    text-align: center;
+    height: 1.5em;
+    font-size: 17px;
 }
 
 .boton_trayectoria{
@@ -92,7 +107,7 @@ select{
 
 #carpetas div{
     display: none;
-    width: 50em;
+    width: auto;
     margin: 0 auto;
     text-align: center;
 }
@@ -119,18 +134,26 @@ img{
     bottom: 0;
     left: 0;
     right: 0;
-    width: 30em;
-    height: 15em;
+    width: 33em;
+    height: 13em;
     text-align: center;
     margin: auto;
     border-radius: 1.5em;
     position: absolute;
+    padding: 2em;
+}
+
+#candadito{
+    height: 13em;
+    display:inline-block;
+    vertical-align:middle;
+    margin-right: 1.5em;
 }
 
 #contenido_m_acceso{
-    padding: 2em;
     width: auto;
-    margin: auto;
+    display:inline-block;
+    vertical-align:middle;
 }
 
 .login_acceso{

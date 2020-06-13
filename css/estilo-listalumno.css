@@ -1,0 +1,23 @@
+body{
+    font-family: Arial;
+    margin: 0;
+    padding: 0 2em;
+}
+
+table, th, td{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #000000;
+    position: relative;
+    height: 2em;
+}
+
+.columnas{
+    width: 10em;
+}
+
+#columna-nombre{
+    width: 30em;
+}

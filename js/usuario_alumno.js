@@ -34,6 +34,7 @@ try {
     document.getElementById("sexo").innerText = "Sexo: " + mostrar.sexo + ".";
     if (mostrar.sexo === "Masculino"){
         document.getElementById('solo-femenino').style.display="none";
+        document.getElementById('gestacional').style.display="none";
     }
 
     document.getElementById("indigena").innerText = "Indígena: " + mostrar.indigena + ".";

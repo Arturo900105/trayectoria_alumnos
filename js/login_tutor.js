@@ -1,4 +1,4 @@
-let correo, area, fecha, tutoria, usuario;
+let correo, area, tutoria, usuario;
 let alerta1, alerta2, alerta3;
 let mensaje1, mensaje2, mensaje3, mensaje4, mensaje5;
 
@@ -11,7 +11,7 @@ function crearUsuario() {
     alerta2 = "Seleccione una área";
     alerta3 = "Ingrese una dirección de E-mail";
 
-    if (tutoria == ""){
+    if (tutoria === ""){
         Swal.fire({
             title: alerta1,
             icon: "warning",
@@ -31,7 +31,7 @@ function crearUsuario() {
         }
     }
 
-    if (area == ""){
+    if (area === ""){
         Swal.fire({
             title: alerta2,
             icon: "warning",
@@ -57,7 +57,7 @@ function crearUsuario() {
         }
     }
 
-    if (correo == ""){
+    if (correo === ""){
         Swal.fire({
             title: alerta3,
             icon: "warning",
@@ -77,18 +77,18 @@ function crearUsuario() {
 
 
 $(document).ready(function () {
+    document.getElementById("formulario_tutor").reset();
     $('#formulario_tutor').submit(function (e) {
         e.preventDefault();
 
         area = document.getElementById("area_de").value;
-        fecha = document.getElementById("f_alta").value;
         mensaje1 = "Por favor,\nGenere su Login";
         mensaje2 = "Por favor,\nIngrese su Nombre(s)";
         mensaje3 = "Por favor,\nIngrese su Apellido Paterno";
         mensaje4 = "Por favor,\nIngrese su Apellido Materno";
         mensaje5 = "Por favor, Ingrese sus\nNombre(s) y Apellidos";
 
-        if ($('#usu-tutor').val().trim() == '' && $('#pass-tutor').val().trim() == '') {
+        if ($('#usu-tutor').val().trim() === '' && $('#pass-tutor').val().trim() === '') {
             Swal.fire({
                 title: mensaje1,
                 icon: "warning",
@@ -99,7 +99,7 @@ $(document).ready(function () {
             return false;
         }
 
-        else if ($('#nombre_tutor').val().trim() == '' && $('#apepat_tutor').val().trim() == '' && $('#apemat_tutor').val().trim() == '') {
+        else if ($('#nombre_tutor').val().trim() === '' && $('#apepat_tutor').val().trim() === '' && $('#apemat_tutor').val().trim() === '') {
             Swal.fire({
                 title: mensaje5,
                 icon: "warning",
@@ -110,7 +110,7 @@ $(document).ready(function () {
             return false;
         }
 
-        else if ($('#nombre_tutor').val().trim() == '') {
+        else if ($('#nombre_tutor').val().trim() === '') {
             Swal.fire({
                 title: mensaje2,
                 icon: "warning",
@@ -121,7 +121,7 @@ $(document).ready(function () {
             return false;
         }
 
-        else if ($('#apepat_tutor').val().trim() == '') {
+        else if ($('#apepat_tutor').val().trim() === '') {
             Swal.fire({
                 title: mensaje3,
                 icon: "warning",
@@ -132,7 +132,7 @@ $(document).ready(function () {
             return false;
         }
 
-        else if ($('#apemat_tutor').val().trim() == '') {
+        else if ($('#apemat_tutor').val().trim() === '') {
             Swal.fire({
                 title: mensaje4,
                 icon: "warning",
@@ -182,7 +182,6 @@ $(document).ready(function () {
                 });
                 document.getElementById("formulario_tutor").reset();
                 document.getElementById("area_de").value = area;
-                document.getElementById("f_alta").value = fecha;
             }
         });
 
