@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2020 a las 03:08:31
+-- Tiempo de generación: 13-06-2020 a las 07:39:34
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -55,6 +55,21 @@ INSERT INTO `alumno` (`num_ficha`, `apellidos`, `nombre`, `fecha_de_nacimiento`,
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `coordinador`
+--
+
+CREATE TABLE `coordinador` (
+  `nombre` text DEFAULT NULL,
+  `apellidos` text DEFAULT NULL,
+  `coordinacion` varchar(4) DEFAULT NULL,
+  `email` text DEFAULT NULL,
+  `usuario` text DEFAULT NULL,
+  `password` varchar(40) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `domicilio`
 --
 
@@ -74,6 +89,17 @@ CREATE TABLE `domicilio` (
 INSERT INTO `domicilio` (`num_ficha`, `domicilio`, `colonia`, `codigo_postal`, `localidad`, `procedencia`) VALUES
 ('0007', 'Fco. González Bocanegra #592', 'Villicaña', 60280, 'Nahuatzen', 'Nahuatzen; Mich.'),
 ('0010', 'Miguel de Cervantes Saavedra #463', 'Centro', 60280, 'Nahuatzen', 'Nahuatzen; Mich.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `num_control_alumno`
+--
+
+CREATE TABLE `num_control_alumno` (
+  `num_ficha` varchar(4) DEFAULT NULL,
+  `num_control` varchar(7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -222,6 +248,13 @@ ALTER TABLE `alumno`
 --
 ALTER TABLE `domicilio`
   ADD UNIQUE KEY `domicilio_num_ficha_uindex` (`num_ficha`);
+
+--
+-- Indices de la tabla `num_control_alumno`
+--
+ALTER TABLE `num_control_alumno`
+  ADD UNIQUE KEY `num_control_alumno_num_control_uindex` (`num_control`),
+  ADD UNIQUE KEY `num_control_alumno_num_ficha_uindex` (`num_ficha`);
 
 --
 -- Indices de la tabla `procedencia`
