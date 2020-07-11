@@ -1,15 +1,39 @@
+let valor, nuevoValor;
 let b1_01, b1_02, b1_03, b1_04, b1_05, b1_06, b1_07, b1_08, b1_09, b1_10;
 let b2_11, b2_12, b2_13, b2_14, b2_15, b2_16, b2_17, b2_18, b2_19, b2_20;
 let b3_21, b3_22, b3_23, b3_24, b3_25, b3_26, b3_27, b3_28, b3_29, b3_30;
 let b4_31, b4_32, b4_33, b4_34, b4_35, b4_36, b4_37, b4_38, b4_39, b4_40;
 let bloque1, bloque2, bloque3, bloque4;
 let vbloque1, vbloque2, vbloque3, vbloque4;
-let bd1, bd2, bd3, bd4;
 
 $(document).ready(function () {
-    document.getElementById("alumno-psicologia").reset();
+    $("#alumno-psicologia")[0].reset()
+    $("#cual, #porque").hide()
 
     $('#alumno-psicologia').on('click', function () {
+
+        if ($("#respuesta1:radio").is(":checked")) {
+            $("#cual").show()
+        } else {
+            $("#cual").hide()
+        }
+
+        if ($("#respuesta2:radio").is(":checked")) {
+            $("#porque").show()
+        } else {
+            $("#porque").hide()
+        }
+
+        $('.escala_pretest').on('change keypress paste focus textInput input',function(){
+            valor = $(this).val()
+            nuevoValor = valor.replace(/\D/g, "")
+            if (nuevoValor > 3) {
+                $(this).val(3)
+            } else {
+                $(this).val(nuevoValor)
+            }
+        })
+
         b1_01 = $("[name = bloque1_01]:checked").val();  if (b1_01 === "1") {b1_01 = "01";} else {b1_01 = "";}
         b1_02 = $("[name = bloque1_02]:checked").val();  if (b1_02 === "1") {b1_02 = "02";} else {b1_02 = "";}
         b1_03 = $("[name = bloque1_03]:checked").val();  if (b1_03 === "1") {b1_03 = "03";} else {b1_03 = "";}
@@ -54,29 +78,24 @@ $(document).ready(function () {
         b4_39 = $("[name = bloque4_39]:checked").val();  if (b4_39 === "1") {b4_39 = "39";} else {b4_39 = "";}
         b4_40 = $("[name = bloque4_40]:checked").val();  if (b4_40 === "1") {b4_40 = "40";} else {b4_40 = "";}
 
-        bloque1 = b1_01 + b1_02 + b1_03 + b1_04 + b1_05 + b1_06 + b1_07 + b1_08 + b1_09 + b1_10;
-        bloque2 = b2_11 + b2_12 + b2_13 + b2_14 + b2_15 + b2_16 + b2_17 + b2_18 + b2_19 + b2_20;
-        bloque3 = b3_21 + b3_22 + b3_23 + b3_24 + b3_25 + b3_26 + b3_27 + b3_28 + b3_29 + b3_30;
-        bloque4 = b4_31 + b4_32 + b4_33 + b4_34 + b4_35 + b4_36 + b4_37 + b4_38 + b4_39 + b4_40;
+        bloque1 = b1_01 + b1_02 + b1_03 + b1_04 + b1_05 + b1_06 + b1_07 + b1_08 + b1_09 + b1_10
+        bloque2 = b2_11 + b2_12 + b2_13 + b2_14 + b2_15 + b2_16 + b2_17 + b2_18 + b2_19 + b2_20
+        bloque3 = b3_21 + b3_22 + b3_23 + b3_24 + b3_25 + b3_26 + b3_27 + b3_28 + b3_29 + b3_30
+        bloque4 = b4_31 + b4_32 + b4_33 + b4_34 + b4_35 + b4_36 + b4_37 + b4_38 + b4_39 + b4_40
 
-        document.getElementById("bloque1v").value = bloque1.match(/.{1,2}(.$)?/g);
-        document.getElementById("bloque2v").value = bloque2.match(/.{1,2}(.$)?/g);
-        document.getElementById("bloque3v").value = bloque3.match(/.{1,2}(.$)?/g);
-        document.getElementById("bloque4v").value = bloque4.match(/.{1,2}(.$)?/g);
+        $("#bloque1v").val(bloque1.match(/.{1,2}(.$)?/g))
+        $("#bloque2v").val(bloque2.match(/.{1,2}(.$)?/g))
+        $("#bloque3v").val(bloque3.match(/.{1,2}(.$)?/g))
+        $("#bloque4v").val(bloque4.match(/.{1,2}(.$)?/g))
 
-        vbloque1 = document.getElementById("bloque1v").value;
-        vbloque2 = document.getElementById("bloque2v").value;
-        vbloque3 = document.getElementById("bloque3v").value;
-        vbloque4 = document.getElementById("bloque4v").value;
+        vbloque1 = document.getElementById("bloque1v").value
+        vbloque2 = document.getElementById("bloque2v").value
+        vbloque3 = document.getElementById("bloque3v").value
+        vbloque4 = document.getElementById("bloque4v").value
 
-        bd1 = vbloque1.replace(/,+/g, " ");
-        bd2 = vbloque2.replace(/,+/g, " ");
-        bd3 = vbloque3.replace(/,+/g, " ");
-        bd4 = vbloque4.replace(/,+/g, " ");
-
-        document.getElementById("bloque1v_bd").value = bd1;
-        document.getElementById("bloque2v_bd").value = bd2;
-        document.getElementById("bloque3v_bd").value = bd3;
-        document.getElementById("bloque4v_bd").value = bd4;
+        $("#bloque1v_bd").val(vbloque1.replace(/,+/g, " "));
+        $("#bloque2v_bd").val(vbloque2.replace(/,+/g, " "));
+        $("#bloque3v_bd").val(vbloque3.replace(/,+/g, " "));
+        $("#bloque4v_bd").val(vbloque4.replace(/,+/g, " "));
     })
 })

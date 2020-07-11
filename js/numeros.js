@@ -50,18 +50,6 @@ function solo_numero(evt) {
 
 
 $(document).ready(function () {
-    $('.escala_pretest').on('change keypress paste focus textInput input',function(){
-        var val = $(this).val();
-        var newVal = val.replace(/\D/g, '');
-        if (newVal > 3) {
-            $(this).val(3);
-        } else {
-            $(this).val(newVal);
-        }
-    });
-});
-
-$(document).ready(function () {
     $('.escala_posttest').on('change keypress paste focus textInput input',function(){
         var val = $(this).val();
         var newVal = val.replace(/\D/g, '');

@@ -15,33 +15,37 @@
 
 </head>
 <body>
-    <h1>Área de Pedagogía</h1>
     <form action="php/datos_pedagogia.php" method="POST" name="alumno-pedagogia" id="alumno-pedagogia">
+        <h1>Área de Pedagogía</h1>
+        <br>
 
         <h2 class="dato" id="ficha" ></h2>
         <h2 class="dato" id="alumno"></h2>
         <h2 class="dato" id="carrera"></h2>
         <h2 class="dato" id="generacion"></h2>
         <input type="hidden" value="" id="ficha_alumno" name="ficha_alumno">
+        <br>
 
         <h2 class="subtema">Inventario sobre estilos de aprendizaje</h2>
-        <p>
+        <p class="instrucciones">
             Cada persona tiene su forma preferida de aprender.
-            <br>
+            <br><br>
             Reconocer sus preferencias le ayudará a comprender sus fuerzas en cualquier situación de aprendizaje.
-            <br>
+            <br><br>
             Por favor, responda verdaderamente a cada una de las preguntas, de acuerdo a lo que hace actualmente, no según lo que piense que sea la respuesta correcta.
-            <br>
-            Use la escala siguiente para responder a cada pregunta. Ponga un circulo sobre la respuesta.
+            <br><br>
+            Use la escala siguiente para responder a cada pregunta. <b>Seleccione un circulo sobre la respuesta:</b>
         </p>
+        <br>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;
-            1- Nunca (N).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            2- Raramente (R).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            3- Ocacionalmente (O).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            4- Usualmente (U).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <p class="significado">
+            1- Nunca (N).<br>
+            2- Raramente (R).<br>
+            3- Ocacionalmente (O).<br>
+            4- Usualmente (U).<br>
             5- Siempre (S).
         </p>
+        <br>
 
         <table class="preguntas_uno">
             <tr>

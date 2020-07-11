@@ -1,5 +1,5 @@
 //1) Definir Las Variables Correspondintes
-var municipio_1 = new Array ("--- Seleccione: ---",
+let municipio_1 = new Array ("--- Seleccione: ---",
     "Acuitzio", "Aguililla", "Álvaro Obregón", "Angamacutiro", "Angangueo", "Apatzingán", "Aporo", "Aquila", "Ario", "Arteaga",
     "Briseñas", "Buenavista", "Carácuaro", "Coahuayana", "Coalcomán de Vázquez Pallares", "Coeneo", "Contepec", "Copándaro", "Cotija", "Cuitzeo",
     "Charapan", "Charo", "Chavinda", "Cherán", "Chilchota", "Chinicuila", "Chucándiro", "Churintzio", "Churumuco", "Ecuandureo",
@@ -13,17 +13,17 @@ var municipio_1 = new Array ("--- Seleccione: ---",
     "Tzitzio", "Uruapan", "Venustiano Carranza", "Villamar", "Vista Hermosa", "Yurécuaro", "Zacapu", "Zamora", "Zináparo", "Zinapécuaro",
     "Ziracuaretiro", "Zitácuaro", "José Sixto Verduzco");
 
-var municipio_2 = new Array("-------");
+let municipio_2 = new Array("-------");
 
 // 2) crear una funcion que permita ejecutar el cambio dinamico
 function cambiaEstado(){
-    var estado;
+    let estado;
 
     //Se toma el valor del "estado seleccionado"
     estado = document.datos_alumnew.estado[document.datos_alumnew.estado.selectedIndex].value;
 
     //se checa si el estado está definido
-    if(estado != ""){
+    if(estado !== ""){
 
         //selecionamos los municipios correctos
         mis_municipios = eval("municipio_" + estado);
@@ -55,7 +55,7 @@ function cambiaEstado(){
 }
 
 $(document).ready(function () {
-    $('#estado').val("");
+    $("#estado").val("");
     $('#nom_estado').val("");
     $('#nom_municipio').val("");
 

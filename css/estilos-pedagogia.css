@@ -5,10 +5,12 @@ body{
 
 h1{
     text-align: center;
+    margin: 0;
 }
 
 .dato{
     font-family: Arial;
+    margin: 0;
 }
 
 .subtema{
@@ -34,6 +36,18 @@ form{
     align-content: center;
     border-radius: 15px;
     border: 2px solid #ff1c00;
+}
+
+.instrucciones{
+    font-size: 20px;
+    margin: 0;
+}
+
+.significado{
+    text-align: left;
+    margin: 0 auto;
+    font-size: 20px;
+    width: 10em;
 }
 
 .opciones{

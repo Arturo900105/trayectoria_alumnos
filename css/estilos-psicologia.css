@@ -5,21 +5,9 @@ body{
 h1{
     text-align: center;
 }
-table, th, td{
-    border: 1px solid #000000;
-    border-collapse: collapse;
-    margin: 0 auto;
-    font-size: 15px;
-    color: #000000;
-}
 
-#cual, #porque{
-    width: 25em;
-    height: 4em;
-    text-align: justify;
-    font-size: 14px;
-    padding: 0;
-    font-family: "Gill Sans MT";
+h2{
+    margin: 0;
 }
 
 form{
@@ -32,19 +20,58 @@ form{
     border: 5px solid #000000;
 }
 
-#aadd{
-    width: 25em;
+#preguntas, .preguntas, .respuesta{
+    //border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 15px;
+    color: #000000;
 }
 
-#escala{
+.preguntas{
+    width: 30em;
+    height: 4em;
+    text-align: justify;
+}
+
+.respuesta{
+    width: 5em;
+    height: 4em;
+    text-align: center;
+}
+
+#cual, #porque{
+    width: 25em;
+    height: 2.5em;
+    text-align: justify;
+    font-size: 15px;
+    padding: 6px;
+    font-family: "Gill Sans MT";
+}
+
+#ansiedad_depresion, .no_escala, .preguntas_escala, .escala_pt, .resultado_escala{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #000000;
+}
+
+.no_escala{
+    width: 4em;
+    text-align: center;
+}
+
+.preguntas_escala{
+    width: 30em;
+}
+
+.escala_pt{
     width: 20em;
 }
 
-#pre-test{
-    width: 7em;
-}
-
 .resultado_escala{
+    width: 7em;
     text-align: center;
 }
 
@@ -52,32 +79,29 @@ form{
     width: 3em;
     height: 2em;
     text-align: center;
-    font-family: Arial;
     font-size: 30px;
 }
 
-.no_escala, .no_bloques{
-    width: 3.5em;
+.tabla_orivoc, .no_bloques, .bloques, .valor, .bloques_sn{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #000000;
+}
+
+.no_bloques{
+    width: 4em;
     text-align: center;
-}
-
-.preguntas{
-    width: 20em;
-    height: 4em;
-    text-align: justify;
-}
-
-.respuesta{
-    width: 5em;
-    text-align: center;
-}
-
-.valor{
-    width: 7.5em;
 }
 
 .bloques{
-    width: 50em;
+    width: 45em;
+}
+
+.bloques_sn{
+    text-align: center;
+    width: 5em;
 }
 
 #botones_psicologia{

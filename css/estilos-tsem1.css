@@ -1,0 +1,196 @@
+body{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+#trayectoria1{
+    background: #ff5900;
+    width: 55em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    border-radius: 2em;
+}
+
+h1{
+    text-align: center;
+    margin: 0;
+}
+
+#contenedor1{
+    background: #42e20a;
+    margin: 0 3.9em;
+    padding: 7px 0;
+}
+
+#t_semestre{
+    text-align: center;
+    width: 12em;
+    font-size: 15px;
+}
+
+#tabla_ingles, #inglesth, #inglestd{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 15px;
+    color: #000000;
+}
+
+#inglesth{
+    width: 25em;
+    height: 5em;
+    text-align: center;
+}
+
+#inglestd{
+    width: 25em;
+}
+
+#nivel_ingles{
+    text-align: center;
+    font-size: 15px;
+    width: 12em;
+    height: 1.5em;
+}
+
+#creditos, .creditosth, .creditostd{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+    width: 50.4em;
+}
+
+.creditostd{
+    height: 2.5em;
+}
+
+.credito{
+    text-align: center;
+    font-size: 15px;
+    width: 5em;
+    margin: 3px 0;
+}
+
+#materias, .materiastd1, .materiastd2, .materiastd3, .materiastd{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materiastd1{
+    width: 9.8em;
+}
+
+.materiastd2{
+    width: 25em;
+    text-align: center;
+}
+
+.materiastd3{
+    width: 9em;
+}
+
+#cantidad_materias, #materias_reprobadas{
+    text-align: center;
+    width: 4em;
+}
+
+.materiaN{
+    text-align: center;
+    width: 25em;
+    height: 1.5em;
+}
+
+.calificacionN{
+    text-align: center;
+    width: 7em;
+    height: 1.5em;
+}
+
+
+#beca, .becatd{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.becatd{
+    width: 25em;
+    height: 2em;
+}
+
+#tipo_beca{
+    width: 20em;
+    height: 1.5em;
+    text-align: center;
+}
+
+#relbeca{
+    text-align: left;
+}
+
+#materias2, .materias2th, .materias2td{
+    //border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materias2th{
+    width: 25em;
+    padding: 10px 0;
+}
+
+.materias2td{
+    width: 25em;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.materiarep{
+    width: 20em;
+    text-align: center;
+    margin: 3px 0;
+    font-size: 15px;
+}
+
+.folios_canal{
+    width: 7em;
+    text-align: center;
+    margin: 2px;
+}
+
+#ciclo{
+    text-align: center;
+    font-size: 15px;
+}
+
+#observaciones{
+    padding: 7px 10px;
+    font-family: Arial;
+}
+
+#contenedor2{
+    text-align: center;
+}
+
+.btn-t1{
+    font-family: "Britannic Bold";
+    margin: 0 2em;
+    width: 10em;
+    height: 2.5em;
+}

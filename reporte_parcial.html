@@ -13,6 +13,7 @@
 
     <script src="js/numeros.js"></script>
     <script src="js/decimales.js"></script>
+    <script src="js/alerta_reportparcial.js"></script>
 </head>
 <body>
     <div class="logos_reporte">
@@ -26,13 +27,13 @@
             <br><br>REPORTE PARCIAL
         </h1>
 
-    <form action="" method="get" id="reporte1">
+    <form action="" method="" id="ReporteParcial">
         <div class="primer">
             <label for="periodo"><b>PERIODO A EVALUAR:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <select name="periodo" id="periodo">
                 <option value="">----------</option>
-                <option value="Agosto - Diciembre">Agosto - Diciembre</option>
-                <option value="Enero - Junio">Enero - Junio</option>
+                <option onclick="limpiar()" value="Agosto - Diciembre">Agosto - Diciembre</option>
+                <option onclick="limpiar()" value="Enero - Junio">Enero - Junio</option>
             </select>
             <br><br>
 
@@ -44,8 +45,32 @@
         </div>
         <br><br>
 
-        <label>Nombre del Tutor:&nbsp;&nbsp;<input type="text" id="nom-tutor"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Semestre/Grupo:&nbsp;&nbsp;<input type="text" id="sem-grup"></label>
+        <label>Nombre del Tutor:&nbsp;&nbsp;<input type="text" id="nom_tutor"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Semestre:
+            <select name="semestre" id="semestre" class="sem_grup">
+                <option value="">-----</option>
+                <option class="sem_impar" value="1">1</option>
+                <option class="sem_par" value="2">2</option>
+                <option class="sem_impar" value="3">3</option>
+                <option class="sem_par" value="4">4</option>
+                <option class="sem_impar" value="5">5</option>
+                <option class="sem_par" value="6">6</option>
+                <option class="sem_impar" value="7">7</option>
+                <option class="sem_par" value="8">8</option>
+                <option class="sem_impar" value="9">9</option>
+                <option class="sem_par" value="10">10</option>
+            </select>
+        </label>&nbsp;&nbsp;&nbsp;
+
+        <label>Grupo:
+            <select name="grupo" id="grupo" class="sem_grup">
+                <option value="">-----</option>
+                <option class="grupos" value="A">A</option>
+                <option class="grupos" value="B">B</option>
+                <option class="grupos" value="C">C</option>
+                <option class="grupos" value="D">D</option>
+            </select>
+        </label>
         <br><br>
 
         <label>Programa:&nbsp;&nbsp;<input type="text" id="programa"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -211,7 +236,7 @@
         <br><br>
 
         <div class="botones_reporte">
-            <input type="button" value="GUARDAR" class="bot-generadores">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="GUARDAR" class="bot-generadores">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="documentos/reporte_parcial.php"><input type="button" value="IMPRIMIR" class="bot-generadores"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="SALIR" class="bot-generadores" onclick="history.back()">
         </div>

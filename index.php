@@ -31,17 +31,19 @@ require "php/BD_Connect.php";
         <a href="javascript:accesoCITA()"><input type="button" value="PERSONAL DE LA CITA" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
         <br><br><br>
 
-        <p>
+        <div id="significado">
             La tutoría es un proceso de acompañamiento grupal o individual que un tutor le brinda al estudiante durante su estancia en el ITSP
             con el propósito de contribuir a su formación integral e incidir en las metas institucionales relacionados con la calidad educativa;
-            elevar los índices de eficiencia terminal, bajar los índices de reprobación y deserción.
-            <br>La tutoría contempla 3 ejes fundamentales:
-            <br>
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1- Desarrollo Académico.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2- Desarrollo Personal.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3- Desarrollo Profesional.
-        </p>
-        <br><br>
+            elevar los índices de eficiencia terminal, bajar los índices de reprobación y deserción. La tutoría contempla 3 ejes fundamentales:
+            <br><br>
+
+            <div id="significado2">
+                    1- Desarrollo Académico.
+                <br>2- Desarrollo Personal.
+                <br>3- Desarrollo Profesional.
+            </div>
+        </div>
+
         <div class="modal-fondo" id="ventana_modal">
             <div id="v_modal">
                 <img src="img/candado.png" id="candado">

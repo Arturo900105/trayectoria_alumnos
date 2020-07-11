@@ -3,11 +3,10 @@ let xa2, xb2, xc2, xd2, xe2, xf2, xg2, xh2, xi2, xj2, xk2, xl2, xm2, xn2, xo2, x
 let xa3, xb3, xc3, xd3, xe3, xf3, xg3, xh3, xi3, xj3, xk3, xl3, xm3, xn3, xo3, xp3, xq3, xr3, xs3, xt3;
 let cadena1, cadena2, cadena3;
 let valido1, valido2, valido3;
-let bdcelda1, bdcelda2, bdcelda3;
 //console.log(marcax1b);
 
 $(document).ready(function () {
-    document.getElementById("alumno-pedagogia").reset();
+    $("#alumno-pedagogia")[0].reset();
 
     $('#alumno-pedagogia').on('click', function () {
         xa1 = $("[name = marcaXA1]:checked").val();  if (xa1 === "1") {xa1 = "A";} else {xa1 = "";}
@@ -77,21 +76,17 @@ $(document).ready(function () {
         cadena2 = xa2+xb2+xc2+xd2+xe2+xf2+xg2+xh2+xi2+xj2+xk2+xl2+xm2+xn2+xo2+xp2+xq2+xr2+xs2+xt2;
         cadena3 = xa3+xb3+xc3+xd3+xe3+xf3+xg3+xh3+xi3+xj3+xk3+xl3+xm3+xn3+xo3+xp3+xq3+xr3+xs3+xt3;
 
-        document.getElementById("validados1").value = cadena1.split("");
-        document.getElementById("validados2").value = cadena2.split("");
-        document.getElementById("validados3").value = cadena3.split("");
+        $("#validados1").val(cadena1.split(""));
+        $("#validados2").val(cadena2.split(""));
+        $("#validados3").val(cadena3.split(""));
 
         valido1 = document.getElementById("validados1").value;
         valido2 = document.getElementById("validados2").value;
         valido3 = document.getElementById("validados3").value;
 
-        bdcelda1 = valido1.replace(/,+/g, " ");
-        bdcelda2 = valido2.replace(/,+/g, " ");
-        bdcelda3 = valido3.replace(/,+/g, " ");
-
-        document.getElementById("cadena1").value = bdcelda1;
-        document.getElementById("cadena2").value = bdcelda2;
-        document.getElementById("cadena3").value = bdcelda3;
+        $("#cadena1").val(valido1.replace(/,+/g, " "));
+        $("#cadena2").val(valido2.replace(/,+/g, " "));
+        $("#cadena3").val(valido3.replace(/,+/g, " "));
 
     })
 })

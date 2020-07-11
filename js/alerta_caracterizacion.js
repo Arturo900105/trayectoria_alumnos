@@ -86,7 +86,7 @@ $(document).ready(function () {
         let tittle_confir = "¿Registrar?";
         let texto_confir = "Después, para modificar errores, tendrá que acudir con el(la) encargado(a) de Tutoría Académica.";
 
-        if ($('#no_ficha').val().trim() == '') {
+        if ($('#no_ficha').val().trim() === '') {
             Swal.fire({
                 title: ficha_vacia,
                 icon: "warning",

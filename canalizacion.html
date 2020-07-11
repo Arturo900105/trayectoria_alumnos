@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
 
     <script src="js/alerta_canalizacion.js"></script>
 </head>
@@ -22,32 +26,34 @@
     <h1>PROGRAMA DE TUTORÍA ACADÉMICA</h1>
     <h2>CANALIZACIÓN DE TUTORADO</h2>
 
-    <form action="" method="post" name="canalizacion" id="canalizaciones">
-        <label>Folio:&nbsp;&nbsp;<input type="text" id="folio" name="folio" value="" readonly required></label>
+    <form action="" method="" name="canalizacion" id="canalizacion">
+        <label>Folio:&nbsp;&nbsp;<input type="text" id="folio" name="folio" value="" readonly></label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Fecha:&nbsp;&nbsp;<input type="text" id="fecha-hoy" value="" readonly required></label>
+        <label>Fecha:&nbsp;&nbsp;<input type="text" id="fecha-hoy" name="fecha-hoy" value="" readonly></label>
         <br><br>
 
-        <label>Nombre del Estudiante:&nbsp;&nbsp;<input type="text" class="nom_alumno" name="nom_alumno" required></label>
+        <label>Nombre del Estudiante:&nbsp;&nbsp;<input type="text" id="nom_alumno" name="nom_alumno" placeholder="Nombre(s) y Apellidos"></label>
         <br><br>
         Carrera:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label title="Ingeniería en Gestión Empresarial">
-            <input type="radio" id="igem" name="carrera" value="IGEM">IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="igem" name="carrera" value="1">IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label title="Ingeniería Industrial">
-            <input type="radio" id="iind" name="carrera" value="IIND">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="iind" name="carrera" value="2">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label title="Ingeniería en Sistemas Computacionales">
-            <input type="radio" id="isic" name="carrera" value="ISIC">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="isic" name="carrera" value="3">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label title="Ingeniería Biomédica">
-            <input type="radio" id="ibio" name="carrera" value="IBIO">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="ibio" name="carrera" value="4">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label title="Ingeniería en Innovación Agrícola Sustentable">
-            <input type="radio" id="iias" name="carrera" value="IIAS">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="iias" name="carrera" value="5">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label title="Ingeniería en Energías Renovables">
-            <input type="radio" id="ienr" name="carrera" value="IENR">IENR</label>
+            <input type="radio" id="ienr" name="carrera" value="6">IENR</label>
         <br><br>
-        <label>No. de Control:&nbsp;&nbsp;<input type="text" id="no_control" maxlength="7" minlength="7" required></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Núm. de Control:&nbsp;&nbsp;
+            <input type="text" id="num_control" name="num_control" maxlength="7" minlength="7">
+        </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <select class="seleccion" name="semestre" id="semestre" onclick="cambiarCiclo()" required>
-            <option value="">-- Semestre --</option>
+        <select class="seleccion" name="semestre" id="semestre">
+            <option value="">--- Semestre ---</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -62,23 +68,23 @@
             <option value="12">12</option>
         </select>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="ciclo_escolar" name="ciclo_escolar" placeholder="-- Ciclo Escolar --" required readonly>
+        <input type="text" id="ciclo_escolar" name="ciclo_escolar" placeholder="--- Ciclo Escolar ---" readonly>
         <br><br>
 
         Tipo de Canalización:&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" onchange="onChangeRadio('hide-otra_canalizacion')" name="tipo_canalizacion" value="Psicológica">Psicológica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" onchange="onChangeRadio('hide-otra_canalizacion')" name="tipo_canalizacion" value="Pedagógica">Pedagógica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" onchange="onChangeRadio('hide-otra_canalizacion')" name="tipo_canalizacion" value="Asesoría Académica">Asesoría Académica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" onchange="onChangeRadio('hide-otra_canalizacion')" name="tipo_canalizacion" value="Médica">Médica</label>
+        <label><input type="radio" name="tipo_canalizacion" value="Psicológica">Psicológica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="tipo_canalizacion" value="Pedagógica">Pedagógica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="tipo_canalizacion" value="Asesoría Académica">Asesoría Académica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="tipo_canalizacion" value="Médica">Médica</label>
         <br><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" onchange="onChangeRadio('show-otra_canalizacion')" name="tipo_canalizacion" value="">Otra:</label>&nbsp;&nbsp;
-        <input type="text" name="tipo_canalizacion" id="otra_canalizacion" class="otra_canalizacion">
+        <label><input type="radio" name="tipo_canalizacion" id="otra_canalizacion" value="otro">Otra:</label>&nbsp;&nbsp;
+        <input type="text" name="nombre_canalizacion" id="nombre_canalizacion">
         <br><br>
         Descripción de la Problemática:
         <br>
         <label for="problematica"></label>
-        <textarea name="problematica" id="problematica" cols="75" rows="9" required></textarea>
+        <textarea name="problematica" id="problematica" cols="75" rows="9" ></textarea>
         <br>
 
         <table>
@@ -92,10 +98,10 @@
             </tr>
             <tr>
                 <td class="td2">
-                    <input class="firmas" type="text" name="firma_tutor-profesor" id="firma1" title="Nombre del Tutor/Profesor que firmará" required>
+                    <input class="firmas" type="text" name="firma_tutor-profesor" id="firma1" title="Nombre del Tutor/Profesor que firmará">
                 </td>
                 <td class="td2">
-                    <input class="firmas" type="text" name="firma_coor-tutoria" id="firma2" title="Nombre de la persona que firmará" required>
+                    <input class="firmas" type="text" name="firma_coor-tutoria" id="firma2" title="Nombre de la persona que firmará">
                 </td>
             </tr>
         </table>
@@ -109,7 +115,7 @@
             </tr>
             <tr>
                 <td class="td2">
-                    <input class="firmas" type="text" name="firma_encargado" id="firma3" title="Nombre del encargado que firmará" required>
+                    <input class="firmas" type="text" name="firma_encargado" id="firma3" title="Nombre del encargado que firmará">
                 </td>
             </tr>
         </table>
@@ -118,7 +124,7 @@
         <div id="botones_canalizacion">
             <input type="submit" value="GUARDAR" class="boton_cana">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="documentos/canalizacion.php"><input type="button" value="IMPRIMIR" class="boton_cana"></a>
+            <a href="documentos/canalizacion.php?folio=0320001"><input id="imprimir" type="button" value="IMPRIMIR" class="boton_cana"></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="REGRESAR" class="boton_cana" onclick="history.back()">
         </div>

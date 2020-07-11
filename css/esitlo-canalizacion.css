@@ -59,7 +59,7 @@ table, td{
     height: 1.5em;
 }
 
-.nom_alumno{
+#nom_alumno{
     text-align: center;
     width: 25em;
 }
@@ -74,12 +74,12 @@ table, td{
     text-align: center;
 }
 
-#no_control{
+#num_control{
     width: 7em;
     text-align: center;
 }
 
-#otra_canalizacion{
+#nombre_canalizacion{
     text-align: center;
     width: 15em;
     display: none;

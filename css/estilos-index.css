@@ -44,13 +44,20 @@ h2{
     margin-right: auto;
     border:none;
 }
-p{
+
+#significado{
     text-align: justify;
     color: white;
-    font-size: 25px;
-    width: 50em;
+    font-size: 27px;
+    width: 53em;
     display: block;
     margin: 0 auto;
+}
+
+#significado2{
+    margin: 0 auto;
+    width: 10.5em;
+    font-size: 27px;
 }
 
 .boton_acceso{
@@ -117,6 +124,8 @@ p{
 
 .botones_login{
     text-align: center;
+    background-color: #453d3d;
+    color: #FFFFFF;
     font-size: 15px;
     width: 10em;
     height: 2.5em;
