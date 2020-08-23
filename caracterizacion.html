@@ -36,10 +36,12 @@
         <label>Numero de ficha:&nbsp;&nbsp;
             <input type="text" id="no_ficha" onkeypress="return solo_numero(event);" onclick="javascript:borrarFicha();" onblur="Poner_Ceros(this)" maxlength="4" min="1" name="no_ficha">
         </label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Fecha de registro:&nbsp;&nbsp;<input type="date" id="f_registro" name="f_registro" required></label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Fecha de registro:&nbsp;&nbsp;<input type="date" id="f_registro" name="f_registro" placeholder="Seleccionar fecha " required></label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Generación:&nbsp;&nbsp;<input type="text" id="generacion" name="generacion" readonly required>
+        &nbsp;
+        <input type="button" value="Otra Generación" id="btngeneracion">
         <br><br>
 
         Nombre:&nbsp;&nbsp;
@@ -176,12 +178,13 @@
         <br>
 
         <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTIS">&nbsp;CBTIS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTa">&nbsp;CBTa</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTA">&nbsp;CBTA</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="COBACH">&nbsp;COBACH</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Cecyte">&nbsp;Cecyte</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Preparatoria">&nbsp;Preparatoria</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="Sistema Abierto">&nbsp;Sistema Abierto</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" value="otro" onchange="onChangeRadio('show-otra_prepa')">&nbsp;Otro:</label>&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CECYTE">&nbsp;CECYTE</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="PREPARATORIA">&nbsp;PREPARATORIA</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="SISTEMA ABIERTO">&nbsp;SISTEMA ABIERTO</label>
+        <br><br>
+        <label><input type="radio" name="preparatoria" value="otro" onchange="onChangeRadio('show-otra_prepa')">&nbsp;OTRO:</label>&nbsp;
 
         <input type="text" name="otro_bach" placeholder="Especifique..." id="otro_bach" class="otra_prepa">
         <br><br>

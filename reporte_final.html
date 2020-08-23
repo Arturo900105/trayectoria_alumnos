@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>REPORTE FINAK</title>
-    <link rel="stylesheet" href="css/esitlo-reporte_final.css">
+    <title>REPORTE FINAL</title>
+    <link rel="stylesheet" href="css/estilo-reporte_final.css">
 
     <script src="js/jquery_3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
@@ -11,41 +11,63 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
-    <script src="js/numeros.js"></script>
-    <script src="js/decimales.js"></script>
+
 </head>
 <body>
-<div class="logos_reporte">
-    <img src="img/logo_itsp.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="img/logo_tecnm.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="img/escudo_michoacan.png" class="logos">
+
+<div class="logos_reportef">
+    <img src="img/logo_itsp.png" class="logosf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="img/logo_tecnm.png" class="logosf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="img/escudo_michoacan.png" class="logosf">
 </div>
+
 <h1>INSTITUTO TECNOLÓGICO SUPERIOR P’URHÉPECHA
     <br>DIRECCIÓN ACADÉMICA
     <br>PROGRAMA INSTITUCIONAL DE TUTORÍAS
-    <br><br>REPORTE FINAL
+    <br><br>REPORTE FINAL DE TUTORÍAS
 </h1>
 
-<form action="" method="get" id="ReporteFinal">
-    <div class="primer">
-        <label for="periodo"><b>PERIODO A EVALUAR:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <select name="periodo" id="periodo">
+<form action="" method="" id="ReporteFinal">
+    <div class="primerf">
+        <label for="periodofinal"><b>PERIODO A EVALUAR:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="periodofinal" id="periodofinal">
             <option value="">----------</option>
-            <option value="Agosto - Diciembre">Agosto - Diciembre</option>
-            <option value="Enero - Junio">Enero - Junio</option>
+            <option onclick="limpiar()" value="Agosto - Diciembre">Agosto - Diciembre</option>
+            <option onclick="limpiar()" value="Enero - Junio">Enero - Junio</option>
         </select>
-        <br><br>
-
-        <b>REPORTE FINAL DE TUTORÍAS</b>
     </div>
     <br><br>
 
-    <label>Nombre del Tutor:&nbsp;&nbsp;<input type="text" id="nom-tutor"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <label>Semestre/Grupo:&nbsp;&nbsp;<input type="text" id="sem-grup"></label>
+    <label>Nombre del Tutor:&nbsp;&nbsp;<input type="text" id="nom_tutorf"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label>Semestre:
+        <select name="semestref" id="semestref" class="sem_grupf">
+            <option value="">-----</option>
+            <option class="sem_impar" value="1">1</option>
+            <option class="sem_par" value="2">2</option>
+            <option class="sem_impar" value="3">3</option>
+            <option class="sem_par" value="4">4</option>
+            <option class="sem_impar" value="5">5</option>
+            <option class="sem_par" value="6">6</option>
+            <option class="sem_impar" value="7">7</option>
+            <option class="sem_par" value="8">8</option>
+            <option class="sem_impar" value="9">9</option>
+            <option class="sem_par" value="10">10</option>
+        </select>
+    </label>&nbsp;&nbsp;&nbsp;
+
+    <label>Grupo:
+        <select name="grupof" id="grupof" class="sem_grupf">
+            <option value="">-----</option>
+            <option class="grupos" value="A">A</option>
+            <option class="grupos" value="B">B</option>
+            <option class="grupos" value="C">C</option>
+            <option class="grupos" value="D">D</option>
+        </select>
+    </label>
     <br><br>
 
-    <label>Programa:&nbsp;&nbsp;<input type="text" id="programa"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <label>Núm. total de tutorados asignados:&nbsp;&nbsp;<input type="text" id="num-tutorado"></label>
+    <label>Programa:&nbsp;&nbsp;<input type="text" id="programaf"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label>Núm. total de tutorados asignados:&nbsp;&nbsp;<input type="text" id="num_tutorado"></label>
     <p>Núm./Porcentaje de estudiantes no acreditados (Por asignatura):</p>
     <table>
         <tr>
@@ -214,10 +236,11 @@
 </form>
 <br>
 
-<div id="base_reporte">
+<div id="base_reportef">
     Carretera: Uruapan–Carapan; Km. 31.5; CP. 60270; Cherán, Mich.
     <br>Tels. 01(443) 292 1023 y (443) 292 1026; e-mail: its-purhepecha@its-purhepecha.edu.mx
     <br><b>www.tecnm.mx | www.its-purhepecha.edu.mx</b>
 </div>
+
 </body>
 </html>

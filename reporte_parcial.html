@@ -45,7 +45,7 @@
         </div>
         <br><br>
 
-        <label>Nombre del Tutor:&nbsp;&nbsp;<input type="text" id="nom_tutor"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Nombre del Tutor:&nbsp;&nbsp;<input type="text" id="nom_tutor" name="nom_tutor"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label>Semestre:
             <select name="semestre" id="semestre" class="sem_grup">
                 <option value="">-----</option>
@@ -73,8 +73,19 @@
         </label>
         <br><br>
 
-        <label>Programa:&nbsp;&nbsp;<input type="text" id="programa"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Núm. total de tutorados asignados:&nbsp;&nbsp;<input type="text" id="num-tutorado"></label>
+        <select name="programap" id="programap">
+            <option value="">--- Programa: ---</option>
+            <option class="programap" value="IGEM">Ingeniería en Gestión Empresarial</option>
+            <option class="programap" value="IIND">Ingeniería Industrial</option>
+            <option class="programap" value="ISIC">Ingeniería en Sistemas Computacionales</option>
+            <option class="programap" value="IBIO">Ingeniería Biomédica</option>
+            <option class="programap" value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
+            <option class="programap" value="IENR">Ingeniería en Energías Renovables</option>
+            <option class="programap" value="IFOR">Ingeniería Forestal</option>
+            <option class="programap" value="IAGR">Ingeniería en Agronomía</option>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label>Núm. total de tutorados asignados:&nbsp;&nbsp;<input type="text" id="num_tutoradop" name="num_tutoradop"></label>
         <p>Núm./Porcentaje de estudiantes no acreditados (Por asignatura):</p>
         <table>
             <tr>
@@ -85,87 +96,105 @@
             </tr>
             <tr>
                 <td class="num_materia">1.-</td>
-                <td class="nom_materia"><input type="text" class="materia"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia1"></td>
                 <td class="materia_reprobada"><input type="text"
                                                      class="num-materia"
                                                      pattern="[0-9]{1}{2}"
                                                      onkeypress="return solo_numero(event);"
                                                      minlength="1"
-                                                     maxlength="2"></td>
+                                                     maxlength="2"
+                                                     name="materia_rep1"></td>
+
                 <td class="porcentaje_reprobado"><input type="text"
                                                         class="por-materia"
                                                         maxlength="5"
+                                                        name="por_materia1"
                                                         onkeypress="return NumDecimal(event);"></td>
             </tr>
             <tr>
                 <td class="num_materia">2.-</td>
-                <td class="nom_materia"><input type="text" class="materia"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia2"></td>
                 <td class="materia_reprobada"><input type="text"
                                                      class="num-materia"
                                                      pattern="[0-9]{1}{2}"
                                                      onkeypress="return solo_numero(event);"
                                                      minlength="1"
-                                                     maxlength="2"></td>
+                                                     maxlength="2"
+                                                     name="materia_rep2"></td>
+
                 <td class="porcentaje_reprobado"><input type="text"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        onkeypress="return NumDecimal(event);"></td></td>
+                                                        name="por_materia2"
+                                                        onkeypress="return NumDecimal(event);"></td>
             </tr>
             <tr>
                 <td class="num_materia">3.-</td>
-                <td class="nom_materia"><input type="text" class="materia"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia3"></td>
                 <td class="materia_reprobada"><input type="text"
                                                      class="num-materia"
                                                      pattern="[0-9]{1}{2}"
                                                      onkeypress="return solo_numero(event);"
                                                      minlength="1"
-                                                     maxlength="2"></td>
+                                                     maxlength="2"
+                                                     name="materia_rep3"></td>
+
                 <td class="porcentaje_reprobado"><input type="text"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        onkeypress="return NumDecimal(event);"></td></td>
+                                                        name="por_materia3"
+                                                        onkeypress="return NumDecimal(event);"></td>
             </tr>
             <tr>
                 <td class="num_materia">4.-</td>
-                <td class="nom_materia"><input type="text" class="materia"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia4"></td>
                 <td class="materia_reprobada"><input type="text"
                                                      class="num-materia"
                                                      pattern="[0-9]{1}{2}"
                                                      onkeypress="return solo_numero(event);"
                                                      minlength="1"
-                                                     maxlength="2"></td>
+                                                     maxlength="2"
+                                                     name="materia_rep4"></td>
+
                 <td class="porcentaje_reprobado"><input type="text"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        onkeypress="return NumDecimal(event);"></td></td>
+                                                        name="por_materia4"
+                                                        onkeypress="return NumDecimal(event);"></td>
             </tr>
             <tr>
                 <td class="num_materia">5.-</td>
-                <td class="nom_materia"><input type="text" class="materia"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia5"></td>
                 <td class="materia_reprobada"><input type="text"
                                                      class="num-materia"
                                                      pattern="[0-9]{1}{2}"
                                                      onkeypress="return solo_numero(event);"
                                                      minlength="1"
-                                                     maxlength="2"></td>
+                                                     maxlength="2"
+                                                     name="materia_rep5"></td>
+
                 <td class="porcentaje_reprobado"><input type="text"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        onkeypress="return NumDecimal(event);"></td></td>
+                                                        name="por_materia5"
+                                                        onkeypress="return NumDecimal(event);"></td>
             </tr>
             <tr>
                 <td class="num_materia">6.-</td>
-                <td class="nom_materia"><input type="text" class="materia"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia6"></td>
                 <td class="materia_reprobada"><input type="text"
                                                      class="num-materia"
                                                      pattern="[0-9]{1}{2}"
                                                      onkeypress="return solo_numero(event);"
                                                      minlength="1"
-                                                     maxlength="2"></td>
+                                                     maxlength="2"
+                                                     name="materia_rep6"></td>
+
                 <td class="porcentaje_reprobado"><input type="text"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        onkeypress="return NumDecimal(event);"></td></td>
+                                                        name="por_materia6"
+                                                        onkeypress="return NumDecimal(event);"></td>
             </tr>
         </table>
         <br>

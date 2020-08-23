@@ -16,3 +16,5 @@ function zero_fill ($valor, $long = 0){
 }
 
 echo "\nMuestra: "."03"."20".zero_fill($filaF, 3);
+
+?>

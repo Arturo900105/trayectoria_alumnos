@@ -1,40 +1,38 @@
-let reporte_parcial, periodo;
+let reporte_final, periodof;
 
 function limpiar() {
     $(".sem_grup").val("")
 }
 
 $(document).ready(function () {
-    reporte_parcial = $("#ReporteParcial")
-    periodo = $('#periodo')
-    reporte_parcial[0].reset();
-    $(".sem_impar, .sem_par, .grupos, .programap").hide();
+    reporte_final = $("#")
+    periodof = $('#periodo')
+    reporte_final[0].reset();
+    $(".sem_impar, .sem_par, .grupos").hide();
 
-    reporte_parcial.on("click", function () {
+    reporte_final.on("click", function () {
 
-        if (periodo.val().trim() === "Agosto - Diciembre"){
+        if (periodof.val().trim() === "Agosto - Diciembre"){
             $(".sem_impar").show()
             $(".grupos").show()
             $(".sem_par").hide()
-            $(".programap").show()
 
-        } else if (periodo.val().trim() === ""){
-            $(".sem_impar, .sem_par, .grupos, .programap").hide();
-            $(".sem_grup, #programap").val("")
+        } else if (periodof.val().trim() === ""){
+            $(".sem_impar, .sem_par, .grupos").hide();
+            $(".sem_grup").val("")
 
         } else {
             $(".sem_impar").hide()
             $(".grupos").show()
             $(".sem_par").show()
-            $(".programap").show()
         }
     })
 
-    reporte_parcial.submit(function (e) {
+    reporte_final.submit(function (e) {
         e.preventDefault()
 
-        if (periodo.val().trim() === "") {
-            Swal.fire({title: "Seleccione\nel periodo a evaluar",
+        if (periodof.val().trim() === "") {
+            Swal.fire({title: "Seleccione\nel periodo final a evaluar",
                 icon: "warning",
                 confirmButtonColor: '#000155',
                 backdrop: "rgba(0,0,0,0)"});
