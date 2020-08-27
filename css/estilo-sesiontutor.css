@@ -1,0 +1,100 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    text-align: center;
+    padding: 0 0 0.5em;
+}
+
+#areaTutor{
+    margin: 0 auto;
+    text-align: center;
+    width: 80em;
+    padding: 1em 0;
+}
+
+.logosTutor{
+    height: 13em;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+#datosTutor{
+    width: 40em;
+    display:inline-block;
+    vertical-align:middle;
+    text-align: left;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+}
+
+/*menus*/
+.menuTutor{
+    list-style: none;
+    padding: 0;
+    background: #101016;
+    text-align: center;
+    width: 80em;
+    margin: auto;
+}
+
+.menuTutor li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 20px;
+    display: block;
+}
+
+.menuTutor li{
+    display: inline-block;
+    text-align: center;
+}
+
+.menuTutor li a:hover{
+    background: rgba(255, 90, 0, 0.8);
+    color: #FFFFFF;
+}
+
+/*sub-menus*/
+.submenuTutor{
+    display: none;
+    position: absolute;
+    background: #011029;
+}
+
+.submenuTutor li{
+    display: block;
+    text-align: left;
+}
+
+.menuTutor li:hover .submenuTutor{
+    display: block;
+}
+
+.menuTutor li .submenuTutor a{
+    line-height: unset;
+    white-space: nowrap;
+}
+
+.menuTutor li .submenuTutor a:hover{
+    background: rgb(71, 74, 74);
+    color: #FFFFFF;
+}
+
+.contentTutor{
+    margin: 0 auto;
+    background: #db8400;
+    width: 80em;
+    height: 30em;
+}
+
+p{
+    padding: 1em;
+    width: 30em;
+    text-align: justify;
+}

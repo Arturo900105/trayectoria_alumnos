@@ -41,6 +41,18 @@ require "BD_Connect.php";
         $carreraNombre = 'ienr';
     }
 
+    else if ($carrera == "7"){
+        $dig1 = "07";
+        $ifor = "X";
+        $carreraNombre = 'ifor';
+    }
+
+    else if ($carrera == "8"){
+        $dig1 = "08";
+        $iagr = "X";
+        $carreraNombre = 'iagr';
+    }
+
     $consultaFolio = "SELECT * FROM canalizacion WHERE $carreraNombre = 'X' and YEAR(STR_TO_DATE(fecha,'%d-%m-%Y')) = YEAR(NOW())";
     $resulFolio = mysqli_query($connect, $consultaFolio);
     $filaF = mysqli_num_rows($resulFolio);
@@ -77,7 +89,7 @@ require "BD_Connect.php";
 
 
     $t_canalizacion = "INSERT INTO canalizacion VALUES ('$folio','$fecha','$nomAlumno',
-                                                        '$igem','$iind','$isic','$ibio','$iias','$ienr',
+                                                        '$igem','$iind','$isic','$ibio','$iias','$ienr','$ifor','$iagr',
                                                         '$numControl','$semestre','$cicloEscolar',
                                                         '$psicologica','$pedagogica','$ases_acad','$medica','$otraCanalizacion',
                                                         '$descProblematica',

@@ -54,6 +54,10 @@ function crearUsuario() {
                 break;
             case 'IENR': area = "06";
                 break;
+            case 'IFOR': area = "07";
+                break;
+            case 'IAGR': area = "08";
+                break;
         }
     }
 

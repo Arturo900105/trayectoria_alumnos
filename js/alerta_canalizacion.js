@@ -61,6 +61,14 @@ $(document).ready(function () {
             digito1 = "06"
             $("#folio").val(digito1+digito2+digito3)
 
+        } else if ($("#ifor:radio").is(":checked")) {
+            digito1 = "07"
+            $("#folio").val(digito1+digito2+digito3)
+
+        } else if ($("#iagr:radio").is(":checked")) {
+            digito1 = "08"
+            $("#folio").val(digito1+digito2+digito3)
+
         }
 
 

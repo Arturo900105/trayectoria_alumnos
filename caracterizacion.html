@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Caracterización Personalizada del Estudiante</title>
-    <link rel="stylesheet" href="css/estilos-caracterizacion.css">
+    <link rel="stylesheet" href="css/estilo-caracterizacion.css">
 
     <script src="js/jquery_3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
@@ -24,9 +24,10 @@
 </head>
 
 <body>
-    <h1>Caracterización personalizada del estudiante</h1>
-
     <form action="" method="post" name="datos_alumnew" id="form_alumno">
+        <h1>CARACTERIZACIÓN PERSONALIZADA DEL ESTUDIANTE</h1>
+        <br><br>
+
         <h2>Por favor, llena lo que se te pide a continuación:</h2>
         <br>
 
@@ -204,20 +205,23 @@
         </label>
         <br><br><br><br>
 
-        <b class="carreras">Carrera:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería en Gestión Empresarial"><input type="radio" name="carrera" value="IGEM" >IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería Industrial"><input type="radio" name="carrera" value="IIND">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería en Sistemas Computacionales"><input type="radio" name="carrera" value="ISIC">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería Biomédica"><input type="radio" name="carrera" value="IBIO">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería en Innovación Agrícola Sustentable"><input type="radio" name="carrera" value="IIAS">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería en Energías Renovables"><input type="radio" name="carrera" value="IENR">IENR</label>
+        <b class="carreras">Carrera:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label class="carreras" title="Ingeniería en Gestión Empresarial"><input type="radio" name="carrera" value="IGEM" >IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="carreras" title="Ingeniería Industrial"><input type="radio" name="carrera" value="IIND">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="carreras" title="Ingeniería en Sistemas Computacionales"><input type="radio" name="carrera" value="ISIC">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="carreras" title="Ingeniería Biomédica"><input type="radio" name="carrera" value="IBIO">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="carreras" title="Ingeniería en Innovación Agrícola Sustentable"><input type="radio" name="carrera" value="IIAS">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="carreras" title="Ingeniería en Energías Renovables"><input type="radio" name="carrera" value="IENR">IENR</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="carreras" title="Ingeniería Forestal"><input type="radio" name="carrera" value="IENR">IFOR</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="carreras" title="Ingeniería en Agronomía"><input type="radio" name="carrera" value="IENR">IAGR</label>
         <br><br><br>
 
         <div id="botones">
             <input type="submit" value="REGISTRAR" class="boton">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="SALIR" class="boton" onclick="history.back();">
         </div>
-        <br><br><br>
+        <br><br>
 
         <h2>Has click en una de las siguientes carpetas, y para acceder utiliza tu Núm. de Ficha:</h2>
         <br><br>
@@ -225,11 +229,8 @@
             <a href="javascript:Confirmar_Acceso('pedagogia.html')"><img src="img/area_pedagogia.png" title="Área de Pedagogía" class="carpetas" id="carpeta1"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="javascript:Confirmar_Acceso('psicologia.html')"><img src="img/area_psicologia.png" title="Área de Psicología" class="carpetas" id="carpeta2"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="javascript:Confirmar_Acceso('medica.html')"><img src="img/area_medica.png" title="Área Médica" class="carpetas" id="carpeta3"></a>
-            <br><br>
-            <a href="javascript:Acceso_Post_Test()"><img src="img/area_pspost-test.png" title="Escala Hospitalaria de Ansiedad y Depresión" class="carpetas" id="carpeta4"></a>
         </div>
     </form>
-    <br><br>
 
     <div class="areas-acceso" id="acceso_area">
         <div id="areas">

@@ -9,7 +9,7 @@ require "php/BD_Connect.php";
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Trayectoria ITSP</title>
-        <link rel="stylesheet" href="css/estilos-index.css">
+        <link rel="stylesheet" href="css/estilo-index.css">
         <script src="js/jquery_3.4.1.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
@@ -132,6 +132,8 @@ require "php/BD_Connect.php";
                         <option value="IBIO">Ingeniería Biomédica</option>
                         <option value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
                         <option value="IENR">Ingeniería en Energías Renovables</option>
+                        <option value="IFOR">Ingeniería Forestal</option>
+                        <option value="IAGR">Ingeniería en Agronomía</option>
                     </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="email" placeholder="E-mail:" name="cita_email" id="cita_email">
                     <br><br>

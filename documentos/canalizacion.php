@@ -56,36 +56,48 @@
     $pdf->Cell(0, 5, utf8_decode($fila["nom_estudiante"]), "B", 1,"C");
     $pdf->Ln(4);
 
-    $pdf->Cell(32, 5, utf8_decode('Carrera:'), 0, 0,"L");
+    $pdf->Cell(24, 5, utf8_decode('Carrera:'), 0, 0,"L");
 
-    $pdf->Cell(18, 5, utf8_decode('IGEM:'), 0, 0,"R");
-    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(14, 5, utf8_decode('IGEM:'), 0, 0,"R");
+    $pdf->SetFont('Arial', 'B', 11);
     $pdf->Cell(5, 5, utf8_decode($fila["igem"]), 0, 0,"L");
 
-    $pdf->SetFont('Arial', '', 12);
-    $pdf->Cell(18, 5, utf8_decode('IIND:'), 0, 0,"R");
-    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(14, 5, utf8_decode('IIND:'), 0, 0,"R");
+    $pdf->SetFont('Arial', 'B', 11);
     $pdf->Cell(5, 5, utf8_decode($fila["iind"]), 0, 0,"L");
 
-    $pdf->SetFont('Arial', '', 12);
-    $pdf->Cell(18, 5, utf8_decode('ISIC:'), 0, 0,"R");
-    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(14, 5, utf8_decode('ISIC:'), 0, 0,"R");
+    $pdf->SetFont('Arial', 'B', 11);
     $pdf->Cell(5, 5, utf8_decode($fila["isic"]), 0, 0,"L");
 
-    $pdf->SetFont('Arial', '', 12);
-    $pdf->Cell(18, 5, utf8_decode('IBIO:'), 0, 0,"R");
-    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(14, 5, utf8_decode('IBIO:'), 0, 0,"R");
+    $pdf->SetFont('Arial', 'B', 11);
     $pdf->Cell(5, 5, utf8_decode($fila["ibio"]), 0, 0,"L");
 
-    $pdf->SetFont('Arial', '', 12);
-    $pdf->Cell(18, 5, utf8_decode('IIAS:'), 0, 0,"R");
-    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(14, 5, utf8_decode('IIAS:'), 0, 0,"R");
+    $pdf->SetFont('Arial', 'B', 11);
     $pdf->Cell(5, 5, utf8_decode($fila["iias"]), 0, 0,"L");
 
-    $pdf->SetFont('Arial', '', 12);
-    $pdf->Cell(18, 5, utf8_decode('IENR:'), 0, 0,"R");
-    $pdf->SetFont('Arial', 'B', 12);
-    $pdf->Cell(5, 5, utf8_decode($fila["ienr"]), 0, 1,"L");
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(14, 5, utf8_decode('IENR:'), 0, 0,"R");
+    $pdf->SetFont('Arial', 'B', 11);
+    $pdf->Cell(5, 5, utf8_decode($fila["ienr"]), 0, 0,"L");
+
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(14, 5, utf8_decode('IFOR:'), 0, 0,"R");
+    $pdf->SetFont('Arial', 'B', 11);
+    $pdf->Cell(5, 5, utf8_decode($fila["ifor"]), 0, 0,"L");
+
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(14, 5, utf8_decode('IAGR:'), 0, 0,"R");
+    $pdf->SetFont('Arial', 'B', 11);
+    $pdf->Cell(5, 5, utf8_decode($fila["iagr"]), 0, 1,"L");
+
     $pdf->Ln(4);
 
     $pdf->SetFont('Arial', '', 12);

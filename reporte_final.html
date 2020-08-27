@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>REPORTE FINAL</title>
-    <link rel="stylesheet" href="css/estilo-reporte_final.css">
+    <link rel="stylesheet" href="css/estilo-reportefinal.css">
 
     <script src="js/jquery_3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
@@ -66,7 +66,19 @@
     </label>
     <br><br>
 
-    <label>Programa:&nbsp;&nbsp;<input type="text" id="programaf"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name="programaf" id="programaf">
+        <option value="">--- Programa: ---</option>
+        <option class="programap" value="IGEM">Ingeniería en Gestión Empresarial</option>
+        <option class="programap" value="IIND">Ingeniería Industrial</option>
+        <option class="programap" value="ISIC">Ingeniería en Sistemas Computacionales</option>
+        <option class="programap" value="IBIO">Ingeniería Biomédica</option>
+        <option class="programap" value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
+        <option class="programap" value="IENR">Ingeniería en Energías Renovables</option>
+        <option class="programap" value="IFOR">Ingeniería Forestal</option>
+        <option class="programap" value="IAGR">Ingeniería en Agronomía</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
     <label>Núm. total de tutorados asignados:&nbsp;&nbsp;<input type="text" id="num_tutorado"></label>
     <p>Núm./Porcentaje de estudiantes no acreditados (Por asignatura):</p>
     <table>

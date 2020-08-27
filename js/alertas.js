@@ -247,6 +247,10 @@ $(document).ready(function () {
                     break;
                 case 'IENR': coordTutoria = "06";
                     break;
+                case 'IFOR': coordTutoria = "07";
+                    break;
+                case 'IAGR': coordTutoria = "08";
+                    break;
             }
 
             const eliminaAcentos = (str) =>{return str.normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
