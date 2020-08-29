@@ -137,9 +137,13 @@ h2{
 .boton{
     width: 8em;
     height: 2em;
-    margin: 0 auto;
+    margin: 0 2em;
     display:inline;
     color: #000000;
+}
+
+.boton:hover{
+    background: #aad6e3;
 }
 
 .escuelas{
@@ -158,6 +162,10 @@ h2{
 .carreras{
     font-size: 1.5em;
     text-align: center;
+}
+
+.carreras:hover{
+    color: #54e502;
 }
 
 .carpetas{
@@ -204,10 +212,15 @@ h2{
 }
 
 .botones_acceso{
+    margin: 0 5px;
     text-align: center;
     font-size: 15px;
-    width: 8em;
-    height: 2.5em;
+    width: 10em;
+    height: 3em;
     font-family: "Britannic Bold";
 }
 
+.botones_acceso:hover{
+    color: #FFFFFF;
+    background: #390202;
+}

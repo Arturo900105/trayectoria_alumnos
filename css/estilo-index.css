@@ -6,7 +6,6 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    display:block;
 }
 
 /*Para pantalla con poco tamaño*/
@@ -39,10 +38,9 @@ h2{
 }
 
 #itsp_logo{
-    height: 25em;
+    height: 30em;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     border:none;
 }
 
@@ -61,15 +59,27 @@ h2{
     font-size: 27px;
 }
 
-.boton_acceso{
+.boton_acceso, .boton_acceso-salir{
+    margin: 0 3px;
     width: 15em;
     height: 3em;
-    font-family: "Britannic Bold";
-    font-size: 1em;
+    font-size: 15px;
     color: #000000;
-    border-radius: 1em;
+    border-radius: 4px;
+    border: 2px solid #000000;
 }
 
+.boton_acceso:hover{
+    background: darkgreen;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.boton_acceso-salir:hover{
+    background: #900000;
+    color: #FFFFFF;
+    border: 2px solid #ffffff;
+}
 
 .modal-fondo{
     background: rgba(0, 0, 0, 0.75);

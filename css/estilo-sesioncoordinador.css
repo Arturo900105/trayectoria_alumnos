@@ -1,0 +1,108 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    text-align: center;
+    padding: 0 0 0.5em;
+}
+
+#areaCoordinador{
+    margin: 0 auto;
+    text-align: center;
+    width: auto;
+    padding: 1em 0;
+}
+
+.logosCoordinador{
+    height: 13em;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+#datosCoordinador{
+    width: 40em;
+    display:inline-block;
+    vertical-align:middle;
+    text-align: left;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+}
+
+.contenidoCoor{
+    margin: 0 auto;
+    width: 80em;
+    height: auto;
+    background: #ca6701;
+    display: flex;
+    align-items: flex-start;
+}
+
+/*menus*/
+.menuCoordinador{
+    margin: 0;
+    list-style: none;
+    background: #010137;
+    text-align: left;
+    width: 15em;
+}
+
+.menuCoordinador li{
+    height: 60px;
+}
+
+.menuCoordinador li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 20px;
+    display: block;
+}
+
+.menuCoordinador li a:hover{
+    background: rgb(2, 27, 76);
+    color: #008aff;
+}
+
+/*sub-menus*/
+.submenuCoordinador{
+    list-style: none;
+    display: none;
+    position: absolute;
+    background: #021b4c;
+    margin-top: -60px;
+    margin-left: 15em;
+}
+
+.submenuCoordinador li{
+    display: block;
+    text-align: left;
+    height: 60px;
+}
+
+.menuCoordinador li:hover .submenuCoordinador{
+    display: unset;
+
+}
+
+.menuCoordinador li .submenuCoordinador a{
+    line-height: unset;
+    white-space: nowrap;
+}
+
+.menuCoordinador li .submenuCoordinador a:hover{
+    background: #410c0c;
+    color: #ffffff;
+}
+
+.parrafoCoor{
+    padding: 1em;
+    width: 35em;
+    color: #000000;
+    text-align: justify;
+    display: flex;
+    font-family: "Arial Black";
+}

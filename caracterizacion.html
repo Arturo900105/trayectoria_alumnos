@@ -24,247 +24,247 @@
 </head>
 
 <body>
-    <form action="" method="post" name="datos_alumnew" id="form_alumno">
-        <h1>CARACTERIZACIÓN PERSONALIZADA DEL ESTUDIANTE</h1>
-        <br><br>
+<form action="" method="post" name="datos_alumnew" id="form_alumno">
+    <h1>CARACTERIZACIÓN PERSONALIZADA DEL ESTUDIANTE</h1>
+    <br><br>
 
-        <h2>Por favor, llena lo que se te pide a continuación:</h2>
-        <br>
+    <h2>Por favor, llena lo que se te pide a continuación:</h2>
+    <br>
 
-        <h2 id="advertencia">"PROCURA EVITAR LAS FALTAS DE ORTOGRAFÍA"</h2>
-        <br><br>
+    <h2 id="advertencia">"PROCURA EVITAR LAS FALTAS DE ORTOGRAFÍA"</h2>
+    <br><br>
 
-        <label>Numero de ficha:&nbsp;&nbsp;
-            <input type="text" id="no_ficha" onkeypress="return solo_numero(event);" onclick="javascript:borrarFicha();" onblur="Poner_Ceros(this)" maxlength="4" min="1" name="no_ficha">
-        </label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Fecha de registro:&nbsp;&nbsp;<input type="date" id="f_registro" name="f_registro" placeholder="Seleccionar fecha " required></label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Generación:&nbsp;&nbsp;<input type="text" id="generacion" name="generacion" readonly required>
-        &nbsp;
-        <input type="button" value="Otra Generación" id="btngeneracion">
-        <br><br>
+    <label>Numero de ficha:&nbsp;&nbsp;
+        <input type="text" id="no_ficha" onkeypress="return solo_numero(event);" onclick="javascript:borrarFicha();" onblur="Poner_Ceros(this)" maxlength="4" min="1" name="no_ficha">
+    </label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label>Fecha de registro:&nbsp;&nbsp;<input type="date" id="f_registro" name="f_registro" placeholder="Seleccionar fecha " required></label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Generación:&nbsp;&nbsp;<input type="text" id="generacion" name="generacion" readonly required>
+    &nbsp;
+    <input type="button" value="Otra Generación" id="btngeneracion">
+    <br><br>
 
-        Nombre:&nbsp;&nbsp;
-        <input type="text" id="nombre" placeholder="Nombre(s):" name="nombre" onkeypress="return soloLetras(event);" required>
-        &nbsp;&nbsp;
-        <input type="text" id="apellido_pat" placeholder="Apellido Paterno:" name="apat" onkeypress="return soloLetras(event);" required>
-        &nbsp;&nbsp;
-        <input type="text" id="apellido_mat" placeholder="Apellido Materno:" name="amat" onkeypress="return soloLetras(event);" required>
-        <br><br><br><br>
+    Nombre:&nbsp;&nbsp;
+    <input type="text" id="nombre" placeholder="Nombre(s):" name="nombre" onkeypress="return soloLetras(event);" required>
+    &nbsp;&nbsp;
+    <input type="text" id="apellido_pat" placeholder="Apellido Paterno:" name="apat" onkeypress="return soloLetras(event);" required>
+    &nbsp;&nbsp;
+    <input type="text" id="apellido_mat" placeholder="Apellido Materno:" name="amat" onkeypress="return soloLetras(event);" required>
+    <br><br><br><br>
 
-        <h2>Datos Generales:</h2>
-        <br>
+    <h2>Datos Generales:</h2>
+    <br>
 
-        <label>Fecha de nacimiento:&nbsp;
-            <input type="date" id="fnacimiento" name="fnacimiento" required>
-        </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label>Fecha de nacimiento:&nbsp;
+        <input type="date" id="fnacimiento" name="fnacimiento" required>
+    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        Sexo:&nbsp;
-        <select id="sexo" name="sexo">
-            <option value="">-------</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Femenino">Femenino</option>
-        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Sexo:&nbsp;
+    <select id="sexo" name="sexo">
+        <option value="">-------</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        Se considera Indígena:&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="indigena" id="si_indigena" value="Si">Sí</label>&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="indigena" id="no_indigena" value="No">No</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label for="edad" class="">Edad:</label>&nbsp;
-        <input type="text" id="edad" class="su_edad" name="edad" onkeypress="return soloEdad(event);" maxlength="2" minlength="2" min="10" max="60" required>
-        <br><br>
+    Se considera Indígena:&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="indigena" id="si_indigena" value="Si">Sí</label>&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="indigena" id="no_indigena" value="No">No</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="edad" class="">Edad:</label>&nbsp;
+    <input type="text" id="edad" class="su_edad" name="edad" onkeypress="return soloEdad(event);" maxlength="2" minlength="2" min="10" max="60" required>
+    <br><br>
 
-        Estado Civil:&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="estado_civil" value="Soltero">Soltero(a)</label>&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="estado_civil" value="Casado">Casado(a)</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label for="telefono">Teléfono/Celular:</label>&nbsp;
-        <input type="tel" id="telefono" name="tel-cel"
-               pattern="[0-9]{10}"
-               onkeypress="return solo_tel(event);"
-               maxlength="10"
-               required>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label for="email">E-mail:</label>&nbsp;
-        <input type="email" id="email" name="e-mail">
-        <br><br><br><br>
+    Estado Civil:&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="estado_civil" value="Soltero">Soltero(a)</label>&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="estado_civil" value="Casado">Casado(a)</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="telefono">Teléfono/Celular:</label>&nbsp;
+    <input type="tel" id="telefono" name="tel-cel"
+           pattern="[0-9]{10}"
+           onkeypress="return solo_tel(event);"
+           maxlength="10"
+           required>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="email">E-mail:</label>&nbsp;
+    <input type="email" id="email" name="e-mail">
+    <br><br><br><br>
 
-        <h2>Lugar de Procedencia:</h2>
-        <br>
+    <h2>Lugar de Procedencia:</h2>
+    <br>
 
-        <label for="avenida_calle">Avenida/Calle:</label>&nbsp;
-        <input type="text" id="avenida_calle" name="domicilio" required>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="avenida_calle">Avenida/Calle:</label>&nbsp;
+    <input type="text" id="avenida_calle" name="domicilio" required>
+    &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <label for="esquina">Esquina:</label>&nbsp;
-        <input type="text" id="esquina" name="dom_esquina" placeholder="OPCIONAL">
-        <br><br>
+    <label for="esquina">Esquina:</label>&nbsp;
+    <input type="text" id="esquina" name="dom_esquina" placeholder="OPCIONAL">
+    <br><br>
 
-        <label for="numero">Número:</label>&nbsp;
-        <input type="text" id="numero" name="numero" placeholder="S/N" minlength="0" maxlength="4">
-        &nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="numero">Número:</label>&nbsp;
+    <input type="text" id="numero" name="numero" placeholder="S/N" minlength="0" maxlength="4">
+    &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <label for="colonia">Colonia:</label>&nbsp;
-        <input type="text" id="colonia" name="colonia" required>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="colonia">Colonia:</label>&nbsp;
+    <input type="text" id="colonia" name="colonia" required>
+    &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <label for="codpos">Código Postal:</label>&nbsp;
-        <input type="text" id="codpos" name="cod-post" pattern="[0-9]{5}" onkeypress="return CodigoPostal(event);" maxlength="5" required>
-        <br><br>
+    <label for="codpos">Código Postal:</label>&nbsp;
+    <input type="text" id="codpos" name="cod-post" pattern="[0-9]{5}" onkeypress="return CodigoPostal(event);" maxlength="5" required>
+    <br><br>
 
-        <label for="estado">Estado:</label>&nbsp;
-        <select name="estado" id="estado" onchange="cambiaEstado();" data-default-value="">
-            <option value="" selected="selected">-------</option>
-            <option value="1">Michoacán de Ocampo</option>
-            <option value="2">Otro Estado...</option>
-        </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="estado">Estado:</label>&nbsp;
+    <select name="estado" id="estado" onchange="cambiaEstado();" data-default-value="">
+        <option value="" selected="selected">-------</option>
+        <option value="1">Michoacán de Ocampo</option>
+        <option value="2">Otro Estado...</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <label for="municipio">Municipio:</label>&nbsp;
-        <select name="municipio" id="municipio">
-            <option value="" selected="selected">-------</option>
-        </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="municipio">Municipio:</label>&nbsp;
+    <select name="municipio" id="municipio">
+        <option value="" selected="selected">-------</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <label for="localidad">Localidad:</label>&nbsp;
-        <input type="text" name="localidad" id="localidad" placeholder="OPCIONAL">
-        <br><br>
-        <div id="estados">
-            <div id="2">
-                <label for="nom_estado">Nombre del Estado:</label>&nbsp;
-                <select name="nom_estado" id="nom_estado">
-                    <option value="">--- Seleccione: ---</option>
-                    <option value="Ags.">Aguascalientes</option>
-                    <option value="B.C.">Baja California</option>
-                    <option value="B.C.S.">Baja California Sur</option>
-                    <option value="Camp.">Campeche</option>
-                    <option value="Chis.">Chiapas</option>
-                    <option value="Chih.">Chihuahua</option>
-                    <option value="Coah.">Coahuila de Zaragoza</option>
-                    <option value="Col.">Colima</option>
-                    <option value="CDMX.">Ciudad de México</option>
-                    <option value="Dgo.">Durango</option>
-                    <option value="Gto.">Guanajuato</option>
-                    <option value="Gro.">Guerrero</option>
-                    <option value="Hgo.">Hidalgo</option>
-                    <option value="Jal.">Jalisco</option>
-                    <option value="Edo. Méx.">Estado de México</option>
-                    <option value="Mor.">Morelos</option>
-                    <option value="Nay.">Nayarit</option>
-                    <option value="N.L.">Nuevo León</option>
-                    <option value="Oax.">Oaxaca</option>
-                    <option value="Pue.">Puebla</option>
-                    <option value="Qro.">Querétaro</option>
-                    <option value="Q.R.">Quintana Roo</option>
-                    <option value="S.L.P.">San Luis Potosí</option>
-                    <option value="Sin.">Sinaloa</option>
-                    <option value="Son.">Sonora </option>
-                    <option value="Tab.">Tabasco</option>
-                    <option value="Tamps.">Tamaulipas</option>
-                    <option value="Tlax.">Tlaxcala</option>
-                    <option value="Ver.">Veracruz de Ignacio de la Llave</option>
-                    <option value="Yuc.">Yucatán</option>
-                    <option value="Zac.">Zacatecas</option>
-                </select>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for="nom_municipio">Nombre del Municipio:</label>&nbsp;
-                <input type="text" name="nom_municipio" id="nom_municipio">
-                <br><br>
-            </div>
-        </div>
-        <br><br>
-
-        <h2>Escuela de Procedencia:</h2>
-        <br>
-
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTIS">&nbsp;CBTIS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTA">&nbsp;CBTA</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="COBACH">&nbsp;COBACH</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CECYTE">&nbsp;CECYTE</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="PREPARATORIA">&nbsp;PREPARATORIA</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="SISTEMA ABIERTO">&nbsp;SISTEMA ABIERTO</label>
-        <br><br>
-        <label><input type="radio" name="preparatoria" value="otro" onchange="onChangeRadio('show-otra_prepa')">&nbsp;OTRO:</label>&nbsp;
-
-        <input type="text" name="otro_bach" placeholder="Especifique..." id="otro_bach" class="otra_prepa">
-        <br><br>
-
-        <b>Tipo de Bachillerato:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Económico-Administrativo">&nbsp;Económico-Administrativo</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Físico-Matemático">&nbsp;Físico-Matemático</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Histórico-Social">&nbsp;Histórico-Social</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Químico-Biológico">&nbsp;Químico-Biológico</label>
-        <br><br>
-
-        <label><b>Nombre de la Escuela:</b>&nbsp;&nbsp;
-            <input type="text" class="escuelas" name="nom_prepa" id="preparatoria" onkeypress="return soloValidos(event);" onpaste="return false;">
-        </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><b>Promedio:</b>&nbsp;&nbsp;
-            <input type="text" class="promedio" id="prom_prepa" name="prom_prepa" step="any" min="6.0" max="10" maxlength="3" onclick="javascript:borrarProm_Bach();" onkeypress="return NumDecimal(event);">
-        </label>
-        <br><br><br><br>
-
-        <b class="carreras">Carrera:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <label class="carreras" title="Ingeniería en Gestión Empresarial"><input type="radio" name="carrera" value="IGEM" >IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería Industrial"><input type="radio" name="carrera" value="IIND">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería en Sistemas Computacionales"><input type="radio" name="carrera" value="ISIC">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería Biomédica"><input type="radio" name="carrera" value="IBIO">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería en Innovación Agrícola Sustentable"><input type="radio" name="carrera" value="IIAS">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería en Energías Renovables"><input type="radio" name="carrera" value="IENR">IENR</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería Forestal"><input type="radio" name="carrera" value="IENR">IFOR</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="carreras" title="Ingeniería en Agronomía"><input type="radio" name="carrera" value="IENR">IAGR</label>
-        <br><br><br>
-
-        <div id="botones">
-            <input type="submit" value="REGISTRAR" class="boton">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="button" value="SALIR" class="boton" onclick="history.back();">
-        </div>
-        <br><br>
-
-        <h2>Has click en una de las siguientes carpetas, y para acceder utiliza tu Núm. de Ficha:</h2>
-        <br><br>
-        <div class="areas">
-            <a href="javascript:Confirmar_Acceso('pedagogia.html')"><img src="img/area_pedagogia.png" title="Área de Pedagogía" class="carpetas" id="carpeta1"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:Confirmar_Acceso('psicologia.html')"><img src="img/area_psicologia.png" title="Área de Psicología" class="carpetas" id="carpeta2"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:Confirmar_Acceso('medica.html')"><img src="img/area_medica.png" title="Área Médica" class="carpetas" id="carpeta3"></a>
-        </div>
-    </form>
-
-    <div class="areas-acceso" id="acceso_area">
-        <div id="areas">
-            <form action="" id="contenido_area" name="contenido_area">
-                <input type="password"
-                       placeholder="Ingresa Núm. de Ficha"
-                       onkeypress="return nip(event);"
-                       onblur="Poner_Ceros(this)"
-                       onclick="loginArea();"
-                       maxlength="4"
-                       id="login_areas"
-                       name="login"
-                       class="area_acceso">
-                <br><br>
-                <button class="botones_acceso" onclick="setLogin(event);">ENTRAR</button>
-                <button class="botones_acceso" onclick="Cerrar_Acceso(event);">CANCELAR</button>
-            </form>
+    <label for="localidad">Localidad:</label>&nbsp;
+    <input type="text" name="localidad" id="localidad" placeholder="OPCIONAL">
+    <br><br>
+    <div id="estados">
+        <div id="2">
+            <label for="nom_estado">Nombre del Estado:</label>&nbsp;
+            <select name="nom_estado" id="nom_estado">
+                <option value="">--- Seleccione: ---</option>
+                <option value="Ags.">Aguascalientes</option>
+                <option value="B.C.">Baja California</option>
+                <option value="B.C.S.">Baja California Sur</option>
+                <option value="Camp.">Campeche</option>
+                <option value="Chis.">Chiapas</option>
+                <option value="Chih.">Chihuahua</option>
+                <option value="Coah.">Coahuila de Zaragoza</option>
+                <option value="Col.">Colima</option>
+                <option value="CDMX.">Ciudad de México</option>
+                <option value="Dgo.">Durango</option>
+                <option value="Gto.">Guanajuato</option>
+                <option value="Gro.">Guerrero</option>
+                <option value="Hgo.">Hidalgo</option>
+                <option value="Jal.">Jalisco</option>
+                <option value="Edo. Méx.">Estado de México</option>
+                <option value="Mor.">Morelos</option>
+                <option value="Nay.">Nayarit</option>
+                <option value="N.L.">Nuevo León</option>
+                <option value="Oax.">Oaxaca</option>
+                <option value="Pue.">Puebla</option>
+                <option value="Qro.">Querétaro</option>
+                <option value="Q.R.">Quintana Roo</option>
+                <option value="S.L.P.">San Luis Potosí</option>
+                <option value="Sin.">Sinaloa</option>
+                <option value="Son.">Sonora </option>
+                <option value="Tab.">Tabasco</option>
+                <option value="Tamps.">Tamaulipas</option>
+                <option value="Tlax.">Tlaxcala</option>
+                <option value="Ver.">Veracruz de Ignacio de la Llave</option>
+                <option value="Yuc.">Yucatán</option>
+                <option value="Zac.">Zacatecas</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="nom_municipio">Nombre del Municipio:</label>&nbsp;
+            <input type="text" name="nom_municipio" id="nom_municipio">
+            <br><br>
         </div>
     </div>
+    <br><br>
 
-    <div class="areas-acceso" id="acceso_posttest">
-        <div id="aadd_posttest">
-            <form id="contenido_posttest">
-                <input type="text"
-                       placeholder="Ingresa tu Núm. de Control"
-                       onkeypress="return nip(event);"
-                       maxlength="7"
-                       class="area_acceso"
-                       required>
-                <br><br>
-                <input type="button" value="ENTRAR" class="botones_acceso" onclick="history.back()">&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" value="CANCELAR" class="botones_acceso" onclick="Accesol_Post_Test()">
-            </form>
-        </div>
+    <h2>Escuela de Procedencia:</h2>
+    <br>
+
+    <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTIS">&nbsp;CBTIS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CBTA">&nbsp;CBTA</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="COBACH">&nbsp;COBACH</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="CECYTE">&nbsp;CECYTE</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="PREPARATORIA">&nbsp;PREPARATORIA</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="radio" name="preparatoria" onchange="onChangeRadio('hide-otra_prepa')" value="SISTEMA ABIERTO">&nbsp;SISTEMA ABIERTO</label>
+    <br><br>
+    <label><input type="radio" name="preparatoria" value="otro" onchange="onChangeRadio('show-otra_prepa')">&nbsp;OTRO:</label>&nbsp;
+
+    <input type="text" name="otro_bach" placeholder="Especifique..." id="otro_bach" class="otra_prepa">
+    <br><br>
+
+    <b>Tipo de Bachillerato:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Económico-Administrativo">&nbsp;Económico-Administrativo</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Físico-Matemático">&nbsp;Físico-Matemático</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Histórico-Social">&nbsp;Histórico-Social</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><input type="checkbox" class="tipo_area" name="tipo_area[]" value="Químico-Biológico">&nbsp;Químico-Biológico</label>
+    <br><br>
+
+    <label><b>Nombre de la Escuela:</b>&nbsp;&nbsp;
+        <input type="text" class="escuelas" name="nom_prepa" id="preparatoria" onkeypress="return soloValidos(event);" onpaste="return false;">
+    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label><b>Promedio:</b>&nbsp;&nbsp;
+        <input type="text" class="promedio" id="prom_prepa" name="prom_prepa" step="any" min="6.0" max="10" maxlength="3" onclick="javascript:borrarProm_Bach();" onkeypress="return NumDecimal(event);">
+    </label>
+    <br><br><br><br>
+
+    <b class="carreras">Carrera:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <label class="carreras" title="Ingeniería en Gestión Empresarial"><input type="radio" name="carrera" value="IGEM" >IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="carreras" title="Ingeniería Industrial"><input type="radio" name="carrera" value="IIND">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="carreras" title="Ingeniería en Sistemas Computacionales"><input type="radio" name="carrera" value="ISIC">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="carreras" title="Ingeniería Biomédica"><input type="radio" name="carrera" value="IBIO">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="carreras" title="Ingeniería en Innovación Agrícola Sustentable"><input type="radio" name="carrera" value="IIAS">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="carreras" title="Ingeniería en Energías Renovables"><input type="radio" name="carrera" value="IENR">IENR</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="carreras" title="Ingeniería Forestal"><input type="radio" name="carrera" value="IENR">IFOR</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="carreras" title="Ingeniería en Agronomía"><input type="radio" name="carrera" value="IENR">IAGR</label>
+    <br><br><br>
+
+    <div id="botones">
+        <input type="submit" value="REGISTRAR" class="boton">
+        <input type="button" value="SALIR" class="boton" onclick="history.back();">
     </div>
+    <br><br>
+
+    <h2>Has click en una de las siguientes carpetas, y para acceder utiliza tu Núm. de Ficha:</h2>
+    <br><br>
+    <div class="areas">
+        <a href="javascript:Confirmar_Acceso('pedagogia.html')"><img src="img/area_pedagogia.png" title="Área de Pedagogía" class="carpetas" id="carpeta1"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="javascript:Confirmar_Acceso('psicologia.html')"><img src="img/area_psicologia.png" title="Área de Psicología" class="carpetas" id="carpeta2"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="javascript:Confirmar_Acceso('medica.html')"><img src="img/area_medica.png" title="Área Médica" class="carpetas" id="carpeta3"></a>
+    </div>
+</form>
+
+<div class="areas-acceso" id="acceso_area">
+    <div id="areas">
+        <form action="" id="contenido_area" name="contenido_area">
+            <input type="password"
+                   placeholder="Ingresa Núm. de Ficha"
+                   onkeypress="return nip(event);"
+                   onblur="Poner_Ceros(this)"
+                   onclick="loginArea();"
+                   maxlength="4"
+                   id="login_areas"
+                   name="login"
+                   class="area_acceso">
+            <br><br>
+            <button class="botones_acceso" onclick="setLogin(event);">ENTRAR</button>
+            <button class="botones_acceso" onclick="Cerrar_Acceso(event);">CANCELAR</button>
+        </form>
+    </div>
+</div>
+
+<div class="areas-acceso" id="acceso_posttest">
+    <div id="aadd_posttest">
+        <form id="contenido_posttest">
+            <input type="text"
+                   placeholder="Ingresa tu Núm. de Control"
+                   onkeypress="return nip(event);"
+                   maxlength="7"
+                   class="area_acceso"
+                   required>
+            <br><br>
+            <input type="button" value="ENTRAR" class="botones_acceso" onclick="history.back()">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="CANCELAR" class="botones_acceso" onclick="Accesol_Post_Test()">
+        </form>
+    </div>
+</div>
 </body>
 </html>

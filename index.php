@@ -21,14 +21,15 @@ require "php/BD_Connect.php";
     </head>
     <body>
         <h1>Coordinación Institucional de Tutoría Académica</h1>
-        <img src="img/logo_itsp2.png" title="Instituto Tecnológico Superior P'urhépecha" id="itsp_logo">
-        <br><br><br>
+        <img src="img/logo_cita.png" title="Tutoría Académica" id="itsp_logo">
+        <br>
 
-        <a href="caracterizacion.html"><input type="button" value="ALUMNOS" class="boton_acceso" title="Formularios para Alumnos de Nuevo Ingreso"></a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:Confirmar_Acceso()"><input type="button" value="TRAYECTORIAS" class="boton_acceso" title="Acceso para Tutores"></a>&nbsp;&nbsp;&nbsp;
-        <a href="canalizacion.html"><input type="button" value="CANALIZACIÓN" class="boton_acceso" title="Canalizar Problema Presentado"></a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:Confirmar_Accesol_Reportes()"><input type="button" value="REALIZAR REPORTES" class="boton_acceso" title="Generar Reporte Parcial o Final"></a>&nbsp;&nbsp;&nbsp;
+        <a href="caracterizacion.html"><input type="button" value="ALUMNOS" class="boton_acceso" title="Formularios para Alumnos de Nuevo Ingreso"></a>
+        <a href="javascript:Confirmar_Acceso()"><input type="button" value="TRAYECTORIAS" class="boton_acceso" title="Acceso para Tutores"></a>
+        <a href="canalizacion.html"><input type="button" value="CANALIZACIÓN" class="boton_acceso" title="Canalizar Problema Presentado"></a>
+        <a href="javascript:Confirmar_Accesol_Reportes()"><input type="button" value="REALIZAR REPORTES" class="boton_acceso" title="Generar Reporte Parcial o Final"></a>
         <a href="javascript:accesoCITA()"><input type="button" value="PERSONAL DE LA CITA" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
+        <a href=""><input type="button" value="SALIR" class="boton_acceso-salir" title="Salir de la Aplicación"></a>
         <br><br><br>
 
         <div id="significado">
