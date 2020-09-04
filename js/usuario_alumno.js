@@ -17,7 +17,12 @@ switch (mostrar.carrera) {
     case 'IIAS': carrera = "Ingeniería en Innovación Agrícola Sustentable";
         break;
     case 'IENR': carrera = "Ingeniería en Energías Renovables";
-        break;}
+        break;
+    case 'IFOR': carrera = "Ingeniería Forestal";
+        break;
+    case 'IAGR': carrera = "Ingeniería en Agronomía";
+        break;
+}
 
 document.getElementById("carrera").innerText = "Carrera: " + carrera + ".";
 document.getElementById("generacion").innerText = "Generación: " + mostrar.generacion + ".";

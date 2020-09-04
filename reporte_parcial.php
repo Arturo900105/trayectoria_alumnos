@@ -1,3 +1,6 @@
+<?php
+require "php/BD_Connect.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,9 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
-    <script src="js/numeros.js"></script>
-    <script src="js/decimales.js"></script>
     <script src="js/alerta_reportparcial.js"></script>
+
 </head>
 <body>
     <div class="logos_reporte">
@@ -21,6 +23,7 @@
         <img src="img/logo_tecnm.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <img src="img/escudo_michoacan.png" class="logos">
     </div>
+
         <h1>INSTITUTO TECNOLÓGICO SUPERIOR P’URHÉPECHA
             <br>DIRECCIÓN ACADÉMICA
             <br>PROGRAMA INSTITUCIONAL DE TUTORÍAS
@@ -38,14 +41,24 @@
             <br><br>
 
             <b>REPORTE:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label>1<input type="radio" name="num_reporte"></label>&nbsp;&nbsp;
-            <label>2<input type="radio" name="num_reporte"></label>&nbsp;&nbsp;
-            <label>3<input type="radio" name="num_reporte"></label>
+            <label>1<input type="radio" name="num_reporte" value="1"></label>&nbsp;&nbsp;
+            <label>2<input type="radio" name="num_reporte" value="2"></label>&nbsp;&nbsp;
+            <label>3<input type="radio" name="num_reporte" value="3"></label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DE TUTORÍAS. </b>
         </div>
         <br><br>
 
-        <label>Nombre del Tutor:&nbsp;&nbsp;<input type="text" id="nom_tutor" name="nom_tutor"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="nom_tutor" id="nom_tutor">
+            <option value="">--- Nombre del Tutor: ---</option>
+            <?php
+            $consulta = "SELECT * FROM tutor";
+            $resultado = mysqli_query($connect, $consulta);
+            while ($tutor = $resultado->fetch_assoc()) {
+                echo "<option value='".$tutor['nombre']." ".$tutor['apellido']."_".$tutor['area_de']."'>".$tutor['nombre']." ".$tutor['apellido']."</option>";
+            }
+            ?>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
         <label>Semestre:
             <select name="semestre" id="semestre" class="sem_grup">
                 <option value="">-----</option>
@@ -73,175 +86,166 @@
         </label>
         <br><br>
 
-        <select name="programap" id="programap">
-            <option value="">--- Programa: ---</option>
-            <option class="programap" value="IGEM">Ingeniería en Gestión Empresarial</option>
-            <option class="programap" value="IIND">Ingeniería Industrial</option>
-            <option class="programap" value="ISIC">Ingeniería en Sistemas Computacionales</option>
-            <option class="programap" value="IBIO">Ingeniería Biomédica</option>
-            <option class="programap" value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
-            <option class="programap" value="IENR">Ingeniería en Energías Renovables</option>
-            <option class="programap" value="IFOR">Ingeniería Forestal</option>
-            <option class="programap" value="IAGR">Ingeniería en Agronomía</option>
-        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="programap" id="programap" placeholder="--- Programa: ---" value="" readonly>
 
-        <label>Núm. total de tutorados asignados:&nbsp;&nbsp;<input type="text" id="num_tutoradop" name="num_tutoradop"></label>
+        <label>Núm. Total de tutorados asignados:&nbsp;&nbsp;<input type="text"
+                                                          id="num_tutoradop"
+                                                          name="num_tutoradop"
+                                                          title="Total de Alumnos equivalentes al 100%."
+                                                          minlength="1"
+                                                          maxlength="2"></label>
+        <br><br>
+
         <p>Núm./Porcentaje de estudiantes no acreditados (Por asignatura):</p>
         <table>
             <tr>
-                <th class="num_materia">#</th>
-                <th class="nom_materia">Nombre de la Asignatura:</th>
+                <th colspan="2" class="nom_materia">Nombre de la Asignatura:</th>
                 <th class="materia_reprobada">Núm.</th>
                 <th class="porcentaje_reprobado">%</th>
             </tr>
             <tr>
                 <td class="num_materia">1.-</td>
-                <td class="nom_materia"><input type="text" class="materia" name="materia1"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia1" value=""></td>
                 <td class="materia_reprobada"><input type="text"
+                                                     id="num_materia1"
                                                      class="num-materia"
-                                                     pattern="[0-9]{1}{2}"
-                                                     onkeypress="return solo_numero(event);"
                                                      minlength="1"
                                                      maxlength="2"
                                                      name="materia_rep1"></td>
 
                 <td class="porcentaje_reprobado"><input type="text"
+                                                        id="por_materia1"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        name="por_materia1"
-                                                        onkeypress="return NumDecimal(event);"></td>
+                                                        readonly
+                                                        name="por_materia1"></td>
             </tr>
             <tr>
                 <td class="num_materia">2.-</td>
-                <td class="nom_materia"><input type="text" class="materia" name="materia2"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia2" value=""></td>
                 <td class="materia_reprobada"><input type="text"
+                                                     id="num_materia2"
                                                      class="num-materia"
-                                                     pattern="[0-9]{1}{2}"
-                                                     onkeypress="return solo_numero(event);"
                                                      minlength="1"
                                                      maxlength="2"
                                                      name="materia_rep2"></td>
 
                 <td class="porcentaje_reprobado"><input type="text"
+                                                        id="por_materia2"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        name="por_materia2"
-                                                        onkeypress="return NumDecimal(event);"></td>
+                                                        readonly
+                                                        name="por_materia2"></td>
             </tr>
             <tr>
                 <td class="num_materia">3.-</td>
-                <td class="nom_materia"><input type="text" class="materia" name="materia3"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia3" value=""></td>
                 <td class="materia_reprobada"><input type="text"
+                                                     id="num_materia3"
                                                      class="num-materia"
-                                                     pattern="[0-9]{1}{2}"
-                                                     onkeypress="return solo_numero(event);"
                                                      minlength="1"
                                                      maxlength="2"
                                                      name="materia_rep3"></td>
 
                 <td class="porcentaje_reprobado"><input type="text"
+                                                        id="por_materia3"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        name="por_materia3"
-                                                        onkeypress="return NumDecimal(event);"></td>
+                                                        readonly
+                                                        name="por_materia3"></td>
             </tr>
             <tr>
                 <td class="num_materia">4.-</td>
-                <td class="nom_materia"><input type="text" class="materia" name="materia4"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia4" value=""></td>
                 <td class="materia_reprobada"><input type="text"
+                                                     id="num_materia4"
                                                      class="num-materia"
-                                                     pattern="[0-9]{1}{2}"
-                                                     onkeypress="return solo_numero(event);"
                                                      minlength="1"
                                                      maxlength="2"
                                                      name="materia_rep4"></td>
 
                 <td class="porcentaje_reprobado"><input type="text"
+                                                        id="por_materia4"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        name="por_materia4"
-                                                        onkeypress="return NumDecimal(event);"></td>
+                                                        readonly
+                                                        name="por_materia4"></td>
             </tr>
             <tr>
                 <td class="num_materia">5.-</td>
-                <td class="nom_materia"><input type="text" class="materia" name="materia5"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia5" value=""></td>
                 <td class="materia_reprobada"><input type="text"
+                                                     id="num_materia5"
                                                      class="num-materia"
-                                                     pattern="[0-9]{1}{2}"
-                                                     onkeypress="return solo_numero(event);"
                                                      minlength="1"
                                                      maxlength="2"
                                                      name="materia_rep5"></td>
 
                 <td class="porcentaje_reprobado"><input type="text"
+                                                        id="por_materia5"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        name="por_materia5"
-                                                        onkeypress="return NumDecimal(event);"></td>
+                                                        readonly
+                                                        name="por_materia5"></td>
             </tr>
             <tr>
                 <td class="num_materia">6.-</td>
-                <td class="nom_materia"><input type="text" class="materia" name="materia6"></td>
+                <td class="nom_materia"><input type="text" class="materia" name="materia6" value=""></td>
                 <td class="materia_reprobada"><input type="text"
+                                                     id="num_materia6"
                                                      class="num-materia"
-                                                     pattern="[0-9]{1}{2}"
-                                                     onkeypress="return solo_numero(event);"
                                                      minlength="1"
                                                      maxlength="2"
                                                      name="materia_rep6"></td>
 
                 <td class="porcentaje_reprobado"><input type="text"
+                                                        id="por_materia6"
                                                         class="por-materia"
                                                         maxlength="5"
-                                                        name="por_materia6"
-                                                        onkeypress="return NumDecimal(event);"></td>
+                                                        readonly
+                                                        name="por_materia6"></td>
             </tr>
         </table>
         <br>
 
-        <label>Reuniones efectuadas en el periodo:&nbsp;&nbsp;&nbsp;<input type="text" class="reuniones"></label>
+        <label>Reuniones efectuadas en el periodo:<input type="text" name="reuniones" class="cajas_numrbd" minlength="1" maxlength="3"></label>
+        <label id="desertados">Número de estudiantes que desertaron:<input type="text" name="desertados" class="cajas_numrbd" minlength="1" maxlength="3"></label>
         <br><br>
 
-        <label>Número de estudiantes becarios y tipo de beca:&nbsp;&nbsp;&nbsp;<input type="text" class="becarios"></label>
-        <br><br>
-
-        <label>Número de estudiantes que desertaron:&nbsp;&nbsp;&nbsp;<input type="text" class="desertaron"></label>
+        <label>Número de estudiantes becarios:<input type="text" name="num_becados" class="cajas_numrbd" minlength="1" maxlength="3"></label>
+        <input type="text" id="becarios" name="becarios" placeholder="Tipo de Beca:">
         <br><br>
 
         <table>
             <tr>
                 <td class="nom_canalizaciones">Número de canalizaciones a asesoría pares:</td>
                 <td class="num_canalizaciones"><input type="text"
-                                                      class="canalizacion"
-                                                      pattern="[0-9]{1}{2}"
-                                                      onkeypress="return solo_numero(event);"
+                                                      name="num_canalip1"
+                                                      class="num_canalip"
                                                       minlength="1"
                                                       maxlength="2"></td>
             </tr>
             <tr>
                 <td class="nom_canalizaciones">Número de canalizaciones al área de psicología:</td>
                 <td class="num_canalizaciones"><input type="text"
-                                                      class="canalizacion"
-                                                      pattern="[0-9]{1}{2}"
-                                                      onkeypress="return solo_numero(event);"
+                                                      name="num_canalip2"
+                                                      class="num_canalip"
                                                       minlength="1"
                                                       maxlength="2"></td>
             </tr>
             <tr>
                 <td class="nom_canalizaciones">Número de canalizaciones al consultorio médico:</td>
                 <td class="num_canalizaciones"><input type="text"
-                                                      class="canalizacion"
-                                                      pattern="[0-9]{1}{2}"
-                                                      onkeypress="return solo_numero(event);"
+                                                      name="num_canalip3"
+                                                      class="num_canalip"
                                                       minlength="1"
                                                       maxlength="2"></td>
             </tr>
             <tr>
                 <td class="nom_canalizaciones">Número de canalizaciones al área de pedagogía:</td>
                 <td class="num_canalizaciones"><input type="text"
-                                                      class="canalizacion"
-                                                      pattern="[0-9]{1}{2}"
-                                                      onkeypress="return solo_numero(event);"
+                                                      name="num_canalip4"
+                                                      class="num_canalip"
                                                       minlength="1"
                                                       maxlength="2"></td>
             </tr>
@@ -249,24 +253,24 @@
         <br>
 
         <label for="problematica">Problemática general detectada en el periodo:</label>
-        <br><textarea class="area_texto" name="" id="problematica" cols="70" rows="2"></textarea>
+        <br><textarea title="Problemática general detectada en el periodo" class="area_texto" name="problematica" cols="70" rows="2"></textarea>
         <br><br>
 
         <label for="necesidades">Necesidades tutoriales específicas:</label>
-        <br><textarea class="area_texto" name="" id="necesidades" cols="70" rows="2"></textarea>
+        <br><textarea title="Necesidades tutoriales específicas" class="area_texto" name="necesidades" cols="70" rows="2"></textarea>
         <br><br>
 
         <label for="desertores">En caso de existir desertores describir el motivo:</label>
-        <br><textarea class="area_texto" name="" id="desertores" cols="70" rows="2"></textarea>
+        <br><textarea title="En caso de existir desertores describir el motivo" class="area_texto" name="desertores" cols="70" rows="2"></textarea>
         <br><br>
 
         <label for="rec_obs">Recomendaciones/Observaciones:</label>
-        <br><textarea class="area_texto" name="" id="rec_obs" cols="70" rows="2"></textarea>
+        <br><textarea title="Recomendaciones/Observaciones" class="area_texto" name="recobser" cols="70" rows="2"></textarea>
         <br><br>
 
         <div class="botones_reporte">
             <input type="submit" value="GUARDAR" class="bot-generadores">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="documentos/reporte_parcial.php"><input type="button" value="IMPRIMIR" class="bot-generadores"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="IMPRIMIR" id="imprimirRP" class="bot-generadores">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="SALIR" class="bot-generadores" onclick="history.back()">
         </div>
     </form>

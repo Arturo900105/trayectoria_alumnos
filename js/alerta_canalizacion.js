@@ -94,6 +94,163 @@ $(document).ready(function () {
     })
 
 
+    //Evento del botón IMPRIMIR
+    $("#imprimir").on("click", function (){
+        if ($('#nom_alumno').val().trim() === "") {
+            Swal.fire({title: "Porfavor,\nIngrese el nombre del Estudiante",
+                icon: "warning",
+                confirmButtonColor: '#000155',
+                backdrop: "rgba(0,1,85,0.7)"});
+            return false;
+        }
+
+        if (!$("input[name='carrera']:radio").is(":checked")) {
+            Swal.fire({title: "Porfavor,\nSeleccione una Carrera",
+                icon: "warning",
+                confirmButtonColor: '#000155',
+                backdrop: "rgba(0,1,85,0.7)"});
+            return false;
+        }
+
+        if ($('#num_control').val().trim() === "") {
+            Swal.fire({title: "Porfavor,\nIngrese el Número de Control",
+                icon: "warning",
+                confirmButtonColor: '#000155',
+                backdrop: "rgba(0,1,85,0.7)"});
+            return false;
+        }
+
+        if ($('#semestre').val().trim() === "") {
+            Swal.fire({title: "Porfavor,\nSeleccione el Semestre",
+                icon: "warning",
+                confirmButtonColor: '#000155',
+                backdrop: "rgba(0,1,85,0.7)"});
+            return false;
+        }
+
+        if (!$("input[name='tipo_canalizacion']:radio").is(":checked")) {
+            Swal.fire({title: "Porfavor,\nEscoja el Tipo de Canalización",
+                icon: "warning",
+                confirmButtonColor: '#000155',
+                backdrop: "rgba(0,1,85,0.7)"});
+            return false;
+        } else if ($("#otra_canalizacion:radio").is(":checked")) {
+            if ($('#nombre_canalizacion').val().trim() === ""){
+                Swal.fire({title: "Porfavor,\nEscriba el Tipo de Canalización",
+                    icon: "warning",
+                    confirmButtonColor: '#000155',
+                    backdrop: "rgba(0,1,85,0.7)"});
+                return false;
+            }
+        }
+
+        if ($('#problematica').val().trim() === "") {
+            Swal.fire({
+                icon: "warning",
+                title: "Porfavor,\nDescriba el problema canalizado",
+                showClass: {
+                    popup: 'animate__animated animate__fadeInLeft'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutRight'
+                },
+                confirmButtonColor: '#000155',
+            })
+            return false;
+        }
+
+        if ($('#firma1').val().trim() === "") {
+            Swal.fire({
+                icon: "warning",
+                title: "Ingrese el nombre del\nTutor o Profesor\nque firmará",
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutDown'
+                }
+            })
+            return false;
+        }
+
+        if ($('#firma2').val().trim() === "") {
+            Swal.fire({
+                icon: "warning",
+                title: "Ingrese el nombre\ndel encargado(a) de la\nCoordinación de Tutorías\nque firmará",
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutDown'
+                }
+            })
+            return false;
+        }
+
+        if ($('#firma3').val().trim() === "") {
+            Swal.fire({
+                icon: "warning",
+                title: "Ingrese el nombre\ndel encargado(a) del\nÁrea Canalizada\nque firmará",
+                showClass: {
+                    popup: 'animate__animated animate__fadeInUp'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            })
+            return false;
+        }
+
+        Swal.fire({
+            icon: "question",
+            title: "¿Guardar Canalización?",
+            text: "Después, no podrá realizar cambios en el formato",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#19980b',
+            cancelButtonColor: '#910018',
+            confirmButtonText: 'GUARDAR',
+            cancelButtonText: 'CANCELAR',
+            backdrop: "rgba(35,220,0,0.7)"
+
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: "php/form_canalizacion.php",
+                    type: 'POST',
+                    data: form_canalizacion.serialize(),
+                    success: function (folio) {
+                        Cookies3 = Cookies.noConflict();
+                        Cookies3.set('numFolio', folio);
+
+                        swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: "CANALIZACIÓN GUARDADA EXITOSAMENTE!!!",
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(()=>{
+                            document.location = 'documentos/canalizacion.php?folio='+ folio;
+                        });
+                    },
+                    error: function (error) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: (error.responseText),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                });
+                //form_canalizacion[0].reset();
+                //$("#fecha-hoy").val(dia+"-"+mes+"-"+year)
+            }
+        });
+    })
+
+    
+    //Evento del botón GUARDAR
     form_canalizacion.submit(function (e) {
         e.preventDefault()
 
@@ -230,7 +387,9 @@ $(document).ready(function () {
                             title: "CANALIZACIÓN GUARDADA EXITOSAMENTE!!!",
                             showConfirmButton: false,
                             timer: 1500
-                        })
+                        }).then(()=>{
+                            history.back();
+                        });
                     },
                     error: function (error) {
                         swal.fire({
@@ -242,8 +401,8 @@ $(document).ready(function () {
                         })
                     }
                 });
-                //form_canalizacion[0].reset();
-                //$("#fecha-hoy").val(dia+"-"+mes+"-"+year)
+                form_canalizacion[0].reset();
+                $("#fecha-hoy").val(dia+"-"+mes+"-"+year)
             }
         });
 

@@ -42,8 +42,8 @@ h2{
 
 #nom_tutor{
     text-align: center;
-    width: 20em;
-    height: 1.5em;
+    width: 30em;
+    height: 2em;
     font-size: 15px;
 }
 .sem_grup{
@@ -54,8 +54,9 @@ h2{
 }
 
 #programap{
+    margin-right: 2em;
     text-align: center;
-    height: 2em;
+    height: 1.5em;
     width: 25em;
     font-size: 15px;
 }
@@ -122,20 +123,23 @@ th{
     text-align: center;
     font-size: 15px;
     padding: 4px;
+    color: red;
 }
 
-.reuniones{
-    width: 5em;
+.cajas_numrbd{
+    margin-left: 1em;
+    width: 4em;
     height: 1.5em;
     text-align: center;
 }
-.becarios{
-    width: 25em;
-    height: 1.5em;
-    text-align: center;
+
+#desertados{
+    margin-left: 3em;
 }
-.desertaron{
-    width: 5em;
+
+#becarios{
+    margin-left: 1.5em;
+    width: 30em;
     height: 1.5em;
     text-align: center;
 }
@@ -149,7 +153,7 @@ th{
     text-align: center;
 }
 
-.canalizacion{
+.num_canalip{
     width: 3em;
     height: 1.5em;
     text-align: center;

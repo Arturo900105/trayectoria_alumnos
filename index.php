@@ -21,7 +21,7 @@ require "php/BD_Connect.php";
     </head>
     <body>
         <h1>Coordinación Institucional de Tutoría Académica</h1>
-        <img src="img/logo_cita.png" title="Tutoría Académica" id="itsp_logo">
+        <img src="img/logo_cita2.png" title="Tutoría Académica" id="itsp_logo">
         <br>
 
         <a href="caracterizacion.html"><input type="button" value="ALUMNOS" class="boton_acceso" title="Formularios para Alumnos de Nuevo Ingreso"></a>
@@ -65,11 +65,11 @@ require "php/BD_Connect.php";
         <div class="modal-fondo" id="ventana_modal_reportes">
             <div id="v_modal_reportes">
                 <div id="contenido_modal_reportes">
-                    <a href="reporte_parcial.html"><input type="button" value="REPORTE PARCIAL" class="login_reportes"></a>
+                    <a href="reporte_parcial.php"><input type="button" value="REPORTE PARCIAL" class="login_reportes"></a>
                     <br><br>
-                    <a href="reporte_final.html"><input type="button" value="REPORTE FINAL" class="login_reportes"></a>
+                    <a href="reporte_final.php"><input type="button" value="REPORTE FINAL" class="login_reportes"></a>
                     <br><br>
-                    <input type="button" value="SALIR" class="login_reportes" onclick="Cerrar_Accesol_Reportes()">
+                    <input type="button" value="SALIR" id="reportes_salir" class="login_reportes" onclick="Cerrar_Accesol_Reportes()">
                 </div>
             </div>
         </div>

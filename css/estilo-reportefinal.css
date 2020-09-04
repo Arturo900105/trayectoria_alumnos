@@ -31,47 +31,176 @@ h2{
 }
 
 .primerf{
+    margin: 0 0 1em;
     text-align: center;
 }
 
 #periodofinal{
-    width: 12em;
+    width: 20em;
     height: 2em;
     text-align: center;
     font-size: 15px;
 }
 
 #nom_tutorf{
+    margin-right: 1.5em;
     text-align: center;
-    width: 20em;
-    height: 1.5em;
+    width: 30em;
+    height: 2em;
     font-size: 15px;
 }
 
 .sem_grupf{
     text-align: center;
-    width: 4em;
-    height: 1.7em;
+    width: 5em;
+    height: 2em;
     font-size: 15px;
 }
 
+#semestref{
+    margin-right: 1.5em;
+}
+
 #programaf{
+    margin-right: 2em;
     text-align: center;
-    height: 2em;
+    height: 1.5em;
     width: 25em;
     font-size: 15px;
 }
 
-#num_tutorado{
+#num_tutoradof{
+    margin-left: 5px;
     text-align: center;
     height: 1.5em;
     width: 4em;
     font-size: 15px;
 }
 
+table, th, td{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    color: #000000;
+    margin: 0 auto;
+    font-size: 15px;
+}
 
+th{
+    height: 2em;
+    color: black;
+    background-color: #ff7c10;
+}
 
+.num_materia{
+    width: 3em;
+    text-align: center;
+}
+
+.nom_materia{
+    width: auto;
+    text-align: center;
+}
+
+.materiaf{
+    width: 20em;
+    height: 1.2em;
+    text-align: justify;
+    font-size: 15px;
+    padding: 4px;
+    font-family: Arial;
+}
+
+.materia_reprobada{
+    width: auto;
+    text-align: center;
+}
+
+.num_materiaf{
+    width: 3em;
+    height: 1.2em;
+    text-align: center;
+    font-size: 15px;
+    padding: 4px;
+}
+
+.porcentaje_reprobado{
+    width: auto;
+    text-align: center;
+}
+
+.por_materiaf{
+    width: 3em;
+    height: 1.2em;
+    text-align: center;
+    font-size: 15px;
+    padding: 4px;
+    color: red;
+}
+
+.cajasf_numrbd{
+    margin-left: 1em;
+    width: 4em;
+    height: 1.5em;
+    text-align: center;
+}
+
+#desertadosf{
+    margin-left: 3em;
+}
+
+#becariosf{
+    margin-left: 1.5em;
+    width: 30em;
+    height: 1.5em;
+    text-align: center;
+}
+
+.nom_canalizaciones{
+    width: 25em;
+}
+
+.num_canalizaciones{
+    width: auto;
+    text-align: center;
+}
+
+.num_canalif{
+    width: 3em;
+    height: 1.5em;
+    text-align: center;
+    font-size: 15px;
+}
+
+.area_texto{
+    text-align: justify;
+    margin: 1em auto 0;
+    display: block;
+    font-size: 17px;
+    font-family: Arial;
+    padding: 5px 5px;
+}
+
+.respuesta_tutores{
+    text-align: center;
+    font-size: 17px;
+    font-family: Arial;
+}
+
+.botones_reportef{
+    margin-top: 2em;
+    text-align: center;
+}
+
+.bot-generadoresf{
+    background-color: #453d3d;
+    width: 8em;
+    height: 2em;
+    color: white;
+    margin: 0 2em;
+    display:inline;
+}
 
 #base_reportef{
     text-align: center;
 }
+
