@@ -1,11 +1,12 @@
-let correo, area, tutoria, usuario;
-let alerta1, alerta2, alerta3;
+let correo, area, tutoria, usuario, formularioTutor, usuTutor, passTutor;
+let alerta1, alerta2, alerta3, paginaTutor = '';
 let mensaje1, mensaje2, mensaje3, mensaje4, mensaje5;
 
+
 function crearUsuario() {
-    correo = document.getElementById("email").value;
-    area = document.getElementById("area_de").value;
-    tutoria = document.getElementById("tipo-tutoria").value;
+    correo = $("#email").val()
+    area = $("#area_de").val()
+    tutoria = $("#tipo-tutoria").val()
 
     alerta1 = "Seleccione el tipo de Tutoría";
     alerta2 = "Seleccione una área";
@@ -73,19 +74,30 @@ function crearUsuario() {
     }
 
     usuario = correo.split('@')[0] + "." + tutoria.substring(undefined) + area.substring(undefined);
-    document.getElementById("usu-tutor").value = usuario;
 
-    document.getElementById("pass-tutor").value = generarPassword(10,'alf');
-    //console.log(usuario);
+    $("#usu-tutor").val(usuario)
+    $("#pass-tutor").val(generarPassword(10,'alf'))
 }
 
 
 $(document).ready(function () {
-    document.getElementById("formulario_tutor").reset();
-    $('#formulario_tutor').submit(function (e) {
+    formularioTutor = $('#formulario_tutor')
+    formularioTutor[0].reset()
+
+    $("#nombre_tutor").on("click", function (){
+        $("#nombre_tutor").val("")
+    })
+    $("#apepat_tutor").on("click", function (){
+        $("#apepat_tutor").val("")
+    })
+    $("#apemat_tutor").on("click", function (){
+        $("#apemat_tutor").val("")
+    })
+
+    formularioTutor.submit(function (e) {
         e.preventDefault();
 
-        area = document.getElementById("area_de").value;
+        area = $("#area_de").val()
         mensaje1 = "Por favor,\nGenere su Login";
         mensaje2 = "Por favor,\nIngrese su Nombre(s)";
         mensaje3 = "Por favor,\nIngrese su Apellido Paterno";
@@ -148,8 +160,8 @@ $(document).ready(function () {
         }
 
         Swal.fire({
-            title: "Registrar",
-            text: "Después, dentro de la paltaforma podrá modificar sus datos",
+            title: "¿REGISTRARSE?",
+            text: "Después, ya no podrá modificar sus datos hasta que acuda al área de Tutoria Académica",
             type: 'warning',
             icon: "question",
             showCancelButton: true,
@@ -183,19 +195,70 @@ $(document).ready(function () {
                             timer: 1500
                         })
                     }
-                });
-                document.getElementById("formulario_tutor").reset();
-                document.getElementById("area_de").value = area;
+                })
+
+                formularioTutor[0].reset()
+                $("#area_de").val(area)
             }
-        });
-
-    });
-});
+        })
 
 
-function borrarNombre() {document.getElementById("nombre_tutor").value = "";}
-function borrarApePat() {document.getElementById("apepat_tutor").value = "";}
-function borrarApeMat() {document.getElementById("apemat_tutor").value = "";}
 
 
-//document.getElementById("formulario_tutor").reset();
+    })
+
+    $("#login_tutor").on("click", function (e){
+        e.preventDefault();
+        usuTutor = $("[name = usuario]")
+        passTutor = $("[name = pass]")
+
+        if (usuTutor.val().trim() === "" && passTutor.val().trim() === "") {
+            Swal.fire({
+                title: "Ingrese su\nUsuario y Contraseña",
+                position: "top",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0)",
+                timer: 1000
+            });
+            return false;
+        } else if (usuTutor.val().trim() === "") {
+            Swal.fire({
+                title: "Ingrese su Usuario",
+                position: "top",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0)",
+                timer: 1000
+            });
+            return false;
+        } else if (passTutor.val().trim() === "") {
+            Swal.fire({
+                title: "Ingrese su Contraseña",
+                position: "top",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0)",
+                timer: 1000
+            });
+            return false;
+        } else {
+
+        }
+
+
+
+
+    })
+
+
+
+})
+
+
+function Confirmar_M_Acceso() {
+    $("#modal-acceso").css({display:"block"})
+}
+function Cerrar_M_Acceso() {
+    $("#modal-acceso").css({display:"none"})
+}

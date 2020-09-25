@@ -1,11 +1,12 @@
 <?php
 require "BD_Connect.php";
+require "fecha_hora.php";
 
     function zero_fill ($valor, $long = 0) {
         return str_pad($valor, $long, '0', STR_PAD_LEFT);
     }
 
-    $fecha = $_POST["fecha-hoy"];
+    $fecha = $_POST["fecha_hoy"];
     $nomAlumno = $_POST["nom_alumno"];
 
     $carrera = $_POST["carrera"];
@@ -88,12 +89,11 @@ require "BD_Connect.php";
     $firmaEAC = $_POST["firma_encargado"];
 
 
-    $t_canalizacion = "INSERT INTO canalizacion VALUES ('$folio','$fecha','$nomAlumno',
+    $t_canalizacion = "INSERT INTO canalizacion VALUES ('$folio','$fecha','$horaHoy','$nomAlumno',
                                                         '$igem','$iind','$isic','$ibio','$iias','$ienr','$ifor','$iagr',
                                                         '$numControl','$semestre','$cicloEscolar',
                                                         '$psicologica','$pedagogica','$ases_acad','$medica','$otraCanalizacion',
-                                                        '$descProblematica',
-                                                        '$firmaTP','$firmaCTPE','$firmaEAC')";
+                                                        '$descProblematica','$firmaTP','$firmaCTPE','$firmaEAC')";
     $qtcanali = mysqli_query($connect, $t_canalizacion);
 
     if (!$qtcanali){

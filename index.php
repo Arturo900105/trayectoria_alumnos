@@ -27,7 +27,7 @@ require "php/BD_Connect.php";
         <a href="caracterizacion.html"><input type="button" value="ALUMNOS" class="boton_acceso" title="Formularios para Alumnos de Nuevo Ingreso"></a>
         <a href="javascript:Confirmar_Acceso()"><input type="button" value="TRAYECTORIAS" class="boton_acceso" title="Acceso para Tutores"></a>
         <a href="canalizacion.html"><input type="button" value="CANALIZACIÓN" class="boton_acceso" title="Canalizar Problema Presentado"></a>
-        <a href="javascript:Confirmar_Accesol_Reportes()"><input type="button" value="REALIZAR REPORTES" class="boton_acceso" title="Generar Reporte Parcial o Final"></a>
+        <a href="javascript:Confirmar_Acceso_Reportes()"><input type="button" value="REALIZAR REPORTES" class="boton_acceso" title="Generar Reporte Parcial o Final"></a>
         <a href="javascript:accesoCITA()"><input type="button" value="PERSONAL DE LA CITA" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
         <a href=""><input type="button" value="SALIR" class="boton_acceso-salir" title="Salir de la Aplicación"></a>
         <br><br><br>
@@ -46,30 +46,30 @@ require "php/BD_Connect.php";
         </div>
 
         <div class="modal-fondo" id="ventana_modal">
-            <div id="v_modal">
+            <form id="v_modal" autocomplete="off">
                 <img src="img/candado.png" id="candado">
                 <div id="contenido_modal">
-                    <input type="text" placeholder="Ingresa tu Usuario" class="login">
+                    <input type="text" placeholder="Ingresa tu Usuario" id="usuarioTutor" class="login">
                     <br><br>
-                    <input type="password" placeholder="Ingresa tu Contraseña" class="login">
+                    <input type="password" placeholder="Ingresa tu Contraseña" id="passTutor" class="login" minlength="10" maxlength="10">
                 </div>
                 <br><br>
                 <div id="contenido_modal2">
-                    <a href="login-tutor.html"><input type="button" value="Nuevo Usuario" class="botones_login"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" value="ENTRAR" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" value="CANCELAR" class="botones_login" onclick="Cerrar_Accesol()">
+                    <a href="login-tutor.html"><input type="button" value="Nuevo Usuario" class="botones_login" id="nuevoTutor"></a>
+                    <input type="button" value="ENTRAR" class="botones_login" id="entrar_tutor">
+                    <input type="button" value="CANCELAR" class="botones_login" id="cerrarTutor">
                 </div>
-            </div>
+            </form>
         </div>
         
         <div class="modal-fondo" id="ventana_modal_reportes">
             <div id="v_modal_reportes">
                 <div id="contenido_modal_reportes">
-                    <a href="reporte_parcial.php"><input type="button" value="REPORTE PARCIAL" class="login_reportes"></a>
+                    <a href="reporte_parcial.php"><input type="button" value="REPORTE PARCIAL" class="login_reportes" id="reporteParcial"></a>
                     <br><br>
-                    <a href="reporte_final.php"><input type="button" value="REPORTE FINAL" class="login_reportes"></a>
+                    <a href="reporte_final.php"><input type="button" value="REPORTE FINAL" class="login_reportes" id="reporteFinal"></a>
                     <br><br>
-                    <input type="button" value="SALIR" id="reportes_salir" class="login_reportes" onclick="Cerrar_Accesol_Reportes()">
+                    <input type="button" value="SALIR" id="reporteSalir" class="login_reportes">
                 </div>
             </div>
         </div>
@@ -80,48 +80,46 @@ require "php/BD_Connect.php";
                 <div id="contenido_modal_nip">
                     <input type="text"
                            id="log_usu"
-                           placeholder="Ingrese su Usuario:"
-                           title="Ingresa el NIP de seguridad"
-                           class="login_nip"
-                           required>
+                           placeholder="Ingresa tu Usuario:"
+                           class="login_nip">
                     <br><br>
                     <input type="password"
                            id="log_pass"
-                           placeholder="Ingrese su NIP:"
+                           placeholder="Ingresa tu NIP:"
                            onkeypress="return nip(event);"
-                           title="Ingresa el NIP de seguridad"
                            maxlength="4"
-                           class="login_nip"
-                           required>
+                           class="login_nip">
                 </div>
                 <br><br>
 
                 <div id="contenido_modal_nip2">
-                    <a href="javascript:LogNipCITA()"><input type="button" value="Nuevo Usuario" class="botones_login"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" id="logarUsuario" value="ENTRAR" class="botones_login">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="javascript:LogNipCITA()"><input type="button" value="Nuevo Usuario" class="botones_login"></a>
+                    <input type="button" id="logarUsuario" value="ENTRAR" class="botones_login">
                     <input type="button" value="CANCELAR" class="botones_login" onclick="cerrarCITA()">
                 </div>
             </div>
         </div>
 
-        <div id="fondo_nip">
+        <div class="modal-fondo" id="fondo_nip">
             <div id="solo_nip">
                 <input type="password" placeholder="Ingrese NIP autorizado" id="pass-nip" maxlength="10">
-                <br><br>
+
                 <a href="javascript:confirmarLoginNip()">
                     <input type="button" value="ENTRAR" class="boton_formcita">
-                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
                 <input type="button" value="CANCELAR" class="boton_formcita" onclick="cerrarNipCITA()">
             </div>
         </div>
 
-        <div id="ventana_modal_cita">
+        <div class="modal-fondo" id="ventana_modal_cita">
             <div id="v_modal_cita">
-                <form id="formulario_cita">
-                    <h2>Formulario para el Personal de la
+                <form id="formulario_cita" autocomplete="off">
+                    <h2 class="form_pcita">Formulario para el Personal de la
                         <br>Coordinación Institucional de Tutoría Académica</h2>
-                    <input type="text" name="nombreCoord" id="nombreCoord" placeholder="Nombre(s):" class="cita_nombre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="apePat" id="apePat" placeholder="Apellido Paterno:" class="cita_apellidos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+
+                    <input type="text" name="nombreCoord" id="nombreCoord" placeholder="Nombre(s):" class="cita_nombre">
+                    <input type="text" name="apePat" id="apePat" placeholder="Apellido Paterno:" class="cita_apellidos">
                     <input type="text" name="apeMat" id="apeMat" placeholder="Apellido Materno:" class="cita_apellidos">
                     <br><br>
 
@@ -135,16 +133,16 @@ require "php/BD_Connect.php";
                         <option value="IENR">Ingeniería en Energías Renovables</option>
                         <option value="IFOR">Ingeniería Forestal</option>
                         <option value="IAGR">Ingeniería en Agronomía</option>
-                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </select>
                     <input type="email" placeholder="E-mail:" name="cita_email" id="cita_email">
-                    <br><br>
+                    <br>
 
-                    <input type="button" id="generarLogin" value="Generar Login" class="boton_formcita">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="usuarioCoord" id="usuarioCoord" placeholder="Usuario:" class="cita_login" readonly>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" id="generarLogin" value="Generar Login" class="boton_formcita">
+                    <input type="text" name="usuarioCoord" id="usuarioCoord" placeholder="Usuario:" class="cita_login" readonly>
                     <input type="text" name="passCoord" id="passCoord" placeholder="Contraseña:" class="cita_login" readonly>
-                    <br><br>
+                    <br>
 
-                    <input type="submit" value="REGISTRAR" class="boton_formcita">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="REGISTRAR" class="boton_formcita">
                     <a href="javascript:cerrarLoginNip()">
                         <input type="button" value="CANCELAR" class="boton_formcita" onclick="cerrarLoginNip()">
                     </a>
@@ -152,5 +150,9 @@ require "php/BD_Connect.php";
             </div>
         </div>
         <script src="js/pass_tutor.js"></script>
+
+        <div class="cite_name">
+            <cite>Hecha por ISIC. Gabriel Abraham Sánchez Fonseca</cite>
+        </div>
     </body>
 </html>

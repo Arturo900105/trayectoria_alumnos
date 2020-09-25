@@ -35,12 +35,12 @@
     $q4 = mysqli_query($connect, $pedagogia);
 
     if ($q4){
-        echo "REGISTRO EXITOSO!!!";
+        echo "EXAMEN PEDAGÓGICO\nGUARDADO EXITOSAMENTE!!!";
     }
     else{
-        printf("Errormessage: \n%s", mysqli_error($connect));
+        //printf("Errormessage: \n%s", mysqli_error($connect));
         http_response_code(404);
-        echo "\n\nNO SE GUARDÓ NADA!!!";
+        echo "\n\nNO SE PUDO GUARDAR\nEL EXAMEN PEDAGÓGICO";
     }
 
 ?>

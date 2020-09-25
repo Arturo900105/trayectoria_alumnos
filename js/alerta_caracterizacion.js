@@ -1,15 +1,23 @@
-let paginaAbrir = '';
+let num_ficha;
+let paginaAbrir = '', form_alumno, prom_bachi;
 let alertArea1, alertArea2;
 
+let yearcpe = new Date().getFullYear().toString().substr(-2)
+let generacion = new Date().getFullYear();
+
+function Poner_Ceros(num) {
+    num.value = yearcpe+"-"+("0000" + num.value).slice (-4);
+}
+
 function Confirmar_Acceso(pagina) {
-    document.getElementById('acceso_area').style.display = "block";
+    $("#acceso_area").css({display:"block"})
     paginaAbrir = pagina;
     //console.log(paginaAbrir)
 }
 
 function Cerrar_Acceso(e) {
     e.preventDefault();
-    document.getElementById('acceso_area').style.display = "none";
+    $("#acceso_area").css({display:"none"})
 }
 
 function setLogin(e){
@@ -27,7 +35,7 @@ function setLogin(e){
             backdrop: "rgba(0,0,0,0)"
         });
         return false;
-    } else if ($('#login_areas').val().trim() === '0000') {
+    } else if ($('#login_areas').val().trim() === yearcpe+"-"+'0000') {
         Swal.fire({
             title: alertArea2,
             position: 'top',
@@ -57,19 +65,99 @@ function setLogin(e){
                     timer: 1500
                 })
             }
-        });
+        })
     }
 }
 
-$(document).ready(function () {
-    $("input[name = indigena], [name = estado_civil], [name = preparatoria], [name = carrera]").prop( "checked", false );
-    $(".tipo_area").prop( "checked", false );
+/*
+function numDecimal(evt,input) {
+    let key = window.Event ? evt.which : evt.keyCode;
+    let chark = String.fromCharCode(key);
+    let tempValue = input.value+chark;
 
-    $('#form_alumno').submit(function (e) {
+    if(key >= 48 && key <= 57){
+        if (filter(tempValue)=== false) {
+            return false;
+        } else {
+            return true;
+        }
+    } else {
+        if (key === 8 || key === 13 || key === 0) {
+            return true;
+        }else if(key === 46){
+            if (filter(tempValue)=== false){
+                return false;
+            } else {
+                return true;
+            }
+        } else{
+            return false;
+        }
+    }
+}
+
+function filter(__val__) {
+    let preg = /^([0-9]+\.?[0-9]{0,1})$/;
+    if(preg.test(__val__) === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+*/
+
+$(document).ready(function () {
+    form_alumno = $("#form_alumno")
+    form_alumno[0].reset()
+    $("#generacion").val(generacion)
+    prom_bachi = $("#prom_prepa")
+
+    $('#no_ficha, #edad, #telefono, #codpos, #login_areas').on('input', function () {
+        this.value = this.value.replace(/[^0-9]/g,'');
+    })
+
+    $('#no_ficha').on("click", function (){
+        $("#no_ficha").val("")
+    })
+
+    $('.nom_pat_mat').on('input', function (e) {
+        if (!/^[ a-záéíóúüñ.-]*$/i.test(this.value)) {
+            this.value = this.value.replace(/[^ a-záéíóúüñ.-]+/ig,"");
+        }
+    });
+
+    $('#preparatoria').on('input', function (e) {
+        if (!/^[ a-z0-9áéíóúüñ.]*$/i.test(this.value)) {
+            this.value = this.value.replace(/[^ a-z0-9áéíóúüñ.]+/ig,"");
+        }
+    });
+
+    prom_bachi.on("click", function (){
+        $("#prom_prepa").val("")
+    })
+
+
+    prom_bachi.on("change keypress paste focus textInput input",function() {
+        if (!/^[0-9.]*$/i.test(this.value)) {
+            this.value = this.value.replace(/[^0-9.]+/ig,"");
+        } else if (this.value > 10) {
+            $(this).val(this.value[0]+"."+this.value[1])
+        } else if (this.value >= 2 && this.value <= 5){
+            $(this).val(6)
+        } else if (this.value === "1"){
+            $(this).val(10)
+        }else if (this.value[0] === "0" || this.value[0] === "."){
+            $(this).val(this.value[1])
+        } else if (this.value === this.value[0]+"." || this.value === this.value[0]+".0"){
+            $(this).val(this.value[0])
+        }
+    })
+
+
+    form_alumno.submit(function (e) {
         e.preventDefault();
 
         let ficha_vacia = "Ingresa un Número de Ficha";
-        let generacion = new Date().getFullYear();
         let alerta1 = "Ingresa una Ficha válida";
         let alertaSexo = "Falta validar el campo sexo";
         let alerta2 = "Confirma si te\nconsideras Indígena o no";
@@ -84,7 +172,7 @@ $(document).ready(function () {
         let alerta11 = "Por favor,\nIngrese el nombre del\nBachillerato";
         let alert_carrera = "Seleccione una Carrera";
         let tittle_confir = "¿Registrar?";
-        let texto_confir = "Después, para modificar errores, tendrá que acudir con el(la) encargado(a) de Tutoría Académica.";
+        let texto_confir = "Después, para modificar errores, tendrá que acudir al área de Tutoría Académica del Tecnológico.";
 
         if ($('#no_ficha').val().trim() === '') {
             Swal.fire({
@@ -94,10 +182,34 @@ $(document).ready(function () {
                 backdrop: "rgba(85,0,0,0.7)"
             });
             return false;
-        } else if ($('#no_ficha').val().trim() === '0000') {
+        } else if ($('#no_ficha').val().trim() === yearcpe+"-"+'0000') {
             Swal.fire({title: alerta1, icon: "warning", confirmButtonColor: '#550100', backdrop: "rgba(85,0,0,0.7)"});
             return false;
         }
+
+        if ($('#f_registro').val().trim() === '') {
+            Swal.fire({
+                title: "Seleccione la fecha en que obtuvo su ficha para el examen de admisión",
+                width: "60%",
+                icon: "warning",
+                confirmButtonColor: '#550100',
+                backdrop: "rgba(85,0,0,0.7)"
+            });
+            return false;
+        }
+
+
+        if ($('#fnacimiento').val().trim() === '') {
+            Swal.fire({
+                title: "Seleccione su Fecha de Nacimiento",
+                width: "40%",
+                icon: "warning",
+                confirmButtonColor: '#550100',
+                backdrop: "rgba(85,0,0,0.7)"
+            });
+            return false;
+        }
+
 
         if ($('#sexo').val().trim() === '') {
             Swal.fire({
@@ -167,7 +279,7 @@ $(document).ready(function () {
             }
         }
 
-        if (!$('.tipo_area').is(":checked")) {
+        if (!$('.tipo_bach').is(":checked")) {
             Swal.fire({title: alerta10, icon: "warning", confirmButtonColor: '#000155', backdrop: "rgba(0,1,85,0.7)"});
             return false;
         }
@@ -190,6 +302,7 @@ $(document).ready(function () {
         Swal.fire({
             title: tittle_confir,
             text: texto_confir,
+            width:"50%",
             type: 'warning',
             icon: "question",
             showCancelButton: true,
@@ -224,17 +337,23 @@ $(document).ready(function () {
                         })
                     }
                 });
-                document.getElementById("form_alumno").reset();
-                document.getElementById("generacion").value = generacion;
+                form_alumno[0].reset()
+                $("#generacion").val(generacion)
             }
         });
-    });
+    })
+
+    $("#login_areas").on("click", function (){
+        $("#login_areas").val("")
+    })
+
+
 });
 
 function Acceso_Post_Test() {
-    document.getElementById('acceso_posttest').style.display = "block";
+    $("#acceso_posttest").css({display:"block"})
 }
 
 function Accesol_Post_Test() {
-    document.getElementById('acceso_posttest').style.display = "none";
+    $("#acceso_posttest").css({display:"none"})
 }

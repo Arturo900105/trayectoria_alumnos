@@ -16,16 +16,17 @@
 </head>
 <body>
     <h1>Área de Psicología</h1>
-    <form action="php/datos_psicologia.php" method="POST" name="alumno-psicologia" id="alumno-psicologia">
+    <form action="" method="" id="alumno_psicologia" autocomplete="off">
 
         <h2 class="dato" id="ficha"></h2>
         <h2 class="dato" id="alumno"></h2>
         <h2 class="dato" id="carrera"></h2>
         <h2 class="dato" id="generacion"></h2>
         <input type="hidden" value="" id="ficha_alumno" name="ficha_alumno">
-        <br><br>
 
-        Contesta las siguientes preguntas, marcando el círculo donde corresponda:
+        <p class="p_preguntas">
+            Contesta las siguientes preguntas, marcando el círculo donde corresponda:
+        </p>
 
         <table id="preguntas">
             <tr>
@@ -69,203 +70,208 @@
         <br><br>
 
         <h2>Escala Hospitalaria de Ansiedad y Depresión</h2>
-        <p>
-            A continuación, escribe en le columna de [PRE-TEST] el número que más se acerque a lo que sientes, percibes o pienses:
+        <p class="p_tabla">
+            A continuación;
+            <br>Escribe en le columna de [PRE-TEST] el número que más se acerque a lo que sientes, percibes o pienses:
         </p>
 
         <table id="ansiedad_depresion">
             <tr>
-                <th class="no_escala">#</th>
-                <th class="preguntas_escala">Ansiedad/Depresión</th>
-                <th class="escala_pt">Escala</th>
-                <th class="resultado_escala">PRE - TEST</th>
+                <th class="ad_th" colspan="2">ANSIEDAD/DEPRESIÓN</th>
+                <th class="ad_th">ESCALA</th>
+                <th class="ad_th">PRE-TEST</th>
             </tr>
             <tr>
                 <td class="no_escala">A.1.</td>
                 <td class="preguntas_escala">Me siento tensa(o) o nerviosa(o):</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Casi todo el día.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Gran parte del día.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; De vez en cuando.</label>
-                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                        <label>3.&nbsp;&nbsp;Casi todo el día.</label>
+                    <br><label>2.&nbsp;&nbsp;Gran parte del día.</label>
+                    <br><label>1.&nbsp;&nbsp;De vez en cuando.</label>
+                    <br><label>0.&nbsp;&nbsp;Nunca.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_a1" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_a1" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">D.1.</td>
                 <td class="preguntas_escala">Sigo disfrutando de las cosas siempre:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Ciertamente. Igual que antes.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; No tanto como antes.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Solamente un poco.</label>
-                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Ya no disfruto nada.</label>
+                        <label>0.&nbsp;&nbsp;Ciertamente. Igual que antes.</label>
+                    <br><label>1.&nbsp;&nbsp;No tanto como antes.</label>
+                    <br><label>2.&nbsp;&nbsp;Solamente un poco.</label>
+                    <br><label>3.&nbsp;&nbsp;Ya no disfruto nada.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_d1" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_d1" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">A.2.</td>
                 <td class="preguntas_escala">Siento una especie de temor como si algo malo fuera a suceder:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Sí, y muy intenso.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Sí, pero no muy intenso.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Sí, pero no me preocupa.</label>
-                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; No siento nada de eso.</label>
+                        <label>3.&nbsp;&nbsp;Sí, y muy intenso.</label>
+                    <br><label>2.&nbsp;&nbsp;Sí, pero no muy intenso.</label>
+                    <br><label>1.&nbsp;&nbsp;Sí, pero no me preocupa.</label>
+                    <br><label>0.&nbsp;&nbsp;No siento nada de eso.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_a2" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_a2" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">D.2.</td>
                 <td class="preguntas_escala">Soy capaz de reírme y ver el lado gracioso de las cosas:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Igual que siempre.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Actualmente, algo menos.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Actualmente, mucho menos.</label>
-                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Actualmente, en absoluto.</label>
+                        <label>0.&nbsp;&nbsp;Igual que siempre.</label>
+                    <br><label>1.&nbsp;&nbsp;Actualmente, algo menos.</label>
+                    <br><label>2.&nbsp;&nbsp;Actualmente, mucho menos.</label>
+                    <br><label>3.&nbsp;&nbsp;Actualmente, en absoluto.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_d2" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_d2" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">A.3.</td>
                 <td class="preguntas_escala">Tengo la cabeza llena de preocupaciones:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Casi todo el día.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Gran parte del día.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; De vez en cuando.</label>
-                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                        <label>3.&nbsp;&nbsp;Casi todo el día.</label>
+                    <br><label>2.&nbsp;&nbsp;Gran parte del día.</label>
+                    <br><label>1.&nbsp;&nbsp;De vez en cuando.</label>
+                    <br><label>0.&nbsp;&nbsp;Nunca.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_a3" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_a3" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">D.3.</td>
                 <td class="preguntas_escala">Me siento alegre:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Nunca.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Muy pocas veces.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; En algunas ocaciones.</label>
-                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Gran parte del día.</label>
+                        <label>3.&nbsp;&nbsp;Nunca.</label>
+                    <br><label>2.&nbsp;&nbsp;Muy pocas veces.</label>
+                    <br><label>1.&nbsp;&nbsp;En algunas ocaciones.</label>
+                    <br><label>0.&nbsp;&nbsp;Gran parte del día.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_d3" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_d3" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">A.4.</td>
                 <td class="preguntas_escala">Soy capaz de permanecer sentada(o), tanquila(o) y relajada(o):</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Siempre.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; A menudo.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Raras veces.</label>
-                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Nunca.</label>
+                        <label>0.&nbsp;&nbsp;Siempre.</label>
+                    <br><label>1.&nbsp;&nbsp;A menudo.</label>
+                    <br><label>2.&nbsp;&nbsp;Raras veces.</label>
+                    <br><label>3.&nbsp;&nbsp;Nunca.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_a4" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_a4" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">D.4.</td>
                 <td class="preguntas_escala">Me siento lenta(o) y torpe:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Gran parte del día.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; A menudo.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; A veces.</label>
-                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                        <label>3.&nbsp;&nbsp;Gran parte del día.</label>
+                    <br><label>2.&nbsp;&nbsp;A menudo.</label>
+                    <br><label>1.&nbsp;&nbsp;A veces.</label>
+                    <br><label>0.&nbsp;&nbsp;Nunca.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_d4" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_d4" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">A.5.</td>
                 <td class="preguntas_escala">Experimento una desagradable sensación de nervios y hormigueos en el estómago:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Sólo en algunas ocasiones.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; A menudo.</label>
-                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Muy a menudo.</label>
+                        <label>0.&nbsp;&nbsp;Nunca.</label>
+                    <br><label>1.&nbsp;&nbsp;Sólo en algunas ocasiones.</label>
+                    <br><label>2.&nbsp;&nbsp;A menudo.</label>
+                    <br><label>3.&nbsp;&nbsp;Muy a menudo.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_a5" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_a5" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">D.5.</td>
                 <td class="preguntas_escala">He perdido el interés por mi aspecto persona:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Completamente.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; No me cuido como debiera hacerlo.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Es posible que no me cuide como debiera.</label>
-                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Me cuido como siempre lo he hecho.</label>
+                        <label>3.&nbsp;&nbsp;Completamente.</label>
+                    <br><label>2.&nbsp;&nbsp;No me cuido como debiera hacerlo.</label>
+                    <br><label>1.&nbsp;&nbsp;Es posible que no me cuide como debiera.</label>
+                    <br><label>0.&nbsp;&nbsp;Me cuido como siempre lo he hecho.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_d5" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_d5" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">A.6.</td>
                 <td class="preguntas_escala">Me siento inquieta(o) como si no pudiera parar de moverme:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Realmente mucho.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Bastante.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; No mucho.</label>
-                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; En absoluto.</label>
+                        <label>3.&nbsp;&nbsp;Realmente mucho.</label>
+                    <br><label>2.&nbsp;&nbsp;Bastante.</label>
+                    <br><label>1.&nbsp;&nbsp;No mucho.</label>
+                    <br><label>0.&nbsp;&nbsp;En absoluto.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_a6" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_a6" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">D.6.</td>
                 <td class="preguntas_escala">Espero las cosas con ilusión:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;0.&nbsp;&nbsp; Como siempre.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Algo menos que antes.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Mucho menos que antes.</label>
-                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; En absoluto.</label>
+                        <label>0.&nbsp;&nbsp;Como siempre.</label>
+                    <br><label>1.&nbsp;&nbsp;Algo menos que antes.</label>
+                    <br><label>2.&nbsp;&nbsp;Mucho menos que antes.</label>
+                    <br><label>3.&nbsp;&nbsp;En absoluto.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_d6" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_d6" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">A.7.</td>
                 <td class="preguntas_escala">Experimento de repente sensaciones de gran angustia o temor:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;3.&nbsp;&nbsp; Muy a menudo.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Con cierta frecuencia.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Raramente.</label>
-                    <br><label>&nbsp;&nbsp;0.&nbsp;&nbsp; Nunca.</label>
+                        <label>3.&nbsp;&nbsp;Muy a menudo.</label>
+                    <br><label>2.&nbsp;&nbsp;Con cierta frecuencia.</label>
+                    <br><label>1.&nbsp;&nbsp;Raramente.</label>
+                    <br><label>0.&nbsp;&nbsp;Nunca.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_a7" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_a7" maxlength="1">
                 </td>
             </tr>
             <tr>
                 <td class="no_escala">D.7.</td>
                 <td class="preguntas_escala">Soy capaz de disfrutar con un buen libro o con un buen programa de radio o televisión:</td>
                 <td class="escala_pt">
-                        <label>&nbsp;&nbsp;0.&nbsp;&nbsp; A menudo.</label>
-                    <br><label>&nbsp;&nbsp;1.&nbsp;&nbsp; Algunas veces.</label>
-                    <br><label>&nbsp;&nbsp;2.&nbsp;&nbsp; Pocas veces.</label>
-                    <br><label>&nbsp;&nbsp;3.&nbsp;&nbsp; Casi nunca.</label>
+                        <label>0.&nbsp;&nbsp;A menudo.</label>
+                    <br><label>1.&nbsp;&nbsp;Algunas veces.</label>
+                    <br><label>2.&nbsp;&nbsp;Pocas veces.</label>
+                    <br><label>3.&nbsp;&nbsp;Casi nunca.</label>
                 </td>
                 <td class="resultado_escala">
-                    <input type="text" class="escala_pretest" name="ep_d7" maxlength="1" required>
+                    <input type="text" class="escala_pretest" name="ep_d7" maxlength="1">
                 </td>
             </tr>
         </table>
         <br>
+
+        <div id="acceso_posttest">
+            <a class="a_posttest" href="escala_posttest.html"><img src="img/area_pspost-test.png" title="Escala Post-Test" class="carpeta_posttest"></a>
+        </div>
+
         <h2>Test de orientación vocacional.</h2>
-        <p>
+        <p class="p_sino">
             Contesta Sí o No, según corresponda:
             <input type="hidden" id="bloque1v">
             <input type="hidden" id="bloque2v">
@@ -279,8 +285,8 @@
         </p>
         <table class="tabla_orivoc">
             <tr>
-                <th colspan="2">Bloque 1</th>
-                <th colspan="2" class="valor">Valor</th>
+                <th colspan="2" class="valor">BLOQUE 1</th>
+                <th colspan="2" class="valor">VALOR</th>
             </tr>
             <tr>
                 <td class="no_bloques">01</td>
@@ -349,8 +355,8 @@
 
         <table class="tabla_orivoc">
             <tr>
-                <th colspan="2">Bloque 2</th>
-                <th colspan="2" class="valor">Valor</th>
+                <th colspan="2" class="valor">BLOQUE 2</th>
+                <th colspan="2" class="valor">VALOR</th>
             </tr>
             <tr>
                 <td class="no_bloques">11</td>
@@ -418,8 +424,8 @@
 
         <table class="tabla_orivoc">
             <tr>
-                <th colspan="2">Bloque 3</th>
-                <th colspan="2" class="valor">Valor</th>
+                <th colspan="2" class="valor">BLOQUE 3</th>
+                <th colspan="2" class="valor">VALOR</th>
             </tr>
             <tr>
                 <td class="no_bloques">21</td>
@@ -487,8 +493,8 @@
 
         <table class="tabla_orivoc">
             <tr>
-                <th colspan="2">Bloque 4</th>
-                <th colspan="2" class="valor">Valor</th>
+                <th colspan="2" class="valor">BLOQUE 4</th>
+                <th colspan="2" class="valor">VALOR</th>
             </tr>
             <tr>
                 <td class="no_bloques">31</td>
@@ -552,10 +558,10 @@
             </tr>
         </table>
         <br>
+
         <div id="botones_psicologia">
             <input type="submit" value="GUARDAR" class="boton_psico">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="button" id="cerrar" value="REGRESAR" class="boton_psico" onclick="borrarCoockie();">
+            <input type="button" id="cerrarPsicologia" value="REGRESAR" class="boton_psico">
         </div>
     </form>
     <script src="js/usuario_alumno.js"></script>

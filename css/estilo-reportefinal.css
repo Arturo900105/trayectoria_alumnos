@@ -3,13 +3,14 @@ body{
 }
 
 .logos_reportef{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .logosf{
+    margin: 0 5em;
     height: 7em;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 h1{
@@ -87,8 +88,8 @@ table, th, td{
 
 th{
     height: 2em;
-    color: black;
-    background-color: #ff7c10;
+    color: white;
+    background-color: #1144bf;
 }
 
 .num_materia{
@@ -102,6 +103,7 @@ th{
 }
 
 .materiaf{
+    border: none;
     width: 20em;
     height: 1.2em;
     text-align: justify;
@@ -116,6 +118,7 @@ th{
 }
 
 .num_materiaf{
+    border: none;
     width: 3em;
     height: 1.2em;
     text-align: center;
@@ -129,6 +132,7 @@ th{
 }
 
 .por_materiaf{
+    border: none;
     width: 3em;
     height: 1.2em;
     text-align: center;
@@ -165,6 +169,7 @@ th{
 }
 
 .num_canalif{
+    border: none;
     width: 3em;
     height: 1.5em;
     text-align: center;
@@ -187,17 +192,34 @@ th{
 }
 
 .botones_reportef{
-    margin-top: 2em;
-    text-align: center;
+    height: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .bot-generadoresf{
-    background-color: #453d3d;
-    width: 8em;
-    height: 2em;
     color: white;
-    margin: 0 2em;
+    background: #585656;
+    border-radius: 5px;
+    border: none;
+    width: 10em;
+    height: 3em;
+    margin: 0 1.5em;
     display:inline;
+}
+
+.bot-generadoresf:hover {
+    cursor:pointer;
+    font-family: "Arial Black";
+    background: #1144bf;
+}
+
+#cerrarRFinal:hover{
+    cursor:pointer;
+    font-family: "Arial Black";
+    background: #fc1e1e;
+    color: #000000;
 }
 
 #base_reportef{

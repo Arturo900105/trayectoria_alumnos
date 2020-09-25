@@ -1,11 +1,6 @@
 <?php
     require "BD_Connect.php";
-
-    ini_set('date.timezone', 'America/Mexico_City');
-    setlocale(LC_TIME,"spanish");
-
-    $fecha_realizado = utf8_decode(strftime("%A,%e de %B de %Y"));
-    $hora_realizado = date("h:i a.");
+    require "fecha_hora.php";
 
     $periodo = $_POST["periodo"];
     $reporte = $_POST["num_reporte"];
@@ -106,7 +101,7 @@
                                                   num_asepar,num_psicologia,num_medica,num_pedagogica,
                                                   problematica,necesidades,desertores,recomendacion_observacion)
 
-                      VALUES ('$fecha_realizado','$hora_realizado','$periodo',
+                      VALUES ('$fechaHoy','$horaHoy','$periodo',
                               '$reporte1','$reporte2','$reporte3',
                               '$nomTutor[0]','$semGrupo','$Programa','$numTA',
                               '$asignatura1','$numAsignatura1','$porAsignatura1',
@@ -126,7 +121,7 @@
         http_response_code(404);
         echo "\n\nNO SE PUDO GUARDAR EL REPORTE PARCIAL!!!";
     } else {
-        //echo "REPORTE PARCIAL\nGUARDADO EXITOSAMENTE!!!";
+        echo "REPORTE PARCIAL\nGUARDADO EXITOSAMENTE!!!";
         echo mysqli_insert_id($connect);
     }
 

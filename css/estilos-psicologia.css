@@ -10,7 +10,7 @@ h2{
     margin: 0;
 }
 
-form{
+#alumno_psicologia {
     display:block;
     align-content: center;
     width: 62em;
@@ -18,6 +18,21 @@ form{
     padding: 1em;
     border-radius: 10px;
     border: 5px solid #000000;
+}
+
+.p_preguntas{
+    margin: 1em 0 10px;
+    font-size: 25px;
+}
+
+.p_tabla {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.p_sino{
+    margin: 10px 0;
+    font-size: 25px;
 }
 
 #preguntas, .preguntas, .respuesta{
@@ -49,7 +64,7 @@ form{
     font-family: "Gill Sans MT";
 }
 
-#ansiedad_depresion, .no_escala, .preguntas_escala, .escala_pt, .resultado_escala{
+#ansiedad_depresion, .ad_th, .no_escala, .preguntas_escala, .escala_pt, .resultado_escala{
     border: 1px solid #000000;
     border-collapse: collapse;
     margin: 0 auto;
@@ -57,16 +72,23 @@ form{
     color: #000000;
 }
 
+.ad_th{
+    background: #00ff38;
+    height: 2em;
+}
+
 .no_escala{
-    width: 4em;
+    width: 5em;
     text-align: center;
 }
 
 .preguntas_escala{
-    width: 30em;
+    padding: 0 10px;
+    width: 25em;
 }
 
 .escala_pt{
+    padding: 5px 10px;
     width: 20em;
 }
 
@@ -76,10 +98,26 @@ form{
 }
 
 .escala_pretest{
+    color: #02701d;
+    background: none;
+    border: none;
     width: 3em;
     height: 2em;
     text-align: center;
     font-size: 30px;
+}
+
+#acceso_posttest{
+    margin: 0;
+    height: 17em;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.carpeta_posttest{
+    width: 20em;
 }
 
 .tabla_orivoc, .no_bloques, .bloques, .valor, .bloques_sn{
@@ -90,30 +128,50 @@ form{
     color: #000000;
 }
 
+.valor{
+    background: #00ff38;
+    height: 2em;
+}
+
 .no_bloques{
+    height: 2em;
     width: 4em;
     text-align: center;
 }
 
 .bloques{
+    height: 2em;
     width: 45em;
 }
 
 .bloques_sn{
+    height: 2em;
     text-align: center;
     width: 5em;
 }
 
 #botones_psicologia{
-    text-align: center;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .boton_psico{
-    width: 8em;
-    height: 2em;
-    margin: 0 auto;
-    display:inline;
+    background: #b0adad;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    width: 10em;
+    height: 2.3em;
+    margin: 0 1.5em;
     color: #000000;
+}
+
+.boton_psico:hover{
+    font-family: "Arial Black";
+    background: #900000;
+    color: #FFFFFF;
 }
 
 #bloque1v_bd,#bloque2v_bd,#bloque3v_bd,#bloque4v_bd{

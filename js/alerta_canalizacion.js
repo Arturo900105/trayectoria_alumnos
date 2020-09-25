@@ -1,41 +1,30 @@
-let fecha, mes, dia, year;
+let fecha, hoy, mes, dia, year, dias_semana, nom_meses;
 let digito1, digito2, digito3;
 let impar, par;
 let form_canalizacion;
 let Cookies3;
 
-window.onload = function(){
-
-    fecha = new Date(); //Fecha actual
-
-    mes = fecha.getMonth()+1; //obteniendo mes
-    dia = fecha.getDate(); //obteniendo dia
-    year = fecha.getFullYear(); //obteniendo año
-
-    if(dia < 10)
-        dia = '0' + dia; //agrega cero si el menor de 10
-
-    if(mes < 10)
-        mes = '0' + mes; //agrega cero si el menor de 10
-
-    $("#fecha-hoy").val(dia+"-"+mes+"-"+year)
-
-    //console.log(year.toString().substr(2));
-};
-
-
 $(document).ready(function () {
+    fecha = new Date(); //Fecha actual
+    hoy = fecha.getDay(); //Obteniendo el Día de la semana
+    dia = fecha.getDate(); //Obteniendo Número del día
+    mes = fecha.getMonth()+1; //Obteniendo el  Mes del año
+    year = fecha.getFullYear(); //Obteniendo el  Año
+
+    dias_semana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    nom_meses = ["", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
     form_canalizacion = $("#canalizacion")
     impar = "Agosto - Diciembre";
     par = "Enero - Junio";
 
     form_canalizacion[0].reset()
-    $("#fecha-hoy").val(dia+"-"+mes+"-"+year)
+    $("#fecha_hoy").val(dias_semana[hoy]+", "+dia+" de "+nom_meses[mes]+" de "+year)
 
 
     form_canalizacion.on('click', function () {
-        digito2 = new Date().getFullYear().toString().substr(-2)
-        digito3 = "000";
+        digito2 = year.toString().substr(-2)
+        digito3 = "...";
 
         if ($("#igem:radio").is(":checked")) {
             digito1 = "01"
@@ -70,7 +59,6 @@ $(document).ready(function () {
             $("#folio").val(digito1+digito2+digito3)
 
         }
-
 
         if ($('#semestre').val().trim() === ''){
             $("#ciclo_escolar").val("")
@@ -243,8 +231,8 @@ $(document).ready(function () {
                         })
                     }
                 });
-                //form_canalizacion[0].reset();
-                //$("#fecha-hoy").val(dia+"-"+mes+"-"+year)
+                form_canalizacion[0].reset();
+                $("#fecha_hoy").val(dias_semana[hoy]+", "+dia+" de "+nom_meses[mes]+" de "+year)
             }
         });
     })
@@ -402,7 +390,7 @@ $(document).ready(function () {
                     }
                 });
                 form_canalizacion[0].reset();
-                $("#fecha-hoy").val(dia+"-"+mes+"-"+year)
+                $("#fecha_hoy").val(dias_semana[hoy]+", "+dia+" de "+nom_meses[mes]+" de "+year)
             }
         });
 

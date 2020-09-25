@@ -1,0 +1,316 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    text-align: center;
+}
+
+h2{
+    margin-left: 1em;
+}
+
+#trayectoria6{
+    margin: 2em auto;
+    background: none;
+    width: 55em;
+    padding: 1em;
+    border-radius: 2em;
+    border: 4px solid #0238b7;
+}
+
+#tabla_ingles_6, #inglesth_6, #inglestd_6{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 15px;
+    color: #000000;
+}
+
+#inglesth_6{
+    width: 25em;
+    height: 5em;
+    text-align: center;
+}
+
+#inglestd_6{
+    width: 25em;
+}
+
+#nivel_ingles_6{
+    margin-left: 2em;
+    text-align: center;
+    font-size: 15px;
+    width: 13em;
+    height: 1.7em;
+}
+
+.nivel_ingles_6{
+    margin-left: 20px;
+}
+
+.ingles_ubicacion_6{
+    margin-left: 20px;
+}
+
+#creditos_6, .creditosth_6, .creditostd_6{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.creditosth_6{
+    background: #1680e5;
+    height: 3em;
+}
+
+.creditostd_6{
+    height: 5em;
+}
+
+#creditostd1_6{
+    width: 12em;
+}
+
+#creditostd2_6{
+    text-align: right;
+    width: 15em;
+}
+
+#creditostd3_6{
+    width: 13em;
+}
+
+#creditostd4_6{
+    width: 10em;
+}
+
+.credito_6{
+    margin-left: 5px;
+    text-align: center;
+    font-size: 15px;
+    width: 4em;
+    height: 1.5em;
+}
+
+#cultural_6{
+    margin-right: 3em;
+}
+
+#deportiva_6{
+    margin-top: 10px;
+    margin-right: 3em;
+}
+
+#complementaria_6{
+    font-size: 30px;
+    text-align: center;
+    width: 3em;
+    height: 1.5em;
+}
+
+#suma_tcdc_6{
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 50px;
+    width: 2.2em;
+    height: 1em;
+}
+
+
+#tabla_servSocial, #td_servSocial1, #td_servSocial1{
+    //border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 15px;
+    color: #000000;
+}
+#td_servSocial1{
+    text-align: center;
+    width: 15em;
+    height: 7em;
+}
+#td_servSocial2{
+    text-align: center;
+    width: 35em;
+    height: 7em;
+}
+
+#lugar_servsoc{
+    padding: 5px 2px;
+    text-align: center;
+}
+.servicio_social_6{
+    margin: 0 0.5em;
+}
+
+#materias_6, .materiastd1_6, .materiastd2_6, .materiastd3_6, .materiastd_6{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materiastd1_6{
+    width: 10em;
+}
+
+.materiastd2_6{
+    width: 30em;
+    text-align: center;
+}
+
+.materiastd3_6{
+    width: 10em;
+}
+
+.materiasth_6{
+    height: 2em;
+    background: #1680e5;
+}
+
+#cantidad_materias_6, #materias_reprobadas_6{
+    font-family: "Arial Black";
+    border: none;
+    background: none;
+    text-align: center;
+    width: 4em;
+    height: 2em;
+}
+
+#materias_reprobadas_6{
+    color: #0238b7;
+}
+
+.materiaN_6{
+    border: none;
+    background: none;
+    margin: 2px;
+    text-align: left;
+    width: 28em;
+    height: 2em;
+    font-size: 15px;
+    color: black;
+}
+
+.calificacionN_6{
+    border: none;
+    background: none;
+    margin: 2px 0;
+    text-align: center;
+    width: 8em;
+    height: 2em;
+    font-size: 15px;
+    color: black;
+}
+
+#beca_6, .becatd_6{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.becatd_6{
+    width: 25em;
+    height: 2em;
+}
+
+#tipo_beca_6{
+    width: 25em;
+    height: 2em;
+    text-align: center;
+}
+
+#relbeca_6{
+    text-align: left;
+}
+
+#materias2_6, .materias2th_6, .materias2td_6{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materias2th_6{
+    width: 25em;
+    padding: 10px 0;
+}
+
+.materias2td_6{
+    width: 25em;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.materiarep_6{
+    width: 20em;
+    height: 2em;
+    padding-left: 7px;
+    text-align: left;
+    margin: 3px 0;
+    font-size: 15px;
+}
+
+.label_becado_6{
+    margin-left: 1em;
+}
+
+.folios_canal_6{
+    margin-top: 4px;
+    margin-left: 10px;
+    color: #ec0000;
+    width: 7em;
+    height: 1.2em;
+    font-size: 17px;
+    text-align: center;
+}
+
+.ingles_ubicacion_6:hover, .nivel_ingles_6:hover, .servicio_social_6:hover, .label_becado_6:hover, .label_foliocanali_6:hover{
+    color: #0238b7;
+}
+
+#ciclo_6{
+    text-align: center;
+    font-size: 15px;
+}
+
+#observaciones_6{
+    padding: 7px 10px;
+    font-family: Arial;
+}
+
+#contenedor2_6{
+    text-align: center;
+}
+
+.btn-t1_6{
+    margin: 0 1.5em;
+    border-radius: 5px;
+    border: none;
+    width: 10em;
+    height: 3em;
+    display:inline;
+}
+
+.btn-t1_6:hover{
+    font-family: "Arial Black";
+    color: #FFFFFF;
+    background: #0238b7;
+}

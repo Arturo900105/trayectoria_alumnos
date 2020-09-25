@@ -1,0 +1,81 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    text-align: center;
+}
+
+h2{
+    margin: 0;
+}
+
+#proceso_titulacion{
+    margin: 2em auto;
+    padding: 1em 2em;
+    width: 65em;
+    border-radius: 2em;
+    border: 4px solid #088f02;
+}
+
+#campo_tema{
+    text-align: center;
+}
+
+#tema{
+    margin-left: 5px;
+    font-size: 15px;
+    text-align: center;
+    height: 2em;
+    width: 50em;
+}
+
+.ingles_acred{
+    margin-left: 2em;
+}
+
+#texto_credito{
+    margin-left: 4em;
+}
+
+#creditos_cumplidos{
+    margin-left: 5px;
+    margin-right: 4em;
+    font-size: 15px;
+    text-align: center;
+    height: 1.7em;
+    width: 5em;
+}
+
+#fecha_examen{
+    margin-left: 5px;
+    color: red;
+    text-align: center;
+    height: 2em;
+    width: 10em;
+}
+
+.botones_titulacion{
+    margin: 2em auto 0;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.btn_tit{
+    margin: 0 1.5em;
+    border-radius: 5px;
+    border: none;
+    width: 10em;
+    height: 3em;
+    display:inline;
+}
+
+.btn_tit:hover{
+    font-family: "Arial Black";
+    background: #11d001;
+}

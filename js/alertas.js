@@ -1,59 +1,42 @@
 let passCITA, nombreCoord, apePat, apeMat, separador, coordTutoria, usuarioCoord, usuMUlt, patCoord, matCoord;
 let alertaCITA1, alertaCITA2, alertaCITA3, alertaCITA4, alertaCITA5;
 let alertaCITA6, alertaCITA7, alertaCITA8, alertaCITA9, alertaCITA10;
-let alertaCITA11, alertaCITA12;
+let alertaCITA11, alertaCITA12, separador1, separador2;
 
 function Confirmar_Acceso() {
-    document.getElementById('ventana_modal').style.display="block";
-}
-function Cerrar_Accesol() {
-    document.getElementById('ventana_modal').style.display="none";
+    $("#ventana_modal").css({display:"block"})
 }
 
-
-function Confirmar_Accesol_Reportes() {
-    document.getElementById('ventana_modal_reportes').style.display="block";
+function Confirmar_Acceso_Reportes() {
+    $("#ventana_modal_reportes").css({display:"block"})
 }
-function Cerrar_Accesol_Reportes() {
-    document.getElementById('ventana_modal_reportes').style.display="none";
-}
-
-
-function Confirmar_M_Acceso() {
-    document.getElementById('modal-acceso').style.display="block";
-}
-function Cerrar_M_Acceso() {
-    document.getElementById('modal-acceso').style.display="none";
-}
-
 
 
 function accesoCITA() {
-    document.getElementById('ventana_modal_nip').style.display="block";
+    $("#ventana_modal_nip").css({display:"block"})
 }
 function cerrarCITA() {
-    document.getElementById('ventana_modal_nip').style.display="none";
-    document.getElementById("log_usu").value = "";
-    document.getElementById("log_pass").value = "";
+    $("#ventana_modal_nip").css({display:"none"})
+    $("#log_usu").val("")
+    $("#log_pass").val("")
 }
-
 
 
 function LogNipCITA() {
-    document.getElementById('fondo_nip').style.display="block";
+    $("#fondo_nip").css({display:"block"})
     return cerrarCITA();
 }
 function cerrarNipCITA() {
-    document.getElementById('fondo_nip').style.display="none";
-    document.getElementById("pass-nip").value = "";
+    $("#fondo_nip").css({display:"none"})
+    $("#pass-nip").val("")
 }
 
 
 function confirmarLoginNip() {
-    passCITA = document.getElementById("pass-nip").value;
+    passCITA = $("#pass-nip").val()
 
     if (passCITA === "CITA20ITSP" || passCITA === "cita20itsp"){
-        document.getElementById('ventana_modal_cita').style.display="block";
+        $("#ventana_modal_cita").css({display:"block"})
         return cerrarNipCITA();
     } else  if (passCITA === ""){
         Swal.fire({
@@ -77,15 +60,15 @@ function confirmarLoginNip() {
     }
 }
 function cerrarLoginNip() {
-    document.getElementById('ventana_modal_cita').style.display="none";
+    $("#ventana_modal_cita").css({display:"none"})
 }
 
 
 $(document).ready(function () {
     try {
-        document.getElementById("formulario_cita").reset();
-        document.getElementById("form").reset();
-        document.getElementById("pass-nip").value = "";
+        $("#formulario_cita")[0].reset()
+        $("#form")[0].reset()
+        $("#pass-nip").val("")
     } catch (e) {}
 
     $(document).on("keydown", function (e) {
@@ -112,6 +95,62 @@ $(document).ready(function () {
     alertaCITA10 = "Por favor,\nIngrese su Usuario";
     alertaCITA11 = "Por favor,\nIngrese su NIP";
     alertaCITA12 = "LOGIN INCORRECTO!!!";
+
+
+    //Ventana modal para acceder a las trayectorias
+    $("#nuevoTutor").on("click", function (){
+        $("#ventana_modal").css({display:"none"})
+        $('#usuarioTutor').val("")
+        $('#passTutor').val("")
+    })
+    $("#entrar_tutor").on("click", function (){
+        if ($('#usuarioTutor').val().trim() === "" && $('#passTutor').val().trim() === ""){
+            Swal.fire({
+                title: "Ingresa tu Usuario y tu\nContraseña de 10 digitos",
+                icon: "warning",
+                position: "top",
+                backdrop: "rgba(0,0,0,0)",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        } else if ($('#usuarioTutor').val().trim() === "") {
+            Swal.fire({
+                title: "Ingresa tu Usuario",
+                icon: "warning",
+                position: "top",
+                backdrop: "rgba(0,0,0,0)",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        } else {
+            Swal.fire({
+                title: "Ingresa tu\nContraseña de 10 digitos",
+                icon: "warning",
+                position: "top",
+                backdrop: "rgba(0,0,0,0)",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        }
+    })
+    $("#cerrarTutor").on("click", function (){
+        $("#ventana_modal").css({display:"none"})
+        $('#usuarioTutor').val("")
+        $('#passTutor').val("")
+    })
+
+
+    //Ventana modal para acceder a los Reportes: Parcial y Final
+    $("#reporteParcial").on("click",function (){
+        $("#ventana_modal_reportes").css({display:"none"})
+    })
+    $("#reporteFinal").on("click",function (){
+        $("#ventana_modal_reportes").css({display:"none"})
+    })
+    $("#reporteSalir").on("click", function (){
+        $("#ventana_modal_reportes").css({display:"none"})
+    })
+
 
     $('#logarUsuario').on('click', function () {
 
@@ -201,39 +240,56 @@ $(document).ready(function () {
             });
             return false;
         } else {
-            separador = / de la | de los | de | del | /;
-            nombreCoord = document.getElementById("nombreCoord").value;
-
             //Más de un Nombre
+            nombreCoord = $("#nombreCoord").val()
+            separador = / de la | de los | de | del | /
+
             if (nombreCoord.split(separador).length === 2){
                 usuMUlt = nombreCoord.toLowerCase().substring(0,1) +
-                    nombreCoord.toLowerCase().split(separador)[1].substring(0,1);
+                          nombreCoord.toLowerCase().split(separador)[1].substring(0,1);
             } else if (nombreCoord.split(separador).length === 3){
                 usuMUlt = nombreCoord.toLowerCase().substring(0,1) +
-                    nombreCoord.toLowerCase().split(separador)[1].substring(0,1) +
-                    nombreCoord.toLowerCase().split(separador)[2].substring(0,1);
+                          nombreCoord.toLowerCase().split(separador)[1].substring(0,1) +
+                          nombreCoord.toLowerCase().split(separador)[2].substring(0,1);
             } else {
                 usuMUlt = nombreCoord.toLowerCase().substr(0,1);
             }
 
-            apePat = document.getElementById("apePat").value;
-            apeMat = document.getElementById("apeMat").value;
 
+            //Apellidos Paterno compuestos por 2 o 3 palabras
+            apePat = $("#apePat").val()
+            apeMat = $("#apeMat").val()
 
-            //Apellidos compuestos por 2 o 3 palabras
-            if (apePat.split(" ").length > 1){
-                patCoord = apePat.split(" ")[apePat.split(" ").length - 1].toLowerCase();
+            separador1 = / de |-| de la | de los | del | y /
+            separador2 = /de la |de los |de |y |del |De la |De los |De |Y |Del /
+
+            if (apePat.split(separador1).length > 1){
+                patCoord = apePat.split(separador1)[0].toLowerCase().substring(0,1)+
+                           apePat.split(separador1)[1].toLowerCase().substring(undefined);
+
+            } else if (apePat.split(separador2).length > 1){
+                patCoord = apePat.split(separador2)[apePat.split(separador2).length - 1].toLowerCase();
+
             } else {
                 patCoord = apePat.toLowerCase().substring(undefined);
+
             }
 
-            if (apeMat.split(" ").length > 1){
-                matCoord = apeMat.split(" ")[apeMat.split(" ").length - 1].toLowerCase().substring(0,1);
+            //Apellidos Materno compuestos por 2 o 3 palabras
+            if (apeMat.split(separador1).length > 1){
+                matCoord = apeMat.split(separador1)[0].toLowerCase().substring(0,1)+
+                           apeMat.split(separador1)[1].toLowerCase().substring(0,1);
+
+            } else if (apeMat.split(separador2).length > 1){
+                matCoord = apeMat.split(separador2)[apeMat.split(separador2).length - 1].toLowerCase().substring(0,1);
+
             } else {
                 matCoord = apeMat.toLowerCase().substring(0,1);
+
             }
 
-            coordTutoria = document.getElementById("cita_tutoria").value;
+            //Valor de la Coordinación de Tutoría
+            coordTutoria = $("#cita_tutoria").val()
             switch (coordTutoria) {
                 case 'IGEM': coordTutoria = "01";
                     break;
@@ -253,10 +309,15 @@ $(document).ready(function () {
                     break;
             }
 
-            const eliminaAcentos = (str) =>{return str.normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
-            usuarioCoord = eliminaAcentos(usuMUlt + "." + patCoord + matCoord + "_" + coordTutoria.substring(undefined));
-            document.getElementById("usuarioCoord").value = usuarioCoord;
-            document.getElementById("passCoord").value = generarPassword(4,'num');
+            //Eliminación de acentos
+            const eliminaAcentos = (str) =>{
+                return str.normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+            }
+
+            //Concatenando el Usuario del Coordinador y generando Nip de 4 números
+            usuarioCoord = eliminaAcentos(usuMUlt + "." + patCoord + matCoord + "_" + coordTutoria.substring(undefined))
+            $("#usuarioCoord").val(usuarioCoord)
+            $("#passCoord").val(generarPassword(4,'num'))
         }
     })
 
@@ -384,8 +445,8 @@ $(document).ready(function () {
                         })
                     }
                 });
-                document.getElementById("formulario_cita").reset();
-                document.getElementById("pass-nip").value = "";
+                $("#formulario_cita")[0].reset()
+                $("#pass-nip").val("")
                 return cerrarLoginNip();
             }
         });

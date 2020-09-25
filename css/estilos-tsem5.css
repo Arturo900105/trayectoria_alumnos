@@ -1,0 +1,287 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    text-align: center;
+}
+
+h2{
+    margin-left: 1em;
+}
+
+#trayectoria5{
+    margin: 2em auto;
+    background: none;
+    width: 55em;
+    padding: 1em;
+    border-radius: 2em;
+    border: 4px solid #ff5a00;
+}
+
+#tabla_ingles_5, #inglesth_5, #inglestd_5{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 15px;
+    color: #000000;
+}
+
+#inglesth_5{
+    width: 25em;
+    height: 5em;
+    text-align: center;
+}
+
+#inglestd_5{
+    width: 25em;
+}
+
+#nivel_ingles_5{
+    margin-left: 2em;
+    text-align: center;
+    font-size: 15px;
+    width: 13em;
+    height: 1.7em;
+}
+
+.nivel_ingles_5{
+    margin-left: 20px;
+}
+
+.ingles_ubicacion_5{
+    margin-left: 20px;
+}
+
+#creditos_5, .creditosth_5, .creditostd_5{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.creditosth_5{
+    background: #ff5a00;
+    height: 3em;
+}
+
+.creditostd_5{
+    height: 5em;
+}
+
+#creditostd1_5{
+    width: 12em;
+}
+
+#creditostd2_5{
+    text-align: right;
+    width: 15em;
+}
+
+#creditostd3_5{
+    width: 13em;
+}
+
+#creditostd4_5{
+    width: 10em;
+}
+
+.credito_5{
+    margin-left: 5px;
+    text-align: center;
+    font-size: 15px;
+    width: 4em;
+    height: 1.5em;
+}
+
+#cultural_5{
+    margin-right: 3em;
+}
+
+#deportiva_5{
+    margin-top: 10px;
+    margin-right: 3em;
+}
+
+#complementaria_5{
+    font-size: 30px;
+    text-align: center;
+    width: 3em;
+    height: 1.5em;
+}
+
+#suma_tcdc_5{
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 50px;
+    width: 2.2em;
+    height: 1em;
+}
+
+#materias_5, .materiastd1_5, .materiastd2_5, .materiastd3_5, .materiastd_5{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materiastd1_5{
+    width: 10em;
+}
+
+.materiastd2_5{
+    width: 30em;
+    text-align: center;
+}
+
+.materiastd3_5{
+    width: 10em;
+}
+
+.materiasth_5{
+    height: 2em;
+    background: #ff5a00;
+}
+
+#cantidad_materias_5, #materias_reprobadas_5{
+    font-family: "Arial Black";
+    border: none;
+    background: none;
+    text-align: center;
+    width: 4em;
+    height: 2em;
+}
+
+#materias_reprobadas_5{
+    color: #ec0000;
+}
+
+.materiaN_5{
+    border: none;
+    background: none;
+    margin: 2px;
+    text-align: left;
+    width: 28em;
+    height: 2em;
+    font-size: 15px;
+    color: black;
+}
+
+.calificacionN_5{
+    border: none;
+    background: none;
+    margin: 2px 0;
+    text-align: center;
+    width: 8em;
+    height: 2em;
+    font-size: 15px;
+    color: black;
+}
+
+#beca_5, .becatd_5{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.becatd_5{
+    width: 25em;
+    height: 2em;
+}
+
+#tipo_beca_5{
+    width: 25em;
+    height: 2em;
+    text-align: center;
+}
+
+#relbeca_5{
+    text-align: left;
+}
+
+#materias2_5, .materias2th_5, .materias2td_5{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materias2th_5{
+    width: 25em;
+    padding: 10px 0;
+}
+
+.materias2td_5{
+    width: 25em;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.materiarep_5{
+    width: 20em;
+    height: 2em;
+    padding-left: 7px;
+    text-align: left;
+    margin: 3px 0;
+    font-size: 15px;
+}
+
+.label_becado_5{
+    margin-left: 1em;
+}
+
+.folios_canal_5{
+    margin-top: 4px;
+    margin-left: 10px;
+    color: #ec0000;
+    width: 7em;
+    height: 1.2em;
+    font-size: 17px;
+    text-align: center;
+}
+
+.ingles_ubicacion_5:hover, .nivel_ingles_5:hover, .label_becado_5:hover, .label_foliocanali_5:hover{
+    color: #ff5a00;
+}
+
+#ciclo_5{
+    text-align: center;
+    font-size: 15px;
+}
+
+#observaciones_5{
+    padding: 7px 10px;
+    font-family: Arial;
+}
+
+#contenedor2_5{
+    text-align: center;
+}
+
+.btn-t1_5{
+    margin: 0 1.5em;
+    border-radius: 5px;
+    border: none;
+    width: 10em;
+    height: 3em;
+    display:inline;
+}
+
+.btn-t1_5:hover{
+    font-family: "Arial Black";
+    background: #ff5a00;
+}

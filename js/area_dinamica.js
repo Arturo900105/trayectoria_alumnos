@@ -1,12 +1,16 @@
+let SelectValor, area_carrera, carpeta_carrera;
+
 $(document).ready(function () {
+    area_carrera = $('#area_de')
+    carpeta_carrera = $('#carpetas')
 
-    $('#area_de').on('change',function () {
+    area_carrera.on('change',function () {
 
-        var SelectValor = '#'+$(this).val();
+        SelectValor = '#'+$(this).val();
 
-        $('#carpetas').children('div').hide();
+        carpeta_carrera.children('div').hide();
         try{
-            $('#carpetas').children(SelectValor).show();
+            carpeta_carrera.children(SelectValor).show();
         }
         catch (e) {}
     });

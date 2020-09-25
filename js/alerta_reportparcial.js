@@ -4,27 +4,20 @@ let total_reprobado1, total_reprobado2, total_reprobado3, total_reprobado4, tota
 let por_reprobado1, por_reprobado2, por_reprobado3, por_reprobado4, por_reprobado5, por_reprobado6;
 let CookiesRP;
 
-function limpiar() {
-    $(".sem_grup").val("")
-}
-
 $(document).ready(function () {
     reporte_parcial = $("#ReporteParcial")
     periodo = $('#periodo')
-
     nombreTutor = $('#nom_tutor')
-
     reporte_parcial[0].reset();
     $(".sem_impar, .sem_par, .grupos").hide();
 
-    $('#num_tutoradop, .num-materia').on('input', function () {
+    $(".periodop").on("click", function () {
+        $(".sem_grup").val("")
+    })
+
+    $('#num_tutoradop, .num-materia, .cajas_numrbd, .num_canalip').on('input', function () {
         this.value = this.value.replace(/[^0-9]/g,'');
     });
-
-    $('.cajas_numrbd, .num_canalip').on('input', function () {
-        this.value = this.value.replace(/[^0-9]/g,'');
-    });
-
 
     num_materia1 = $("#num_materia1")
     num_materia2 = $("#num_materia2")
@@ -33,48 +26,59 @@ $(document).ready(function () {
     num_materia5 = $("#num_materia5")
     num_materia6 = $("#num_materia6")
 
-    num_materia1.on("keyup", function (){
+    reporte_parcial.on("keyup", function (){
         t_alumno = $("#num_tutoradop").val()
+
         total_reprobado1 = num_materia1.val()
-        por_reprobado1 = (total_reprobado1*100)/t_alumno;
-        $("#por_materia1").val((Math.round(por_reprobado1*100)/100).toFixed(2))
-    })
-
-    num_materia2.on("keyup", function (){
-        t_alumno = $("#num_tutoradop").val()
         total_reprobado2 = num_materia2.val()
-        por_reprobado2 = (total_reprobado2*100)/t_alumno;
-        $("#por_materia2").val((Math.round(por_reprobado2*100)/100).toFixed(2))
-    })
-
-    num_materia3.on("keyup", function (){
-        t_alumno = $("#num_tutoradop").val()
         total_reprobado3 = num_materia3.val()
-        por_reprobado3 = (total_reprobado3*100)/t_alumno;
-        $("#por_materia3").val((Math.round(por_reprobado3*100)/100).toFixed(2))
-    })
-
-    num_materia4.on("keyup", function (){
-        t_alumno = $("#num_tutoradop").val()
         total_reprobado4 = num_materia4.val()
-        por_reprobado4 = (total_reprobado4*100)/t_alumno;
-        $("#por_materia4").val((Math.round(por_reprobado4*100)/100).toFixed(2))
-    })
-
-    num_materia5.on("keyup", function (){
-        t_alumno = $("#num_tutoradop").val()
         total_reprobado5 = num_materia5.val()
-        por_reprobado5 = (total_reprobado5*100)/t_alumno;
-        $("#por_materia5").val((Math.round(por_reprobado5*100)/100).toFixed(2))
-    })
-
-    num_materia6.on("keyup", function (){
-        t_alumno = $("#num_tutoradop").val()
         total_reprobado6 = num_materia6.val()
-        por_reprobado6 = (total_reprobado6*100)/t_alumno;
-        $("#por_materia6").val((Math.round(por_reprobado6*100)/100).toFixed(2))
-    })
 
+        por_reprobado1 = (total_reprobado1*100)/t_alumno;
+        por_reprobado2 = (total_reprobado2*100)/t_alumno;
+        por_reprobado3 = (total_reprobado3*100)/t_alumno;
+        por_reprobado4 = (total_reprobado4*100)/t_alumno;
+        por_reprobado5 = (total_reprobado5*100)/t_alumno;
+        por_reprobado6 = (total_reprobado6*100)/t_alumno;
+
+        if (t_alumno === "" || total_reprobado1 === "") {
+            $("#por_materia1").val("")
+        } else {
+            $("#por_materia1").val((Math.round(por_reprobado1*100)/100).toFixed(2))
+        }
+
+        if (t_alumno === "" || total_reprobado2 === "") {
+            $("#por_materia2").val("")
+        } else {
+            $("#por_materia2").val((Math.round(por_reprobado2*100)/100).toFixed(2))
+        }
+
+        if (t_alumno === "" || total_reprobado3 === "") {
+            $("#por_materia3").val("")
+        } else {
+            $("#por_materia3").val((Math.round(por_reprobado3*100)/100).toFixed(2))
+        }
+
+        if (t_alumno === "" || total_reprobado4 === "") {
+            $("#por_materia4").val("")
+        } else {
+            $("#por_materia4").val((Math.round(por_reprobado4*100)/100).toFixed(2))
+        }
+
+        if (t_alumno === "" || total_reprobado5 === "") {
+            $("#por_materia5").val("")
+        } else {
+            $("#por_materia5").val((Math.round(por_reprobado5*100)/100).toFixed(2))
+        }
+
+        if (t_alumno === "" || total_reprobado6 === "") {
+            $("#por_materia6").val("")
+        } else {
+            $("#por_materia6").val((Math.round(por_reprobado6*100)/100).toFixed(2))
+        }
+    })
 
     reporte_parcial.on("click", function () {
 

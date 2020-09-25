@@ -1,7 +1,7 @@
 body{
     font-family: "Arial";
     margin: 0;
-    background-image: url("../img/foto_alumnos.jpg");
+    background-image: url("../img/foto_cita.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -31,7 +31,7 @@ h2{
 }
 
 #form_alumno{
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
     color: #FFFFFF;
     border-radius: 1em;
     display:block;
@@ -40,64 +40,56 @@ h2{
     padding: 1em 2em;
 }
 
+/*Fila 1*/
 #no_ficha, #generacion{
-    width: 6em;
-    text-align: center;
-    color: #ff0600;
-}
-
-#nombre, #apellido_pat, #apellido_mat{
-    width: 13em;
-    text-align: center;
-}
-
-#avenida_calle, #esquina{
-    width: 25em;
-    text-align: center;
-}
-
-#numero{
-    width: 5em;
-    text-align: center;
-    color: #ff0600;
-}
-
-#municipio, #estado{
-    width: 14em;
-    height: 1.6em;
-    text-align: center;
-}
-
-#estados div{
-    display: none;
-}
-
-#nom_estado, #nom_municipio, #colonia, #localidad{
-    width: 14em;
-    text-align: center;
-}
-
-#codpos{
-    width: 5em;
-    text-align: center;
-    color: #ff0600;
-}
-
-#edad{
-    width: 3em;
-    text-align: center;
-    color: #ff0600;
-}
-
-#telefono{
+    font-family: "Arial Black";
+    margin-left: 5px;
+    font-size: 15px;
     width: 7em;
     text-align: center;
     color: #ff0600;
 }
 
+.labelfecha{
+    margin-left: 6em;
+}
 
+#f_registro{
+    margin-left: 5px;
+    margin-right: 6em;
+    font-size: 15px;
+    width: 10em;
+    color: #ff0600;
+    text-align: center;
+    font-family: Arial;
+}
 
-#fnacimiento, #f_registro{
+#btngeneracion{
+    border: none;
+    margin-left: 1em;
+    height: 1.7em;
+    width: 7em;
+}
+
+#btngeneracion:hover{
+    font-family: "Arial Black";
+    background: #54e502;
+}
+
+/*Fila 2*/
+.nom_pat_mat {
+    margin-left: 1em;
+    font-size: 15px;
+    width: 15em;
+    height: 20px;
+    text-align: center;
+}
+
+/*Fila 3*/
+#fnacimiento{
+    margin-left: 2px;
+    margin-right: 2em;
+    font-size: 15px;
     width: 10em;
     color: #ff0600;
     text-align: center;
@@ -105,73 +97,238 @@ h2{
 }
 
 #sexo{
+    margin-left: 2px;
+    margin-right: 2em;
+    font-size: 15px;
     width: 8em;
     text-align: center;
 }
 
-#procedencia{
-    width: 12em;
+.ind_sino{
+    margin-left: 10px;
+}
+
+.label_edad{
+    margin-left: 2em;
+}
+
+#edad{
+    font-family: "Arial Black";
+    margin-left: 2px;
+    width: 4em;
+    font-size: 15px;
     text-align: center;
+    color: #ff0600;
+}
+
+/*Fila 4*/
+.edo_civil{
+    margin-left: 10px;
+}
+
+.label_telcel{
+    margin-left: 3em;
+}
+
+#telefono{
+    margin-left: 2px;
+    margin-right: 3em;
+    font-size: 15px;
+    width: 8em;
+    text-align: center;
+    color: #ff0600;
 }
 
 #email{
+    margin-left: 2px;
+    font-size: 15px;
+    width: 17em;
+    text-align: center;
+}
+
+/*Fila 5*/
+#avenida_calle, #esquina{
+    margin-left: 2px;
+    font-size: 15px;
+    width: 24em;
+    text-align: center;
+}
+
+.label_esquina{
+    margin-left: 3em;
+}
+
+/*Fila 6*/
+#numero{
+    margin-left: 2px;
+    margin-right: 6em;
+    font-size: 15px;
+    width: 5em;
+    text-align: center;
+    color: #ff0600;
+}
+
+#colonia {
+    margin-left: 2px;
+    margin-right: 6em;
+    font-size: 15px;
     width: 15em;
     text-align: center;
 }
 
-.promedio{
-    width: 4em;
+#codpos {
+    margin-left: 2px;
+    font-size: 15px;
+    width: 7em;
+    text-align: center;
+    color: #ff0600;
+}
+
+/*Fila 7*/
+#municipio, #estado{
+    margin-left: 2px;
+    font-size: 15px;
+    width: 14em;
+    height: 1.6em;
     text-align: center;
 }
 
-#botones{
+.label_municipio {
+    margin-left: 3em;
+}
+
+.label_localidad{
+    margin-left: 3em;
+}
+
+#localidad {
+    margin-left: 2px;
+    font-size: 15px;
+    width: 14em;
     text-align: center;
+}
+
+/*Fila 7.1*/
+#estados div{
+    display: none;
+}
+
+#nom_estado {
+    margin-left: 2px;
+    margin-right: 4em;
+    font-size: 15px;
+    width: 14em;
+    height: 1.6em;
+    text-align: center;
+}
+
+#nom_municipio {
+    margin-left: 2px;
+    font-size: 15px;
+    width: 14em;
+    text-align: center;
+}
+
+/*Fila 8*/
+.tipo_prepa {
+    margin-right: 2.5em;
+}
+
+.tipo_otra {
+    margin-right: 5px;
 }
 
 #otro_bach{
-    width: 14em;
+    width: 15em;
+    font-size: 15px;
     text-align: center;
     display: none;
 }
 
-.boton{
-    width: 8em;
-    height: 2em;
-    margin: 0 2em;
-    display:inline;
-    color: #000000;
+
+/*Fila 9*/
+.tipo_area {
+    margin-left: 1.5em;
 }
 
-.boton:hover{
-    background: #aad6e3;
-}
 
-.escuelas{
+/*Fila 10*/
+#preparatoria{
+    margin-left: 5px;
+    margin-right: 5em;
+    font-size: 15px;
     width: 30em;
     text-align: center;
 }
 
+#prom_prepa{
+    margin-left: 5px;
+    font-size: 15px;
+    width: 5em;
+    text-align: center;
+}
+
+
+/*Fila 11*/
+.texto_carreras {
+    font-size: 25px;
+}
+
+.carreras {
+    margin-left: 22px;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+/*Fila 12*/
+#botones{
+    height: 7em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.boton {
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    width: 13em;
+    height: 2.3em;
+    margin: 0 1.5em;
+    color: #000000;
+}
+
+.boton:hover{
+    font-family: "Arial Black";
+    background: #54e502;
+}
+
+
+/*Fila 13*/
 .areas{
-    display:block;
-    width: 60em;
-    margin: 0 auto;
-    padding: 0 2em;
-    text-align: center;
+    height: 13em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+
 }
 
-.carreras{
-    font-size: 1.5em;
-    text-align: center;
-}
-
-.carreras:hover{
-    color: #54e502;
+.a_carpetas{
+    margin: 2em;
 }
 
 .carpetas{
-    width: 17em;
+    width: 15em;
 }
 
+/*CAMBIO DE COLOR PARA LOS RAIDOS Y CHECKBOX*/
+.carreras:hover, .ind_sino:hover, .edo_civil:hover, .tipo_prepa:hover, .tipo_otra:hover, .tipo_area:hover{
+    color: #54e502;
+}
+
+
+/*VENTANAS MODALES*/
 .areas-acceso{
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -212,6 +369,8 @@ h2{
 }
 
 .botones_acceso{
+    border: none;
+    border-radius: 10px;
     margin: 0 5px;
     text-align: center;
     font-size: 15px;

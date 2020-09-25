@@ -70,19 +70,21 @@ h2{
 }
 
 .boton_acceso:hover{
+    cursor:pointer;
     background: darkgreen;
     color: #ffffff;
     border: 2px solid #ffffff;
 }
 
 .boton_acceso-salir:hover{
+    cursor:pointer;
     background: #900000;
     color: #FFFFFF;
     border: 2px solid #ffffff;
 }
 
 .modal-fondo{
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -94,66 +96,82 @@ h2{
 }
 
 #v_modal{
-    background: rgba(85, 5, 4, 0.8);
+    background: none;
+    border: 4px solid #ffffff;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 33em;
-    height: 13em;
+    width: 35em;
+    height: 18em;
     margin: auto;
     border-radius: 1.5em;
     position: absolute;
-    padding: 2em;
-    text-align: center;
 }
 
 #candado{
+    margin-top: 2em;
     width: 7em;
-    display:inline-block;
+    display:inline;
     vertical-align:middle;
-    margin-right: 1em;
+    margin-right: 2em;
 }
 
 #contenido_modal{
+    margin-top: 2em;
     display:inline-block;
     vertical-align:middle;
-    margin-left: 2em;
 }
 
 #contenido_modal2{
+    margin: 0;
+    vertical-align:middle;
     text-align: center;
 }
 
 .login{
+    border-radius: 5px;
+    color: white;
     text-align: center;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.2);
     width: 15em;
     height: 2em;
     font-size: 20px;
 }
 
 .botones_login{
+    margin: 5px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
     text-align: center;
-    background-color: #453d3d;
-    color: #FFFFFF;
+    background: none;
+    color: white;
     font-size: 15px;
     width: 10em;
-    height: 2.5em;
-    font-family: "Britannic Bold";
+    height: 3em;
+}
+
+.botones_login:hover{
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    font-family: "Arial";
 }
 
 #v_modal_reportes{
-    background: rgb(5, 2, 91);
+    background: none;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     width: 20em;
-    height: 15em;
+    height: 17em;
     margin: auto;
-    border-radius: 1.5em;
+    border: 4px solid #ffffff;
+    border-radius: 1em;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 #contenido_modal_reportes{
@@ -163,34 +181,46 @@ h2{
 }
 
 .login_reportes{
+    border: none;
+    border-radius: 10px;
     text-align: center;
     font-size: 15px;
     width: 15em;
     height: 3em;
-    font-family: "Britannic Bold";
+    background: rgba(255, 255, 255, 0.5);
+    color: #000000;
 }
 
-.login_reportes:hover{
-    background: #05025B;
+#reporteParcial:hover{
+    font-family: "Arial Black";
+    background: rgba(255, 124, 16, 0.5);
     color: #FFFFFF;
 }
 
-#reportes_salir:hover{
-    background: #540303;
+#reporteFinal:hover{
+    font-family: "Arial Black";
+    background: rgba(17, 68, 191, 0.5);
+    color: #FFFFFF;
+}
+
+#reporteSalir:hover{
+    font-family: "Arial Black";
+    background: rgba(167, 9, 9, 0.5);
     color: #FFFFFF;
 }
 
 #v_modal_nip{
-    background: rgba(1, 23, 180, 0.8);
+    margin: auto;
+    padding: 2em;
+    background: rgba(0, 0, 0, 0);
+    border: 4px solid #ffffff;
+    border-radius: 1.5em;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     width: 32em;
-    height: 12em;
-    margin: auto;
-    padding: 2em;
-    border-radius: 1.5em;
+    height: 13em;
     position: absolute;
     text-align: center;
 }
@@ -214,108 +244,141 @@ h2{
 
 .login_nip{
     text-align: center;
-    background-color: white;
-    color: #000f49;
+    border: 2px solid #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
     width: 15em;
-    height: 1.5em;
+    height: 2em;
     font-size: 20px;
-}
-
-#fondo_nip{
-    background: rgba(0, 0, 0, 0.75);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
 }
 
 #solo_nip{
     text-align: center;
-    background: rgba(135, 1, 1, 0.8);
+    border: 4px solid #ffffff;
+    background: rgba(0, 0, 0, 0);
     padding: 2em;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     width: 20em;
-    height: 5em;
+    height: 7em;
     margin: auto;
-    border-radius: 2em;
+    border-radius: 10px;
     position: absolute;
     align-content: center;
 }
 
 #pass-nip{
+    color: #FFFFFF;
+    border: 2px solid #ffffff;
+    background: rgba(255, 255, 255, 0.2);
     width: 20em;
-    height: 2.5em;
+    height: 3em;
     text-align: center;
     font-size: 15px;
-    border-radius: 1em;
+    border-radius: 10px;
 }
 
-#ventana_modal_cita{
-    background: rgba(0, 0, 0, 0.75);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
+.boton_formcita{
+    margin: 1.7em 10px 0;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    background: none;
+    width: 10em;
+    height: 3em;
+    text-align: center;
+}
+
+.boton_formcita:hover{
+    background: rgba(255, 255, 255, 0.2);
+    font-family: "Arial Black";
 }
 
 #v_modal_cita{
+    margin: auto;
+    padding: 0;
     text-align: center;
-    background: rgba(1, 23, 180, 0.8);
-    padding: 1em;
+    border: 4px solid #ffffff;
+    background: rgba(3, 4, 88, 0.7);
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 40em;
-    height: 17em;
-    margin: auto;
+    width: 60em;
+    height: 25em;
     border-radius: 2em;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.form_pcita{
+    margin: 0;
 }
 
 .cita_nombre{
-    width: 15em;
-    height: 1.5em;
+    color: #FFFFFF;
+    border: 2px solid #ffffff;
+    background: none;
+    font-size: 15px;
+    width: 20em;
+    height: 2em;
     text-align: center;
 }
 
 .cita_apellidos{
-    width: 12em;
-    height: 1.5em;
+    color: #FFFFFF;
+    border: 2px solid #ffffff;
+    background: none;
+    margin-left: 1em;
+    font-size: 15px;
+    width: 15em;
+    height: 2em;
     text-align: center;
 }
 
 #cita_tutoria{
-    width: 23em;
-    height: 2em;
+    color: #FFFFFF;
+    border: 2px solid #ffffff;
+    background: none;
+    font-size: 15px;
+    width: 25em;
+    height: 2.2em;
     text-align: center;
 }
 
 #cita_email{
-    width: 20em;
-    height: 1.5em;
+    color: #FFFFFF;
+    border: 2px solid #ffffff;
+    background: none;
+    margin-left: 2em;
+    font-size: 15px;
+    width: 25em;
+    height: 2em;
     text-align: center;
 }
 
 .cita_login{
-    width: 11em;
-    height: 1.5em;
+    color: #FFFFFF;
+    border: 2px solid #ffffff;
+    background: none;
+    margin: 0 1em;
+    font-size: 15px;
+    width: 15em;
+    height: 2em;
     text-align: center;
 }
 
-.boton_formcita{
-    width: 10em;
-    height: 2em;
-    text-align: center;
+.cite_name{
+    margin: 2em auto;
+    width: 93em;
+    text-align: left;
+}
+
+cite{
+    font-size: 20px;
+    color: #FFFFFF;
 }

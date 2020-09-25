@@ -19,8 +19,8 @@ require "php/BD_Connect.php";
 </head>
 <body>
     <div class="logos_reportef">
-        <img src="img/logo_itsp.png" class="logosf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="img/logo_tecnm.png" class="logosf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/logo_itsp.png" class="logosf">
+        <img src="img/logo_tecnm.png" class="logosf">
         <img src="img/escudo_michoacan.png" class="logosf">
     </div>
 
@@ -30,12 +30,12 @@ require "php/BD_Connect.php";
         <br><br>REPORTE FINAL DE TUTORÍAS
     </h1>
 
-    <form action="" method="" id="ReporteFinal">
+    <form action="" method="" id="ReporteFinal" autocomplete="off">
         <div class="primerf">
             <select name="periodofinal" id="periodofinal">
                 <option value="">--- PERIODO A EVALUAR: ---</option>
-                <option onclick="limpiarf()" value="Agosto - Diciembre">Agosto - Diciembre</option>
-                <option onclick="limpiarf()" value="Enero - Junio">Enero - Junio</option>
+                <option class="periodof" value="Agosto - Diciembre">Agosto - Diciembre</option>
+                <option class="periodof" value="Enero - Junio">Enero - Junio</option>
             </select>
         </div>
 
@@ -230,11 +230,11 @@ require "php/BD_Connect.php";
         <textarea class="area_texto" name="desertoresf" cols="80" rows="2" placeholder="En caso de existir desertores describir el motivo:" title="En caso de existir desertores describir el motivo"></textarea>
 
         <textarea class="area_texto" name="rec_obsf" cols="80" rows="2" placeholder="Recomendaciones/Observaciones:" title="Recomendaciones/Observaciones"></textarea>
-
+        <br>
         <div class="botones_reportef">
             <input type="submit" value="GUARDAR" class="bot-generadoresf">
             <input type="button" id="imprimirRF" value="IMPRIMIR" class="bot-generadoresf">
-            <input type="button" value="SALIR" class="bot-generadoresf" onclick="history.back()">
+            <input type="button" value="SALIR" class="bot-generadoresf" id="cerrarRFinal" onclick="history.back()">
         </div>
     </form>
     <br>

@@ -3,12 +3,13 @@ body{
 }
 
 .logos_reporte{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 .logos{
+    margin: 0 5em;
     height: 7em;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 h1{
@@ -34,19 +35,44 @@ h2{
 }
 
 #periodo{
+    margin-left: 1em;
     width: 12em;
     height: 2em;
     text-align: center;
     font-size: 15px;
 }
 
+.label_report{
+    margin-right: 1em;
+}
+
+.label_numreport{
+    margin: 10px;
+}
+
+.label_numreport:hover{
+    font-family: "Arial Black";
+    color: #ff7c10;
+}
+
+.label_tut{
+    margin-left: 1em;
+}
+
 #nom_tutor{
+    margin-right: 2em;
     text-align: center;
     width: 30em;
     height: 2em;
     font-size: 15px;
 }
+
+#semestre{
+    margin-right: 2em;
+}
+
 .sem_grup{
+    margin-left: 5px;
     text-align: center;
     width: 4em;
     height: 1.7em;
@@ -54,7 +80,7 @@ h2{
 }
 
 #programap{
-    margin-right: 2em;
+    margin-right: 3em;
     text-align: center;
     height: 1.5em;
     width: 25em;
@@ -62,6 +88,7 @@ h2{
 }
 
 #num_tutoradop{
+    margin-left: 10px;
     text-align: center;
     height: 1.5em;
     width: 4em;
@@ -92,6 +119,7 @@ th{
     text-align: center;
 }
 .materia{
+    border: none;
     width: 20em;
     height: 1.2em;
     text-align: justify;
@@ -106,6 +134,7 @@ th{
     text-align: center;
 }
 .num-materia{
+    border: none;
     width: 3em;
     height: 1.2em;
     text-align: center;
@@ -118,6 +147,7 @@ th{
     text-align: center;
 }
 .por-materia{
+    border: none;
     width: 3em;
     height: 1.2em;
     text-align: center;
@@ -154,20 +184,11 @@ th{
 }
 
 .num_canalip{
+    border: none;
     width: 3em;
     height: 1.5em;
     text-align: center;
     font-size: 15px;
-}
-
-.botones_reporte{
-    text-align: center;
-}
-
-
-
-#base_reporte{
-    text-align: center;
 }
 
 .area_texto{
@@ -187,11 +208,39 @@ th{
     font-family: Arial;
 }
 
+.botones_reporte{
+    height: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
 .bot-generadores{
-    background-color: #453d3d;
-    width: 8em;
-    height: 2em;
     color: white;
-    margin: 0 auto;
+    background: #585656;
+    border-radius: 5px;
+    border: none;
+    width: 10em;
+    height: 3em;
+    margin: 0 1.5em;
     display:inline;
+}
+
+.bot-generadores:hover {
+    cursor:pointer;
+    font-family: "Arial Black";
+    color: black;
+    background: #ff7c10;
+
+}
+
+#cerrarRParcial:hover{
+    cursor:pointer;
+    font-family: "Arial Black";
+    background: #fc1e1e;
+    color: #000000;
+}
+
+#base_reporte{
+    text-align: center;
 }

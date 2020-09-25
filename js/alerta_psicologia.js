@@ -1,4 +1,4 @@
-let valor, nuevoValor;
+let valor, nuevoValor, form_psicologia;
 let b1_01, b1_02, b1_03, b1_04, b1_05, b1_06, b1_07, b1_08, b1_09, b1_10;
 let b2_11, b2_12, b2_13, b2_14, b2_15, b2_16, b2_17, b2_18, b2_19, b2_20;
 let b3_21, b3_22, b3_23, b3_24, b3_25, b3_26, b3_27, b3_28, b3_29, b3_30;
@@ -7,21 +7,24 @@ let bloque1, bloque2, bloque3, bloque4;
 let vbloque1, vbloque2, vbloque3, vbloque4;
 
 $(document).ready(function () {
-    $("#alumno-psicologia")[0].reset()
+    form_psicologia = $('#alumno_psicologia')
+    $("#acceso_posttest").hide()
+
+    $("#alumno_psicologia")[0].reset()
     $("#cual, #porque").hide()
 
-    $('#alumno-psicologia').on('click', function () {
+    form_psicologia.on('click', function () {
 
         if ($("#respuesta1:radio").is(":checked")) {
             $("#cual").show()
         } else {
-            $("#cual").hide()
+            $("#cual").hide().val("")
         }
 
         if ($("#respuesta2:radio").is(":checked")) {
             $("#porque").show()
         } else {
-            $("#porque").hide()
+            $("#porque").hide().val("")
         }
 
         $('.escala_pretest').on('change keypress paste focus textInput input',function(){
@@ -97,5 +100,659 @@ $(document).ready(function () {
         $("#bloque2v_bd").val(vbloque2.replace(/,+/g, " "));
         $("#bloque3v_bd").val(vbloque3.replace(/,+/g, " "));
         $("#bloque4v_bd").val(vbloque4.replace(/,+/g, " "));
+    })
+
+    form_psicologia.submit(function (e){
+        e.preventDefault();
+
+        if (!$("input[name='respuesta1']:checked").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 1 sin contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 2000
+            });
+            return false;
+        } else if ($("#respuesta1:checked").val() === "SÍ"){
+            if ($("#cual").val().trim() === "") {
+                Swal.fire({
+                    title: "Describe Cúal...",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    backdrop: "rgba(0,0,0,0.0)",
+                    timer: 2000
+                });
+                return false;
+            }
+        }
+
+
+        if (!$("input[name='respuesta2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 2 sin contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 2000
+            });
+            return false;
+        } else if ($("#respuesta2:checked").val() === "SÍ"){
+            if ($("#porque").val().trim() === "") {
+                Swal.fire({
+                    title: "Describe Por qué...",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    backdrop: "rgba(0,0,0,0.0)",
+                    timer: 2000
+                });
+                return false;
+            }
+        }
+
+
+        if ($("[name=ep_a1]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo A.1. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if ($("[name=ep_d1]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo D.1. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+        if ($("[name=ep_a2]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo A.2. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if ($("[name=ep_d2]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo D.2. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+        if ($("[name=ep_a3]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo A.3. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if ($("[name=ep_d3]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo D.3. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+        if ($("[name=ep_a4]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo A.4. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if ($("[name=ep_d4]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo D.4. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+        if ($("[name=ep_a5]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo A.5. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if ($("[name=ep_d5]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo D.5. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+        if ($("[name=ep_a6]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo A.6. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if ($("[name=ep_d6]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo D.6. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+        if ($("[name=ep_a7]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo A.7. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if ($("[name=ep_d7]").val().trim() === "") {
+            Swal.fire({
+                title: "Campo D.7. Vacío",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+        //Eventos del Bloque 1
+        if (!$("input[name='bloque1_01']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 01 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_02']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 02 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_03']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 03 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_04']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 04 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_05']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 05 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_06']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 06 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_07']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 07 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_08']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 08 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_09']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 09 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque1_10']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 10 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+        //Eventos del Bloque 2
+        if (!$("input[name='bloque2_11']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 11 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_12']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 12 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_13']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 13 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_14']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 14 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_15']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 15 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_16']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 16 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_17']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 17 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_18']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 18 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_19']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 19 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque2_20']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 20 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+        //Eventos del Bloque 3
+        if (!$("input[name='bloque3_21']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 21 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_22']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 22 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_23']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 23 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_24']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 24 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_25']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 25 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_26']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 26 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_27']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 27 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_28']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 28 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_29']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 29 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque3_30']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 30 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+        //Eventos del Bloque 4
+        if (!$("input[name='bloque4_31']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 31 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_32']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 32 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_33']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 33 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_34']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 34 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_35']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 35 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_36']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 36 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_37']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 37 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_38']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 38 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_39']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 39 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+        if (!$("input[name='bloque4_40']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 40 sin Contestar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+        Swal.fire({
+            title: "¿Guardar Examen Psicológico?",
+            text: "Descpués, ya no podrá hacer cambios en el examen",
+            type: 'warning',
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: '#19980b',
+            cancelButtonColor: '#910018',
+            confirmButtonText: 'GUARDAR',
+            cancelButtonText: 'CANCELAR',
+            backdrop: "rgba(7,44,0,0.7)"
+
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: "php/datos_psicologia.php",
+                    type: 'POST',
+                    data: form_psicologia.serialize(),
+                    success: function (respuesta) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: (respuesta),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function (error) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: (error.responseText),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                });
+                form_psicologia[0].reset()
+            }
+        });
     })
 })

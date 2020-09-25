@@ -19,43 +19,42 @@
 </head>
 <body>
     <div id="logos_canalizacion">
-        <img src="img/logo_itsp.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="img/logo_tecnm.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/logo_itsp.png" class="logos">
+        <img src="img/logo_tecnm.png" class="logos">
         <img src="img/escudo_michoacan.png" class="logos">
     </div>
     <h1>PROGRAMA DE TUTORÍA ACADÉMICA</h1>
     <h2>CANALIZACIÓN DE TUTORADO</h2>
 
-    <form action="" method="" name="canalizacion" id="canalizacion">
-        <label>Folio:&nbsp;&nbsp;<input type="text" id="folio" name="folio" value="" readonly></label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label>Fecha:&nbsp;&nbsp;<input type="text" id="fecha-hoy" name="fecha-hoy" value="" readonly></label>
-        <br><br>
+    <form action="" method="" name="canalizacion" id="canalizacion" autocomplete="off">
+        <label>Folio:<input type="text" id="folio" name="folio" value="" readonly></label>
+        <label>Fecha:<input type="text" id="fecha_hoy" name="fecha_hoy" value="" readonly></label>
+        <br><br><br>
 
-        <label>Nombre del Estudiante:&nbsp;&nbsp;<input type="text" id="nom_alumno" name="nom_alumno" placeholder="Nombre(s) y Apellidos"></label>
+        <label>Nombre del Estudiante:<input type="text" id="nom_alumno" name="nom_alumno" placeholder="Nombre(s) y Apellidos"></label>
         <br><br>
-        Carrera:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Gestión Empresarial">
-            <input type="radio" id="igem" name="carrera" value="1">IGEM</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería Industrial">
-            <input type="radio" id="iind" name="carrera" value="2">IIND</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Sistemas Computacionales">
-            <input type="radio" id="isic" name="carrera" value="3">ISIC</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería Biomédica">
-            <input type="radio" id="ibio" name="carrera" value="4">IBIO</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Innovación Agrícola Sustentable">
-            <input type="radio" id="iias" name="carrera" value="5">IIAS</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Energías Renovables">
-            <input type="radio" id="ienr" name="carrera" value="6">IENR</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería Forestal">
-            <input type="radio" id="ifor" name="carrera" value="7">IFOR</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label title="Ingeniería en Agronomía">
+        Carrera:
+        <label class="carreras_itsp" title="Ingeniería en Gestión Empresarial">
+            <input type="radio" id="igem" name="carrera" value="1">IGEM</label>
+        <label class="carreras_itsp" title="Ingeniería Industrial">
+            <input type="radio" id="iind" name="carrera" value="2">IIND</label>
+        <label class="carreras_itsp" title="Ingeniería en Sistemas Computacionales">
+            <input type="radio" id="isic" name="carrera" value="3">ISIC</label>
+        <label class="carreras_itsp" title="Ingeniería Biomédica">
+            <input type="radio" id="ibio" name="carrera" value="4">IBIO</label>
+        <label class="carreras_itsp" title="Ingeniería en Innovación Agrícola Sustentable">
+            <input type="radio" id="iias" name="carrera" value="5">IIAS</label>
+        <label class="carreras_itsp" title="Ingeniería en Energías Renovables">
+            <input type="radio" id="ienr" name="carrera" value="6">IENR</label>
+        <label class="carreras_itsp" title="Ingeniería Forestal">
+            <input type="radio" id="ifor" name="carrera" value="7">IFOR</label>
+        <label class="carreras_itsp" title="Ingeniería en Agronomía">
             <input type="radio" id="iagr" name="carrera" value="8">IAGR</label>
 
         <br><br>
-        <label>Núm. de Control:&nbsp;&nbsp;
+        <label>Núm. de Control:
             <input type="text" id="num_control" name="num_control" maxlength="7" minlength="7">
-        </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </label>
 
         <select class="seleccion" name="semestre" id="semestre">
             <option value="">--- Semestre ---</option>
@@ -72,18 +71,18 @@
             <option value="11">11</option>
             <option value="12">12</option>
         </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
         <input type="text" id="ciclo_escolar" name="ciclo_escolar" placeholder="--- Ciclo Escolar ---" readonly>
         <br><br>
 
-        Tipo de Canalización:&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="Psicológica">Psicológica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="Pedagógica">Pedagógica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="Asesoría Académica">Asesoría Académica</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" value="Médica">Médica</label>
+        Tipo de Canalización:
+        <label class="tipo_canali"><input type="radio" name="tipo_canalizacion" value="Psicológica">Psicológica</label>
+        <label class="tipo_canali"><input type="radio" name="tipo_canalizacion" value="Pedagógica">Pedagógica</label>
+        <label class="tipo_canali"><input type="radio" name="tipo_canalizacion" value="Asesoría Académica">Asesoría Académica</label>
+        <label class="tipo_canali"><input type="radio" name="tipo_canalizacion" value="Médica">Médica</label>
         <br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label><input type="radio" name="tipo_canalizacion" id="otra_canalizacion" value="otro">Otra:</label>&nbsp;&nbsp;
+
+        <label class="canali_otra"><input type="radio" name="tipo_canalizacion" id="otra_canalizacion" value="otro">Otra:</label>
         <input type="text" name="nombre_canalizacion" id="nombre_canalizacion">
         <br><br>
         Descripción de la Problemática:
@@ -127,11 +126,9 @@
         <br><br>
 
         <div id="botones_canalizacion">
-            <input type="submit" value="GUARDAR" class="boton_cana">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input id="imprimir" type="button" value="IMPRIMIR" class="boton_cana">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="button" value="REGRESAR" class="boton_cana" onclick="history.back()">
+            <input type="submit" value="GUARDAR" class="boton_canali">
+            <input id="imprimir" type="button" value="IMPRIMIR" class="boton_canali">
+            <input type="button" value="REGRESAR" class="boton_salir" onclick="history.back()">
         </div>
     </form>
     <br><br>

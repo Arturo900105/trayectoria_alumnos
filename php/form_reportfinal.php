@@ -1,11 +1,6 @@
 <?php
     require "BD_Connect.php";
-
-    ini_set('date.timezone', 'America/Mexico_City');
-    setlocale(LC_TIME,"spanish");
-
-    $fecha_rfinal = utf8_decode(strftime("%A,%e de %B de %Y"));
-    $hora_rfinal = date("h:i a.");
+    require "fecha_hora.php";
 
     $periodoFinal = $_POST["periodofinal"];
 
@@ -90,7 +85,7 @@
                                              num_aseparf,num_psicologiaf,num_medicaf,num_pedagogica,
                                              problematica,necesidades,desertados,recomobser)
 
-                    VALUES ('$fecha_rfinal','$hora_rfinal','$periodoFinal',
+                    VALUES ('$fechaHoy','$horaHoy','$periodoFinal',
                             '$nomTutorF[0]','$semgrupFin','$programFin','$numTAf',
                             '$materiaf1','$numMateriaf1','$porMateriaf1',
                             '$materiaf2','$numMateriaf2','$porMateriaf2',
@@ -109,7 +104,7 @@
         http_response_code(404);
         echo "\n\nNO SE PUDO GUARDAR EL REPORTE FINAL!!!";
     } else {
-        //echo "REPORTE FINAL\nGUARDADO EXITOSAMENTE!!!";
+        echo "REPORTE FINAL\nGUARDADO EXITOSAMENTE!!!";
         echo mysqli_insert_id($connect);
     }
 

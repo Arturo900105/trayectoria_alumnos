@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario Tutor</title>
-    <link rel="stylesheet" href="css/estilo-logintrayectoria.css">
+    <link rel="stylesheet" href="css/estilo-logintutor.css">
 
     <script src="js/jquery_3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
@@ -12,19 +12,15 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
     <script src="js/area_dinamica.js"></script>
-    <script src="js/alertas.js"></script>
 </head>
 <body>
-    <h1>FORMULARIO DE REGISTRO PARA EL TUTOR</h1>
-    <form action="" method="" id="formulario_tutor">
-
+    <form action="" method="" id="formulario_tutor" autocomplete="off">
+        <h1>FORMULARIO DE REGISTRO PARA EL TUTOR</h1>
         <h2>Para seguir con el registro de las trayectorias,
             <br>llena lo que se te pide a continuación:</h2>
-        <br><br>
-
-        <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre(s):" onclick="borrarNombre()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="apepat_tutor" name="apepat_tutor" class="apellidos_tutor" placeholder="Apellido Paterno:" onclick="borrarApePat()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="apemat_tutor" name="apemat_tutor" class="apellidos_tutor" placeholder="Apellido Materno:" onclick="borrarApeMat()">
+        <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre(s):">
+        <input type="text" id="apepat_tutor" name="apepat_tutor" class="apellidos_tutor" placeholder="Apellido Paterno:">
+        <input type="text" id="apemat_tutor" name="apemat_tutor" class="apellidos_tutor" placeholder="Apellido Materno:">
         <br><br>
 
         <select name="tipo_tutoria" id="tipo-tutoria" >
@@ -33,7 +29,7 @@
             <option value="Tutoría Generacional">2. Tutoría Generacional</option>
             <option value="Tutoría de Salida">3. Tutoría de Salida</option>
         </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
         <select name="area_de" id="area_de" title="A continuación, se mostrará la carpeta del área seleccionada">
             <option value=""> --- Área de: --- </option>
             <option value="IGEM">Ingeniería en Gestión Empresarial</option>
@@ -47,26 +43,27 @@
         </select>
         <br><br>
 
+        <input type="email" name="email" id="email" placeholder="E-mail:">
+        <br><br>
+
         <div class="alerta-email">
-            <label for="email"><b>Se te enviará el Usuario y Contraseña que generes, al correo que proporciones;
-                <br>Así que:
-                <br><br>¡¡¡ASEGURATE DE ESCRIBIRLO BIEN!!!</b>
+            <label for="email">Después de generar el Login,
+                anota o copia tu Usuario y Contraseña en un lugar donde los tengas a la mano,
+                ya que los va a necesitar para acceder a su plataforma de trabajo
+                <br><br>Así que:
+                <br><br><b>¡¡¡ASEGURATE DE ANOTARLOS BIEN!!!</b>
             </label>
         </div>
         <br>
 
-        <input type="email" name="email" id="email" placeholder="E-mail:">
-        <br><br>
-
-        <input type="button" class="boton_trayectoria" id="generar-login" value="Generar Login" onclick="crearUsuario()">
+        <input type="button" class="boton_genelogin" id="generar-login" value="Generar Login" onclick="crearUsuario()">
         <br><br>
         <input type="text" id="usu-tutor" name="usu_tutor" placeholder="Usuario:" readonly>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" id="pass-tutor" name="pass_tutor" placeholder="Contraseña:" readonly>
         <br><br>
 
-        <div class="botones">
-            <input type="submit" value="REGISTRAR" class="boton_trayectoria">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div id="botones">
+            <input type="submit" value="REGISTRAR" class="boton_trayectoria">
             <input type="button" value="SALIR" class="boton_trayectoria" onclick="history.back()">
         </div>
         <br>
@@ -109,14 +106,14 @@
     <div class="modal-acceso" id="modal-acceso">
         <div id="m_acceso">
             <img src="img/candado.png" id="candadito">
-            <div id="contenido_m_acceso">
+            <form id="contenido_m_acceso">
                 <input type="text" name="usuario" placeholder="Ingresa tu Usuario" class="login_acceso">
                 <br><br>
                 <input type="password" name="pass" placeholder="Ingresa tu Contraseña" class="login_acceso">
                 <br><br>
-                <input type="button" value="ENTRAR" class="botones_login_acceso">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" value="ENTRAR" class="botones_login_acceso" id="login_tutor">
                 <input type="button" value="CANCELAR" class="botones_login_acceso" onclick="Cerrar_M_Acceso()">
-            </div>
+            </form>
         </div>
     </div>
     <script src="js/login_tutor.js"></script>

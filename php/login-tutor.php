@@ -7,7 +7,7 @@ require "BD_Connect.php";
     $usuario = $_POST['usuario'];
     $password = $_POST['pass'];
 
-    $consulta = "SELECT * FROM tutor WHERE usuario = '$usuario' and password = '$password'";
+    $consulta = "SELECT * FROM tutor WHERE usuario = '$usuario' and pass_tutor = '$password'";
     $resultado = mysqli_query($connect, $consulta);
     $filas = mysqli_num_rows($resultado);
 

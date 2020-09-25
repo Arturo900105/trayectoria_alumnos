@@ -19,8 +19,8 @@ require "php/BD_Connect.php";
 </head>
 <body>
     <div class="logos_reporte">
-        <img src="img/logo_itsp.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="img/logo_tecnm.png" class="logos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/logo_itsp.png" class="logos">
+        <img src="img/logo_tecnm.png" class="logos">
         <img src="img/escudo_michoacan.png" class="logos">
     </div>
 
@@ -30,21 +30,21 @@ require "php/BD_Connect.php";
             <br><br>REPORTE PARCIAL
         </h1>
 
-    <form action="" method="" id="ReporteParcial">
+    <form action="" method="" id="ReporteParcial" autocomplete="off">
         <div class="primer">
-            <label for="periodo"><b>PERIODO A EVALUAR:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="periodo"><b>PERIODO A EVALUAR:</b></label>
             <select name="periodo" id="periodo">
                 <option value="">----------</option>
-                <option onclick="limpiar()" value="Agosto - Diciembre">Agosto - Diciembre</option>
-                <option onclick="limpiar()" value="Enero - Junio">Enero - Junio</option>
+                <option class="periodop" value="Agosto - Diciembre">Agosto - Diciembre</option>
+                <option class="periodop" value="Enero - Junio">Enero - Junio</option>
             </select>
             <br><br>
 
-            <b>REPORTE:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label>1<input type="radio" name="num_reporte" value="1"></label>&nbsp;&nbsp;
-            <label>2<input type="radio" name="num_reporte" value="2"></label>&nbsp;&nbsp;
-            <label>3<input type="radio" name="num_reporte" value="3"></label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DE TUTORÍAS. </b>
+            <b class="label_report">REPORTE:</b>
+            <label class="label_numreport">1<input type="radio" name="num_reporte" value="1"></label>
+            <label class="label_numreport">2<input type="radio" name="num_reporte" value="2"></label>
+            <label class="label_numreport">3<input type="radio" name="num_reporte" value="3"></label>
+            <b class="label_tut">DE TUTORÍAS.</b>
         </div>
         <br><br>
 
@@ -57,7 +57,7 @@ require "php/BD_Connect.php";
                 echo "<option value='".$tutor['nombre']." ".$tutor['apellido']."_".$tutor['area_de']."'>".$tutor['nombre']." ".$tutor['apellido']."</option>";
             }
             ?>
-        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </select>
 
         <label>Semestre:
             <select name="semestre" id="semestre" class="sem_grup">
@@ -73,7 +73,7 @@ require "php/BD_Connect.php";
                 <option class="sem_impar" value="9">9</option>
                 <option class="sem_par" value="10">10</option>
             </select>
-        </label>&nbsp;&nbsp;&nbsp;
+        </label>
 
         <label>Grupo:
             <select name="grupo" id="grupo" class="sem_grup">
@@ -88,7 +88,7 @@ require "php/BD_Connect.php";
 
         <input type="text" name="programap" id="programap" placeholder="--- Programa: ---" value="" readonly>
 
-        <label>Núm. Total de tutorados asignados:&nbsp;&nbsp;<input type="text"
+        <label>Núm. Total de tutorados asignados:<input type="text"
                                                           id="num_tutoradop"
                                                           name="num_tutoradop"
                                                           title="Total de Alumnos equivalentes al 100%."
@@ -266,12 +266,12 @@ require "php/BD_Connect.php";
 
         <label for="rec_obs">Recomendaciones/Observaciones:</label>
         <br><textarea title="Recomendaciones/Observaciones" class="area_texto" name="recobser" cols="70" rows="2"></textarea>
-        <br><br>
+        <br>
 
         <div class="botones_reporte">
-            <input type="submit" value="GUARDAR" class="bot-generadores">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="button" value="IMPRIMIR" id="imprimirRP" class="bot-generadores">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="button" value="SALIR" class="bot-generadores" onclick="history.back()">
+            <input type="submit" value="GUARDAR" class="bot-generadores">
+            <input type="button" value="IMPRIMIR" id="imprimirRP" class="bot-generadores">
+            <input type="button" value="SALIR" class="bot-generadores" id="cerrarRParcial" onclick="history.back()">
         </div>
     </form>
     <br>

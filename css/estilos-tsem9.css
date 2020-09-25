@@ -1,0 +1,315 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    text-align: center;
+}
+
+h2{
+    margin-left: 1em;
+}
+
+#trayectoria9{
+    margin: 2em auto;
+    background: none;
+    width: 55em;
+    padding: 1em;
+    border-radius: 2em;
+    border: 4px solid #ff5a00;
+}
+
+#tabla_ingles_9, #inglesth_9, #inglestd_9{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 15px;
+    color: #000000;
+}
+
+#inglesth_9{
+    width: 25em;
+    height: 5em;
+    text-align: center;
+}
+
+#inglestd_9{
+    width: 25em;
+}
+
+#nivel_ingles_9{
+    margin-left: 2em;
+    text-align: center;
+    font-size: 15px;
+    width: 13em;
+    height: 1.7em;
+}
+
+.nivel_ingles_9{
+    margin-left: 20px;
+}
+
+.ingles_ubicacion_9{
+    margin-left: 20px;
+}
+
+#creditos_9, .creditosth_9, .creditostd_9{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.creditosth_9{
+    background: #fc7427;
+    height: 3em;
+}
+
+.creditostd_9{
+    height: 5em;
+}
+
+#creditostd1_9{
+    width: 12em;
+}
+
+#creditostd2_9{
+    text-align: right;
+    width: 15em;
+}
+
+#creditostd3_9{
+    width: 13em;
+}
+
+#creditostd4_9{
+    width: 10em;
+}
+
+.credito_9{
+    margin-left: 5px;
+    text-align: center;
+    font-size: 15px;
+    width: 4em;
+    height: 1.5em;
+}
+
+#cultural_9{
+    margin-right: 3em;
+}
+
+#deportiva_9{
+    margin-top: 10px;
+    margin-right: 3em;
+}
+
+#complementaria_9{
+    font-size: 30px;
+    text-align: center;
+    width: 3em;
+    height: 1.5em;
+}
+
+#suma_tcdc_9{
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 50px;
+    width: 2.2em;
+    height: 1em;
+}
+
+
+#tabla_residencia, #td_residencia1, #td_residencia2{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 15px;
+    color: #000000;
+}
+#td_residencia1{
+    text-align: center;
+    width: 15em;
+    height: 7em;
+}
+#td_residencia2{
+    text-align: center;
+    width: 35em;
+    height: 7em;
+}
+
+#lugar_residencia{
+    padding: 5px 2px;
+    text-align: center;
+}
+.residencia_9{
+    margin: 0 0.5em;
+}
+
+#materias_9, .materiastd1_9, .materiastd2_9, .materiastd3_9, .materiastd_9{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materiastd1_9{
+    width: 10em;
+}
+
+.materiastd2_9{
+    width: 30em;
+    text-align: center;
+}
+
+.materiastd3_9{
+    width: 10em;
+}
+
+.materiasth_9{
+    height: 2em;
+    background: #fc7427;
+}
+
+#cantidad_materias_9, #materias_reprobadas_9{
+    font-family: "Arial Black";
+    border: none;
+    background: none;
+    text-align: center;
+    width: 4em;
+    height: 2em;
+}
+
+#materias_reprobadas_9{
+    color: #ec0000;
+}
+
+.materiaN_9{
+    border: none;
+    background: none;
+    margin: 2px;
+    text-align: left;
+    width: 28em;
+    height: 2em;
+    font-size: 15px;
+    color: black;
+}
+
+.calificacionN_9{
+    border: none;
+    background: none;
+    margin: 2px 0;
+    text-align: center;
+    width: 8em;
+    height: 2em;
+    font-size: 15px;
+    color: black;
+}
+
+#beca_9, .becatd_9{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.becatd_9{
+    width: 25em;
+    height: 2em;
+}
+
+#tipo_beca_9{
+    width: 25em;
+    height: 2em;
+    text-align: center;
+}
+
+#relbeca_9{
+    text-align: left;
+}
+
+#materias2_9, .materias2th_9, .materias2td_9{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materias2th_9{
+    width: 25em;
+    padding: 10px 0;
+}
+
+.materias2td_9{
+    width: 25em;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.materiarep_9{
+    width: 20em;
+    height: 2em;
+    padding-left: 7px;
+    text-align: left;
+    margin: 3px 0;
+    font-size: 15px;
+}
+
+.label_becado_9{
+    margin-left: 1em;
+}
+
+.folios_canal_9{
+    margin-top: 4px;
+    margin-left: 10px;
+    color: #ec0000;
+    width: 7em;
+    height: 1.2em;
+    font-size: 17px;
+    text-align: center;
+}
+
+.ingles_ubicacion_9:hover, .nivel_ingles_9:hover, .residencia_9:hover, .label_becado_9:hover, .label_foliocanali_9:hover{
+    color: #ff6500;
+}
+
+#ciclo_9{
+    text-align: center;
+    font-size: 15px;
+}
+
+#observaciones_9{
+    padding: 7px 10px;
+    font-family: Arial;
+}
+
+#contenedor2_9{
+    text-align: center;
+}
+
+.btn-t1_9{
+    margin: 0 1.5em;
+    border-radius: 5px;
+    border: none;
+    width: 10em;
+    height: 3em;
+    display:inline;
+}
+
+.btn-t1_9:hover{
+    font-family: "Arial Black";
+    background: #ff5a00;
+}

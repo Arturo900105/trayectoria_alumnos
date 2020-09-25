@@ -2,15 +2,20 @@
     require "BD_Connect.php";
 
     $fichaAlumno = $_POST['ficha_alumno'];
+
     $resp1 = $_POST['respuesta1'];
-    $cual = $_POST['cual'];
-    if ($resp1 == "No"){
+    $cual = "";
+    if ($resp1 == "SÍ"){
+        $cual = $_POST['cual'];
+    } else {
         $cual = "----------";
     }
 
     $resp2 = $_POST['respuesta2'];
-    $porque = $_POST['porque'];
-    if ($resp2 == "No"){
+    $porque = "";
+    if ($resp2 == "SÍ"){
+        $porque = $_POST['porque'];
+    } else {
         $porque = "----------";
     }
 
@@ -38,12 +43,12 @@
     $q5 = mysqli_query($connect, $psicologia);
 
     if ($q5){
-        echo "REGISTRO EXITOSO!!!";
+        echo "EXAMEN PSICOLÓGICO\nGUARDADO EXITOSAMENTE!!!";
     }
     else{
         //printf("Errormessage: \n%s", mysqli_error($connect));
         http_response_code(404);
-        echo "\n\nNO SE GUARDÓ NADA!!!";
+        echo "\n\nNO SE PUDO GUARDAR\nEL EXAMEN PSICOLÓGICO";
     }
 
 ?>

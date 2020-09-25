@@ -1,3 +1,4 @@
+let form_pedagogia;
 let xa1, xb1, xc1, xd1, xe1, xf1, xg1, xh1, xi1, xj1, xk1, xl1, xm1, xn1, xo1, xp1, xq1, xr1, xs1, xt1;
 let xa2, xb2, xc2, xd2, xe2, xf2, xg2, xh2, xi2, xj2, xk2, xl2, xm2, xn2, xo2, xp2, xq2, xr2, xs2, xt2;
 let xa3, xb3, xc3, xd3, xe3, xf3, xg3, xh3, xi3, xj3, xk3, xl3, xm3, xn3, xo3, xp3, xq3, xr3, xs3, xt3;
@@ -6,9 +7,10 @@ let valido1, valido2, valido3;
 //console.log(marcax1b);
 
 $(document).ready(function () {
-    $("#alumno-pedagogia")[0].reset();
+    form_pedagogia = $("#alumno_pedagogia")
+    form_pedagogia[0].reset();
 
-    $('#alumno-pedagogia').on('click', function () {
+    form_pedagogia.on('click', function () {
         xa1 = $("[name = marcaXA1]:checked").val();  if (xa1 === "1") {xa1 = "A";} else {xa1 = "";}
         xb1 = $("[name = marcaXB1]:checked").val();  if (xb1 === "1") {xb1 = "B";} else {xb1 = "";}
         xc1 = $("[name = marcaXC1]:checked").val();  if (xc1 === "1") {xc1 = "C";} else {xc1 = "";}
@@ -87,6 +89,955 @@ $(document).ready(function () {
         $("#cadena1").val(valido1.replace(/,+/g, " "));
         $("#cadena2").val(valido2.replace(/,+/g, " "));
         $("#cadena3").val(valido3.replace(/,+/g, " "));
+    })
 
+    form_pedagogia.submit(function (e){
+        e.preventDefault();
+
+        if (!$("input[name='pregunta1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 1 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 2 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 3 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta4']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 4 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta5']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 5 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta6']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 6 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }  else if (!$("input[name='pregunta7']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 7 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }  else if (!$("input[name='pregunta8']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 8 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta9']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 9 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta10']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 10 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta11']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 11 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta12']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 12 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta13']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 13 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta14']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 14 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta15']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 15 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta16']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 16 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta17']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 17 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta18']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 18 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta19']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 19 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta20']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 20 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        } else if (!$("input[name='pregunta21']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Pregunta 21 sin contestar",
+                icon: "warning",
+                width: "30%",
+                background: "#470101",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 1000
+            });
+            return false;
+        }
+
+
+//Encuesta para organización del estudio:
+        if (!$("input[name='marcaXA1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso A de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXB1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso B de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXC1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso C de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXD1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso D de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXE1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso E de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXF1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso F de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXG1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso G de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXH1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso H de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXI1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso I de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXJ1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso J de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXK1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso K de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXL1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso L de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXM1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso M de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXN1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso N de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXO1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso O de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXP1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso P de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXQ1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso Q de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXR1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso R de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXS1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso S de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXT1']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso T de:\nEncuesta para organización del estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        }
+
+
+//Encuesta sobre técnicas de estudio:
+        if (!$("input[name='marcaXA2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso A de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXB2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso B de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXC2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso C de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXD2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso D de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXE2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso E de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXF2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso F de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXG2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso G de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXH2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso H de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXI2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso I de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXJ2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso J de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXK2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso K de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXL2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso L de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXM2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso M de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXN2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso N de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXO2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso O de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXP2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso P de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXQ2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso Q de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXR2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso R de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXS2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso S de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXT2']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso T de:\nEncuesta sobre técnicas de estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        }
+
+
+//Encuesta sobre motivación para el estudio:
+        if (!$("input[name='marcaXA3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso A de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXB3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso B de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXC3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso C de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXD3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso D de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXE3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso E de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXF3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso F de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXG3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso G de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXH3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso H de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXI3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso I de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXJ3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso J de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXK3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso K de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXL3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso L de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXM3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso M de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXN3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso N de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXO3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso O de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXP3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso P de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXQ3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso Q de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXR3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso R de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXS3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso S de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        } else if (!$("input[name='marcaXT3']:radio").is(":checked")) {
+            Swal.fire({
+                title: "Inciso T de:\nEncuesta sobre motivación para el estudio,\nSin contestar!!!",
+                icon: "warning",
+                width: "45%",
+                background: "#001800",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 4000
+            });
+            return false;
+        }
+
+        Swal.fire({
+            title: "¿Guardar Examen Pedagógico?",
+            text: "Descpués, ya no podrá hacer cambios en el examen",
+            type: 'warning',
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: '#19980b',
+            cancelButtonColor: '#910018',
+            confirmButtonText: 'GUARDAR',
+            cancelButtonText: 'CANCELAR',
+            backdrop: "rgba(7,44,0,0.7)"
+
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: "php/datos_pedagogia.php",
+                    type: 'POST',
+                    data: form_pedagogia.serialize(),
+                    success: function (respuesta) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: (respuesta),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function (error) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: (error.responseText),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                });
+                form_pedagogia[0].reset();
+            }
+        })
     })
 })

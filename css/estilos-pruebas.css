@@ -1,0 +1,26 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+#apellidos{
+    margin: 1em auto;
+    width: 40em;
+    height: 40em;
+    background: #b01212;
+    text-align: center;
+    padding: 1em;
+}
+
+.nom_patmat{
+    font-size: 20px;
+    width: 10em;
+    height: 2em;
+    text-align: center;
+}
+
+#cambiar{
+    width: 10em;
+    height: 3em;
+}

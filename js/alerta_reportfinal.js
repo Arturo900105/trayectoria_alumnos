@@ -4,17 +4,16 @@ let totalf_reprobado1, totalf_reprobado2, totalf_reprobado3, totalf_reprobado4, 
 let porf_reprobado1, porf_reprobado2, porf_reprobado3, porf_reprobado4, porf_reprobado5, porf_reprobado6;
 let CookiesRF;
 
-function limpiarf() {
-    $(".sem_grupf").val("")
-}
-
 $(document).ready(function () {
-
     reporte_final = $("#ReporteFinal")
     periodof = $('#periodofinal')
     nombreTutorFinal = $('#nom_tutorf')
     reporte_final[0].reset();
     $(".sem_imparf, .sem_parf, .grupos").hide();
+
+    $(".periodof").on("click", function () {
+        $(".sem_grupf").val("")
+    })
 
     $('#num_tutoradof, .num_materiaf, .cajasf_numrbd, .num_canalif').on('input', function () {
         this.value = this.value.replace(/[^0-9]/g,'');
@@ -27,48 +26,59 @@ $(document).ready(function () {
     numf_materia5 = $("[name = num_materiaf5]")
     numf_materia6 = $("[name = num_materiaf6]")
 
-    numf_materia1.on("keyup", function (){
+    reporte_final.on("keyup", function (){
         tf_alumno = $("#num_tutoradof").val()
+
         totalf_reprobado1 = numf_materia1.val()
-        porf_reprobado1 = (totalf_reprobado1*100)/tf_alumno;
-        $("[name = por_materiaf1]").val((Math.round(porf_reprobado1*100)/100).toFixed(2))
-    })
-
-    numf_materia2.on("keyup", function (){
-        tf_alumno = $("#num_tutoradof").val()
         totalf_reprobado2 = numf_materia2.val()
-        porf_reprobado2 = (totalf_reprobado2*100)/tf_alumno;
-        $("[name = por_materiaf2]").val((Math.round(porf_reprobado2*100)/100).toFixed(2))
-    })
-
-    numf_materia3.on("keyup", function (){
-        tf_alumno = $("#num_tutoradof").val()
         totalf_reprobado3 = numf_materia3.val()
-        porf_reprobado3 = (totalf_reprobado3*100)/tf_alumno;
-        $("[name = por_materiaf3]").val((Math.round(porf_reprobado3*100)/100).toFixed(2))
-    })
-
-    numf_materia4.on("keyup", function (){
-        tf_alumno = $("#num_tutoradof").val()
         totalf_reprobado4 = numf_materia4.val()
-        porf_reprobado4 = (totalf_reprobado4*100)/tf_alumno;
-        $("[name = por_materiaf4]").val((Math.round(porf_reprobado4*100)/100).toFixed(2))
-    })
-
-    numf_materia5.on("keyup", function (){
-        tf_alumno = $("#num_tutoradof").val()
         totalf_reprobado5 = numf_materia5.val()
-        porf_reprobado5 = (totalf_reprobado5*100)/tf_alumno;
-        $("[name = por_materiaf5]").val((Math.round(porf_reprobado5*100)/100).toFixed(2))
-    })
-
-    numf_materia6.on("keyup", function (){
-        tf_alumno = $("#num_tutoradof").val()
         totalf_reprobado6 = numf_materia6.val()
-        porf_reprobado6 = (totalf_reprobado6*100)/tf_alumno;
-        $("[name = por_materiaf6]").val((Math.round(porf_reprobado6*100)/100).toFixed(2))
-    })
 
+        porf_reprobado1 = (totalf_reprobado1*100)/tf_alumno;
+        porf_reprobado2 = (totalf_reprobado2*100)/tf_alumno;
+        porf_reprobado3 = (totalf_reprobado3*100)/tf_alumno;
+        porf_reprobado4 = (totalf_reprobado4*100)/tf_alumno;
+        porf_reprobado5 = (totalf_reprobado5*100)/tf_alumno;
+        porf_reprobado6 = (totalf_reprobado6*100)/tf_alumno;
+
+        if (tf_alumno === "" || totalf_reprobado1 === "") {
+            $("[name = por_materiaf1]").val("")
+        } else {
+            $("[name = por_materiaf1]").val((Math.round(porf_reprobado1*100)/100).toFixed(2))
+        }
+
+        if (tf_alumno === "" || totalf_reprobado2 === "") {
+            $("[name = por_materiaf2]").val("")
+        } else {
+            $("[name = por_materiaf2]").val((Math.round(porf_reprobado2*100)/100).toFixed(2))
+        }
+
+        if (tf_alumno === "" || totalf_reprobado3 === "") {
+            $("[name = por_materiaf3]").val("")
+        } else {
+            $("[name = por_materiaf3]").val((Math.round(porf_reprobado3*100)/100).toFixed(2))
+        }
+
+        if (tf_alumno === "" || totalf_reprobado4 === "") {
+            $("[name = por_materiaf4]").val("")
+        } else {
+            $("[name = por_materiaf4]").val((Math.round(porf_reprobado4*100)/100).toFixed(2))
+        }
+
+        if (tf_alumno === "" || totalf_reprobado5 === "") {
+            $("[name = por_materiaf5]").val("")
+        } else {
+            $("[name = por_materiaf5]").val((Math.round(porf_reprobado5*100)/100).toFixed(2))
+        }
+
+        if (tf_alumno === "" || totalf_reprobado6 === "") {
+            $("[name = por_materiaf6]").val("")
+        } else {
+            $("[name = por_materiaf6]").val((Math.round(porf_reprobado6*100)/100).toFixed(2))
+        }
+    })
 
     reporte_final.on("click", function () {
 

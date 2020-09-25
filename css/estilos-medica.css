@@ -11,7 +11,7 @@ h2{
     margin: 0;
 }
 
-#medica-alumno{
+#medica_alumno{
     display:block;
     align-content: center;
     width: 60em;
@@ -22,6 +22,14 @@ h2{
 }
 
 .tel_em{
+    font-family: "Arial Black";
+    color: #ff0000;
+    margin: 0 1em;
+    width: 12em;
+    height: 2em;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #000000;
     text-align: center;
 }
 
@@ -95,22 +103,29 @@ table, th, td{
 }
 
 #peso, #talla{
+    margin-right: 7px;
+    font-size: 15px;
+    border-radius: 5px;
     width: 5em;
     text-align: center;
 }
 
 #sangre{
-    width: 9em;
+    height: 1.8em;
+    width: 10em;
     text-align: left;
 }
 
-#otro_hered{
-    width: 15em;
-    text-align: center;
-    display: none;
+.label_anteherd:hover{
+    color: #ff4b00;
 }
 
-#botones_medicos{
+#otro_hered{
+    margin-left: 10px;
+    font-size: 13px;
+    border-radius: 7px;
+    width: 13em;
+    height: 1.6em;
     text-align: center;
 }
 
@@ -124,6 +139,10 @@ table, th, td{
     text-align: center;
     width: 15em;
     height: 2em;
+}
+
+.label_toxic:hover{
+    color: #ff0000;
 }
 
 .ejercicio{
@@ -162,21 +181,35 @@ table, th, td{
 .diab_tipo{
     width: 15em;
     height: 2em;
-    display: none;
     text-align: center;
 }
 
 .tipos{
     width: auto;
     height: auto;
-    display: none;
     font-size: 12px;
 }
 
+#botones_medicos{
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
 .bot-med{
-    width: 8em;
-    height: 2em;
-    margin: 0 auto;
-    display:inline;
+    background: #b0adad;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    width: 10em;
+    height: 2.3em;
+    margin: 0 1.5em;
     color: #000000;
+}
+
+.bot-med:hover{
+    font-family: "Arial Black";
+    background: #900000;
+    color: #FFFFFF;
 }

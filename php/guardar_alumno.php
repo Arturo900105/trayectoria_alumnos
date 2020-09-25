@@ -1,6 +1,7 @@
 <?php
 
 require "BD_Connect.php";
+require "fecha_hora.php";
 
     $ficha = $_POST['no_ficha'];
     $nombre = $_POST['nombre'];
@@ -20,7 +21,7 @@ require "BD_Connect.php";
     $edad = $_POST['edad'];
     $tel_cel = $_POST['tel-cel'];
     $email = $_POST['e-mail'];
-    $fecha_registro = $_POST['f_registro'];
+    $fecha_ficha = $_POST['f_registro'];
     $carrera = $_POST['carrera'];
     $generacion = $_POST['generacion'];
 
@@ -71,7 +72,7 @@ require "BD_Connect.php";
     $nom_bach = $_POST['nom_prepa'];
     $prom_bach = $_POST['prom_prepa'];
 
-    $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$apellidos','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_registro','$carrera','$generacion')";
+    $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$fechaHoy','$apellidos','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_ficha','$carrera','$generacion')";
     $query = mysqli_query($connect, $guardar_alumno);
 
     if ($query) {

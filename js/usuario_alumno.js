@@ -1,8 +1,8 @@
 let Cookies2 = Cookies.noConflict();
 let mostrar = JSON.parse(Cookies2.get('usuario'));
 
-document.getElementById("ficha").innerText = "Ficha: " + mostrar.num_ficha + ".";
-document.getElementById("alumno").innerText = "Alumno: " + mostrar.nombre + " " + mostrar.apellidos + ".";
+$("#ficha").text("Ficha: " + mostrar.num_ficha + ".")
+$("#alumno").text("Alumno: " + mostrar.nombre + " " + mostrar.apellidos + ".")
 
 let carrera = "";
 switch (mostrar.carrera) {
@@ -24,25 +24,27 @@ switch (mostrar.carrera) {
         break;
 }
 
-document.getElementById("carrera").innerText = "Carrera: " + carrera + ".";
-document.getElementById("generacion").innerText = "Generación: " + mostrar.generacion + ".";
-document.getElementById("ficha_alumno").value = mostrar.num_ficha;
+$("#carrera").text("Carrera: " + carrera + ".")
+$("#generacion").text("Generación: " + mostrar.generacion + ".")
+$("#ficha_alumno").val(mostrar.num_ficha)
 
-function borrarCoockie() {
-    Cookies2.remove('usuario');
-    history.back();
-}
+$(document).ready(function (){
+    $("#cerrarPedagogia, #cerrarPsicologia, #cerrarMedica").on("click", function (){
+        Cookies2.remove('usuario');
+        history.back();
+    })
+})
 
 try {
-    document.getElementById("edo_civil").innerText = "Estado Civil: " + mostrar.edo_civil + ".";
+    $("#edo_civil").text("Estado Civil: " + mostrar.edo_civil + ".")
+    $("#sexo").text("Sexo: " + mostrar.sexo + ".")
 
-    document.getElementById("sexo").innerText = "Sexo: " + mostrar.sexo + ".";
     if (mostrar.sexo === "Masculino"){
-        document.getElementById('solo-femenino').style.display="none";
-        document.getElementById('gestacional').style.display="none";
+        $("#solo-femenino").css({display:"none"})
+        $("#gestacional").css({display:"none"})
     }
 
-    document.getElementById("indigena").innerText = "Indígena: " + mostrar.indigena + ".";
+    $("#indigena").text("Indígena: " + mostrar.indigena + ".")
 }
 catch (e) {}
 //console.log(mostrar.num_ficha);

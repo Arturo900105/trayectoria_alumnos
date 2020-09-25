@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-09-2020 a las 04:51:09
+-- Tiempo de generación: 25-09-2020 a las 07:29:55
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `alumno` (
-  `num_ficha` varchar(4) NOT NULL,
+  `num_ficha` varchar(7) NOT NULL,
+  `fecha_registro` text DEFAULT NULL,
   `apellidos` text DEFAULT NULL,
   `nombre` text DEFAULT NULL,
   `fecha_de_nacimiento` date DEFAULT NULL,
@@ -39,7 +40,7 @@ CREATE TABLE `alumno` (
   `edo_civil` varchar(10) DEFAULT NULL,
   `tel_cel` text DEFAULT NULL,
   `email` text DEFAULT NULL,
-  `fecha_registro` date DEFAULT NULL,
+  `fecha_ficha` date DEFAULT NULL,
   `carrera` varchar(4) DEFAULT NULL,
   `generacion` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -48,9 +49,9 @@ CREATE TABLE `alumno` (
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`num_ficha`, `apellidos`, `nombre`, `fecha_de_nacimiento`, `sexo`, `indigena`, `edad`, `edo_civil`, `tel_cel`, `email`, `fecha_registro`, `carrera`, `generacion`) VALUES
-('0007', 'Sánchez Fonseca', 'Gabriel Abraham', '1994-10-22', 'Masculino', 'No', 25, 'Soltero', '5540734715', 'gabraham_sf@outlook.com', '2020-04-27', 'ISIC', 2020),
-('0010', 'Morales Avilés', 'Alma Yudill', '2003-02-01', 'Femenino', 'Si', 17, 'Soltera', '4522026543', 'gabraham_sf@outlook.com', '2020-04-27', 'IGEM', 2020);
+INSERT INTO `alumno` (`num_ficha`, `fecha_registro`, `apellidos`, `nombre`, `fecha_de_nacimiento`, `sexo`, `indigena`, `edad`, `edo_civil`, `tel_cel`, `email`, `fecha_ficha`, `carrera`, `generacion`) VALUES
+('20-0011', 'Jueves, 24 de Septiembre de 2020', 'Velázquez Fonseca', 'Gabriela', '1996-01-22', 'Femenino', 'No', 23, 'Casada', '7224139697', 'gaby_velafons@outlook.com', '2020-04-08', 'IBIO', 2016),
+('20-0013', 'Jueves, 24 de Septiembre de 2020', 'Sánchez Fonseca', 'Gabriel Abraham', '1994-10-22', 'Masculino', 'No', 25, 'Soltero', '5540734715', 'ga.sanzfons@gmail.com', '2020-04-07', 'ISIC', 2015);
 
 -- --------------------------------------------------------
 
@@ -61,6 +62,7 @@ INSERT INTO `alumno` (`num_ficha`, `apellidos`, `nombre`, `fecha_de_nacimiento`,
 CREATE TABLE `canalizacion` (
   `folio` varchar(7) DEFAULT NULL,
   `fecha` text DEFAULT NULL,
+  `hora` varchar(9) DEFAULT NULL,
   `nom_estudiante` text DEFAULT NULL,
   `igem` varchar(1) DEFAULT NULL,
   `iind` varchar(1) DEFAULT NULL,
@@ -88,9 +90,10 @@ CREATE TABLE `canalizacion` (
 -- Volcado de datos para la tabla `canalizacion`
 --
 
-INSERT INTO `canalizacion` (`folio`, `fecha`, `nom_estudiante`, `igem`, `iind`, `isic`, `ibio`, `iias`, `ienr`, `ifor`, `iagr`, `num_control`, `semestre`, `ciclo_escolar`, `canalizacion_psicologica`, `canalizacion_pedagogica`, `canalizacion_ases_acad`, `canalizacion_medica`, `otra_canalizacion`, `des_problematica`, `firma_tutor`, `firma_ctpe`, `firma_encargado_ac`) VALUES
-('0320001', '01-09-2020', 'Gabriel Abraham Sánchez Fonseca', '', '', 'X', '', '', '', '', '', '1503080', 4, 'Enero - Junio', '', '', 'X', '', '', 'Problema con la materia de Contabilidad Financiera', 'Elpidio Jiménez Cruz', 'María Janacua Benites', 'Miriam Rodríguez Madrigal'),
-('0720001', '01-09-2020', 'Gabriel Abraham Sánchez Fonseca', '', '', '', '', '', '', 'X', '', '1507080', 5, 'Agosto - Diciembre', '', '', '', 'X', '', 'Alergia a algunos fertilizantes', 'Elpidio Jiménez Cruz', 'María Janacua Benites', 'Arturo Sánchez Fonseca');
+INSERT INTO `canalizacion` (`folio`, `fecha`, `hora`, `nom_estudiante`, `igem`, `iind`, `isic`, `ibio`, `iias`, `ienr`, `ifor`, `iagr`, `num_control`, `semestre`, `ciclo_escolar`, `canalizacion_psicologica`, `canalizacion_pedagogica`, `canalizacion_ases_acad`, `canalizacion_medica`, `otra_canalizacion`, `des_problematica`, `firma_tutor`, `firma_ctpe`, `firma_encargado_ac`) VALUES
+('0320001', '01-09-2020', NULL, 'Gabriel Abraham Sánchez Fonseca', '', '', 'X', '', '', '', '', '', '1503080', 4, 'Enero - Junio', '', '', 'X', '', '', 'Problema con la materia de Contabilidad Financiera', 'Elpidio Jiménez Cruz', 'María Janacua Benites', 'Miriam Rodríguez Madrigal'),
+('0720001', '01-09-2020', NULL, 'Gabriel Abraham Sánchez Fonseca', '', '', '', '', '', '', 'X', '', '1507080', 5, 'Agosto - Diciembre', '', '', '', 'X', '', 'Alergia a algunos fertilizantes', 'Elpidio Jiménez Cruz', 'María Janacua Benites', 'Arturo Sánchez Fonseca'),
+('0320002', 'Jueves, 10 de Septiembre de 2020', NULL, 'Gabriel Abraham Sánchez Fonseca', '', '', 'X', '', '', '', '', '', '1503080', 4, 'Enero - Junio', '', '', 'X', '', '', 'DIFICULTAD CON LA MATERIA DE CONTABILIDAD FINANCIERA', 'Elpidio Jiménez Cruz', 'María Janacua Benites', 'Miriam Rodríguez Madrigal');
 
 -- --------------------------------------------------------
 
@@ -114,7 +117,7 @@ CREATE TABLE `coordinador` (
 --
 
 CREATE TABLE `domicilio` (
-  `num_ficha` varchar(4) DEFAULT NULL,
+  `num_ficha` varchar(7) DEFAULT NULL,
   `domicilio` text DEFAULT NULL,
   `colonia` text DEFAULT NULL,
   `codigo_postal` int(5) DEFAULT NULL,
@@ -127,8 +130,22 @@ CREATE TABLE `domicilio` (
 --
 
 INSERT INTO `domicilio` (`num_ficha`, `domicilio`, `colonia`, `codigo_postal`, `localidad`, `procedencia`) VALUES
-('0007', 'Fco. González Bocanegra #592', 'Villicaña', 60280, 'Nahuatzen', 'Nahuatzen; Mich.'),
-('0010', 'Miguel de Cervantes Saavedra #463', 'Centro', 60280, 'Nahuatzen', 'Nahuatzen; Mich.');
+('20-0013', 'Fco. González Bocanegra #592', 'Villicaña', 60280, 'Nahuatzen', 'Nahuatzen; Mich.'),
+('20-0011', 'Privada Primero de mayo #22', 'Xonacatlán de Vicencio', 52060, 'Xonacatlán', 'Xonacatlán; Edo. Méx.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `escala_posttest`
+--
+
+CREATE TABLE `escala_posttest` (
+  `num_ficha` varchar(7) DEFAULT NULL,
+  `num_control` varchar(7) DEFAULT NULL,
+  `semestre` text DEFAULT NULL,
+  `ansiedad` int(2) DEFAULT NULL,
+  `depresion` int(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -137,7 +154,7 @@ INSERT INTO `domicilio` (`num_ficha`, `domicilio`, `colonia`, `codigo_postal`, `
 --
 
 CREATE TABLE `num_control_alumno` (
-  `num_ficha` varchar(4) DEFAULT NULL,
+  `num_ficha` varchar(7) DEFAULT NULL,
   `num_control` varchar(7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -148,7 +165,7 @@ CREATE TABLE `num_control_alumno` (
 --
 
 CREATE TABLE `procedencia` (
-  `num_ficha` varchar(4) DEFAULT NULL,
+  `num_ficha` varchar(7) DEFAULT NULL,
   `bach` text DEFAULT NULL,
   `tipo_bach` text DEFAULT NULL,
   `nom_bach` text DEFAULT NULL,
@@ -160,8 +177,8 @@ CREATE TABLE `procedencia` (
 --
 
 INSERT INTO `procedencia` (`num_ficha`, `bach`, `tipo_bach`, `nom_bach`, `promedio_bach`) VALUES
-('0007', 'CBTa', '─> Físico-Matemático.\n─> Químico-Biológico.', 'CBTa No. 238', 8.5),
-('0010', 'CBTa', '─> Económico-Administrativo.\n─> Histórico-Social.', 'CBTa No. 238', 8);
+('20-0013', 'CBTA', '─> Físico-Matemático.\n─> Químico-Biológico.', 'CBTA No. 238', 8.5),
+('20-0011', 'PREPARATORIA', '─> Económico-Administrativo.\n─> Histórico-Social.', 'Preparatoria No. 3 Plantel Xonacatlán', 8);
 
 -- --------------------------------------------------------
 
@@ -273,7 +290,9 @@ CREATE TABLE `reporte_parcial` (
 
 INSERT INTO `reporte_parcial` (`id_rparcial`, `fecha`, `hora`, `periodo`, `reporte1`, `reporte2`, `reporte3`, `nom_tutor`, `semestre_grupo`, `programa`, `tutorado_asignado`, `asignatura1`, `num_asignatura1`, `por_asignatura1`, `asignatura2`, `num_asignatura2`, `por_asignatura2`, `asignatura3`, `num_asignatura3`, `por_asignatura3`, `asignatura4`, `num_asignatura4`, `por_asignatura4`, `asignatura5`, `num_asignatura5`, `por_asignatura5`, `asignatura6`, `num_asignatura6`, `por_asignatura6`, `reuniones_efectuadas`, `alumnbecado`, `alumndesertado`, `num_asepar`, `num_psicologia`, `num_medica`, `num_pedagogica`, `problematica`, `necesidades`, `desertores`, `recomendacion_observacion`) VALUES
 (1, 'jueves, 3 de septiembre de 2020', '01:04 pm.', 'Agosto - Diciembre', '1', '-', '-', 'Gabriel Abraham Sánchez Fonseca', '1° \"C\"', 'Ingeniería en Sistemas Computacionales', 35, 'Fundamentos de Programación', '3', '8.57%', 'Calculo Diferencial', '6', '17.14%', 'Matematicas Discretas', '3', '8.57%', 'Taller de Ética', '4', '11.43%', '', '', '', '', '', '', 6, '20, Beca de Manutención y de Transporte', 3, 10, 15, 20, 7, 'Que los alumnos se distraen con facilidad', 'Realizar dinámicas más seguido', 'Falta de recursos económicos', 'Motivar a los alumnos a que alcancen sus objetivos'),
-(2, 'jueves, 3 de septiembre de 2020', '01:13 pm.', 'Enero - Junio', '-', '2', '-', 'Gabriel Abraham Sánchez Fonseca', '2° \"C\"', 'Ingeniería en Sistemas Computacionales', 33, 'Probabilidad y Estadísticas', '3', '9.09%', 'Calculo Integral', '5', '15.15%', 'Programación Orientada a Objetos', '2', '6.06%', '', '', '', '', '', '', '', '', '', 7, '20, Beca de Manutención y de Transporte', 0, 7, 4, 7, 12, 'No, ninguno', 'No, ninguno', 'No, ninguno', 'No, ninguno');
+(2, 'jueves, 3 de septiembre de 2020', '01:13 pm.', 'Enero - Junio', '-', '2', '-', 'Gabriel Abraham Sánchez Fonseca', '2° \"C\"', 'Ingeniería en Sistemas Computacionales', 33, 'Probabilidad y Estadísticas', '3', '9.09%', 'Calculo Integral', '5', '15.15%', 'Programación Orientada a Objetos', '2', '6.06%', '', '', '', '', '', '', '', '', '', 7, '20, Beca de Manutención y de Transporte', 0, 7, 4, 7, 12, 'No, ninguno', 'No, ninguno', 'No, ninguno', 'No, ninguno'),
+(3, 'mi?rcoles, 9 de septiembre de 2020', '10:37 am.', 'Agosto - Diciembre', '-', '-', '3', 'Gabriel Abraham Sánchez Fonseca', '3° \"B\"', 'Ingeniería en Sistemas Computacionales', 40, 'Estructura de Datos', '4', '10.00%', 'Calculo Vectorial', '5', '12.50%', 'Investigación de Operaciones', '7', '17.50%', '', '', '', '', '', '', '', '', '', 6, '20, Beca de Manutención y de Transporte', 2, 2, 4, 10, 7, 'NINGUNO NINGUNO', 'NINGUNO NINGUNO', 'NINGUNO NINGUNO', 'NINGUNO NINGUNO'),
+(4, 'Jueves, 10 de Septiembre de 2020', '01:42 pm.', 'Agosto - Diciembre', '-', '2', '-', 'Gabriel Abraham Sánchez Fonseca', '3° \"A\"', 'Ingeniería en Sistemas Computacionales', 34, 'Estructura de Datos', '3', '8.82%', 'Calculo Integral', '4', '11.76%', 'Investigación de Operaciones', '2', '5.88%', '', '', '', '', '', '', '', '', '', 6, '20, Beca de Transporte', 0, 3, 4, 7, 7, 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO');
 
 -- --------------------------------------------------------
 
@@ -282,7 +301,7 @@ INSERT INTO `reporte_parcial` (`id_rparcial`, `fecha`, `hora`, `periodo`, `repor
 --
 
 CREATE TABLE `tabla_medica` (
-  `num_ficha` varchar(4) DEFAULT NULL,
+  `num_ficha` varchar(7) DEFAULT NULL,
   `peso` text DEFAULT NULL,
   `estatura` text DEFAULT NULL,
   `tipo_sangre` text DEFAULT NULL,
@@ -290,26 +309,22 @@ CREATE TABLE `tabla_medica` (
   `toxicomanias` varchar(3) DEFAULT NULL,
   `tipo_toxicomanias` text DEFAULT NULL,
   `frecuencia` text DEFAULT NULL,
-  `embarazo` text DEFAULT NULL,
+  `embarazo` varchar(3) DEFAULT NULL,
+  `tiempo_embarazo` text DEFAULT NULL,
   `act_fisica` varchar(3) DEFAULT NULL,
   `actividad` text DEFAULT NULL,
   `tiempo` text DEFAULT NULL,
-  `alergias` text DEFAULT NULL,
+  `alergias` varchar(3) DEFAULT NULL,
+  `desc_alergias` text DEFAULT NULL,
   `quir_cir` varchar(3) DEFAULT NULL,
   `transfusionales` varchar(3) DEFAULT NULL,
-  `diabetes` text DEFAULT NULL,
+  `diabetes` varchar(3) DEFAULT NULL,
+  `tipo_diabetes` text DEFAULT NULL,
   `hipertencion` varchar(3) DEFAULT NULL,
   `convulsiones` varchar(3) DEFAULT NULL,
   `asma` varchar(3) DEFAULT NULL,
   `tels_emergencia` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tabla_medica`
---
-
-INSERT INTO `tabla_medica` (`num_ficha`, `peso`, `estatura`, `tipo_sangre`, `antes_hered`, `toxicomanias`, `tipo_toxicomanias`, `frecuencia`, `embarazo`, `act_fisica`, `actividad`, `tiempo`, `alergias`, `quir_cir`, `transfusionales`, `diabetes`, `hipertencion`, `convulsiones`, `asma`, `tels_emergencia`) VALUES
-('0007', '75 kg.', '1.70 m.', 'O POSITIVO', 'Diabetes\nGripe', 'NO', '----------', '----------', '----------', 'SÍ', 'Basketbol', 'Cada fin de semana', 'SÍ:\nMedicamentos con sulfas.', 'NO', 'NO', 'SÍ:\nDiabetes Mellitus 1.', 'NO', 'NO', 'NO', '5514525708\n7224139697');
 
 -- --------------------------------------------------------
 
@@ -318,7 +333,7 @@ INSERT INTO `tabla_medica` (`num_ficha`, `peso`, `estatura`, `tipo_sangre`, `ant
 --
 
 CREATE TABLE `tabla_pedagogia` (
-  `num_ficha` varchar(4) DEFAULT NULL,
+  `num_ficha` varchar(7) DEFAULT NULL,
   `aprendizaje_visual` int(11) DEFAULT NULL,
   `aprendizaje_auditivo` int(11) DEFAULT NULL,
   `aprendizaje_kinestesico` int(11) DEFAULT NULL,
@@ -330,13 +345,6 @@ CREATE TABLE `tabla_pedagogia` (
   `preguntas_me` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `tabla_pedagogia`
---
-
-INSERT INTO `tabla_pedagogia` (`num_ficha`, `aprendizaje_visual`, `aprendizaje_auditivo`, `aprendizaje_kinestesico`, `organizacion_estudio`, `tecnicas_estudio`, `motivacion_estudio`, `preguntas_oe`, `preguntas_te`, `preguntas_me`) VALUES
-('0007', 32, 24, 27, 13, 10, 13, 'A B C D E F J K N O P S T', 'B C F G J K N P Q T', 'A D E F G H I J M O R S T');
-
 -- --------------------------------------------------------
 
 --
@@ -344,7 +352,7 @@ INSERT INTO `tabla_pedagogia` (`num_ficha`, `aprendizaje_visual`, `aprendizaje_a
 --
 
 CREATE TABLE `tabla_psicologia` (
-  `num_ficha` varchar(4) DEFAULT NULL,
+  `num_ficha` varchar(7) DEFAULT NULL,
   `pregunta1` varchar(3) DEFAULT NULL,
   `respuesta1` text DEFAULT NULL,
   `pregunta2` varchar(3) DEFAULT NULL,
@@ -361,12 +369,130 @@ CREATE TABLE `tabla_psicologia` (
   `preguntas_bloque4` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `tabla_psicologia`
+-- Estructura de tabla para la tabla `trayectoria_cappt`
 --
 
-INSERT INTO `tabla_psicologia` (`num_ficha`, `pregunta1`, `respuesta1`, `pregunta2`, `respuesta2`, `ansiedad`, `depresion`, `bloque1`, `bloque2`, `bloque3`, `bloque4`, `preguntas_bloque1`, `preguntas_bloque2`, `preguntas_bloque3`, `preguntas_bloque4`) VALUES
-('0007', 'No', '----------', 'No', '----------', 12, 7, 8, 6, 4, 4, '01 02 03 04 05 06 07 08', '13 14 16 18 19 20', '24 25 28 30', '32 38 39 40');
+CREATE TABLE `trayectoria_cappt` (
+  `num_ficha` varchar(7) DEFAULT NULL,
+  `num_control` varchar(7) DEFAULT NULL,
+  `trabaja` varchar(3) DEFAULT NULL,
+  `itsp_opcion` text DEFAULT NULL,
+  `exani_ii` varchar(4) DEFAULT NULL,
+  `cosnet` varchar(4) DEFAULT NULL,
+  `hablante_pu` varchar(3) DEFAULT NULL,
+  `discapacidad` text DEFAULT NULL,
+  `diag_psicologico` text DEFAULT NULL,
+  `diag_medico` text DEFAULT NULL,
+  `riesgo_salud` text DEFAULT NULL,
+  `estilo_aprendizaje` text DEFAULT NULL,
+  `h_organizacion` varchar(3) DEFAULT NULL,
+  `h_tecnicas` varchar(3) DEFAULT NULL,
+  `h_motivacion` varchar(3) DEFAULT NULL,
+  `o_vocacional` text DEFAULT NULL,
+  `e_ortografia` text DEFAULT NULL,
+  `e_redaccion` text DEFAULT NULL,
+  `nombre_curso1` text DEFAULT NULL,
+  `result_curso1` int(3) DEFAULT NULL,
+  `nombre_curso2` text DEFAULT NULL,
+  `result_curso2` int(3) DEFAULT NULL,
+  `nombre_curso3` text DEFAULT NULL,
+  `result_curso` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem1`
+--
+
+CREATE TABLE `trayectoria_sem1` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria1` int(1) DEFAULT NULL,
+  `credito_cultural1` int(1) DEFAULT NULL,
+  `credito_deportiva1` int(1) DEFAULT NULL,
+  `suma_creditos1` int(1) DEFAULT NULL,
+  `asignatura1_1` text DEFAULT NULL,
+  `calificacion1_1` varchar(3) DEFAULT NULL,
+  `asignatura2_1` text DEFAULT NULL,
+  `calificacion2_1` varchar(3) DEFAULT NULL,
+  `asignatura3_1` text DEFAULT NULL,
+  `calificacion3_1` varchar(3) DEFAULT NULL,
+  `asignatura4_1` text DEFAULT NULL,
+  `calificacion4_1` varchar(3) DEFAULT NULL,
+  `asignatura5_1` text DEFAULT NULL,
+  `calificacion5_1` varchar(3) DEFAULT NULL,
+  `asignatura6_1` text DEFAULT NULL,
+  `calificacion6_1` varchar(3) DEFAULT NULL,
+  `asignatura7_1` text DEFAULT NULL,
+  `calificacion7_1` varchar(3) DEFAULT NULL,
+  `becado` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia1_1` text DEFAULT NULL,
+  `recursar_materia2_1` text DEFAULT NULL,
+  `recursar_materia3_1` text DEFAULT NULL,
+  `recursar_materia4_1` text DEFAULT NULL,
+  `recursar_materia5_1` text DEFAULT NULL,
+  `recursar_materia6_1` text DEFAULT NULL,
+  `recursar_materia7_1` text DEFAULT NULL,
+  `area_medica_1` varchar(7) DEFAULT NULL,
+  `area_psicologica_1` varchar(7) DEFAULT NULL,
+  `asesoria_pares_1` varchar(7) DEFAULT NULL,
+  `tutorias_individuales_1` varchar(7) DEFAULT NULL,
+  `otra_canalizacion_1` varchar(7) DEFAULT NULL,
+  `observacion_ago_dic` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem2`
+--
+
+CREATE TABLE `trayectoria_sem2` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria2` int(1) DEFAULT NULL,
+  `credito_cultural2` int(1) DEFAULT NULL,
+  `credito_deportiva2` int(1) DEFAULT NULL,
+  `suma_creditos2` int(1) DEFAULT NULL,
+  `asignatura1_2` text DEFAULT NULL,
+  `calificacion1_2` varchar(3) DEFAULT NULL,
+  `asignatura2_2` text DEFAULT NULL,
+  `calificacion2_2` varchar(3) DEFAULT NULL,
+  `asignatura3_2` text DEFAULT NULL,
+  `calificacion3_2` varchar(3) DEFAULT NULL,
+  `asignatura4_2` text DEFAULT NULL,
+  `calificacion4_2` varchar(3) DEFAULT NULL,
+  `asignatura5_2` text DEFAULT NULL,
+  `calificacion5_2` varchar(3) DEFAULT NULL,
+  `asignatura6_2` text DEFAULT NULL,
+  `calificacion6_2` varchar(3) DEFAULT NULL,
+  `asignatura7_2` text DEFAULT NULL,
+  `calificacion7_2` varchar(3) DEFAULT NULL,
+  `becado` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia1_2` text DEFAULT NULL,
+  `recursar_materia2_2` text DEFAULT NULL,
+  `recursar_materia3_2` text DEFAULT NULL,
+  `recursar_materia4_2` text DEFAULT NULL,
+  `recursar_materia5_2` text DEFAULT NULL,
+  `recursar_materia6_2` text DEFAULT NULL,
+  `recursar_materia7_2` text DEFAULT NULL,
+  `area_medica_2` varchar(7) DEFAULT NULL,
+  `area_psicologica_2` varchar(7) DEFAULT NULL,
+  `asesoria_pares_2` varchar(7) DEFAULT NULL,
+  `tutorias_individuales_2` varchar(7) DEFAULT NULL,
+  `otra_canalizacion_2` varchar(7) DEFAULT NULL,
+  `observacion_ene_jun` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -381,18 +507,18 @@ CREATE TABLE `tutor` (
   `tipo_tutoria` text DEFAULT NULL,
   `area_de` varchar(4) DEFAULT NULL,
   `email` text DEFAULT NULL,
-  `fecha_registro` date DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
   `usuario` text DEFAULT NULL,
-  `password` text DEFAULT NULL
+  `pass_tutor` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tutor`
 --
 
-INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellido`, `tipo_tutoria`, `area_de`, `email`, `fecha_registro`, `usuario`, `password`) VALUES
-(1, 'Gabriel Abraham', 'Sánchez Fonseca', 'Tutoría Grupal', 'ISIC', 'gabraham_sf@outlook.com', '2020-08-31', 'gabraham_sf.103', '$2y$10$r5VBX2VvhgqfS.BqRJ6hm.tRsvWS3tfJlHMLYuq1w9.aWW/i3yTUq'),
-(2, 'Yeraldin', 'Cano Rodríguez', 'Tutoría Generacional', 'IBIO', 'myeraldin.cr@gmail.com', '2020-08-31', 'myeraldin.cr.204', '$2y$10$plIAS2qscOqVjlNRFrER5.HEgZuGNFY.coxH4989qrT6EjzwMDkAG');
+INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellido`, `tipo_tutoria`, `area_de`, `email`, `fecha_registro`, `hora_registro`, `usuario`, `pass_tutor`) VALUES
+(1, 'Gabriel Abraham', 'Sánchez Fonseca', 'Tutoría Grupal', 'ISIC', 'gabraham_sf@outlook.com', 'Jueves, 24 de Septiembre de 2020', '11:52 pm.', 'gabraham_sf.103', '7bj5RHFABB');
 
 --
 -- Índices para tablas volcadas
@@ -402,7 +528,8 @@ INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellido`, `tipo_tutoria`, `area_de`
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`num_ficha`);
+  ADD PRIMARY KEY (`num_ficha`),
+  ADD UNIQUE KEY `alumno_num_ficha_uindex` (`num_ficha`);
 
 --
 -- Indices de la tabla `canalizacion`
@@ -415,6 +542,13 @@ ALTER TABLE `canalizacion`
 --
 ALTER TABLE `domicilio`
   ADD UNIQUE KEY `domicilio_num_ficha_uindex` (`num_ficha`);
+
+--
+-- Indices de la tabla `escala_posttest`
+--
+ALTER TABLE `escala_posttest`
+  ADD UNIQUE KEY `escala_posttest_num_control_uindex` (`num_control`),
+  ADD UNIQUE KEY `escala_posttest_num_ficha_uindex` (`num_ficha`);
 
 --
 -- Indices de la tabla `num_control_alumno`
@@ -460,10 +594,29 @@ ALTER TABLE `tabla_psicologia`
   ADD UNIQUE KEY `tabla_psicologia_num_ficha_uindex` (`num_ficha`);
 
 --
+-- Indices de la tabla `trayectoria_cappt`
+--
+ALTER TABLE `trayectoria_cappt`
+  ADD UNIQUE KEY `tabla_cappt_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem1`
+--
+ALTER TABLE `trayectoria_sem1`
+  ADD UNIQUE KEY `trayectoria_1sem_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem2`
+--
+ALTER TABLE `trayectoria_sem2`
+  ADD UNIQUE KEY `trayectoria_2sem_num_control_uindex` (`num_control`);
+
+--
 -- Indices de la tabla `tutor`
 --
 ALTER TABLE `tutor`
-  ADD PRIMARY KEY (`id_tutor`);
+  ADD PRIMARY KEY (`id_tutor`),
+  ADD UNIQUE KEY `tutor_id_tutor_uindex` (`id_tutor`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -479,13 +632,13 @@ ALTER TABLE `reporte_final`
 -- AUTO_INCREMENT de la tabla `reporte_parcial`
 --
 ALTER TABLE `reporte_parcial`
-  MODIFY `id_rparcial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_rparcial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tutor`
 --
 ALTER TABLE `tutor`
-  MODIFY `id_tutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

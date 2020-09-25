@@ -1,0 +1,221 @@
+body{
+    font-family: "Gill Sans MT";
+    margin: 0;
+    background-image: url("../img/foto_tutores.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display:block;
+}
+h1{
+    margin: 10px 0 1em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+h2{
+    text-align: center;
+    margin: 1.5em 0 1em;
+    color: #FFFFFF;
+}
+
+.fecha_alta{
+    text-align: right;
+}
+
+#f_alta{
+    text-align: center;
+    color: #ff0600;
+    width: 10em;
+    height: 1.5em;
+}
+
+form{
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50em;
+    display:block;
+    margin: 2em auto;
+    padding: 1em 2em;
+    border-radius: 1em;
+    text-align: center;
+}
+
+select{
+    text-align: center;
+}
+
+#nombre_tutor{
+    font-size: 15px;
+    text-align: center;
+    width: 12em;
+    height: 1.5em;
+}
+
+.apellidos_tutor{
+    margin-left: 1em;
+    font-size: 15px;
+    text-align: center;
+    width: 15em;
+    height: 1.5em;
+}
+
+#tipo-tutoria{
+    font-size: 15px;
+    text-align: center;
+    width: 15em;
+    height: 2em;
+}
+
+#area_de{
+    margin-left: 2em;
+    font-size: 15px;
+    text-align: center;
+    width: 25em;
+    height: 2em;
+}
+
+.alerta-email{
+    margin:0px auto;
+    padding: 5px;
+    font-family: Arial;
+    font-size: 18px;
+    background: rgba(224, 1, 1, 0.5);
+    border-radius: 20px;
+    border: 5px solid #390202;
+    width: 40em;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#email{
+    width: 20em;
+    text-align: center;
+    height: 1.5em;
+    font-size: 20px;
+}
+
+.boton_genelogin{
+    border-radius: 10px;
+    background: darkgray;
+    border: none;
+    width: 12em;
+    height: 2.2em;
+}
+
+.boton_genelogin:hover{
+    background: #ca6701;
+    font-family: "Arial Black";
+}
+
+#usu-tutor, #pass-tutor{
+    margin: 0  1em;
+    width: 15em;
+    text-align: center;
+    height: 1.5em;
+    font-size: 17px;
+}
+
+#botones{
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.boton_trayectoria{
+    border-radius: 10px;
+    background: darkgray;
+    margin: 0 1.5em;
+    border: none;
+    width: 10em;
+    height: 2.5em;
+}
+
+.boton_trayectoria:hover{
+    background: #ca6701;
+    font-family: "Arial Black";
+}
+
+#carpetas div{
+    display: none;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+img{
+    height: 20em;
+}
+
+.modal-acceso{
+    background: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#m_acceso{
+    background: none;
+    border: 2px solid #ffffff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 35em;
+    height: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 1.5em;
+    position: absolute;
+    padding: 1em;
+}
+
+#candadito{
+    margin: 0 2em 0 0;
+    height: 12em;
+}
+
+#contenido_m_acceso{
+    margin: 0;
+    padding: 0;
+    width: auto;
+    display:inline;
+    vertical-align:middle;
+}
+
+.login_acceso{
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    width: 16em;
+    height: 2em;
+    font-size: 20px;
+}
+
+.botones_login_acceso{
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+    width: 10em;
+    height: 2.5em;
+    font-family: "Britannic Bold";
+}
+
+.botones_login_acceso:hover{
+    background: rgba(71, 40, 2 ,0.7);
+    color: #FFFFFF;
+}

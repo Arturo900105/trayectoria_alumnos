@@ -1,17 +1,16 @@
-window.onload = function(){
-
-    let fecha = new Date(); //Fecha actual
-    let year = fecha.getFullYear(); //obteniendo año
-
-    document.getElementById('generacion').value = year;
-};
+let otra_generacion, fechaHoy, yearActual;
 
 $(document).ready(function (){
+    fechaHoy = new Date(); //Fecha actual
+    yearActual = fechaHoy.getFullYear(); //obteniendo año
+
+    $("#generacion").val(yearActual)
+
     $("#btngeneracion").on('click', function () {
-        //$('#generacion').val('')
 
         Swal.fire({
-            backdrop: "rgba(85,0,0,0.7)",
+            backdrop: "rgba(0,0,0,0.0)",
+            background: "#020b32",
             width: "30%",
             confirmButtonColor: '#19980b',
             confirmButtonText: 'CAMBIAR',
@@ -19,18 +18,33 @@ $(document).ready(function (){
             cancelButtonColor: '#910018',
             cancelButtonText: 'CANCELAR',
             input: 'text',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
             inputAttributes: {
                 minLength: 4,
                 maxlength: 4,
                 placeholder: "Ingrese aquí el año de su generación:",
-                pattern: "[0-9]{4}"
-            },
-            inputValidator: (year) => {
-                if (!year) {
-                    return "Por favor llena el campo obligatorio";
-                } else {
-                    return undefined;
+                title: "Ingresa solo números",
+                pattern: "[0-9]{4}",
+            }, inputValidator: gener => {
+                let years = new Date().getFullYear(); //obteniendo año
+
+                if (gener > years) {
+                    return "Ingresa un año actual ó antes del actual";
+                } else if (!/^[0-9]+$/.test(gener)){
+                    return "Caracteres no Válidos";
+                } else if (gener < (years-6)){
+                    return "Ingresa un año desde "+[years-6]+" hasta "+[years];
                 }
+            }
+        }).then((resultado) => {
+            if (resultado.value) {
+                otra_generacion = resultado.value;
+                $("#generacion").val(otra_generacion)
+
+            } else {
+                return false;
+
             }
         })
 

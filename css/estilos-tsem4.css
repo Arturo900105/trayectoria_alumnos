@@ -1,0 +1,284 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+#trayectoria4{
+    margin: 2em auto;
+    background: none;
+    width: 55em;
+    padding: 1em;
+    border-radius: 2em;
+    border: 4px solid #0061de;
+}
+
+.h2t4s{
+    margin: 0;
+    text-align: center;
+}
+
+#tabla_ingles_4, #inglesth_4, #inglestd_4{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 15px;
+    color: #000000;
+}
+
+#inglesth_4{
+    width: 25em;
+    height: 5em;
+    text-align: center;
+}
+
+#inglestd_4{
+    width: 25em;
+}
+
+#nivel_ingles_4{
+    margin-left: 2em;
+    text-align: center;
+    font-size: 15px;
+    width: 13em;
+    height: 1.7em;
+}
+
+.nivel_ingles_4{
+    margin-left: 20px;
+}
+
+.ingles_ubicacion_4{
+    margin-left: 20px;
+}
+
+#creditos_4, .creditosth_4, .creditostd_4{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.creditosth_4{
+    background: #00aaff;
+    height: 3em;
+}
+
+.creditostd_4{
+    height: 5em;
+}
+
+#creditostd1_4{
+    width: 12em;
+}
+
+#creditostd2_4{
+    text-align: right;
+    width: 15em;
+}
+
+#creditostd3_4{
+    width: 13em;
+}
+
+#creditostd4_4{
+    width: 10em;
+}
+
+.credito_4{
+    margin-left: 5px;
+    text-align: center;
+    font-size: 15px;
+    width: 4em;
+    height: 1.5em;
+}
+
+#cultural_4{
+    margin-right: 3em;
+}
+
+#deportiva_4{
+    margin-top: 10px;
+    margin-right: 3em;
+}
+
+#complementaria_4{
+    font-size: 30px;
+    text-align: center;
+    width: 3em;
+    height: 1.5em;
+}
+
+#suma_tcdc_4{
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 50px;
+    width: 2.2em;
+    height: 1em;
+}
+
+#materias_4, .materiastd1_4, .materiastd2_4, .materiastd3_4, .materiastd_4{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materiastd1_4{
+    width: 10em;
+}
+
+.materiastd2_4{
+    width: 30em;
+    text-align: center;
+}
+
+.materiastd3_4{
+    width: 10em;
+}
+
+.materiasth_4{
+    height: 2em;
+    background: #00aaff;
+}
+
+#cantidad_materias_4, #materias_reprobadas_4{
+    font-family: "Arial Black";
+    border: none;
+    background: none;
+    text-align: center;
+    width: 4em;
+    height: 2em;
+}
+
+#materias_reprobadas_4{
+    color: #ec0000;
+}
+
+.materiaN_4{
+    border: none;
+    background: none;
+    margin: 2px;
+    text-align: left;
+    width: 28em;
+    height: 2em;
+    font-size: 15px;
+    color: black;
+}
+
+.calificacionN_4{
+    border: none;
+    background: none;
+    margin: 2px 0;
+    text-align: center;
+    width: 8em;
+    height: 2em;
+    font-size: 15px;
+    color: black;
+}
+
+#beca_4, .becatd_4{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.becatd_4{
+    width: 25em;
+    height: 2em;
+}
+
+#tipo_beca_4{
+    width: 25em;
+    height: 2em;
+    text-align: center;
+}
+
+#relbeca_4{
+    text-align: left;
+}
+
+#materias2_4, .materias2th_4, .materias2td_4{
+//border: 1px solid #000000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.materias2th_4{
+    width: 25em;
+    padding: 10px 0;
+}
+
+.materias2td_4{
+    width: 25em;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.materiarep_4{
+    width: 20em;
+    height: 2em;
+    padding-left: 7px;
+    text-align: left;
+    margin: 3px 0;
+    font-size: 15px;
+}
+
+.label_becado_4{
+    margin-left: 1em;
+}
+
+.folios_canal_4{
+    margin-top: 4px;
+    margin-left: 10px;
+    color: #ec0000;
+    width: 7em;
+    height: 1.2em;
+    font-size: 17px;
+    text-align: center;
+}
+
+.ingles_ubicacion_4:hover, .nivel_ingles_4:hover, .label_becado_4:hover, .label_foliocanali_4:hover{
+    color: #0061de;
+}
+
+#ciclo_4{
+    text-align: center;
+    font-size: 15px;
+}
+
+#observaciones_4{
+    padding: 7px 10px;
+    font-family: Arial;
+}
+
+#contenedor2_4{
+    text-align: center;
+}
+
+.btn-t1_4{
+    margin: 0 1.5em;
+    border-radius: 5px;
+    border: none;
+    width: 10em;
+    height: 3em;
+    display:inline;
+}
+
+.btn-t1_4:hover{
+    font-family: "Arial Black";
+    color: #FFFFFF;
+    background: #0061de;
+}

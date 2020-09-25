@@ -7,9 +7,8 @@ body{
 }
 
 .logos{
+    margin: 0 4em;
     height: 7em;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 h1, h2{
@@ -46,42 +45,85 @@ table, td{
 }
 
 #folio{
+    margin-left: 10px;
+    margin-right: 16em;
     text-align: center;
     color: #ff0200;
     width: 10em;
     height: 1.5em;
+    border-color: #ff0200;
 }
 
-#fecha-hoy{
+#fecha_hoy{
+    border-color: #000f49;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-left: 10px;
     text-align: center;
     color: #000000;
-    width: 10em;
+    width: 20em;
     height: 1.5em;
 }
 
 #nom_alumno{
+    margin-left: 10px;
     text-align: center;
-    width: 25em;
+    height: 1.7em;
+    width: 30em;
+}
+
+.carreras_itsp{
+    margin-left: 1.4em;
+}
+
+.carreras_itsp:hover{
+    color: #ff0200;
+}
+
+#num_control{
+    text-transform: uppercase;
+    margin-left: 10px;
+    height: 1.5em;
+    width: 10em;
+    text-align: center;
 }
 
 #semestre{
+    margin-left: 5em;
     text-align: center;
+    height: 1.82em;
     width: 10em;
 }
 
 #ciclo_escolar{
+    margin-left: 3em;
+    height: 1.5em;
     width: 15em;
     text-align: center;
 }
 
-#num_control{
-    width: 7em;
-    text-align: center;
+.tipo_canali{
+    margin-left: 1.2em;
+}
+
+.tipo_canali:hover{
+    color: #ff0200;
+}
+
+.canali_otra{
+    margin-left: 11.1em;
+}
+
+.canali_otra:hover{
+    color: #ff0200;
 }
 
 #nombre_canalizacion{
+    margin-left: 10px;
     text-align: center;
-    width: 15em;
+    height: 1.5em;
+    width: 20em;
     display: none;
 }
 
@@ -104,16 +146,34 @@ textarea{
 }
 
 #botones_canalizacion{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
-.boton_cana{
-    background-color: #453d3d;
-    width: 8em;
-    height: 2em;
-    color: white;
-    margin: 0 auto;
+.boton_canali, .boton_salir{
+    margin: 0 1.5em;
+    border-radius: 5px;
+    border: none;
+    width: 10em;
+    height: 3em;
+    color: #FFFFFF;
+    background: gray;
     display:inline;
+}
+
+.boton_canali:hover {
+    cursor:pointer;
+    background: #00ff38;
+    color: #000000;
+    font-family: "Arial Black";
+}
+
+.boton_salir:hover {
+    cursor:pointer;
+    background: #fc1e1e;
+    color: #000000;
+    font-family: "Arial Black";
 }
 
 #base{

@@ -46,7 +46,7 @@
     $pdf->Cell(13, 7, "Folio:", 0, 0,"L");
     $pdf->SetTextColor(243,0,33);
     $pdf->Cell(30, 7, utf8_decode($fila["folio"]), 1, 0,"C");
-    $pdf->Cell(70, 7, "", 0, 0,"C");
+    $pdf->Cell(35, 7, "", 0, 0,"C");
     $pdf->SetTextColor(0,0,0);
     $pdf->Cell(20, 7, "Fecha:", 0, 0,"R");
     $pdf->Cell(0, 5, utf8_decode($fila["fecha"]), "B", 1,"C");
