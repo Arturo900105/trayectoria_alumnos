@@ -17,7 +17,8 @@ require "php/BD_Connect.php";
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
         <script src="js/alertas.js"></script>
-        <script src="js/numeros.js"></script>
+        <script src="js/index_tutor.js"></script>
+        <script src="js/index_coordinador.js"></script>
     </head>
     <body>
         <h1>Coordinación Institucional de Tutoría Académica</h1>
@@ -25,11 +26,12 @@ require "php/BD_Connect.php";
         <br>
 
         <a href="caracterizacion.html"><input type="button" value="ALUMNOS" class="boton_acceso" title="Formularios para Alumnos de Nuevo Ingreso"></a>
-        <a href="javascript:Confirmar_Acceso()"><input type="button" value="TRAYECTORIAS" class="boton_acceso" title="Acceso para Tutores"></a>
+        <a href="javascript:Confirmar_Acceso('sesion_tutor.php')"><input type="button" value="TRAYECTORIAS" class="boton_acceso" title="Acceso para Tutores"></a>
         <a href="canalizacion.html"><input type="button" value="CANALIZACIÓN" class="boton_acceso" title="Canalizar Problema Presentado"></a>
         <a href="javascript:Confirmar_Acceso_Reportes()"><input type="button" value="REALIZAR REPORTES" class="boton_acceso" title="Generar Reporte Parcial o Final"></a>
-        <a href="javascript:accesoCITA()"><input type="button" value="PERSONAL DE LA CITA" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
-        <a href=""><input type="button" value="SALIR" class="boton_acceso-salir" title="Salir de la Aplicación"></a>
+        <a href="javascript:accesoCITA('sesion_coordinador.php')"><input type="button" value="PERSONAL DE LA CITA" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
+        <button class="boton_acceso-salir" title="Salir de la Aplicación" onclick="history.back()">SALIR</button>
+        <!--<a href="http://its-purhepecha.edu.mx/"> <input type="button" class="boton_acceso-salir" title="Salir de la Aplicación" value="SALIR"></a>-->
         <br><br><br>
 
         <div id="significado">
@@ -49,15 +51,15 @@ require "php/BD_Connect.php";
             <form id="v_modal" autocomplete="off">
                 <img src="img/candado.png" id="candado">
                 <div id="contenido_modal">
-                    <input type="text" placeholder="Ingresa tu Usuario" id="usuarioTutor" class="login">
+                    <input type="text" placeholder="Ingresa tu Usuario" id="usuarioTutor" name="usuario" class="login">
                     <br><br>
-                    <input type="password" placeholder="Ingresa tu Contraseña" id="passTutor" class="login" minlength="10" maxlength="10">
+                    <input type="password" placeholder="Ingresa tu Contraseña" id="passTutor" name="pass" class="login" minlength="10" maxlength="10">
                 </div>
                 <br><br>
                 <div id="contenido_modal2">
-                    <a href="login-tutor.html"><input type="button" value="Nuevo Usuario" class="botones_login" id="nuevoTutor"></a>
-                    <input type="button" value="ENTRAR" class="botones_login" id="entrar_tutor">
-                    <input type="button" value="CANCELAR" class="botones_login" id="cerrarTutor">
+                    <a href="login-tutor.html"><input type="button" class="botones_login" id="nuevoTutor" value="Nuevo Usuario"></button></a>
+                    <button class="botones_login" id="entrar_tutor">ENTRAR</button>
+                    <button class="botones_login" id="cerrarTutor">CANCELAR</button>
                 </div>
             </form>
         </div>
@@ -75,18 +77,19 @@ require "php/BD_Connect.php";
         </div>
 
         <div class="modal-fondo" id="ventana_modal_nip">
-            <div id="v_modal_nip">
+            <form id="v_modal_nip" autocomplete="off">
                 <img src="img/candado2.png" id="candado2">
                 <div id="contenido_modal_nip">
                     <input type="text"
                            id="log_usu"
+                           name="log_usuC""
                            placeholder="Ingresa tu Usuario:"
                            class="login_nip">
                     <br><br>
                     <input type="password"
                            id="log_pass"
+                           name="log_passC"
                            placeholder="Ingresa tu NIP:"
-                           onkeypress="return nip(event);"
                            maxlength="4"
                            class="login_nip">
                 </div>
@@ -94,10 +97,10 @@ require "php/BD_Connect.php";
 
                 <div id="contenido_modal_nip2">
                     <a href="javascript:LogNipCITA()"><input type="button" value="Nuevo Usuario" class="botones_login"></a>
-                    <input type="button" id="logarUsuario" value="ENTRAR" class="botones_login">
-                    <input type="button" value="CANCELAR" class="botones_login" onclick="cerrarCITA()">
+                    <input type="button" id="logiarCoord" value="ENTRAR" class="botones_login">
+                    <input type="button" id="cerrarCoord" value="CANCELAR" class="botones_login">
                 </div>
-            </div>
+            </form>
         </div>
 
         <div class="modal-fondo" id="fondo_nip">

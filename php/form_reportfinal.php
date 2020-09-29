@@ -60,7 +60,12 @@
     }
 
     $reunionesF = $_POST["reuniones"];
+
     $alumnoBecadoF = $_POST["num_becadof"].", ".$_POST["becariosf"];
+    if ($_POST["num_becadof"] === "0"){
+        $alumnoBecadoF = "Ningún alumno becado";
+    }
+
     $alumnoDesertadoF = $_POST["desertados"];
 
     $numAseParF = $_POST["num_canalif1"];
@@ -104,7 +109,7 @@
         http_response_code(404);
         echo "\n\nNO SE PUDO GUARDAR EL REPORTE FINAL!!!";
     } else {
-        echo "REPORTE FINAL\nGUARDADO EXITOSAMENTE!!!";
+        //echo "REPORTE FINAL\nGUARDADO EXITOSAMENTE!!!";
         echo mysqli_insert_id($connect);
     }
 

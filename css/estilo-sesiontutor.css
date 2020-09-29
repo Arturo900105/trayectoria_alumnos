@@ -8,36 +8,46 @@
     margin: 0 auto;
     width: auto;
     text-align: center;
-    padding: 1em 0 0;
-}
-
-h1{
-    margin: 0 1em;
-    display:inline-block;
-    vertical-align:middle;
-    width: auto;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.logosTutor{
-    height: 7em;
-    display:inline-block;
-    vertical-align:middle;
+    padding: 1em 0;
 }
 
 #datosTutor{
-    margin: 10px auto 0;
+    margin: 0 5px;
     width: 50em;
+    display:inline-block;
+    vertical-align:middle;
     text-align: left;
-    padding: 10px;
+}
+
+h1{
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+    padding: 0 0 0.5em;
+}
+
+h2{
+    text-align: center;
+    margin: 0;
+}
+
+#nombreUsuarioT{
+    color: #0c9800;
+    font-size: 30px;
+    text-align: center;
+}
+
+.logosTutor{
+    height: 10em;
+    display:inline-block;
+    vertical-align:middle;
 }
 
 /*menus*/
 .menuTutor{
     list-style: none;
     padding: 0;
-    background: #101016;
+    background: black;
     text-align: center;
     width: auto;
     margin: auto;
@@ -64,7 +74,7 @@ h1{
 .submenuTutor{
     display: none;
     position: absolute;
-    background: #011029;
+    background: black;
 }
 
 .submenuTutor li{
@@ -91,6 +101,9 @@ h1{
     display: none;
     position: absolute;
     background: #011029;
+    color: #FFFFFF;
+    margin-top: -60px;
+    margin-left: 18.2em;
 }
 
 .menuTutor li:hover .submenuTutor li:hover .submenuTutor2{

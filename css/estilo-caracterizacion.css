@@ -341,7 +341,7 @@ h2{
     display: none;
 }
 
-#areas, #aadd_posttest{
+#areas{
     background: rgba(85, 5, 4, 0.8);
     top: 0;
     bottom: 0;
@@ -355,7 +355,7 @@ h2{
     position: absolute;
 }
 
-#contenido_area, #contenido_posttest{
+#contenido_area{
     padding: 2em;
     width: auto;
     margin: auto;

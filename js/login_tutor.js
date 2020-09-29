@@ -83,6 +83,7 @@ function crearUsuario() {
 $(document).ready(function () {
     formularioTutor = $('#formulario_tutor')
     formularioTutor[0].reset()
+    $("#contenidoTutor")[0].reset()
 
     $("#nombre_tutor").on("click", function (){
         $("#nombre_tutor").val("")
@@ -196,18 +197,13 @@ $(document).ready(function () {
                         })
                     }
                 })
-
                 formularioTutor[0].reset()
                 $("#area_de").val(area)
             }
         })
-
-
-
-
     })
 
-    $("#login_tutor").on("click", function (e){
+    $("#logiarTutor").on("click", function (e){
         e.preventDefault();
         usuTutor = $("[name = usuario]")
         passTutor = $("[name = pass]")
@@ -243,22 +239,41 @@ $(document).ready(function () {
             });
             return false;
         } else {
-
+            $.ajax({
+                url: "php/login-tutor.php",
+                type: 'POST',
+                data: $("#contenidoTutor").serialize(),
+                success: function (resulT) {
+                    let CookiesT = Cookies.noConflict();
+                    CookiesT.set('UsuTut', resulT);
+                    //console.log(paginaTutor);
+                    location.href = paginaTutor;
+                },
+                error: function (error) {
+                    swal.fire({
+                        position: 'top',
+                        icon: 'question',
+                        title: (error.responseText),
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
         }
-
-
-
 
     })
 
+    $("#cerrarLoginT").on("click", function (e){
+        e.preventDefault();
+        $("#modal-acceso").css({display:"none"})
+        $("#contenidoTutor")[0].reset()
+    })
 
 
 })
 
 
-function Confirmar_M_Acceso() {
+function accesoTutor(paginaT) {
     $("#modal-acceso").css({display:"block"})
-}
-function Cerrar_M_Acceso() {
-    $("#modal-acceso").css({display:"none"})
+    paginaTutor = paginaT;
 }

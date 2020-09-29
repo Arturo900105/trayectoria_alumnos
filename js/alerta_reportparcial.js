@@ -80,6 +80,16 @@ $(document).ready(function () {
         }
     })
 
+    $("[name=num_becados]").on("keyup", function (){
+        let num_becado = $(this).val()
+        if (num_becado[0] === "0") {
+            $(this).val(num_becado[0])
+            $("#becarios").hide().val("")
+        } else {
+            $("#becarios").show()
+        }
+    })
+
     reporte_parcial.on("click", function () {
 
         if (periodo.val().trim() === "Agosto - Diciembre"){
@@ -234,6 +244,7 @@ $(document).ready(function () {
             });
             return false;
         }
+
         if ($('[name = num_becados]').val().trim() === "") {
             Swal.fire({
                 title: "CAMPO VACÍO:\nNúmero de estudiantes becarios",
@@ -244,17 +255,18 @@ $(document).ready(function () {
                 timer: 2000
             });
             return false;
-        }
-        if (($('#becarios').val().trim() === "")) {
-            Swal.fire({
-                title: "CAMPO VACÍO: Tipo de Beca",
-                icon: "warning",
-                backdrop: "rgba(0,1,85, 0.5)",
-                showConfirmButton: false,
-                width: "30%",
-                timer: 2000
-            });
-            return false;
+        } else if (($('[name=num_becados]').val().trim() !== "0")) {
+            if (($('#becarios').val().trim() === "")) {
+                Swal.fire({
+                    title: "CAMPO VACÍO: Tipo de Beca",
+                    icon: "warning",
+                    backdrop: "rgba(0,1,85, 0.5)",
+                    showConfirmButton: false,
+                    width: "30%",
+                    timer: 2000
+                });
+                return false;
+            }
         }
 
 
@@ -358,14 +370,14 @@ $(document).ready(function () {
         }
 
         Swal.fire({
-            title: "¿Regisrar Reporte Parcial?",
+            title: "¿Imprimir Reporte Parcial?",
             text: "Después, para modificar errores tendrá que acudir al área de Tutoría Académica",
             type: 'warning',
             icon: "question",
             showCancelButton: true,
             confirmButtonColor: '#19980b',
             cancelButtonColor: '#910018',
-            confirmButtonText: 'GUARDAR',
+            confirmButtonText: 'IMPRIMIR',
             cancelButtonText: 'CANCELAR',
             width: "40%",
             backdrop: "rgba(0,1,85, 0.5)",
@@ -382,12 +394,12 @@ $(document).ready(function () {
                         swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: "REPORTE PARCIAL GUARDADO EXITOSAMENTE!!!",
+                            title: "REPORTE PARCIAL LISTO PARA IMPRIMIR!!!",
                             showConfirmButton: false,
                             timer: 1500
                         }).then(()=>{
                             document.location = 'documentos/reporte_parcial.php?id_rparcial='+ id_rparcial;
-                        });
+                        })
                     },
                     error: function (error) {
                         swal.fire({
@@ -515,6 +527,7 @@ $(document).ready(function () {
             });
             return false;
         }
+
         if ($('[name = num_becados]').val().trim() === "") {
             Swal.fire({
                 title: "CAMPO VACÍO:\nNúmero de estudiantes becarios",
@@ -525,19 +538,19 @@ $(document).ready(function () {
                 timer: 2000
             });
             return false;
+        } else if (($('[name=num_becados]').val().trim() !== "0")) {
+            if (($('#becarios').val().trim() === "")) {
+                Swal.fire({
+                    title: "CAMPO VACÍO: Tipo de Beca",
+                    icon: "warning",
+                    backdrop: "rgba(0,1,85, 0.5)",
+                    showConfirmButton: false,
+                    width: "30%",
+                    timer: 2000
+                });
+                return false;
+            }
         }
-        if (($('#becarios').val().trim() === "")) {
-            Swal.fire({
-                title: "CAMPO VACÍO: Tipo de Beca",
-                icon: "warning",
-                backdrop: "rgba(0,1,85, 0.5)",
-                showConfirmButton: false,
-                width: "30%",
-                timer: 2000
-            });
-            return false;
-        }
-
 
         if ($('[name = num_canalip1]').val().trim() === "") {
             Swal.fire({

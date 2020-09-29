@@ -7,6 +7,6 @@ if (!$connect) {
     echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
     exit;
 } else {
-    echo "Success: Ya estas conectado" . PHP_EOL;
+    //echo "Success: Ya estas conectado" . PHP_EOL;
 }
 

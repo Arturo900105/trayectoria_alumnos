@@ -9,66 +9,6 @@ function Poner_Ceros(num) {
     num.value = yearcpe+"-"+("0000" + num.value).slice (-4);
 }
 
-function Confirmar_Acceso(pagina) {
-    $("#acceso_area").css({display:"block"})
-    paginaAbrir = pagina;
-    //console.log(paginaAbrir)
-}
-
-function Cerrar_Acceso(e) {
-    e.preventDefault();
-    $("#acceso_area").css({display:"none"})
-}
-
-function setLogin(e){
-    e.preventDefault();
-    alertArea1 = "Debes ingresar tu\nNúm. de Ficha";
-    alertArea2 = "Ficha no válida";
-
-    if ($('#login_areas').val().trim() === '') {
-        Swal.fire({
-            title: alertArea1,
-            position: 'top',
-            showConfirmButton: false,
-            timer: 1500,
-            icon: "warning",
-            backdrop: "rgba(0,0,0,0)"
-        });
-        return false;
-    } else if ($('#login_areas').val().trim() === yearcpe+"-"+'0000') {
-        Swal.fire({
-            title: alertArea2,
-            position: 'top',
-            showConfirmButton: false,
-            timer: 700,
-            icon: "warning",
-            backdrop: "rgba(0,0,0,0)"
-        });
-        return false;
-    } else {
-        $.ajax({
-            url: "php/login-alumno.php",
-            type: 'POST',
-            data: $("#contenido_area").serialize(),
-            success: function (resultado) {
-                let Cookies2 = Cookies.noConflict();
-                Cookies2.set('usuario', resultado);
-                //console.log(paginaAbrir);
-                location.href = paginaAbrir;
-            },
-            error: function (error) {
-                swal.fire({
-                    position: 'top',
-                    icon: 'question',
-                    title: (error.responseText),
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
-        })
-    }
-}
-
 /*
 function numDecimal(evt,input) {
     let key = window.Event ? evt.which : evt.keyCode;
@@ -317,7 +257,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: "php/guardar_alumno.php",
                     type: 'POST',
-                    data: $("#form_alumno").serialize(),
+                    data: form_alumno.serialize(),
                     success: function (respuesta) {
                         swal.fire({
                             position: 'center',
@@ -350,10 +290,63 @@ $(document).ready(function () {
 
 });
 
-function Acceso_Post_Test() {
-    $("#acceso_posttest").css({display:"block"})
+
+function Confirmar_Acceso(pagina) {
+    $("#acceso_area").css({display:"block"})
+    paginaAbrir = pagina;
+    //console.log(paginaAbrir)
 }
 
-function Accesol_Post_Test() {
-    $("#acceso_posttest").css({display:"none"})
+function Cerrar_Acceso(e) {
+    e.preventDefault();
+    $("#acceso_area").css({display:"none"})
+}
+
+function setLogin(e){
+    e.preventDefault();
+    alertArea1 = "Debes ingresar tu\nNúm. de Ficha";
+    alertArea2 = "Ficha no válida";
+
+    if ($('#login_areas').val().trim() === '') {
+        Swal.fire({
+            title: alertArea1,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 1500,
+            icon: "warning",
+            backdrop: "rgba(0,0,0,0)"
+        });
+        return false;
+    } else if ($('#login_areas').val().trim() === yearcpe+"-"+'0000') {
+        Swal.fire({
+            title: alertArea2,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 700,
+            icon: "warning",
+            backdrop: "rgba(0,0,0,0)"
+        });
+        return false;
+    } else {
+        $.ajax({
+            url: "php/login-alumno.php",
+            type: 'POST',
+            data: $("#contenido_area").serialize(),
+            success: function (resultado) {
+                let Cookies2 = Cookies.noConflict();
+                Cookies2.set('usuario', resultado);
+                //console.log(paginaAbrir);
+                location.href = paginaAbrir;
+            },
+            error: function (error) {
+                swal.fire({
+                    position: 'top',
+                    icon: 'question',
+                    title: (error.responseText),
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        })
+    }
 }

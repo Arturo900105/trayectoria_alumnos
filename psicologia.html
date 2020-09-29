@@ -267,7 +267,7 @@
         <br>
 
         <div id="acceso_posttest">
-            <a class="a_posttest" href="escala_posttest.html"><img src="img/area_pspost-test.png" title="Escala Post-Test" class="carpeta_posttest"></a>
+            <a class="a_posttest" href="javascript:accesoPostTest('escala_posttest.html')"><img src="img/area_pspost-test.png" title="Escala Post-Test" class="carpeta_posttest"></a>
         </div>
 
         <h2>Test de orientación vocacional.</h2>
@@ -564,6 +564,21 @@
             <input type="button" id="cerrarPsicologia" value="REGRESAR" class="boton_psico">
         </div>
     </form>
+
+    <div id="modal_posttest">
+        <div id="aadd_posttest">
+            <form id="contenido_posttest">
+                <input type="password"
+                       placeholder="Ingresa tu Núm. de Control"
+                       maxlength="7"
+                       class="area_posttest">
+                <br><br>
+                <button class="botones_posttest" onclick="setPostTest(event)">ENTRAR</button>
+                <button class="botones_posttest" onclick="cerrarPostTest(event)">CANCELAR</button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/usuario_alumno.js"></script>
 </body>
 </html>

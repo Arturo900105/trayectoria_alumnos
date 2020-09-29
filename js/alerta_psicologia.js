@@ -1,4 +1,4 @@
-let valor, nuevoValor, form_psicologia;
+let valor, nuevoValor, form_psicologia, paginaPostTest = "";
 let b1_01, b1_02, b1_03, b1_04, b1_05, b1_06, b1_07, b1_08, b1_09, b1_10;
 let b2_11, b2_12, b2_13, b2_14, b2_15, b2_16, b2_17, b2_18, b2_19, b2_20;
 let b3_21, b3_22, b3_23, b3_24, b3_25, b3_26, b3_27, b3_28, b3_29, b3_30;
@@ -756,3 +756,18 @@ $(document).ready(function () {
         });
     })
 })
+
+function accesoPostTest(pagina) {
+    $("#modal_posttest").css({display:"block"})
+    paginaPostTest = pagina;
+}
+
+function cerrarPostTest(e) {
+    e.preventDefault();
+    $("#modal_posttest").css({display:"none"})
+}
+
+function setPostTest(e) {
+    e.preventDefault();
+
+}

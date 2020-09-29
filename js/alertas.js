@@ -1,30 +1,15 @@
 let passCITA, nombreCoord, apePat, apeMat, separador, coordTutoria, usuarioCoord, usuMUlt, patCoord, matCoord;
 let alertaCITA1, alertaCITA2, alertaCITA3, alertaCITA4, alertaCITA5;
-let alertaCITA6, alertaCITA7, alertaCITA8, alertaCITA9, alertaCITA10;
-let alertaCITA11, alertaCITA12, separador1, separador2;
-
-function Confirmar_Acceso() {
-    $("#ventana_modal").css({display:"block"})
-}
+let alertaCITA6, alertaCITA7, alertaCITA8, separador1, separador2;
 
 function Confirmar_Acceso_Reportes() {
     $("#ventana_modal_reportes").css({display:"block"})
 }
 
 
-function accesoCITA() {
-    $("#ventana_modal_nip").css({display:"block"})
-}
-function cerrarCITA() {
-    $("#ventana_modal_nip").css({display:"none"})
-    $("#log_usu").val("")
-    $("#log_pass").val("")
-}
-
-
 function LogNipCITA() {
     $("#fondo_nip").css({display:"block"})
-    return cerrarCITA();
+    $("#ventana_modal_nip").css({display:"none"})
 }
 function cerrarNipCITA() {
     $("#fondo_nip").css({display:"none"})
@@ -73,7 +58,7 @@ $(document).ready(function () {
 
     $(document).on("keydown", function (e) {
         if(e.which === 27){
-            return cerrarNipCITA(),cerrarCITA(),cerrarLoginNip();
+            return cerrarNipCITA(),cerrarLoginNip();
         }
     })
 
@@ -91,54 +76,6 @@ $(document).ready(function () {
     alertaCITA6 = "Por favor,\nIngrese su E-mail";
     alertaCITA7 = "Por favor,\nGenere su Login";
     alertaCITA8 = "Por favor,\nIngrese los datos requeridos";
-    alertaCITA9 = "Por favor,\nIngrese su Usuario y NIP";
-    alertaCITA10 = "Por favor,\nIngrese su Usuario";
-    alertaCITA11 = "Por favor,\nIngrese su NIP";
-    alertaCITA12 = "LOGIN INCORRECTO!!!";
-
-
-    //Ventana modal para acceder a las trayectorias
-    $("#nuevoTutor").on("click", function (){
-        $("#ventana_modal").css({display:"none"})
-        $('#usuarioTutor').val("")
-        $('#passTutor').val("")
-    })
-    $("#entrar_tutor").on("click", function (){
-        if ($('#usuarioTutor').val().trim() === "" && $('#passTutor').val().trim() === ""){
-            Swal.fire({
-                title: "Ingresa tu Usuario y tu\nContraseña de 10 digitos",
-                icon: "warning",
-                position: "top",
-                backdrop: "rgba(0,0,0,0)",
-                showConfirmButton: false,
-                timer: 2000
-            });
-        } else if ($('#usuarioTutor').val().trim() === "") {
-            Swal.fire({
-                title: "Ingresa tu Usuario",
-                icon: "warning",
-                position: "top",
-                backdrop: "rgba(0,0,0,0)",
-                showConfirmButton: false,
-                timer: 2000
-            });
-        } else {
-            Swal.fire({
-                title: "Ingresa tu\nContraseña de 10 digitos",
-                icon: "warning",
-                position: "top",
-                backdrop: "rgba(0,0,0,0)",
-                showConfirmButton: false,
-                timer: 2000
-            });
-        }
-    })
-    $("#cerrarTutor").on("click", function (){
-        $("#ventana_modal").css({display:"none"})
-        $('#usuarioTutor').val("")
-        $('#passTutor').val("")
-    })
-
 
     //Ventana modal para acceder a los Reportes: Parcial y Final
     $("#reporteParcial").on("click",function (){
@@ -151,41 +88,6 @@ $(document).ready(function () {
         $("#ventana_modal_reportes").css({display:"none"})
     })
 
-
-    $('#logarUsuario').on('click', function () {
-
-        if ($('#log_usu').val().trim() === "" && $('#log_pass').val().trim() === ""){
-            Swal.fire({
-                title: alertaCITA9,
-                icon: "warning",
-                position: "top",
-                backdrop: "rgba(0,0,0,0)",
-                showConfirmButton: false,
-                timer: 2000
-            });
-            return false;
-        } else if ($('#log_usu').val().trim() === ""){
-            Swal.fire({
-                title: alertaCITA10,
-                icon: "warning",
-                position: "top",
-                backdrop: "rgba(0,0,0,0)",
-                showConfirmButton: false,
-                timer: 1500
-            });
-            return false;
-        } else if ($('#log_pass').val().trim() === ""){
-            Swal.fire({
-                title: alertaCITA11,
-                icon: "warning",
-                position: "top",
-                backdrop: "rgba(0,0,0,0)",
-                showConfirmButton: false,
-                timer: 1500
-            });
-            return false;
-        }
-    })
 
     $('#generarLogin').on('click', function () {
 

@@ -75,7 +75,12 @@
     }
 
     $reuniones = $_POST["reuniones"];
+
     $alumnoBecado = $_POST["num_becados"].", ".$_POST["becarios"];
+    if ($_POST["num_becados"] === "0"){
+        $alumnoBecado = "Ningún alumno becado";
+    }
+
     $alumnoDesertado = $_POST["desertados"];
 
     $numAsePar = $_POST["num_canalip1"];
@@ -121,7 +126,7 @@
         http_response_code(404);
         echo "\n\nNO SE PUDO GUARDAR EL REPORTE PARCIAL!!!";
     } else {
-        echo "REPORTE PARCIAL\nGUARDADO EXITOSAMENTE!!!";
+        //echo "REPORTE PARCIAL\nGUARDADO EXITOSAMENTE!!!";
         echo mysqli_insert_id($connect);
     }
 

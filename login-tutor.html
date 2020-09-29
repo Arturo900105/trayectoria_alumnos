@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
     <script src="js/area_dinamica.js"></script>
+    <script src="js/login_tutor.js"></script>
 </head>
 <body>
     <form action="" method="" id="formulario_tutor" autocomplete="off">
@@ -70,35 +71,35 @@
         <div id="carpetas">
             <div id="IGEM">
                 <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_igem.png" title="Ingeniería en Gestión Empresarial"></a>
+                <a href="javascript:accesoTutor('sesion_tutor.php')"><img src="img/folder_igem.png" title="Ingeniería en Gestión Empresarial"></a>
             </div>
             <div id="IIND">
                 <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iind.png" title="Ingeniería Industrial"></a>
+                <a href="javascript:accesoTutor('sesion_tutor.php')"><img src="img/folder_iind.png" title="Ingeniería Industrial"></a>
             </div>
             <div id="ISIC">
                 <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_isic.png" title="Ingeniería en Sistemas Computacionales"></a>
+                <a href="javascript:accesoTutor('sesion_tutor.php')"><img src="img/folder_isic.png" title="Ingeniería en Sistemas Computacionales"></a>
             </div>
             <div id="IBIO">
                 <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ibio.png" title="Ingeniería Biomédica"></a>
+                <a href="javascript:accesoTutor('sesion_tutor.php')"><img src="img/folder_ibio.png" title="Ingeniería Biomédica"></a>
             </div>
             <div id="IIAS">
                 <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iias.png" title="Ingeniería en Innovación Agrícola Sustentable"></a>
+                <a href="javascript:accesoTutor('sesion_tutor.php')"><img src="img/folder_iias.png" title="Ingeniería en Innovación Agrícola Sustentable"></a>
             </div>
             <div id="IENR">
                 <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ienr.png" title="Ingeniería en Energías Renovables"></a>
+                <a href="javascript:accesoTutor('sesion_tutor.php')"><img src="img/folder_ienr.png" title="Ingeniería en Energías Renovables"></a>
             </div>
             <div id="IFOR">
                 <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_ifor.png" title="Ingeniería Forestal"></a>
+                <a href="javascript:accesoTutor('sesion_tutor.php')"><img src="img/folder_ifor.png" title="Ingeniería Forestal"></a>
             </div>
             <div id="IAGR">
                 <h2>Accede a la siguiente carpeta utilizando tu<br>Usuario y Contraseña que generaste y registraste:</h2>
-                <a href="javascript:Confirmar_M_Acceso()"><img src="img/folder_iagr.png" title="Ingeniería en Agronomía"></a>
+                <a href="javascript:accesoTutor('sesion_tutor.php')"><img src="img/folder_iagr.png" title="Ingeniería en Agronomía"></a>
             </div>
         </div>
     </form>
@@ -106,17 +107,16 @@
     <div class="modal-acceso" id="modal-acceso">
         <div id="m_acceso">
             <img src="img/candado.png" id="candadito">
-            <form id="contenido_m_acceso">
+            <form id="contenidoTutor">
                 <input type="text" name="usuario" placeholder="Ingresa tu Usuario" class="login_acceso">
                 <br><br>
                 <input type="password" name="pass" placeholder="Ingresa tu Contraseña" class="login_acceso">
                 <br><br>
-                <input type="button" value="ENTRAR" class="botones_login_acceso" id="login_tutor">
-                <input type="button" value="CANCELAR" class="botones_login_acceso" onclick="Cerrar_M_Acceso()">
+                <button class="botones_login_acceso" id="logiarTutor">ENTRAR</button>
+                <button class="botones_login_acceso" id="cerrarLoginT">CANCELAR</button>
             </form>
         </div>
     </div>
-    <script src="js/login_tutor.js"></script>
     <script src="js/pass_tutor.js"></script>
 </body>
 </html>

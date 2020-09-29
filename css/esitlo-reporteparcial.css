@@ -244,3 +244,7 @@ th{
 #base_reporte{
     text-align: center;
 }
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}

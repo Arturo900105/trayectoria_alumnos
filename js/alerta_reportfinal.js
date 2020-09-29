@@ -80,6 +80,16 @@ $(document).ready(function () {
         }
     })
 
+    $("#num_becadof").on("keyup", function (){
+        let num_becadof = $(this).val()
+        if (num_becadof[0] === "0") {
+            $(this).val(num_becadof[0])
+            $("#becariosf").hide().val("")
+        } else {
+            $("#becariosf").show()
+        }
+    })
+
     reporte_final.on("click", function () {
 
         if (periodof.val().trim() === "Agosto - Diciembre"){
@@ -219,7 +229,6 @@ $(document).ready(function () {
             return false;
         }
 
-
         if ($('#num_becadof').val().trim() === "") {
             Swal.fire({
                 title: "CAMPO VACÍO:\nNúmero de estudiantes becarios",
@@ -230,19 +239,19 @@ $(document).ready(function () {
                 timer: 2000
             });
             return false;
+        } else if ($('#num_becadof').val().trim() !== "0") {
+            if (($('#becariosf').val().trim() === "")) {
+                Swal.fire({
+                    title: "CAMPO VACÍO: Tipo de Beca",
+                    icon: "warning",
+                    backdrop: "rgba(0,84,150, 0.5)",
+                    showConfirmButton: false,
+                    width: "30%",
+                    timer: 2000
+                });
+                return false;
+            }
         }
-        if (($('#becariosf').val().trim() === "")) {
-            Swal.fire({
-                title: "CAMPO VACÍO: Tipo de Beca",
-                icon: "warning",
-                backdrop: "rgba(0,84,150, 0.5)",
-                showConfirmButton: false,
-                width: "30%%",
-                timer: 2000
-            });
-            return false;
-        }
-
 
         if ($('[name = num_canalif1]').val().trim() === "") {
             Swal.fire({
@@ -340,7 +349,7 @@ $(document).ready(function () {
         }
 
         Swal.fire({
-            title: "¿Regisrar Reporte Final?",
+            title: "¿Imprimir Reporte Final?",
             text: "Después, para modificar errores tendrá que acudir al área de Tutoría Académica",
             type: 'warning',
             icon: "question",
@@ -348,7 +357,7 @@ $(document).ready(function () {
             confirmButtonColor: '#19980b',
             cancelButtonColor: '#910018',
             confirmButtonText: 'GUARDAR',
-            cancelButtonText: 'CANCELAR',
+            cancelButtonText: 'IMPRIMIR',
             width: "40%",
             backdrop: "rgba(0,84,150, 0.5)",
 
@@ -364,7 +373,7 @@ $(document).ready(function () {
                         swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: "REPORTE FINAL GUARDADO EXITOSAMENTE!!!",
+                            title: "REPORTE FINAL LISTO PARA IMPRIMIR!!!",
                             showConfirmButton: false,
                             timer: 1500
                         }).then(()=>{
@@ -494,17 +503,18 @@ $(document).ready(function () {
                 timer: 2000
             });
             return false;
-        }
-        if (($('#becariosf').val().trim() === "")) {
-            Swal.fire({
-                title: "CAMPO VACÍO: Tipo de Beca",
-                icon: "warning",
-                backdrop: "rgba(0,84,150, 0.5)",
-                showConfirmButton: false,
-                width: "30%%",
-                timer: 2000
-            });
-            return false;
+        } else if ($('#num_becadof').val().trim() !== "0") {
+            if (($('#becariosf').val().trim() === "")) {
+                Swal.fire({
+                    title: "CAMPO VACÍO: Tipo de Beca",
+                    icon: "warning",
+                    backdrop: "rgba(0,84,150, 0.5)",
+                    showConfirmButton: false,
+                    width: "30%",
+                    timer: 2000
+                });
+                return false;
+            }
         }
 
 
