@@ -9,6 +9,7 @@ require "php/BD_Connect.php";
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Trayectoria ITSP</title>
+        <link rel="shortcut icon" href="iconos/icon2.png" type="image/x-icon">
         <link rel="stylesheet" href="css/estilo-index.css">
         <script src="js/jquery_3.4.1.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
@@ -22,7 +23,7 @@ require "php/BD_Connect.php";
     </head>
     <body>
         <h1>Coordinación Institucional de Tutoría Académica</h1>
-        <img src="img/logo_cita2.png" title="Tutoría Académica" id="itsp_logo">
+        <img src="img/logo_cita2.png" title="Coordinación Institucional de Tutoría Académica" id="itsp_logo">
         <br>
 
         <a href="caracterizacion.html"><input type="button" value="ALUMNOS" class="boton_acceso" title="Formularios para Alumnos de Nuevo Ingreso"></a>
@@ -124,6 +125,11 @@ require "php/BD_Connect.php";
                     <input type="text" name="nombreCoord" id="nombreCoord" placeholder="Nombre(s):" class="cita_nombre">
                     <input type="text" name="apePat" id="apePat" placeholder="Apellido Paterno:" class="cita_apellidos">
                     <input type="text" name="apeMat" id="apeMat" placeholder="Apellido Materno:" class="cita_apellidos">
+                    <br><br>
+
+                    <b id="titleSexo">Sexo:</b>
+                    <label class="seCoord"><input type="radio" name="sexoCoord" value="M">Masculino</label>
+                    <label class="seCoord"><input type="radio" name="sexoCoord" value="F">Femenino</label>
                     <br><br>
 
                     <select name="cita_tutoria" id="cita_tutoria">

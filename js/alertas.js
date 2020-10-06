@@ -274,6 +274,18 @@ $(document).ready(function () {
             return false;
         }
 
+        if (!$("[name=sexoCoord]:radio").is(":checked")) {
+            Swal.fire({
+                title: "Seleccione su sexo",
+                icon: "warning",
+                position: "top",
+                backdrop: "rgba(0,0,0,0)",
+                showConfirmButton: false,
+                timer: 1000
+            });
+            return false;
+        }
+
         if ($('#cita_tutoria').val().trim() === "") {
             Swal.fire({
                 title: alertaCITA5,

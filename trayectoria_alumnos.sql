@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2020 a las 07:29:55
+-- Tiempo de generación: 06-10-2020 a las 05:27:01
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -42,16 +42,17 @@ CREATE TABLE `alumno` (
   `email` text DEFAULT NULL,
   `fecha_ficha` date DEFAULT NULL,
   `carrera` varchar(4) DEFAULT NULL,
-  `generacion` int(4) DEFAULT NULL
+  `generacion` int(4) DEFAULT NULL,
+  `id_tutor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`num_ficha`, `fecha_registro`, `apellidos`, `nombre`, `fecha_de_nacimiento`, `sexo`, `indigena`, `edad`, `edo_civil`, `tel_cel`, `email`, `fecha_ficha`, `carrera`, `generacion`) VALUES
-('20-0011', 'Jueves, 24 de Septiembre de 2020', 'Velázquez Fonseca', 'Gabriela', '1996-01-22', 'Femenino', 'No', 23, 'Casada', '7224139697', 'gaby_velafons@outlook.com', '2020-04-08', 'IBIO', 2016),
-('20-0013', 'Jueves, 24 de Septiembre de 2020', 'Sánchez Fonseca', 'Gabriel Abraham', '1994-10-22', 'Masculino', 'No', 25, 'Soltero', '5540734715', 'ga.sanzfons@gmail.com', '2020-04-07', 'ISIC', 2015);
+INSERT INTO `alumno` (`num_ficha`, `fecha_registro`, `apellidos`, `nombre`, `fecha_de_nacimiento`, `sexo`, `indigena`, `edad`, `edo_civil`, `tel_cel`, `email`, `fecha_ficha`, `carrera`, `generacion`, `id_tutor`) VALUES
+('20-0011', 'Jueves, 24 de Septiembre de 2020', 'Velázquez Fonseca', 'Gabriela', '1996-01-22', 'Femenino', 'No', 23, 'Casada', '7224139697', 'gaby_velafons@outlook.com', '2020-04-08', 'ISIC', 2016, 0),
+('20-0013', 'Jueves, 24 de Septiembre de 2020', 'Sánchez Fonseca', 'Gabriel Abraham', '1994-10-22', 'Masculino', 'No', 25, 'Soltero', '5540734715', 'ga.sanzfons@gmail.com', '2020-04-07', 'ISIC', 2015, 1);
 
 -- --------------------------------------------------------
 
@@ -102,13 +103,25 @@ INSERT INTO `canalizacion` (`folio`, `fecha`, `hora`, `nom_estudiante`, `igem`, 
 --
 
 CREATE TABLE `coordinador` (
+  `id_coordinador` int(11) NOT NULL,
   `nombre` text DEFAULT NULL,
   `apellidos` text DEFAULT NULL,
+  `sexo` varchar(1) DEFAULT NULL,
   `coordinacion` varchar(4) DEFAULT NULL,
   `email` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
   `usuario` text DEFAULT NULL,
-  `password` varchar(40) DEFAULT NULL
+  `pass_coord` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `coordinador`
+--
+
+INSERT INTO `coordinador` (`id_coordinador`, `nombre`, `apellidos`, `sexo`, `coordinacion`, `email`, `fecha_registro`, `hora_registro`, `usuario`, `pass_coord`) VALUES
+(2, 'Arturo', 'Sánchez Fonseca', 'M', 'ISIC', 'fonck.five@gmail.com', 'Lunes, 28 de Septiembre de 2020', '01:42 pm.', 'a.sanchezf_03', 5504),
+(3, 'María', 'Janacua Benites', 'F', 'IIND', 'vientoafavor@hotmail.com', 'Viernes, 2 de Octubre de 2020', '11:18 pm.', 'm.janacuab_02', 9197);
 
 -- --------------------------------------------------------
 
@@ -231,9 +244,7 @@ CREATE TABLE `reporte_final` (
 --
 
 INSERT INTO `reporte_final` (`id_rfinal`, `fecha_final`, `hora_final`, `periodo_final`, `nombre_tutor`, `sem_grupf`, `programa_final`, `tutf_asignado`, `asignatura_f1`, `reprobado_f1`, `por_reprobadof1`, `asignatura_f2`, `reprobado_f2`, `por_reprobadof2`, `asignatura_f3`, `reprobado_f3`, `por_reprobadof3`, `asignatura_f4`, `reprobado_f4`, `por_reprobadof4`, `asignatura_f5`, `reprobado_f5`, `por_reprobadof5`, `asignatura_f6`, `reprobado_f6`, `por_reprobadof6`, `reunion_efectuada`, `alumno_becado`, `alumno_desertado`, `num_aseparf`, `num_psicologiaf`, `num_medicaf`, `num_pedagogica`, `problematica`, `necesidades`, `desertados`, `recomobser`) VALUES
-(1, 'jueves, 3 de septiembre de 2020', '04:39 pm.', 'Enero - Junio', 'Gabriel Abraham Sánchez Fonseca', '4° \"B\"', 'Ingeniería en Sistemas Computacionales', 40, 'Tópicos Avanzados de Programación', '4', '10.00', 'Métodos Numéricos', '5', '12.50', '', '0', '', '', '0', '', '', '0', '', '', '0', '', 6, '25, Beca de Transporte', 0, 6, 7, 8, 9, 'NINGUNO', 'NINGUNO', 'NINGUNO', 'NINGUNO'),
-(4, 'jueves, 3 de septiembre de 2020', '05:09 pm.', 'Enero - Junio', 'Gabriel Abraham Sánchez Fonseca', '4° \"B\"', 'Ingeniería en Sistemas Computacionales', 30, 'Tópicos Avanzados de Programación', '4', '13.33%', 'Métodos Numéricos', '5', '16.67%', '', '', '', '', '', '', '', '', '', '', '', '', 6, '25, Beca de manutención y de transporte', 2, 6, 7, 8, 9, 'NINGUNO', 'NINGUNO', 'NINGUNO', 'NINGUNO'),
-(5, 'jueves, 3 de septiembre de 2020', '06:37 pm.', 'Agosto - Diciembre', 'Gabriel Abraham Sánchez Fonseca', '3° \"A\"', 'Ingeniería en Sistemas Computacionales', 40, 'Estructura de Datos', '3', '7.50%', 'Investigación de Operaciones', '6', '15.00%', 'Calculo Vectorial', '5', '12.50%', '', '', '', '', '', '', '', '', '', 3, '25, Beca de Transporte', 0, 6, 8, 15, 11, 'NINGUNO!!! 1', 'NINGUNO!!! 2', 'NINGUNO!!! 3', 'NINGUNO!!! 4');
+(1, 'Viernes, 25 de Septiembre de 2020', '02:54 pm.', 'Enero - Junio', 'Gabriel Abraham Sánchez Fonseca', '4° \"B\"', 'Ingeniería en Sistemas Computacionales', 35, 'Tópicos Avanzados de Programación', '3', '8.57%', 'Métodos Numéricos', '4', '11.43%', '', '', '', '', '', '', '', '', '', '', '', '', 2, '0, ', 2, 2, 3, 4, 5, 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO');
 
 -- --------------------------------------------------------
 
@@ -289,10 +300,9 @@ CREATE TABLE `reporte_parcial` (
 --
 
 INSERT INTO `reporte_parcial` (`id_rparcial`, `fecha`, `hora`, `periodo`, `reporte1`, `reporte2`, `reporte3`, `nom_tutor`, `semestre_grupo`, `programa`, `tutorado_asignado`, `asignatura1`, `num_asignatura1`, `por_asignatura1`, `asignatura2`, `num_asignatura2`, `por_asignatura2`, `asignatura3`, `num_asignatura3`, `por_asignatura3`, `asignatura4`, `num_asignatura4`, `por_asignatura4`, `asignatura5`, `num_asignatura5`, `por_asignatura5`, `asignatura6`, `num_asignatura6`, `por_asignatura6`, `reuniones_efectuadas`, `alumnbecado`, `alumndesertado`, `num_asepar`, `num_psicologia`, `num_medica`, `num_pedagogica`, `problematica`, `necesidades`, `desertores`, `recomendacion_observacion`) VALUES
-(1, 'jueves, 3 de septiembre de 2020', '01:04 pm.', 'Agosto - Diciembre', '1', '-', '-', 'Gabriel Abraham Sánchez Fonseca', '1° \"C\"', 'Ingeniería en Sistemas Computacionales', 35, 'Fundamentos de Programación', '3', '8.57%', 'Calculo Diferencial', '6', '17.14%', 'Matematicas Discretas', '3', '8.57%', 'Taller de Ética', '4', '11.43%', '', '', '', '', '', '', 6, '20, Beca de Manutención y de Transporte', 3, 10, 15, 20, 7, 'Que los alumnos se distraen con facilidad', 'Realizar dinámicas más seguido', 'Falta de recursos económicos', 'Motivar a los alumnos a que alcancen sus objetivos'),
-(2, 'jueves, 3 de septiembre de 2020', '01:13 pm.', 'Enero - Junio', '-', '2', '-', 'Gabriel Abraham Sánchez Fonseca', '2° \"C\"', 'Ingeniería en Sistemas Computacionales', 33, 'Probabilidad y Estadísticas', '3', '9.09%', 'Calculo Integral', '5', '15.15%', 'Programación Orientada a Objetos', '2', '6.06%', '', '', '', '', '', '', '', '', '', 7, '20, Beca de Manutención y de Transporte', 0, 7, 4, 7, 12, 'No, ninguno', 'No, ninguno', 'No, ninguno', 'No, ninguno'),
-(3, 'mi?rcoles, 9 de septiembre de 2020', '10:37 am.', 'Agosto - Diciembre', '-', '-', '3', 'Gabriel Abraham Sánchez Fonseca', '3° \"B\"', 'Ingeniería en Sistemas Computacionales', 40, 'Estructura de Datos', '4', '10.00%', 'Calculo Vectorial', '5', '12.50%', 'Investigación de Operaciones', '7', '17.50%', '', '', '', '', '', '', '', '', '', 6, '20, Beca de Manutención y de Transporte', 2, 2, 4, 10, 7, 'NINGUNO NINGUNO', 'NINGUNO NINGUNO', 'NINGUNO NINGUNO', 'NINGUNO NINGUNO'),
-(4, 'Jueves, 10 de Septiembre de 2020', '01:42 pm.', 'Agosto - Diciembre', '-', '2', '-', 'Gabriel Abraham Sánchez Fonseca', '3° \"A\"', 'Ingeniería en Sistemas Computacionales', 34, 'Estructura de Datos', '3', '8.82%', 'Calculo Integral', '4', '11.76%', 'Investigación de Operaciones', '2', '5.88%', '', '', '', '', '', '', '', '', '', 6, '20, Beca de Transporte', 0, 3, 4, 7, 7, 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO', 'NINGUNO NINGUNO NINGUNO');
+(1, 'Viernes, 25 de Septiembre de 2020', '08:09 pm.', 'Agosto - Diciembre', '1', '-', '-', 'Gabriel Abraham Sánchez Fonseca', '1° \"B\"', 'Ingeniería en Sistemas Computacionales', 35, 'Fundamentos de Programación', '4', '11.43%', 'Calculo Diferencial', '3', '8.57%', '', '', '', '', '', '', '', '', '', '', '', '', 3, '20, Beca de Transporte', 0, 10, 3, 7, 11, 'NO NINGUNO 1', 'NO NINGUNO 2', 'NO NINGUNO 3', 'NO NINGUNO 4'),
+(2, 'Viernes, 25 de Septiembre de 2020', '10:13 pm.', 'Agosto - Diciembre', '-', '2', '-', 'Gabriel Abraham Sánchez Fonseca', '1° \"B\"', 'Ingeniería en Sistemas Computacionales', 35, 'Taller de Administración', '4', '11.43%', 'Matemáticas Discretas', '2', '5.71%', '', '', '', '', '', '', '', '', '', '', '', '', 3, '0', 0, 1, 2, 3, 4, 'NO NINGUNO 1', 'NO NINGUNO 2', 'NO NINGUNO 3', 'NO NINGUNO 4'),
+(3, 'Viernes, 25 de Septiembre de 2020', '10:39 pm.', 'Enero - Junio', '-', '-', '3', 'Gabriel Abraham Sánchez Fonseca', '2° \"B\"', 'Ingeniería en Sistemas Computacionales', 35, 'Calculo Integral', '3', '8.57%', 'Probabilidad y Estadísticas', '4', '11.43%', '', '', '', '', '', '', '', '', '', '', '', '', 3, '30, Beca de Transporte', 0, 3, 4, 5, 6, 'No, ninguno', 'No, ninguno', 'No, ninguno', 'No, ninguno');
 
 -- --------------------------------------------------------
 
@@ -366,7 +376,8 @@ CREATE TABLE `tabla_psicologia` (
   `preguntas_bloque1` text DEFAULT NULL,
   `preguntas_bloque2` text DEFAULT NULL,
   `preguntas_bloque3` text DEFAULT NULL,
-  `preguntas_bloque4` text DEFAULT NULL
+  `preguntas_bloque4` text DEFAULT NULL,
+  `terminado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -504,6 +515,7 @@ CREATE TABLE `tutor` (
   `id_tutor` int(11) NOT NULL,
   `nombre` text DEFAULT NULL,
   `apellido` text DEFAULT NULL,
+  `sexo` varchar(1) DEFAULT NULL,
   `tipo_tutoria` text DEFAULT NULL,
   `area_de` varchar(4) DEFAULT NULL,
   `email` text DEFAULT NULL,
@@ -517,8 +529,10 @@ CREATE TABLE `tutor` (
 -- Volcado de datos para la tabla `tutor`
 --
 
-INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellido`, `tipo_tutoria`, `area_de`, `email`, `fecha_registro`, `hora_registro`, `usuario`, `pass_tutor`) VALUES
-(1, 'Gabriel Abraham', 'Sánchez Fonseca', 'Tutoría Grupal', 'ISIC', 'gabraham_sf@outlook.com', 'Jueves, 24 de Septiembre de 2020', '11:52 pm.', 'gabraham_sf.103', '7bj5RHFABB');
+INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellido`, `sexo`, `tipo_tutoria`, `area_de`, `email`, `fecha_registro`, `hora_registro`, `usuario`, `pass_tutor`) VALUES
+(1, 'Gabriel Abraham', 'Sánchez Fonseca', 'M', 'Tutoría Grupal', 'ISIC', 'gabraham_sf@outlook.com', 'Jueves, 24 de Septiembre de 2020', '11:52 pm.', 'gabraham_sf.103', '7bj5RHFABB'),
+(2, 'Lourdes Ma. Elvia', 'Fonseca Nava', 'F', 'Tutoría Grupal', 'IGEM', 'fonsecanava.elvia@gmail.com', 'Sábado, 26 de Septiembre de 2020', '11:58 pm.', 'fonsecanava.elvia.101', 'qN63wpqgHc'),
+(3, 'Miriam Yeraldin', 'Cano Rodríguez', 'F', 'Tutoría Generacional', 'IBIO', 'yeraldin.cano.rodriguez@gmail.com', 'Domingo, 27 de Septiembre de 2020', '06:27 pm.', 'yeraldin.cano.rodriguez.204', 'tW9g6B2ajA');
 
 --
 -- Índices para tablas volcadas
@@ -536,6 +550,13 @@ ALTER TABLE `alumno`
 --
 ALTER TABLE `canalizacion`
   ADD UNIQUE KEY `canalizacion_folio_uindex` (`folio`);
+
+--
+-- Indices de la tabla `coordinador`
+--
+ALTER TABLE `coordinador`
+  ADD PRIMARY KEY (`id_coordinador`),
+  ADD UNIQUE KEY `coordinador_id_coordinador_uindex` (`id_coordinador`);
 
 --
 -- Indices de la tabla `domicilio`
@@ -573,7 +594,8 @@ ALTER TABLE `reporte_final`
 -- Indices de la tabla `reporte_parcial`
 --
 ALTER TABLE `reporte_parcial`
-  ADD PRIMARY KEY (`id_rparcial`);
+  ADD PRIMARY KEY (`id_rparcial`),
+  ADD UNIQUE KEY `reporte_parcial_id_rparcial_uindex` (`id_rparcial`);
 
 --
 -- Indices de la tabla `tabla_medica`
@@ -623,22 +645,28 @@ ALTER TABLE `tutor`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `coordinador`
+--
+ALTER TABLE `coordinador`
+  MODIFY `id_coordinador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `reporte_final`
 --
 ALTER TABLE `reporte_final`
-  MODIFY `id_rfinal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_rfinal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte_parcial`
 --
 ALTER TABLE `reporte_parcial`
-  MODIFY `id_rparcial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_rparcial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tutor`
 --
 ALTER TABLE `tutor`
-  MODIFY `id_tutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_tutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

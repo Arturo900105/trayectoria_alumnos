@@ -5,5 +5,5 @@
     //session_unset();
     session_destroy();
     //header("Location:../index.php");
-    echo "<script>history.back();</script>";
+    echo "<script>history.go(-2);</script>";
 ?>

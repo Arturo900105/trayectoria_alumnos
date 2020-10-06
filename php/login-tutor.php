@@ -1,15 +1,11 @@
 <?php
 require "BD_Connect.php";
-    session_name("TUTOR");
-    session_start();
-
     $alertaT1 = "Usuario o Contraseña\nIncorrecto!!!";
     $alertaT2 = "Usuario Incorrecto!!!";
     $alertaT3 = "Contraseña Incorrecta!!!";
 
     $usuarioT = $_POST['usuario'];
     $passwordT = $_POST['pass'];
-    $_SESSION["usututor"] = $usuarioT;
 
     $consultaT = "SELECT * FROM tutor WHERE usuario = '$usuarioT' and pass_tutor = '$passwordT'";
     $resultadoT = mysqli_query($connect, $consultaT);
@@ -17,7 +13,12 @@ require "BD_Connect.php";
 
     if ($filasT > 0){
         http_response_code(200);
-        while($filasT = $resultadoT->fetch_object()){
+        while($filasT = $resultadoT->fetch_assoc()){
+            session_name("TUTOR");
+            session_start();
+            $_SESSION["usututor"] = $usuarioT;
+            $_SESSION["carrera"] = $filasT["area_de"];
+            $_SESSION["idTutor"] = $filasT["id_tutor"];
             echo json_encode($filasT);
         }
     } else{

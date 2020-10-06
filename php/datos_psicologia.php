@@ -39,7 +39,7 @@
     $pb3 = $_POST['bloque3v_bd'];
     $pb4 = $_POST['bloque4v_bd'];
 
-    $psicologia = "INSERT INTO tabla_psicologia VALUES ('$fichaAlumno','$resp1','$cual','$resp2','$porque','$a','$d','$b1','$b2','$b3','$b4','$pb1','$pb2','$pb3','$pb4')";
+    $psicologia = "INSERT INTO tabla_psicologia VALUES ('$fichaAlumno','$resp1','$cual','$resp2','$porque','$a','$d','$b1','$b2','$b3','$b4','$pb1','$pb2','$pb3','$pb4',true)";
     $q5 = mysqli_query($connect, $psicologia);
 
     if ($q5){

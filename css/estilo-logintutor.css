@@ -60,6 +60,18 @@ select{
     height: 1.5em;
 }
 
+#tSexoT{
+    font-family: Arial;
+    color: white;
+    margin-right: 2em;
+}
+
+.seTut{
+    font-family: Arial;
+    margin-left: 1em;
+    color: white;
+}
+
 #tipo-tutoria{
     font-size: 15px;
     text-align: center;

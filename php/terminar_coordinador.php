@@ -3,5 +3,5 @@
     session_name("COORDINADOR");
     session_start();
     session_destroy();
-    echo "<script>history.back();</script>";
+    echo "<script>history.go(-2);</script>";
 ?>

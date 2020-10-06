@@ -1,7 +1,7 @@
-* {
+body{
     font-family: Arial;
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
 }
 
 #areaTutor{
@@ -43,6 +43,10 @@ h2{
     vertical-align:middle;
 }
 
+li{
+    cursor: pointer;
+}
+
 /*menus*/
 .menuTutor{
     list-style: none;
@@ -72,6 +76,7 @@ h2{
 
 /*sub-menus*/
 .submenuTutor{
+    padding: 0;
     display: none;
     position: absolute;
     background: black;
@@ -98,6 +103,7 @@ h2{
 
 /*sub-menus2*/
 .submenuTutor2{
+    padding: 0;
     display: none;
     position: absolute;
     background: #011029;
@@ -110,23 +116,161 @@ h2{
     display: block;
 }
 
-
-
 ion-icon{
     margin-left: 5px;
 }
 
+#parrafoTut{
+    padding: 0;
+    font-size: 20px;
+    text-align: justify;
+}
+
+
+/* TABLA DATOS USUARIO DEL TUTOR */
+#tabla_usutUT, .th_tablausuTut, .td_tablausuTut{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+
+#tabla_usutUT{
+    margin: 1em auto;
+}
+
+.datos_usuTut{
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+#th_usuT{
+    background: #000348;
+    color: #FFFFFF;
+    height: 2em;
+}
+
+.th_tablausuTut, .td_tablausuTut{
+    padding: 5px 10px;
+}
+
+.th_tablausuTut{
+    text-align: left;
+    font-size: 20px;
+}
+
+
+/*TABLA DE ALUMNOS DEL ITSP*/
+#tabla_alumnosITSP, .th_taITSP, .td_taITSP{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+
+#tabla_alumnosITSP{
+    margin: 1em auto;
+    width: auto;
+}
+
+#thAlumnosITSP{
+    background: #ff5200;
+    color: #FFFFFF;
+    height: 2em;
+    text-align: center;
+}
+
+.th_taITSP{
+    height: 1.7em;
+    width: 10em;
+    font-size: 15px;
+    padding: 2px 5px;
+
+}
+
+.td_taITSP{
+    padding: 2px 5px;
+    text-align: center;
+}
+
+
+/*BOTÓN PARA AGREGAR ALUMNOS A MI LISTA*/
+.agregar{
+    margin: 2px 0;
+    width: 9em;
+    height: 2em;
+}
+
+.agregar:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    background: #0fa703;
+}
+
+/*BOTÓN PARA ELIMINAR ALUMNOS DE MI LISTA*/
+.eliminar{
+    margin: 2px 0;
+    width: 9em;
+    height: 2em;
+}
+
+.eliminar:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    background: #f51d1d;
+}
+
+/*BOTONES DE LA FILA ALUMNOS*/
+.btn_alumno{
+    margin: 2px 0;
+    height: 2em;
+}
+
+.btn_alumno:hover{
+    cursor: pointer;
+    background: #0fa703;
+}
+
+
+/*TABLA MIS ALUMNOS*/
+#tabla_misAlumnos, .th_misAlumnos, .td_misAlumnos{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+
+#tabla_misAlumnos{
+    margin: 1em auto;
+    width: auto;
+}
+
+#thAlumnos{
+    background: #ff5200;
+    color: #FFFFFF;
+    height: 2em;
+    text-align: center;
+}
+
+.th_misAlumnos{
+    font-size: 15px;
+    padding: 2px 5px;
+    height: 1.7em;
+}
+
+.td_misAlumnos{
+    padding: 2px 5px;
+    text-align: center;
+}
+
+
+/*DIV TUTOR*/
 .contentTutor{
     margin: 0 auto;
     background: #ef8b4d;
     width: auto;
     height: auto;
-}
-
-p{
-    padding: 1em;
-    width: 30em;
-    text-align: justify;
 }
 
 .vmodal_trayectorias{
@@ -158,7 +302,7 @@ p{
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 #iframe_titulacion{

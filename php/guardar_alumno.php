@@ -1,9 +1,10 @@
 <?php
-
 require "BD_Connect.php";
 require "fecha_hora.php";
 
     $ficha = $_POST['no_ficha'];
+    //$ficha = "20-0011";
+
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apat'] . ' ' . $_POST['amat'];
     $fecha_nacimiento = $_POST['fnacimiento'];
@@ -72,7 +73,7 @@ require "fecha_hora.php";
     $nom_bach = $_POST['nom_prepa'];
     $prom_bach = $_POST['prom_prepa'];
 
-    $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$fechaHoy','$apellidos','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_ficha','$carrera','$generacion')";
+    $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$fechaHoy','$apellidos','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_ficha','$carrera','$generacion',0)";
     $query = mysqli_query($connect, $guardar_alumno);
 
     if ($query) {
@@ -87,7 +88,7 @@ require "fecha_hora.php";
     } else {
         //printf("Errormessage: \n%s", mysqli_error($conectar));
         http_response_code(404);
-        echo "\n\nNO SE GUARDÓ NADA!!!";
-
+        echo "\n\nNO SE GUARDÓ SU REGISTRO!!!";
     }
+
 ?>

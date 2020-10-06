@@ -160,6 +160,17 @@ $(document).ready(function () {
             return false;
         }
 
+        if (!$("[name=sexoTut]:radio").is(":checked")) {
+            Swal.fire({
+                title: "Seleccione su sexo",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(85,0,0,0.7)",
+                timer: 1000
+            });
+            return false;
+        }
+
         Swal.fire({
             title: "¿REGISTRARSE?",
             text: "Después, ya no podrá modificar sus datos hasta que acuda al área de Tutoria Académica",

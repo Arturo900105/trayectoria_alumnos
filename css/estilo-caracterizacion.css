@@ -51,12 +51,12 @@ h2{
 }
 
 .labelfecha{
-    margin-left: 6em;
+    margin-left: 3em;
 }
 
 #f_registro{
     margin-left: 5px;
-    margin-right: 6em;
+    margin-right: 3em;
     font-size: 15px;
     width: 10em;
     color: #ff0600;
@@ -64,15 +64,13 @@ h2{
     font-family: Arial;
 }
 
-#btngeneracion{
-    border: none;
-    margin-left: 1em;
-    height: 1.7em;
+#comprobar, #btngeneracion{
     width: 7em;
+    border: none;
+    height: 1.6em;
 }
 
-#btngeneracion:hover{
-    font-family: "Arial Black";
+#comprobar:hover, #btngeneracion:hover{
     background: #54e502;
 }
 
@@ -382,4 +380,12 @@ h2{
 .botones_acceso:hover{
     color: #FFFFFF;
     background: #390202;
+}
+
+#otra_generacion{
+    border-radius: 30px;
+    text-align: center;
+    width: 20em;
+    color: #FFFFFF;
+    background: none;
 }
