@@ -13,9 +13,13 @@
     border: 4px solid #ff5a00;
 }
 
-.h2t3s{
+h1{
     margin: 0;
     text-align: center;
+}
+
+h2{
+    margin-left: 1em;
 }
 
 #tabla_ingles_3, #inglesth_3, #inglestd_3{

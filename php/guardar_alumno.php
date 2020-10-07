@@ -77,10 +77,10 @@ require "fecha_hora.php";
     $query = mysqli_query($connect, $guardar_alumno);
 
     if ($query) {
-        $domicilio = "INSERT INTO domicilio VALUES ('$ficha','$domicilio','$colonia','$codigo_postal','$localidad','$procedencia')";
+        $domicilio = "INSERT INTO alumno_domicilio VALUES ('$ficha','$domicilio','$colonia','$codigo_postal','$localidad','$procedencia')";
         $query2 = mysqli_query($connect, $domicilio);
 
-        $procedencia = "INSERT INTO procedencia VALUES ('$ficha','$bach','$tipo_bach','$nom_bach','$prom_bach')";
+        $procedencia = "INSERT INTO alumno_procedencia VALUES ('$ficha','$bach','$tipo_bach','$nom_bach','$prom_bach')";
         $query3 = mysqli_query($connect, $procedencia);
 
         echo "REGISTRO EXITOSO!!!";

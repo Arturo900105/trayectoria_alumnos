@@ -239,7 +239,7 @@ if ($letSession == null || $letSession == "") {
     </div>
 
     <div class="vmodal_trayectorias" id="v_modal_cappt">
-        <iframe class="iframe_trayectoria" src="t_semestre0.html"></iframe>
+        <iframe class="iframe_trayectoria" src="t_cappt.html"></iframe>
     </div>
 
     <div class="vmodal_trayectorias" id="v_modal_t1">
@@ -280,7 +280,7 @@ if ($letSession == null || $letSession == "") {
 
     <div class="vmodal_trayectorias" id="v_modal_titulacion">
         <div id="modalTitulacion">
-            <iframe id="iframe_titulacion" src="t_semestret.html"></iframe>
+            <iframe id="iframe_titulacion" src="t_titulacion.html"></iframe>
         </div>
     </div>
 

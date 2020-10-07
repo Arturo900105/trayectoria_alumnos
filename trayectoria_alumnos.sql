@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2020 a las 05:27:01
+-- Tiempo de generación: 07-10-2020 a las 06:49:05
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -53,6 +53,51 @@ CREATE TABLE `alumno` (
 INSERT INTO `alumno` (`num_ficha`, `fecha_registro`, `apellidos`, `nombre`, `fecha_de_nacimiento`, `sexo`, `indigena`, `edad`, `edo_civil`, `tel_cel`, `email`, `fecha_ficha`, `carrera`, `generacion`, `id_tutor`) VALUES
 ('20-0011', 'Jueves, 24 de Septiembre de 2020', 'Velázquez Fonseca', 'Gabriela', '1996-01-22', 'Femenino', 'No', 23, 'Casada', '7224139697', 'gaby_velafons@outlook.com', '2020-04-08', 'ISIC', 2016, 0),
 ('20-0013', 'Jueves, 24 de Septiembre de 2020', 'Sánchez Fonseca', 'Gabriel Abraham', '1994-10-22', 'Masculino', 'No', 25, 'Soltero', '5540734715', 'ga.sanzfons@gmail.com', '2020-04-07', 'ISIC', 2015, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumno_domicilio`
+--
+
+CREATE TABLE `alumno_domicilio` (
+  `num_ficha` varchar(7) DEFAULT NULL,
+  `domicilio` text DEFAULT NULL,
+  `colonia` text DEFAULT NULL,
+  `codigo_postal` int(5) DEFAULT NULL,
+  `localidad` text DEFAULT NULL,
+  `procedencia` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `alumno_domicilio`
+--
+
+INSERT INTO `alumno_domicilio` (`num_ficha`, `domicilio`, `colonia`, `codigo_postal`, `localidad`, `procedencia`) VALUES
+('20-0013', 'Fco. González Bocanegra #592', 'Villicaña', 60280, 'Nahuatzen', 'Nahuatzen; Mich.'),
+('20-0011', 'Privada Primero de mayo #22', 'Xonacatlán de Vicencio', 52060, 'Xonacatlán', 'Xonacatlán; Edo. Méx.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumno_procedencia`
+--
+
+CREATE TABLE `alumno_procedencia` (
+  `num_ficha` varchar(7) DEFAULT NULL,
+  `bach` text DEFAULT NULL,
+  `tipo_bach` text DEFAULT NULL,
+  `nom_bach` text DEFAULT NULL,
+  `promedio_bach` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `alumno_procedencia`
+--
+
+INSERT INTO `alumno_procedencia` (`num_ficha`, `bach`, `tipo_bach`, `nom_bach`, `promedio_bach`) VALUES
+('20-0013', 'CBTA', '─> Físico-Matemático.\n─> Químico-Biológico.', 'CBTA No. 238', 8.5),
+('20-0011', 'PREPARATORIA', '─> Económico-Administrativo.\n─> Histórico-Social.', 'Preparatoria No. 3 Plantel Xonacatlán', 8);
 
 -- --------------------------------------------------------
 
@@ -126,72 +171,13 @@ INSERT INTO `coordinador` (`id_coordinador`, `nombre`, `apellidos`, `sexo`, `coo
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `domicilio`
---
-
-CREATE TABLE `domicilio` (
-  `num_ficha` varchar(7) DEFAULT NULL,
-  `domicilio` text DEFAULT NULL,
-  `colonia` text DEFAULT NULL,
-  `codigo_postal` int(5) DEFAULT NULL,
-  `localidad` text DEFAULT NULL,
-  `procedencia` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `domicilio`
---
-
-INSERT INTO `domicilio` (`num_ficha`, `domicilio`, `colonia`, `codigo_postal`, `localidad`, `procedencia`) VALUES
-('20-0013', 'Fco. González Bocanegra #592', 'Villicaña', 60280, 'Nahuatzen', 'Nahuatzen; Mich.'),
-('20-0011', 'Privada Primero de mayo #22', 'Xonacatlán de Vicencio', 52060, 'Xonacatlán', 'Xonacatlán; Edo. Méx.');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `escala_posttest`
---
-
-CREATE TABLE `escala_posttest` (
-  `num_ficha` varchar(7) DEFAULT NULL,
-  `num_control` varchar(7) DEFAULT NULL,
-  `semestre` text DEFAULT NULL,
-  `ansiedad` int(2) DEFAULT NULL,
-  `depresion` int(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `num_control_alumno`
 --
 
 CREATE TABLE `num_control_alumno` (
-  `num_ficha` varchar(7) DEFAULT NULL,
-  `num_control` varchar(7) DEFAULT NULL
+  `num_control` varchar(7) NOT NULL,
+  `num_ficha` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `procedencia`
---
-
-CREATE TABLE `procedencia` (
-  `num_ficha` varchar(7) DEFAULT NULL,
-  `bach` text DEFAULT NULL,
-  `tipo_bach` text DEFAULT NULL,
-  `nom_bach` text DEFAULT NULL,
-  `promedio_bach` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `procedencia`
---
-
-INSERT INTO `procedencia` (`num_ficha`, `bach`, `tipo_bach`, `nom_bach`, `promedio_bach`) VALUES
-('20-0013', 'CBTA', '─> Físico-Matemático.\n─> Químico-Biológico.', 'CBTA No. 238', 8.5),
-('20-0011', 'PREPARATORIA', '─> Económico-Administrativo.\n─> Histórico-Social.', 'Preparatoria No. 3 Plantel Xonacatlán', 8);
 
 -- --------------------------------------------------------
 
@@ -358,6 +344,20 @@ CREATE TABLE `tabla_pedagogia` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tabla_posttest`
+--
+
+CREATE TABLE `tabla_posttest` (
+  `num_ficha` varchar(7) NOT NULL,
+  `num_control` varchar(7) NOT NULL,
+  `semestre` text DEFAULT NULL,
+  `ansiedad` int(2) DEFAULT NULL,
+  `depresion` int(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tabla_psicologia`
 --
 
@@ -387,8 +387,7 @@ CREATE TABLE `tabla_psicologia` (
 --
 
 CREATE TABLE `trayectoria_cappt` (
-  `num_ficha` varchar(7) DEFAULT NULL,
-  `num_control` varchar(7) DEFAULT NULL,
+  `num_control` varchar(7) NOT NULL,
   `trabaja` varchar(3) DEFAULT NULL,
   `itsp_opcion` text DEFAULT NULL,
   `exani_ii` varchar(4) DEFAULT NULL,
@@ -424,38 +423,38 @@ CREATE TABLE `trayectoria_sem1` (
   `ingles` varchar(3) DEFAULT NULL,
   `nivel_ingles` varchar(7) DEFAULT NULL,
   `examen_ubicacion` varchar(3) DEFAULT NULL,
-  `credito_tutoria1` int(1) DEFAULT NULL,
-  `credito_cultural1` int(1) DEFAULT NULL,
-  `credito_deportiva1` int(1) DEFAULT NULL,
-  `suma_creditos1` int(1) DEFAULT NULL,
-  `asignatura1_1` text DEFAULT NULL,
-  `calificacion1_1` varchar(3) DEFAULT NULL,
-  `asignatura2_1` text DEFAULT NULL,
-  `calificacion2_1` varchar(3) DEFAULT NULL,
-  `asignatura3_1` text DEFAULT NULL,
-  `calificacion3_1` varchar(3) DEFAULT NULL,
-  `asignatura4_1` text DEFAULT NULL,
-  `calificacion4_1` varchar(3) DEFAULT NULL,
-  `asignatura5_1` text DEFAULT NULL,
-  `calificacion5_1` varchar(3) DEFAULT NULL,
-  `asignatura6_1` text DEFAULT NULL,
-  `calificacion6_1` varchar(3) DEFAULT NULL,
-  `asignatura7_1` text DEFAULT NULL,
-  `calificacion7_1` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
   `becado` varchar(3) DEFAULT NULL,
   `tipo_beca` text DEFAULT NULL,
-  `recursar_materia1_1` text DEFAULT NULL,
-  `recursar_materia2_1` text DEFAULT NULL,
-  `recursar_materia3_1` text DEFAULT NULL,
-  `recursar_materia4_1` text DEFAULT NULL,
-  `recursar_materia5_1` text DEFAULT NULL,
-  `recursar_materia6_1` text DEFAULT NULL,
-  `recursar_materia7_1` text DEFAULT NULL,
-  `area_medica_1` varchar(7) DEFAULT NULL,
-  `area_psicologica_1` varchar(7) DEFAULT NULL,
-  `asesoria_pares_1` varchar(7) DEFAULT NULL,
-  `tutorias_individuales_1` varchar(7) DEFAULT NULL,
-  `otra_canalizacion_1` varchar(7) DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
   `observacion_ago_dic` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -470,39 +469,390 @@ CREATE TABLE `trayectoria_sem2` (
   `ingles` varchar(3) DEFAULT NULL,
   `nivel_ingles` varchar(7) DEFAULT NULL,
   `examen_ubicacion` varchar(3) DEFAULT NULL,
-  `credito_tutoria2` int(1) DEFAULT NULL,
-  `credito_cultural2` int(1) DEFAULT NULL,
-  `credito_deportiva2` int(1) DEFAULT NULL,
-  `suma_creditos2` int(1) DEFAULT NULL,
-  `asignatura1_2` text DEFAULT NULL,
-  `calificacion1_2` varchar(3) DEFAULT NULL,
-  `asignatura2_2` text DEFAULT NULL,
-  `calificacion2_2` varchar(3) DEFAULT NULL,
-  `asignatura3_2` text DEFAULT NULL,
-  `calificacion3_2` varchar(3) DEFAULT NULL,
-  `asignatura4_2` text DEFAULT NULL,
-  `calificacion4_2` varchar(3) DEFAULT NULL,
-  `asignatura5_2` text DEFAULT NULL,
-  `calificacion5_2` varchar(3) DEFAULT NULL,
-  `asignatura6_2` text DEFAULT NULL,
-  `calificacion6_2` varchar(3) DEFAULT NULL,
-  `asignatura7_2` text DEFAULT NULL,
-  `calificacion7_2` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
   `becado` varchar(3) DEFAULT NULL,
   `tipo_beca` text DEFAULT NULL,
-  `recursar_materia1_2` text DEFAULT NULL,
-  `recursar_materia2_2` text DEFAULT NULL,
-  `recursar_materia3_2` text DEFAULT NULL,
-  `recursar_materia4_2` text DEFAULT NULL,
-  `recursar_materia5_2` text DEFAULT NULL,
-  `recursar_materia6_2` text DEFAULT NULL,
-  `recursar_materia7_2` text DEFAULT NULL,
-  `area_medica_2` varchar(7) DEFAULT NULL,
-  `area_psicologica_2` varchar(7) DEFAULT NULL,
-  `asesoria_pares_2` varchar(7) DEFAULT NULL,
-  `tutorias_individuales_2` varchar(7) DEFAULT NULL,
-  `otra_canalizacion_2` varchar(7) DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
   `observacion_ene_jun` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem3`
+--
+
+CREATE TABLE `trayectoria_sem3` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `credito_actcom` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
+  `observacion_ago_dic` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem4`
+--
+
+CREATE TABLE `trayectoria_sem4` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `credito_actcom` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
+  `observacion_ene_jun` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem5`
+--
+
+CREATE TABLE `trayectoria_sem5` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `credito_actcom` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
+  `observacion_ago_dic` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem6`
+--
+
+CREATE TABLE `trayectoria_sem6` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `credito_actcom` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `servicio_social` varchar(3) DEFAULT NULL,
+  `lugar_servsocial` text DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
+  `observacion_ene_jun` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem7`
+--
+
+CREATE TABLE `trayectoria_sem7` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `credito_actcom` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `servicio_social` varchar(3) DEFAULT NULL,
+  `lugar_servsocial` text DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
+  `observacion_ago_dic` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem8`
+--
+
+CREATE TABLE `trayectoria_sem8` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `credito_actcom` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `servicio_social` varchar(3) DEFAULT NULL,
+  `lugar_servsocial` text DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
+  `observacion_ene_jun` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_sem9`
+--
+
+CREATE TABLE `trayectoria_sem9` (
+  `num_control` varchar(7) NOT NULL,
+  `ingles` varchar(3) DEFAULT NULL,
+  `nivel_ingles` varchar(7) DEFAULT NULL,
+  `examen_ubicacion` varchar(3) DEFAULT NULL,
+  `credito_tutoria` int(1) DEFAULT NULL,
+  `credito_cultural` int(1) DEFAULT NULL,
+  `credito_deportiva` int(1) DEFAULT NULL,
+  `credito_actcom` int(1) DEFAULT NULL,
+  `suma_creditos` int(1) DEFAULT NULL,
+  `residencia_profesional` varchar(3) DEFAULT NULL,
+  `lugar_resiprof` text DEFAULT NULL,
+  `asignatura_1` text DEFAULT NULL,
+  `calificacion_1` varchar(3) DEFAULT NULL,
+  `asignatura_2` text DEFAULT NULL,
+  `calificacion_2` varchar(3) DEFAULT NULL,
+  `asignatura_3` text DEFAULT NULL,
+  `calificacion_3` varchar(3) DEFAULT NULL,
+  `asignatura_4` text DEFAULT NULL,
+  `calificacion_4` varchar(3) DEFAULT NULL,
+  `asignatura_5` text DEFAULT NULL,
+  `calificacion_5` varchar(3) DEFAULT NULL,
+  `asignatura_6` text DEFAULT NULL,
+  `calificacion_6` varchar(3) DEFAULT NULL,
+  `asignatura_7` text DEFAULT NULL,
+  `calificacion_7` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
+  `tipo_beca` text DEFAULT NULL,
+  `recursar_materia_1` text DEFAULT NULL,
+  `recursar_materia_2` text DEFAULT NULL,
+  `recursar_materia_3` text DEFAULT NULL,
+  `recursar_materia_4` text DEFAULT NULL,
+  `recursar_materia_5` text DEFAULT NULL,
+  `recursar_materia_6` text DEFAULT NULL,
+  `recursar_materia_7` text DEFAULT NULL,
+  `area_medica` varchar(7) DEFAULT NULL,
+  `area_psicologica` varchar(7) DEFAULT NULL,
+  `asesoria_pares` varchar(7) DEFAULT NULL,
+  `tutorias_individuales` varchar(7) DEFAULT NULL,
+  `otra_canalizacion` varchar(7) DEFAULT NULL,
+  `observacion_ago_dic` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `trayectoria_titulacion`
+--
+
+CREATE TABLE `trayectoria_titulacion` (
+  `num_control` varchar(7) DEFAULT NULL,
+  `tema_proyecto` text DEFAULT NULL,
+  `ingles_acreditado` varchar(3) DEFAULT NULL,
+  `creditos_cumplidos` int(3) DEFAULT NULL,
+  `examen_protocolario` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -546,6 +896,18 @@ ALTER TABLE `alumno`
   ADD UNIQUE KEY `alumno_num_ficha_uindex` (`num_ficha`);
 
 --
+-- Indices de la tabla `alumno_domicilio`
+--
+ALTER TABLE `alumno_domicilio`
+  ADD UNIQUE KEY `domicilio_num_ficha_uindex` (`num_ficha`);
+
+--
+-- Indices de la tabla `alumno_procedencia`
+--
+ALTER TABLE `alumno_procedencia`
+  ADD UNIQUE KEY `procedencia_num_ficha_uindex` (`num_ficha`);
+
+--
 -- Indices de la tabla `canalizacion`
 --
 ALTER TABLE `canalizacion`
@@ -559,30 +921,12 @@ ALTER TABLE `coordinador`
   ADD UNIQUE KEY `coordinador_id_coordinador_uindex` (`id_coordinador`);
 
 --
--- Indices de la tabla `domicilio`
---
-ALTER TABLE `domicilio`
-  ADD UNIQUE KEY `domicilio_num_ficha_uindex` (`num_ficha`);
-
---
--- Indices de la tabla `escala_posttest`
---
-ALTER TABLE `escala_posttest`
-  ADD UNIQUE KEY `escala_posttest_num_control_uindex` (`num_control`),
-  ADD UNIQUE KEY `escala_posttest_num_ficha_uindex` (`num_ficha`);
-
---
 -- Indices de la tabla `num_control_alumno`
 --
 ALTER TABLE `num_control_alumno`
+  ADD PRIMARY KEY (`num_control`),
   ADD UNIQUE KEY `num_control_alumno_num_control_uindex` (`num_control`),
   ADD UNIQUE KEY `num_control_alumno_num_ficha_uindex` (`num_ficha`);
-
---
--- Indices de la tabla `procedencia`
---
-ALTER TABLE `procedencia`
-  ADD UNIQUE KEY `procedencia_num_ficha_uindex` (`num_ficha`);
 
 --
 -- Indices de la tabla `reporte_final`
@@ -610,6 +954,13 @@ ALTER TABLE `tabla_pedagogia`
   ADD UNIQUE KEY `tabla_pedagogia_num_ficha_uindex` (`num_ficha`);
 
 --
+-- Indices de la tabla `tabla_posttest`
+--
+ALTER TABLE `tabla_posttest`
+  ADD UNIQUE KEY `escala_posttest_num_ficha_uindex` (`num_ficha`),
+  ADD UNIQUE KEY `escala_posttest_num_control_uindex` (`num_control`);
+
+--
 -- Indices de la tabla `tabla_psicologia`
 --
 ALTER TABLE `tabla_psicologia`
@@ -632,6 +983,54 @@ ALTER TABLE `trayectoria_sem1`
 --
 ALTER TABLE `trayectoria_sem2`
   ADD UNIQUE KEY `trayectoria_2sem_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem3`
+--
+ALTER TABLE `trayectoria_sem3`
+  ADD UNIQUE KEY `trayectoria_sem3_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem4`
+--
+ALTER TABLE `trayectoria_sem4`
+  ADD UNIQUE KEY `trayectoria_sem4_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem5`
+--
+ALTER TABLE `trayectoria_sem5`
+  ADD UNIQUE KEY `trayectoria_sem5_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem6`
+--
+ALTER TABLE `trayectoria_sem6`
+  ADD UNIQUE KEY `trayectoria_sem6_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem7`
+--
+ALTER TABLE `trayectoria_sem7`
+  ADD UNIQUE KEY `trayectoria_sem7_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem8`
+--
+ALTER TABLE `trayectoria_sem8`
+  ADD UNIQUE KEY `trayectoria_sem8_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_sem9`
+--
+ALTER TABLE `trayectoria_sem9`
+  ADD UNIQUE KEY `trayectoria_sem9_num_control_uindex` (`num_control`);
+
+--
+-- Indices de la tabla `trayectoria_titulacion`
+--
+ALTER TABLE `trayectoria_titulacion`
+  ADD UNIQUE KEY `trayectoria_titulacion_num_control_uindex` (`num_control`);
 
 --
 -- Indices de la tabla `tutor`
@@ -673,16 +1072,16 @@ ALTER TABLE `tutor`
 --
 
 --
--- Filtros para la tabla `domicilio`
+-- Filtros para la tabla `alumno_domicilio`
 --
-ALTER TABLE `domicilio`
-  ADD CONSTRAINT `domicilio_ibfk_1` FOREIGN KEY (`num_ficha`) REFERENCES `alumno` (`num_ficha`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `alumno_domicilio`
+  ADD CONSTRAINT `alumno_domicilio_ibfk_1` FOREIGN KEY (`num_ficha`) REFERENCES `alumno` (`num_ficha`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `procedencia`
+-- Filtros para la tabla `alumno_procedencia`
 --
-ALTER TABLE `procedencia`
-  ADD CONSTRAINT `procedencia_ibfk_1` FOREIGN KEY (`num_ficha`) REFERENCES `alumno` (`num_ficha`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `alumno_procedencia`
+  ADD CONSTRAINT `alumno_procedencia_ibfk_1` FOREIGN KEY (`num_ficha`) REFERENCES `alumno` (`num_ficha`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tabla_medica`
