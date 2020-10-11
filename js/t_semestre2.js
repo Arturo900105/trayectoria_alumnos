@@ -7,7 +7,7 @@ $(document).ready(function (){
     trayectoria2sem[0].reset()
     materiasCursadas2 = $("#cantidad_materias_2")
     materiasReprobadas2 = $("#materias_reprobadas_2")
-    $("#relIngles_2, .fila-materias_2, .relbeca_2, .materiarep_2, .folios_canal_2").hide()
+    $("#relIngles_2, #creditos_2, .fila-materias_2, .relbeca_2, .materiarep_2, .folios_canal_2").hide()
 
     s_tuto2 = $("#tutoria_2")
     s_cult2 = $("#cultural_2")
@@ -27,6 +27,7 @@ $(document).ready(function (){
         }
     })
 
+    //Evento para calcular la suma de créditos:
     trayectoria2sem.on("keyup", function () {
         result_tcd1_2 = parseInt(s_tuto2.val())
         result_tcd2_2 = parseInt(s_cult2.val())
@@ -35,7 +36,6 @@ $(document).ready(function (){
         result_tcd5_2 = result_tcd1_2 + result_tcd2_2
         result_tcd6_2 = result_tcd1_2 + result_tcd3_2
         result_tcd7_2 = result_tcd1_2 + result_tcd2_2 + result_tcd3_2
-
 
         if (s_tuto2.val().trim() === '' && s_cult2.val().trim() === '' && s_depor2.val().trim() === ''){
             $("#suma_tcd_2").val("")
@@ -121,6 +121,15 @@ $(document).ready(function (){
             $("input[name = ubicacion_2]").prop("checked", false)
         }
 
+        if ($('#creditos_extras2').val().trim() === "SÍ") {
+            $("#creditos_2").show()
+        } else {
+            $("#creditos_2").hide()
+            $("#tutoria_2").val("")
+            $("#cultural_2").val("")
+            $("#deportiva_2").val("")
+            $("#suma_tcd_2").val("")
+        }
 
         if (materiasCursadas2.val().trim() === ""){
             $(".fila-materias_2").hide()
@@ -353,7 +362,7 @@ $(document).ready(function (){
                         backdrop: "rgba(0,0,0,0.4)"
                     });
                     return false;
-                } else if (!$("[name=ubicacion1]").is(":checked")) {
+                } else if (!$("[name=ubicacion_2]").is(":checked")) {
                     Swal.fire({
                         title: "Examen de Ubicación\n¡Sin contestar!",
                         icon: "warning",
@@ -366,6 +375,197 @@ $(document).ready(function (){
             }
         }
 
+        if ($('#creditos_extras2').val().trim() === "") {
+            Swal.fire({
+                title: "Seleccione si cuenta con créditos de:",
+                html: 'Tutorías.<br>Actividades Extraescolares.',
+                icon: "warning",
+                showConfirmButton: false,
+                width: "35%",
+                timer: 2500,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        }
+
+        if ($("#cantidad_materias_2").val().trim() === "") {
+            Swal.fire({
+                title: "Seleccione el número de Asignaturas Cursadas",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($(".materiaN_2").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de Materías\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            } else if ($(".calificacionN_2").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de Calificaciones\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if ($("#materias_reprobadas_2").val().trim() !== "") {
+            if ($(".materiarep_2").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de\nMaterías Reprobadas\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if (!$("[name=beca_2]").is(":checked")) {
+            Swal.fire({
+                title: "¿Se encuentra Becado?\nSí o No",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($("[name=beca_2]:checked").val() === "SÍ") {
+                if ($("#tipo_beca_2").val().trim() === "") {
+                    Swal.fire({
+                        title: "Describa el tipo de Beca",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+
+        if ($("#canalizacion1_2").is(":checked")) {
+            if ($("#folioAM_2").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion2_2").is(":checked")) {
+            if ($("#folioAP_2").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion3_2").is(":checked")) {
+            if ($("#folioAPar_2").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion4_2").is(":checked")) {
+            if ($("#folioTInd_2").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion5_2").is(":checked")) {
+            if ($("#folioOtra_2").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if ($("#observaciones_2").val().trim() === "") {
+            Swal.fire({
+                title: 'Describa las Observaciones:\n"Enero - Junio"',
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 1500,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        }
+
+        Swal.fire({
+            title: "¿Guardar Trayectoria de 2do Semestre?",
+            html: "Después, no podrá hacer cambios hasta que acuda al<br>Área de Tutorías",
+            width:"40%",
+            type: 'warning',
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: '#19980b',
+            cancelButtonColor: '#910018',
+            confirmButtonText: 'GUARDAR',
+            cancelButtonText: 'CANCELAR',
+            backdrop: "rgba(0,0,0,0)"
+
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: "php/form_tsem2.php",
+                    type: 'POST',
+                    data: trayectoria2sem.serialize(),
+                    success: function (respuesta) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: (respuesta),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function (error) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: (error.responseText),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+                parent.$("#v_modal_t2").hide()
+                trayectoria2sem[0].reset()
+            }
+        })
 
     })
 
@@ -373,6 +573,5 @@ $(document).ready(function (){
         parent.$("#v_modal_t2").hide()
         trayectoria2sem[0].reset()
     })
-
 
 })

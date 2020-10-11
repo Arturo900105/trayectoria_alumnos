@@ -16,7 +16,7 @@
     <script src="js/t_semestre2.js"></script>
 </head>
 <body>
-    <form action="" method="" id="trayectoria2">
+    <form autocomplete="off" id="trayectoria2">
         <h1>Trayectoria de 2do Semestre</h1>
         <br>
 
@@ -28,8 +28,8 @@
                 <td id="inglesth_2">
                     <b>¿Se encuentra cursando el idioma inglés?</b>
                     <br>
-                    <label class="nivel_ingles_2">Sí:<input type="radio" name="ingles_2" value="SÍ"></label>
-                    <label class="nivel_ingles_2">No:<input type="radio" name="ingles_2" value="NO"></label>
+                    <label class="nivel_ingles_2">Sí:&nbsp;<input type="radio" name="ingles_2" value="SÍ"></label>
+                    <label class="nivel_ingles_2">No:&nbsp;<input type="radio" name="ingles_2" value="NO"></label>
                 </td>
 
                 <td id="inglestd_2">
@@ -49,13 +49,22 @@
                         <br><br>
 
                         <b>¿Realizó examen de ubicación?</b>
-                        <label class="ingles_ubicacion_2">Sí:<input type="radio" name="ubicacion_2" value="SÍ"></label>
-                        <label class="ingles_ubicacion_2">No:<input type="radio" name="ubicacion_2" value="NO"></label>
+                        <label class="ingles_ubicacion_2">Sí:&nbsp;<input type="radio" name="ubicacion_2" value="SÍ"></label>
+                        <label class="ingles_ubicacion_2">No:&nbsp;<input type="radio" name="ubicacion_2" value="NO"></label>
                     </div>
                 </td>
             </tr>
         </table>
         <br>
+
+        <label id="label_creditos2">El alumno cuenta con créditos de Tutorías o Actividades Extraescolares:
+            <select id="creditos_extras2">
+                <option value="">----------</option>
+                <option value="SÍ">SÍ</option>
+                <option value="NO">NO</option>
+            </select>
+        </label>
+        <br><br>
 
         <table id="creditos_2">
             <tr>
@@ -185,8 +194,8 @@
             <tr>
                 <td class="becatd_2">
                     ¿Se encuentra Becado?
-                    <label class="label_becado_2">Sí:<input type="radio" name="beca_2" value="SÍ"></label>
-                    <label class="label_becado_2">No:<input type="radio" name="beca_2" value="NO"></label>
+                    <label class="label_becado_2">Sí:&nbsp;<input type="radio" name="beca_2" value="SÍ"></label>
+                    <label class="label_becado_2">No:&nbsp;<input type="radio" name="beca_2" value="NO"></label>
                 </td>
                 <td class="becatd_2">
                     <div id="relbeca_2" class="relbeca_2">

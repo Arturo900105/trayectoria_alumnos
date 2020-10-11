@@ -57,6 +57,17 @@ h2{
     margin-left: 20px;
 }
 
+#label_creditos{
+    margin-left: 1em;
+}
+
+#creditos_extras{
+    margin-left: 5px;
+    text-align: center;
+    width: 7em;
+    height: 2em;
+}
+
 #creditos, .creditosth, .creditostd{
     border: 1px solid #000000;
     border-collapse: collapse;

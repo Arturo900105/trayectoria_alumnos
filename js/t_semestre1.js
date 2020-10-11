@@ -7,12 +7,11 @@ $(document).ready(function () {
     trayectoria1sem[0].reset()
     materiasCursadas = $("#cantidad_materias")
     materiasReprobadas = $("#materias_reprobadas")
-    $("#relIngles, .fila-materias, .relbeca, .materiarep, .folios_canal").hide()
+    $("#relIngles, .fila-materias, #creditos, .relbeca, .materiarep, .folios_canal").hide()
 
     s_tuto1 = $("#tutoria1")
     s_cult1 = $("#cultural1")
     s_depor1 = $("#deportiva1")
-
 
     $('#tutoria1,#cultural1,#deportiva1, .folios_canal, .calificacionN').on('input', function () {
         this.value = this.value.replace(/[^0-9]/g,'');
@@ -114,7 +113,6 @@ $(document).ready(function () {
     })
 
     trayectoria1sem.on('click', function () {
-
         if ($("[name = ingles1]:checked").val() === "SÍ"){
             $("#relIngles").show()
         } else{
@@ -123,6 +121,15 @@ $(document).ready(function () {
             $("input[name = ubicacion1]").prop("checked", false)
         }
 
+        if ($('#creditos_extras').val().trim() === "SÍ") {
+            $("#creditos").show()
+        } else {
+            $("#creditos").hide()
+            $("#tutoria1").val("")
+            $("#cultural1").val("")
+            $("#deportiva1").val("")
+            $("#suma_tcd").val("")
+        }
 
         if ($("[name = beca]:checked").val() === "SÍ"){
             $("#relbeca").show()
@@ -315,7 +322,6 @@ $(document).ready(function () {
         }
     })
 
-
     materiasReprobadas.on("click", function (){
         if (materiasReprobadas.val() > $("#cantidad_materias").val()){
             Swal.fire({
@@ -337,7 +343,6 @@ $(document).ready(function () {
             });
         }
     })
-
 
     trayectoria1sem.submit(function (e){
         e.preventDefault()
@@ -375,6 +380,19 @@ $(document).ready(function () {
             }
         }
 
+        if ($('#creditos_extras').val().trim() === "") {
+            Swal.fire({
+                title: "Seleccione si cuenta con créditos de:",
+                html: 'Tutorías.<br>Actividades Extraescolares.',
+                icon: "warning",
+                showConfirmButton: false,
+                width: "35%",
+                timer: 2500,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        }
+
         if ($("#cantidad_materias").val().trim() === "") {
             Swal.fire({
                 title: "Seleccione el número de Asignaturas Cursadas",
@@ -384,6 +402,39 @@ $(document).ready(function () {
                 backdrop: "rgba(0,0,0,0.4)"
             });
             return false;
+        } else {
+            if ($(".materiaN").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de Materías\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            } else if ($(".calificacionN").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de Calificaciones\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if ($("#materias_reprobadas").val().trim() !== "") {
+            if ($(".materiarep").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de\nMaterías Reprobadas\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
         }
 
         if (!$("[name=beca]").is(":checked")) {
@@ -469,7 +520,7 @@ $(document).ready(function () {
 
         if ($("#observaciones").val().trim() === "") {
             Swal.fire({
-                title: 'Describa las Observaciones:\n"Agosto - Diciembre" ',
+                title: 'Describa las Observaciones:\n"Agosto - Diciembre"',
                 icon: "warning",
                 showConfirmButton: false,
                 timer: 1500,
@@ -478,6 +529,48 @@ $(document).ready(function () {
             return false;
         }
 
+        Swal.fire({
+            title: "¿Guardar Trayectoria de 1er Semestre?",
+            html: "Después, no podrá hacer cambios hasta que acuda al<br>Área de Tutorías",
+            width:"40%",
+            type: 'warning',
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: '#19980b',
+            cancelButtonColor: '#910018',
+            confirmButtonText: 'GUARDAR',
+            cancelButtonText: 'CANCELAR',
+            backdrop: "rgba(0,0,0,0)"
+
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: "php/form_tsem1.php",
+                    type: 'POST',
+                    data: trayectoria1sem.serialize(),
+                    success: function (respuesta) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: (respuesta),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function (error) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: (error.responseText),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+                parent.$("#v_modal_t1").hide()
+                trayectoria1sem[0].reset()
+            }
+        })
 
     })
 
@@ -485,6 +578,5 @@ $(document).ready(function () {
         parent.$("#v_modal_t1").hide()
         trayectoria1sem[0].reset()
     })
-
 
 })

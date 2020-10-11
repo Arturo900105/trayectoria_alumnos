@@ -376,7 +376,273 @@ $(document).ready(function (){
     })
 
 
-    trayectoria6sem.submit(function (){
+    trayectoria6sem.submit(function (e){
+        e.preventDefault()
+
+        if (!$("[name=ingles_6]").is(":checked")) {
+            Swal.fire({
+                title: "Cursando idioma Inglés\n¡Sin contestar!",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($("[name=ingles_6]:checked").val() === "SÍ") {
+                if ($("#nivel_ingles_6").val().trim() === ""){
+                    Swal.fire({
+                        title: "Nivel de Inglés\n¡Sin contestar!",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                } else if (!$("[name=ubicacion_6]").is(":checked")) {
+                    Swal.fire({
+                        title: "Examen de Ubicación\n¡Sin contestar!",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+
+        if ($("#tutoria_6").val().trim() === "") {
+            Swal.fire({
+                title: "¡Campo Vacío!\nTutoría I y II",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else if ($("#cultural_6").val().trim() === ""){
+            Swal.fire({
+                title: "¡Campo Vacío!\nCultural",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else if ($("#deportiva_6").val().trim() === ""){
+            Swal.fire({
+                title: "¡Campo Vacío!\nDeportiva",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        }
+
+        if (!$("[name=servSocial_6]").is(":checked")) {
+            Swal.fire({
+                title: "Servicio Social\n¡Sin contestar!",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($("[name=servSocial_6]:checked").val() === "SÍ") {
+                if ($("#lugar_servsoc").val().trim() === "") {
+                    Swal.fire({
+                        title: "Lugar donde realiza el\nServicio Social...",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+
+        if ($("#cantidad_materias_6").val().trim() === "") {
+            Swal.fire({
+                title: "Seleccione el número de Asignaturas Cursadas",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($(".materiaN_6").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de Materías\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            } else if ($(".calificacionN_6").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de Calificaciones\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if ($("#materias_reprobadas_6").val().trim() !== "") {
+            if ($(".materiarep_6").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de\nMaterías Reprobadas\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if (!$("[name=beca_6]").is(":checked")) {
+            Swal.fire({
+                title: "¿Se encuentra Becado?\nSí o No",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($("[name=beca_6]:checked").val() === "SÍ") {
+                if ($("#tipo_beca_6").val().trim() === "") {
+                    Swal.fire({
+                        title: "Describa el tipo de Beca",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+
+        if ($("#canalizacion1_6").is(":checked")) {
+            if ($("#folioAM_6").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion2_6").is(":checked")) {
+            if ($("#folioAP_6").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion3_6").is(":checked")) {
+            if ($("#folioAPar_6").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion4_6").is(":checked")) {
+            if ($("#folioTInd_6").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion5_6").is(":checked")) {
+            if ($("#folioOtra_6").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if ($("#observaciones_6").val().trim() === "") {
+            Swal.fire({
+                title: 'Describa las Observaciones:\n"Enero - Junio"',
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 1500,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        }
+
+        Swal.fire({
+            title: "¿Guardar Trayectoria de 6to Semestre?",
+            html: "Después, no podrá hacer cambios hasta que acuda al<br>Área de Tutorías",
+            width:"40%",
+            type: 'warning',
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: '#19980b',
+            cancelButtonColor: '#910018',
+            confirmButtonText: 'GUARDAR',
+            cancelButtonText: 'CANCELAR',
+            backdrop: "rgba(0,0,0,0)"
+
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: "php/form_tsem6.php",
+                    type: 'POST',
+                    data: trayectoria6sem.serialize(),
+                    success: function (respuesta) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: (respuesta),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function (error) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: (error.responseText),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+                parent.$("#v_modal_t6").hide()
+                trayectoria6sem[0].reset()
+            }
+        })
 
     })
 

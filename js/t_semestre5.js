@@ -383,7 +383,220 @@ $(document).ready(function (){
         }
     })
 
-    trayectoria5sem.submit(function (){
+    trayectoria5sem.submit(function (e){
+        e.preventDefault()
+
+        if (!$("[name=ingles_5]").is(":checked")) {
+            Swal.fire({
+                title: "Cursando idioma Inglés\n¡Sin contestar!",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($("[name=ingles_5]:checked").val() === "SÍ") {
+                if ($("#nivel_ingles_5").val().trim() === ""){
+                    Swal.fire({
+                        title: "Nivel de Inglés\n¡Sin contestar!",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                } else if (!$("[name=ubicacion_5]").is(":checked")) {
+                    Swal.fire({
+                        title: "Examen de Ubicación\n¡Sin contestar!",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+
+        if ($("#cantidad_materias_5").val().trim() === "") {
+            Swal.fire({
+                title: "Seleccione el número de Asignaturas Cursadas",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($(".materiaN_5").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de Materías\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            } else if ($(".calificacionN_5").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de Calificaciones\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if ($("#materias_reprobadas_5").val().trim() !== "") {
+            if ($(".materiarep_5").val().trim() === "") {
+                Swal.fire({
+                    title: "Campos de\nMaterías Reprobadas\nVACÍOS!!!",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if (!$("[name=beca_5]").is(":checked")) {
+            Swal.fire({
+                title: "¿Se encuentra Becado?\nSí o No",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2000,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        } else {
+            if ($("[name=beca_5]:checked").val() === "SÍ") {
+                if ($("#tipo_beca_5").val().trim() === "") {
+                    Swal.fire({
+                        title: "Describa el tipo de Beca",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+
+        if ($("#canalizacion1_5").is(":checked")) {
+            if ($("#folioAM_5").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion2_5").is(":checked")) {
+            if ($("#folioAP_5").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion3_5").is(":checked")) {
+            if ($("#folioAPar_5").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion4_5").is(":checked")) {
+            if ($("#folioTInd_5").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        } else if ($("#canalizacion5_5").is(":checked")) {
+            if ($("#folioOtra_5").val().trim() === "") {
+                Swal.fire({
+                    title: "Ingrese el Folio de la Canalización",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            }
+        }
+
+        if ($("#observaciones_5").val().trim() === "") {
+            Swal.fire({
+                title: 'Describa las Observaciones:\n"Agosto - Diciembre"',
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 1500,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            return false;
+        }
+
+        Swal.fire({
+            title: "¿Guardar Trayectoria de 5to Semestre?",
+            html: "Después, no podrá hacer cambios hasta que acuda al<br>Área de Tutorías",
+            width:"40%",
+            type: 'warning',
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: '#19980b',
+            cancelButtonColor: '#910018',
+            confirmButtonText: 'GUARDAR',
+            cancelButtonText: 'CANCELAR',
+            backdrop: "rgba(0,0,0,0)"
+
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: "php/form_tsem5.php",
+                    type: 'POST',
+                    data: trayectoria5sem.serialize(),
+                    success: function (respuesta) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: (respuesta),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function (error) {
+                        swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: (error.responseText),
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+                parent.$("#v_modal_t5").hide()
+                trayectoria5sem[0].reset()
+            }
+        })
 
     })
 
