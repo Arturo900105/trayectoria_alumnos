@@ -1,6 +1,6 @@
 let num_ficha;
-let paginaAbrir = '', form_alumno, prom_bachi;
-let alertArea1, alertArea2;
+let paginaAbrir = '', paginaPostTest = "", form_alumno, prom_bachi;
+let alertArea1, alertArea2, areaPostTest, log_posttest;
 
 let yearcpe = new Date().getFullYear().toString().substr(-2)
 let generacion = new Date().getFullYear();
@@ -49,15 +49,34 @@ function filter(__val__) {
 $(document).ready(function () {
     form_alumno = $("#form_alumno")
     form_alumno[0].reset()
+    $('#contenido_area')[0].reset()
+    $('#contenido_posttest')[0].reset()
     $("#generacion").val(generacion)
     prom_bachi = $("#prom_prepa")
+    areaPostTest = $('#login_posttest')
 
-    $('#no_ficha, #edad, #telefono, #codpos, #login_areas').on('input', function () {
+    $('#no_ficha, #edad, #telefono, #codpos').on('input', function () {
         this.value = this.value.replace(/[^0-9]/g,'');
+    })
+
+    $('#login_areas').on('input', function () {
+        this.value = this.value.replace(/[^0-9-]/g,'');
     })
 
     $('#no_ficha').on("click", function (){
         $("#no_ficha").val("")
+    })
+
+    areaPostTest.on("click", function (){
+        $("#login_posttest").val("")
+    })
+    areaPostTest.on('input', function () {
+        this.value = this.value.replace(/[^0-9ASas]/g,'');
+    })
+    areaPostTest.on('keyup', function () {
+        let datos = new String(areaPostTest.val())
+        datos = datos.toUpperCase(datos);
+        areaPostTest.val(datos);
     })
 
     $('.nom_pat_mat').on('input', function (e) {
@@ -286,9 +305,7 @@ $(document).ready(function () {
     $("#login_areas").on("click", function (){
         $("#login_areas").val("")
     })
-
-
-});
+})
 
 
 function Confirmar_Acceso(pagina) {
@@ -298,18 +315,17 @@ function Confirmar_Acceso(pagina) {
 }
 
 function Cerrar_Acceso(e) {
+    $('#contenido_area')[0].reset()
     e.preventDefault();
     $("#acceso_area").css({display:"none"})
 }
 
 function setLogin(e){
     e.preventDefault();
-    alertArea1 = "Debes ingresar tu\nNúm. de Ficha";
-    alertArea2 = "Ficha no válida";
 
     if ($('#login_areas').val().trim() === '') {
         Swal.fire({
-            title: alertArea1,
+            title: "Debes ingresar tu\nNúm. de Ficha",
             position: 'top',
             showConfirmButton: false,
             timer: 1500,
@@ -319,7 +335,7 @@ function setLogin(e){
         return false;
     } else if ($('#login_areas').val().trim() === yearcpe+"-"+'0000') {
         Swal.fire({
-            title: alertArea2,
+            title: "Ficha no válida",
             position: 'top',
             showConfirmButton: false,
             timer: 700,
@@ -334,8 +350,7 @@ function setLogin(e){
             data: $("#contenido_area").serialize(),
             success: function (resultado) {
                 let Cookies2 = Cookies.noConflict();
-                Cookies2.set('usuario', resultado);
-                //console.log(paginaAbrir);
+                Cookies2.set('usuAlumno', resultado);
                 location.href = paginaAbrir;
             },
             error: function (error) {
@@ -349,4 +364,62 @@ function setLogin(e){
             }
         })
     }
+}
+
+function accesoPostTest(posttest) {
+    $("#modal_posttest").css({display:"block"})
+    paginaPostTest = posttest;
+}
+
+function cerrarPostTest(e) {
+    e.preventDefault();
+    $('#contenido_posttest')[0].reset()
+    $("#modal_posttest").css({display:"none"})
+}
+
+function setPostTest(e) {
+    e.preventDefault();
+
+    if (areaPostTest.val().trim() === '') {
+        Swal.fire({
+            title: "Debes ingresar un\nNúm. de Control",
+            position: 'top',
+            showConfirmButton: false,
+            timer: 1000,
+            icon: "warning",
+            backdrop: "rgba(0,0,0,0)"
+        });
+        return false;
+    } else if (areaPostTest.val().trim() === "0000000") {
+        Swal.fire({
+            title: "Núm. de Control no válido",
+            position: 'top',
+            showConfirmButton: false,
+            timer: 1000,
+            icon: "warning",
+            backdrop: "rgba(0,0,0,0)"
+        });
+        return false;
+    } else {
+        $.ajax({
+            url: "php/login-posttest.php",
+            type: 'POST',
+            data: $("#contenido_posttest").serialize(),
+            success: function (resultado) {
+                let CookiesPostTest = Cookies.noConflict();
+                CookiesPostTest.set('Usu-PostTest', resultado);
+                location.href = paginaPostTest;
+            },
+            error: function (error) {
+                swal.fire({
+                    position: 'top',
+                    icon: 'question',
+                    title: (error.responseText),
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        })
+    }
+
 }

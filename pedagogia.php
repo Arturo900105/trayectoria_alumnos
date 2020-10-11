@@ -1,8 +1,40 @@
+<?php
+require "php/BD_Connect.php";
+session_name("ALUMNO");
+session_start();
+$letSessionA = $_SESSION["usuAlumno"];
+
+if ($letSessionA == null || $letSessionA == "") {
+    echo "<!doctype html>
+              <html lang='es' style='height: 100%; display: flex; align-items: center; justify-content: center;'>
+                  <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+                    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+                    <title>Área de Pedagogía</title>
+                    <link rel='shortcut icon' href='iconos/pedagogia.jpg' type='image/x-icon'>
+                  </head>
+                  <body style='text-align: center;'>
+                    <h1 style='font-family: Arial; margin: 0; font-size: 35px; color: red;'>
+                        DEBES INICIAR SESIÓN PARA PODER VER EL
+                        <br>EXAMEN DE PEDAGOGÍA
+                    </h1>
+                    <img style='height: 15em; padding: 15px 0;' src='img/logo_itsp.png'>
+                    <h2 style='margin: 0; font-family: Arial; font-size: 30px;'>Coordinación Institucional de Tutoría Académica
+                    <br>Instituto Tecnológico Superior P'urhépecha
+                    </h2>
+                  </body>
+                </html>";
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Área de Pedagogía</title>
+    <link rel="shortcut icon" href="iconos/pedagogia.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos-pedagogia.css">
 
     <script src="js/jquery_3.4.1.js"></script>
@@ -18,7 +50,7 @@
     <h1>Área de Pedagogía</h1>
     <form action="" method="" id="alumno_pedagogia" autocomplete="off">
 
-        <h2 class="dato" id="ficha" ></h2>
+        <h2 class="dato">Ficha: <?php echo $letSessionA; ?></h2>
         <h2 class="dato" id="alumno"></h2>
         <h2 class="dato" id="carrera"></h2>
         <h2 class="dato" id="generacion"></h2>
@@ -653,7 +685,8 @@
         <br>
         <div id="botones_pedagogia">
             <input type="submit" value="GUARDAR" class="boton_pgia">
-            <input type="button" id="cerrarPedagogia" value="REGRESAR" class="boton_pgia">
+            <a href="php/terminar_alumno.php"><input type="button" id="cerrarPedagogia" value="REGRESAR" class="boton_pgia"></a>
+
         </div>
     </form>
     <script src="js/usuario_alumno.js"></script>

@@ -1,4 +1,5 @@
-let hermano;
+let iframe1 = document.getElementById("lista_misAlumnos");
+let iframe2 = document.getElementById("lista_alumnosITSP");
 
 function agregarAlumno(fichaAlumno, idTutor){
     //console.log(fichaAlumno, idTutor)
@@ -15,7 +16,8 @@ function agregarAlumno(fichaAlumno, idTutor){
                 showConfirmButton: false,
                 timer: 1500
             }).then(() =>{
-                location.href = "/sesion_tutor.php"
+                location.reload(true);
+                iframe1.src = iframe1.src;
             })
         },
         error: function (error) {
@@ -45,7 +47,8 @@ function eliminarAlumno(fichaAlumno, idTutor){
                 showConfirmButton: false,
                 timer: 1500
             }).then(() =>{
-                location.href = "/sesion_tutor.php"
+                location.reload(true);
+                iframe2.src = iframe2.src;
             })
         },
         error: function (error) {
@@ -62,19 +65,19 @@ function eliminarAlumno(fichaAlumno, idTutor){
 
 $(document).ready(function (){
     $("#tabla_usutUT, #tabla_alumnosITSP").hide()
-    $("#tabla_misAlumnos").hide()
+    $(".mis_alumnos, .ventana_alumnos").hide()
     $(".contentTutor").show()
 
     $("#inicioT").on("click", function (){
-        $("#tabla_alumnosITSP").hide()
+        $(".ventana_alumnos").hide()
         $("#tabla_usutUT").hide()
-        $("#tabla_misAlumnos").hide()
+        $(".mis_alumnos").hide()
         $("#parrafoTut").show()
     })
 
     $("#misdatosT").on("click", function (){
-        $("#tabla_alumnosITSP").hide()
-        $("#tabla_misAlumnos").hide()
+        $(".ventana_alumnos").hide()
+        $(".mis_alumnos").hide()
         $("#parrafoTut").hide()
         $("#tabla_usutUT").show()
     })
@@ -82,15 +85,15 @@ $(document).ready(function (){
     $("#misAlumnos").on("click", function (){
         $("#parrafoTut").hide()
         $("#tabla_usutUT").hide()
-        $("#tabla_alumnosITSP").hide()
-        $("#tabla_misAlumnos").show()
+        $(".ventana_alumnos").hide()
+        $(".mis_alumnos").show()
     })
 
     $("#todosAlumnos").on("click", function (){
         $("#parrafoTut").hide()
         $("#tabla_usutUT").hide()
-        $("#tabla_misAlumnos").hide()
-        $("#tabla_alumnosITSP").show()
+        $(".mis_alumnos").hide()
+        $(".ventana_alumnos").show()
     })
 
 

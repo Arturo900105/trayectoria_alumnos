@@ -1,6 +1,6 @@
 let trayectoria1sem, s_tuto1, s_cult1, s_depor1, materiasCursadas;
 let result_tcd1, result_tcd2, result_tcd3, result_tcd4, result_tcd5, result_tcd6, result_tcd7;
-let calificacion1, nuevaCalificacion1, materiasReprobadas, folios1, fechita, year1, digito;
+let calificacion1, nuevaCalificacion1, materiasReprobadas;
 
 $(document).ready(function () {
     trayectoria1sem = $("#trayectoria1")
@@ -68,26 +68,26 @@ $(document).ready(function () {
     })
 
     $(".folios_canal").on("change keypress paste focus textInput input", function (){
-        fechita = new Date();
-        year1 = fechita.getFullYear();
-        digito = year1.toString().substr(-2);
+        let fecha = new Date();
+        let year = fecha.getFullYear();
+        let digito = year.toString().substr(-2);
 
-        folios1 = $(this).val()
-        folios1 = folios1.replace(/\D/g, "")
-        if (folios1[0] > 0){
+        let folio = $(this).val()
+        folio = folio.replace(/\D/g, "")
+        if (folio[0] > 0){
             $(this).val(0)
-        } else if (folios1[1] > 8) {
-            $(this).val(folios1[0]+8)
-        } else if (folios1[1] < 1) {
-            $(this).val(folios1[0]+1)
-        } else if (folios1[2] > digito[0] || folios1[2] < 1) {
-            $(this).val(folios1[0]+folios1[1]+digito[0])
-        } else if (folios1[2] === digito[0] && folios1[3] > digito[1]) {
-            $(this).val(folios1[0]+folios1[1]+digito[0]+digito[1])
-        } else if (folios1[2]+folios1[3] === "00") {
-            $(this).val(folios9[0]+folios1[1]+digito[0]+digito[1])
-        } else if (folios1[4]+folios1[5]+folios1[6] === "000") {
-            $(this).val(folios1[0]+folios1[1]+folios1[2]+folios1[3]+folios1[4]+folios1[5]+1)
+        } else if (folio[1] > 8) {
+            $(this).val(folio[0]+8)
+        } else if (folio[1] < 1) {
+            $(this).val(folio[0]+1)
+        } else if (folio[2] > digito[0] || folio[2] < 1) {
+            $(this).val(folio[0]+folio[1]+digito[0])
+        } else if (folio[2] === digito[0] && folio[3] > digito[1]) {
+            $(this).val(folio[0]+folio[1]+digito[0]+digito[1])
+        } else if (folio[2]+folio[3] === "00") {
+            $(this).val(folio[0]+folio[1]+digito[0]+digito[1])
+        } else if (folio[4]+folio[5]+folio[6] === "000") {
+            $(this).val(folio[0]+folio[1]+folio[2]+folio[3]+folio[4]+folio[5]+1)
         }
     })
 
@@ -274,6 +274,9 @@ $(document).ready(function () {
         if (materiasCursadas.val() === "") {
             materiasReprobadas.val("")
             $(".materiarep").hide()
+        } else if (materiasCursadas.val() < materiasReprobadas.val()) {
+            materiasReprobadas.val("")
+            $(".materiarep").hide()
         }
 
         if ($("#canalizacion1").is(":checked")) {
@@ -310,8 +313,6 @@ $(document).ready(function () {
         } else {
             $("#folioOtra").hide().val("")
         }
-
-
     })
 
 
@@ -328,7 +329,7 @@ $(document).ready(function () {
             materiasReprobadas.val("")
         } else if (materiasCursadas.val() === "") {
             Swal.fire({
-                title: 'Seleccione primero el número de asignaturas cursadas durante el semestre',
+                title: 'Seleccione primero\nlas asignaturas cursadas\ndurante el semestre',
                 icon: "warning",
                 showConfirmButton: false,
                 timer: 2500,

@@ -23,7 +23,7 @@ $(document).ready(function (){
                 backdrop: "rgba(0,0,0,0)",
                 showConfirmButton: false,
                 timer: 2000
-            });
+            })
             return false
         } else if ($('#usuarioTutor').val().trim() === "") {
             Swal.fire({

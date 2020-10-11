@@ -3,7 +3,7 @@ let creditoTutoria9, creditoCultural9, creditoDeportiva9, creditoComplementaria9
 let newCrediTutoria9, newCrediCultural9, newCrediDeportiva9, newCrediComplementaria9;
 let result_tcd1_9, result_tcd2_9, result_tcd3_9, result_tcd4_9, result_tcd5_9, result_tcd6_9, result_tcd7_9, result_tcd8_9;
 let result_tcd9_9, result_tcd10_9, result_tcd11_9, result_tcd12_9, result_tcd13_9, result_tcd14_9, result_tcd15_9;
-let materiasCursadas9, materiasReprobadas9, folios9;
+let materiasCursadas9, materiasReprobadas9;
 
 $(document).ready(function (){
     trayectoria9sem = $("#trayectoria9")
@@ -282,6 +282,9 @@ $(document).ready(function (){
         if (materiasCursadas9.val() === "") {
             materiasReprobadas9.val("")
             $(".materiarep_9").hide()
+        } else if (materiasCursadas9.val() < materiasReprobadas9.val()) {
+            materiasReprobadas9.val("")
+            $(".materiarep_9").hide()
         }
 
 
@@ -328,26 +331,26 @@ $(document).ready(function (){
     })
 
     $(".folios_canal_9").on("change keypress paste focus textInput input", function() {
-        let fechita = new Date();
-        let year = fechita.getFullYear();
+        let fecha = new Date();
+        let year = fecha.getFullYear();
         let digito = year.toString().substr(-2);
 
-        folios9 = $(this).val()
-        folios9 = folios9.replace(/\D/g, "")
-        if (folios9[0] > 0){
+        let folio = $(this).val()
+        folio = folio.replace(/\D/g, "")
+        if (folio[0] > 0){
             $(this).val(0)
-        } else if (folios9[1] > 8) {
-            $(this).val(folios9[0]+8)
-        } else if (folios9[1] < 1) {
-            $(this).val(folios9[0]+1)
-        } else if (folios9[2] > digito[0] || folios9[2] < 1) {
-            $(this).val(folios9[0]+folios9[1]+digito[0])
-        } else if (folios9[2] === digito[0] && folios9[3] > digito[1]) {
-            $(this).val(folios9[0]+folios9[1]+digito[0]+digito[1])
-        } else if (folios9[2]+folios9[3] === "00") {
-            $(this).val(folios9[0]+folios9[1]+digito[0]+digito[1])
-        } else if (folios9[4]+folios9[5]+folios9[6] === "000") {
-            $(this).val(folios9[0]+folios9[1]+folios9[2]+folios9[3]+folios9[4]+folios9[5]+1)
+        } else if (folio[1] > 8) {
+            $(this).val(folio[0]+8)
+        } else if (folio[1] < 1) {
+            $(this).val(folio[0]+1)
+        } else if (folio[2] > digito[0] || folio[2] < 1) {
+            $(this).val(folio[0]+folio[1]+digito[0])
+        } else if (folio[2] === digito[0] && folio[3] > digito[1]) {
+            $(this).val(folio[0]+folio[1]+digito[0]+digito[1])
+        } else if (folio[2]+folio[3] === "00") {
+            $(this).val(folio[0]+folio[1]+digito[0]+digito[1])
+        } else if (folio[4]+folio[5]+folio[6] === "000") {
+            $(this).val(folio[0]+folio[1]+folio[2]+folio[3]+folio[4]+folio[5]+1)
         }
     })
 
@@ -363,7 +366,7 @@ $(document).ready(function (){
             materiasReprobadas9.val("")
         } else if (materiasCursadas9.val() === "") {
             Swal.fire({
-                title: 'Seleccione primero el número de asignaturas cursadas durante el semestre',
+                title: 'Seleccione primero\nlas asignaturas cursadas\ndurante el semestre',
                 icon: "warning",
                 showConfirmButton: false,
                 timer: 2500,

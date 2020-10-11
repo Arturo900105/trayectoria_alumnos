@@ -197,12 +197,51 @@ $(document).ready(function () {
                 backdrop: "rgba(0,0,0,0.4)"
             });
             return false;
+        } else {
+            Swal.fire({
+                title: "¿Guardar Escala Post-Test?",
+                text: "Después, ya no podrá hacer modificaciones",
+                width:"35%",
+                type: 'warning',
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: '#19980b',
+                cancelButtonColor: '#910018',
+                confirmButtonText: 'GUARDAR',
+                cancelButtonText: 'CANCELAR',
+                backdrop: "rgba(0,0,0,0)"
+
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: "php/datos_posttest.php",
+                        type: 'POST',
+                        data: form_posttest.serialize(),
+                        success: function (respuesta) {
+                            swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: (respuesta),
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        },
+                        error: function (error) {
+                            swal.fire({
+                                position: 'center',
+                                icon: 'error',
+                                title: (error.responseText),
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    })
+                    form_posttest[0].reset()
+                }
+            })
         }
-
-
-
-
     })
+
 
 
 })

@@ -1,8 +1,40 @@
+<?php
+require "php/BD_Connect.php";
+session_name("ALUMNO");
+session_start();
+$letSessionA = $_SESSION["usuAlumno"];
+
+if ($letSessionA == null || $letSessionA == "") {
+    echo "<!doctype html>
+              <html lang='es' style='height: 100%; display: flex; align-items: center; justify-content: center;'>
+                  <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+                    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+                    <title>Área de Psicología</title>
+                    <link rel='shortcut icon' href='iconos/psicologia.jpg' type='image/x-icon'>
+                  </head>
+                  <body style='text-align: center;'>
+                    <h1 style='font-family: Arial; margin: 0; font-size: 35px; color: red;'>
+                        DEBES INICIAR SESIÓN PARA PODER VER EL
+                        <br>EXAMEN DE PSICOLOGÍA
+                    </h1>
+                    <img style='height: 15em; padding: 15px 0;' src='img/logo_itsp.png'>
+                    <h2 style='margin: 0; font-family: Arial; font-size: 30px;'>Coordinación Institucional de Tutoría Académica
+                    <br>Instituto Tecnológico Superior P'urhépecha
+                    </h2>
+                  </body>
+                </html>";
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Área de Psicología</title>
+    <link rel="shortcut icon" href="iconos/psicologia.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos-psicologia.css">
 
     <script src="js/jquery_3.4.1.js"></script>
@@ -18,7 +50,7 @@
     <h1>Área de Psicología</h1>
     <form action="" method="" id="alumno_psicologia" autocomplete="off">
 
-        <h2 class="dato" id="ficha"></h2>
+        <h2 class="dato">Ficha: <?php echo $letSessionA; ?></h2>
         <h2 class="dato" id="alumno"></h2>
         <h2 class="dato" id="carrera"></h2>
         <h2 class="dato" id="generacion"></h2>
@@ -265,10 +297,6 @@
             </tr>
         </table>
         <br>
-
-        <div id="acceso_posttest">
-            <a class="a_posttest" href="javascript:accesoPostTest('escala_posttest.html')"><img src="img/area_pspost-test.png" title="Escala Post-Test" class="carpeta_posttest"></a>
-        </div>
 
         <h2>Test de orientación vocacional.</h2>
         <p class="p_sino">
@@ -561,24 +589,9 @@
 
         <div id="botones_psicologia">
             <input type="submit" value="GUARDAR" class="boton_psico">
-            <input type="button" id="cerrarPsicologia" value="REGRESAR" class="boton_psico">
+            <a href="php/terminar_alumno.php"><input type="button" id="cerrarPsicologia" value="REGRESAR" class="boton_psico"></a>
         </div>
     </form>
-
-    <div id="modal_posttest">
-        <div id="aadd_posttest">
-            <form id="contenido_posttest">
-                <input type="password"
-                       placeholder="Ingresa tu Núm. de Control"
-                       maxlength="7"
-                       class="area_posttest">
-                <br><br>
-                <button class="botones_posttest" onclick="setPostTest(event)">ENTRAR</button>
-                <button class="botones_posttest" onclick="cerrarPostTest(event)">CANCELAR</button>
-            </form>
-        </div>
-    </div>
-
     <script src="js/usuario_alumno.js"></script>
 </body>
 </html>

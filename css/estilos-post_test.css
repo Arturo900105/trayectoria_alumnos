@@ -6,6 +6,10 @@ h1{
     text-align: center;
 }
 
+h2{
+    margin: 0;
+}
+
 #posttest_alumnos{
     display:block;
     align-content: center;
@@ -18,9 +22,15 @@ h1{
 
 #sem_posttest{
     margin-left: 10px;
+    font-size: 15px;
     text-align: center;
-    width: 15em;
+    width: 10em;
     height: 2em;
+}
+
+#parrafoPT{
+    font-family: "Berlin Sans FB";
+    font-size: 22px;
 }
 
 table, th, td{
@@ -91,4 +101,8 @@ table, th, td{
     font-family: "Arial Black";
     background: #fc1e1e;
     cursor:pointer;
+}
+
+a{
+    text-decoration: none;
 }

@@ -7,9 +7,9 @@ $(document).ready(function(){
     //comprobamos si se pulsa una tecla
     $("#comprobar").on("click",function(e){
         //obtenemos el texto introducido en el campo
-        consulta_ficha = $("#no_ficha").val();
+        consulta_ficha = $("#no_ficha");
 
-        if (consulta_ficha === ""){
+        if (consulta_ficha.val().trim() === ""){
             Swal.fire({
                 title: "Inresa una ficha",
                 icon: "warning",
@@ -18,7 +18,7 @@ $(document).ready(function(){
                 timer: 1500
             });
             return false;
-        } else if (consulta_ficha === yearcpe+"-"+'0000') {
+        } else if (consulta_ficha.val().trim() === yearcpe+"-"+'0000') {
             Swal.fire({
                 title: "Ficha no válida",
                 icon: "warning",
@@ -26,7 +26,7 @@ $(document).ready(function(){
                 backdrop: "rgba(0,0,0,0.0)",
                 timer: 1500
             });
-            consulta_ficha.val("")
+            consulta_ficha.val("");
             return false;
         } else {
             $.ajax({

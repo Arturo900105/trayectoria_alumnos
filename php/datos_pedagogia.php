@@ -3,14 +3,31 @@
 
     $fichaAlumno = $_POST['ficha_alumno'];
 
-    $sumaVisual = $_POST['pregunta1'] + $_POST['pregunta3'] + $_POST['pregunta6'] +
-                  $_POST['pregunta9'] + $_POST['pregunta10'] + $_POST['pregunta11'] + $_POST['pregunta14'];
+    $isea_1 = $_POST['pregunta1'];
+    $isea_2 = $_POST['pregunta2'];
+    $isea_3 = $_POST['pregunta3'];
+    $isea_4 = $_POST['pregunta4'];
+    $isea_5 = $_POST['pregunta5'];
+    $isea_6 = $_POST['pregunta6'];
+    $isea_7 = $_POST['pregunta7'];
+    $isea_8 = $_POST['pregunta8'];
+    $isea_9 = $_POST['pregunta9'];
+    $isea_10 = $_POST['pregunta10'];
+    $isea_11 = $_POST['pregunta11'];
+    $isea_12 = $_POST['pregunta12'];
+    $isea_13 = $_POST['pregunta13'];
+    $isea_14 = $_POST['pregunta14'];
+    $isea_15 = $_POST['pregunta15'];
+    $isea_16 = $_POST['pregunta16'];
+    $isea_17 = $_POST['pregunta17'];
+    $isea_18 = $_POST['pregunta18'];
+    $isea_19 = $_POST['pregunta19'];
+    $isea_20 = $_POST['pregunta20'];
+    $isea_21 = $_POST['pregunta21'];
 
-    $sumaAuditiva = $_POST['pregunta2'] + $_POST['pregunta5'] + $_POST['pregunta12'] +
-                    $_POST['pregunta15'] + $_POST['pregunta16'] + $_POST['pregunta18'] + $_POST['pregunta20'];
-
-    $sumaKinestesica = $_POST['pregunta4'] + $_POST['pregunta7'] + $_POST['pregunta8'] +
-                       $_POST['pregunta13'] + $_POST['pregunta17'] + $_POST['pregunta19'] + $_POST['pregunta21'];
+    $sumaVisual = $isea_1 + $isea_3 + $isea_6 + $isea_9 + $isea_10 + $isea_11 + $isea_14;
+    $sumaAuditiva = $isea_2 + $isea_5 + $isea_12 + $isea_15 + $isea_16 + $isea_18 + $isea_20;
+    $sumaKinestesica = $isea_4 + $isea_7 + $isea_8 + $isea_13 + $isea_17 + $isea_19 + $isea_21;
 
     $sumatoria1 = $_POST['marcaXA1'] + $_POST['marcaXB1'] + $_POST['marcaXC1'] + $_POST['marcaXD1'] + $_POST['marcaXE1'] +
                   $_POST['marcaXF1'] + $_POST['marcaXG1'] + $_POST['marcaXH1'] + $_POST['marcaXI1'] + $_POST['marcaXJ1'] +
@@ -31,7 +48,13 @@
     $pregutas2 = $_POST['cadena2'];
     $pregutas3 = $_POST['cadena3'];
 
-    $pedagogia = "INSERT INTO tabla_pedagogia VALUES ('$fichaAlumno','$sumaVisual','$sumaAuditiva','$sumaKinestesica','$sumatoria1','$sumatoria2','$sumatoria3','$pregutas1','$pregutas2','$pregutas3')";
+    $pedagogia = "INSERT INTO tabla_pedagogia VALUES ('$fichaAlumno',
+                                                      '$isea_1','$isea_2','$isea_3','$isea_4','$isea_5','$isea_6','$isea_7',
+                                                      '$isea_8','$isea_9','$isea_10','$isea_11','$isea_12','$isea_13','$isea_14',
+                                                      '$isea_15','$isea_16','$isea_17','$isea_18','$isea_19','$isea_20','$isea_21',
+                                                      '$sumaVisual','$sumaAuditiva','$sumaKinestesica',
+                                                      '$sumatoria1','$sumatoria2','$sumatoria3',
+                                                      '$pregutas1','$pregutas2','$pregutas3',true)";
     $q4 = mysqli_query($connect, $pedagogia);
 
     if ($q4){

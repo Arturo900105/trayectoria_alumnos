@@ -246,13 +246,6 @@ ion-icon{
     width: auto;
 }
 
-#thAlumnos{
-    background: #ff5200;
-    color: #FFFFFF;
-    height: 2em;
-    text-align: center;
-}
-
 .th_misAlumnos{
     font-size: 15px;
     padding: 2px 5px;
@@ -296,6 +289,20 @@ ion-icon{
     margin: 2em;
     width: 70em;
     height: 55em;
+}
+
+.ventana_alumnos, .mis_alumnos{
+    padding: 1em;
+    background: none;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.lista_alumnosITSP{
+    width: 90%;
+    height: 20em;
 }
 
 #modalTitulacion{

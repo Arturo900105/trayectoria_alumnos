@@ -1,0 +1,47 @@
+body{
+    font-family: Arial;
+}
+
+h1{
+    text-align: center;
+}
+
+/*TABLA DE ALUMNOS DEL ITSP*/
+#alumnosITSP, .th_alumnosITSP, .td_alumnosITSP{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+
+.th_alumnosITSP{
+    background: #f89b70;
+    height: 1.7em;
+    width: 10em;
+    padding: 2px 5px;
+
+}
+
+.th_alumnosITSP:hover{
+    cursor: pointer;
+    background: #ff6800;
+}
+
+.td_alumnosITSP{
+    padding: 2px 5px;
+    text-align: center;
+}
+
+/*BOTÓN PARA AGREGAR ALUMNOS A MI LISTA*/
+.agregar{
+    margin: 2px 0;
+    width: 9em;
+    height: 2em;
+}
+
+.agregar:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    background: #0fa703;
+}

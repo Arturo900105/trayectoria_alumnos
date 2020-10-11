@@ -12,6 +12,7 @@ require "php/BD_Connect.php";
         <link rel="shortcut icon" href="iconos/icon2.png" type="image/x-icon">
         <link rel="stylesheet" href="css/estilo-index.css">
         <script src="js/jquery_3.4.1.js"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
@@ -83,7 +84,7 @@ require "php/BD_Connect.php";
                 <div id="contenido_modal_nip">
                     <input type="text"
                            id="log_usu"
-                           name="log_usuC""
+                           name="log_usuC"
                            placeholder="Ingresa tu Usuario:"
                            class="login_nip">
                     <br><br>

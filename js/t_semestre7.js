@@ -3,7 +3,7 @@ let creditoTutoria7, creditoCultural7, creditoDeportiva7, creditoComplementaria7
 let newCrediTutoria7, newCrediCultural7, newCrediDeportiva7, newCrediComplementaria7;
 let result_tcd1_7, result_tcd2_7, result_tcd3_7, result_tcd4_7, result_tcd5_7, result_tcd6_7, result_tcd7_7, result_tcd8_7;
 let result_tcd9_7, result_tcd10_7, result_tcd11_7, result_tcd12_7, result_tcd13_7, result_tcd14_7, result_tcd15_7;
-let materiasCursadas7, materiasReprobadas7, folios7;
+let materiasCursadas7, materiasReprobadas7;
 
 $(document).ready(function (){
     trayectoria7sem = $("#trayectoria7")
@@ -119,7 +119,7 @@ $(document).ready(function (){
             $("input[name = ubicacion_7]").prop("checked", false)
         }
 
-        if ($("[name=servSsocial_7]:checked").val() === "SÍ") {
+        if ($("[name=servSocial_7]:checked").val() === "SÍ") {
             $("#lugar_servsoc7").show()
         } else {
             $("#lugar_servsoc7").hide().val("")
@@ -273,6 +273,9 @@ $(document).ready(function (){
         if (materiasCursadas7.val() === "") {
             materiasReprobadas7.val("")
             $(".materiarep_7").hide()
+        } else if (materiasCursadas7.val() < materiasReprobadas7.val()) {
+            materiasReprobadas7.val("")
+            $(".materiarep_7").hide()
         }
 
         if ($("#canalizacion1_7").is(":checked")) {
@@ -317,26 +320,26 @@ $(document).ready(function (){
     })
 
     $(".folios_canal_7").on("change keypress paste focus textInput input", function (){
-        let fechita = new Date();
-        let year = fechita.getFullYear();
+        let fecha = new Date();
+        let year = fecha.getFullYear();
         let digito = year.toString().substr(-2);
 
-        folios7 = $(this).val()
-        folios7 = folios7.replace(/\D/g, "")
-        if (folios7[0] > 0){
+        let folio = $(this).val()
+        folio = folio.replace(/\D/g, "")
+        if (folio[0] > 0){
             $(this).val(0)
-        } else if (folios7[1] > 8) {
-            $(this).val(folios7[0]+8)
-        } else if (folios7[1] < 1) {
-            $(this).val(folios7[0]+1)
-        } else if (folios7[2] > digito[0] || folios7[2] < 1) {
-            $(this).val(folios7[0]+folios7[1]+digito[0])
-        } else if (folios7[2] === digito[0] && folios7[3] > digito[1]) {
-            $(this).val(folios7[0]+folios7[1]+digito[0]+digito[1])
-        } else if (folios7[2]+folios7[3] === "00") {
-            $(this).val(folios7[0]+folios7[1]+digito[0]+digito[1])
-        } else if (folios7[4]+folios7[5]+folios7[6] === "000") {
-            $(this).val(folios7[0]+folios7[1]+folios7[2]+folios7[3]+folios7[4]+folios7[5]+1)
+        } else if (folio[1] > 8) {
+            $(this).val(folio[0]+8)
+        } else if (folio[1] < 1) {
+            $(this).val(folio[0]+1)
+        } else if (folio[2] > digito[0] || folio[2] < 1) {
+            $(this).val(folio[0]+folio[1]+digito[0])
+        } else if (folio[2] === digito[0] && folio[3] > digito[1]) {
+            $(this).val(folio[0]+folio[1]+digito[0]+digito[1])
+        } else if (folio[2]+folio[3] === "00") {
+            $(this).val(folio[0]+folio[1]+digito[0]+digito[1])
+        } else if (folio[4]+folio[5]+folio[6] === "000") {
+            $(this).val(folio[0]+folio[1]+folio[2]+folio[3]+folio[4]+folio[5]+1)
         }
     })
 
@@ -352,7 +355,7 @@ $(document).ready(function (){
             materiasReprobadas7.val("")
         } else if (materiasCursadas7.val() === "") {
             Swal.fire({
-                title: 'Seleccione primero el número de asignaturas cursadas durante el semestre',
+                title: 'Seleccione primero\nlas asignaturas cursadas\ndurante el semestre',
                 icon: "warning",
                 showConfirmButton: false,
                 timer: 2500,

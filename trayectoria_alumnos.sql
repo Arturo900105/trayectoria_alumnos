@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2020 a las 06:49:05
+-- Tiempo de generación: 11-10-2020 a las 04:15:20
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -319,7 +319,8 @@ CREATE TABLE `tabla_medica` (
   `hipertencion` varchar(3) DEFAULT NULL,
   `convulsiones` varchar(3) DEFAULT NULL,
   `asma` varchar(3) DEFAULT NULL,
-  `tels_emergencia` text DEFAULT NULL
+  `tels_emergencia` text DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -330,15 +331,37 @@ CREATE TABLE `tabla_medica` (
 
 CREATE TABLE `tabla_pedagogia` (
   `num_ficha` varchar(7) DEFAULT NULL,
-  `aprendizaje_visual` int(11) DEFAULT NULL,
-  `aprendizaje_auditivo` int(11) DEFAULT NULL,
-  `aprendizaje_kinestesico` int(11) DEFAULT NULL,
-  `organizacion_estudio` int(11) DEFAULT NULL,
-  `tecnicas_estudio` int(11) DEFAULT NULL,
-  `motivacion_estudio` int(11) DEFAULT NULL,
+  `isea_1` int(1) DEFAULT NULL,
+  `isea_2` int(1) DEFAULT NULL,
+  `isea_3` int(1) DEFAULT NULL,
+  `isea_4` int(1) DEFAULT NULL,
+  `isea_5` int(1) DEFAULT NULL,
+  `isea_6` int(1) DEFAULT NULL,
+  `isea_7` int(1) DEFAULT NULL,
+  `isea_8` int(1) DEFAULT NULL,
+  `isea_9` int(1) DEFAULT NULL,
+  `isea_10` int(1) DEFAULT NULL,
+  `isea_11` int(1) DEFAULT NULL,
+  `isea_12` int(1) DEFAULT NULL,
+  `isea_13` int(1) DEFAULT NULL,
+  `isea_14` int(1) DEFAULT NULL,
+  `isea_15` int(1) DEFAULT NULL,
+  `isea_16` int(1) DEFAULT NULL,
+  `isea_17` int(1) DEFAULT NULL,
+  `isea_18` int(1) DEFAULT NULL,
+  `isea_19` int(1) DEFAULT NULL,
+  `isea_20` int(1) DEFAULT NULL,
+  `isea_21` int(1) DEFAULT NULL,
+  `aprendizaje_visual` int(2) DEFAULT NULL,
+  `aprendizaje_auditivo` int(2) DEFAULT NULL,
+  `aprendizaje_kinestesico` int(2) DEFAULT NULL,
+  `organizacion_estudio` int(2) DEFAULT NULL,
+  `tecnicas_estudio` int(2) DEFAULT NULL,
+  `motivacion_estudio` int(2) DEFAULT NULL,
   `preguntas_oe` text DEFAULT NULL,
   `preguntas_te` text DEFAULT NULL,
-  `preguntas_me` text DEFAULT NULL
+  `preguntas_me` text DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -348,11 +371,26 @@ CREATE TABLE `tabla_pedagogia` (
 --
 
 CREATE TABLE `tabla_posttest` (
-  `num_ficha` varchar(7) NOT NULL,
   `num_control` varchar(7) NOT NULL,
   `semestre` text DEFAULT NULL,
+  `a_1` int(1) DEFAULT NULL,
+  `a_2` int(1) DEFAULT NULL,
+  `a_3` int(1) DEFAULT NULL,
+  `a_4` int(1) DEFAULT NULL,
+  `a_5` int(1) DEFAULT NULL,
+  `a_6` int(1) DEFAULT NULL,
+  `a_7` int(1) DEFAULT NULL,
+  `d_1` int(1) DEFAULT NULL,
+  `d_2` int(1) DEFAULT NULL,
+  `d_3` int(1) DEFAULT NULL,
+  `d_4` int(1) DEFAULT NULL,
+  `d_5` int(1) DEFAULT NULL,
+  `d_6` int(1) DEFAULT NULL,
+  `d_7` int(1) DEFAULT NULL,
   `ansiedad` int(2) DEFAULT NULL,
-  `depresion` int(2) DEFAULT NULL
+  `depresion` int(2) DEFAULT NULL,
+  `suma_ad` int(2) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -367,18 +405,40 @@ CREATE TABLE `tabla_psicologia` (
   `respuesta1` text DEFAULT NULL,
   `pregunta2` varchar(3) DEFAULT NULL,
   `respuesta2` text DEFAULT NULL,
-  `ansiedad` int(11) DEFAULT NULL,
-  `depresion` int(11) DEFAULT NULL,
-  `bloque1` int(11) DEFAULT NULL,
-  `bloque2` int(11) DEFAULT NULL,
-  `bloque3` int(11) DEFAULT NULL,
-  `bloque4` int(11) DEFAULT NULL,
+  `a_1` int(1) DEFAULT NULL,
+  `a_2` int(1) DEFAULT NULL,
+  `a_3` int(1) DEFAULT NULL,
+  `a_4` int(1) DEFAULT NULL,
+  `a_5` int(1) DEFAULT NULL,
+  `a_6` int(1) DEFAULT NULL,
+  `a_7` int(1) DEFAULT NULL,
+  `d_1` int(1) DEFAULT NULL,
+  `d_2` int(1) DEFAULT NULL,
+  `d_3` int(1) DEFAULT NULL,
+  `d_4` int(1) DEFAULT NULL,
+  `d_5` int(1) DEFAULT NULL,
+  `d_6` int(1) DEFAULT NULL,
+  `d_7` int(1) DEFAULT NULL,
+  `ansiedad` int(2) DEFAULT NULL,
+  `depresion` int(2) DEFAULT NULL,
+  `suma_ad` int(2) DEFAULT NULL,
+  `bloque1` int(2) DEFAULT NULL,
+  `bloque2` int(2) DEFAULT NULL,
+  `bloque3` int(2) DEFAULT NULL,
+  `bloque4` int(2) DEFAULT NULL,
   `preguntas_bloque1` text DEFAULT NULL,
   `preguntas_bloque2` text DEFAULT NULL,
   `preguntas_bloque3` text DEFAULT NULL,
   `preguntas_bloque4` text DEFAULT NULL,
-  `terminado` tinyint(1) DEFAULT 0
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tabla_psicologia`
+--
+
+INSERT INTO `tabla_psicologia` (`num_ficha`, `pregunta1`, `respuesta1`, `pregunta2`, `respuesta2`, `a_1`, `a_2`, `a_3`, `a_4`, `a_5`, `a_6`, `a_7`, `d_1`, `d_2`, `d_3`, `d_4`, `d_5`, `d_6`, `d_7`, `ansiedad`, `depresion`, `suma_ad`, `bloque1`, `bloque2`, `bloque3`, `bloque4`, `preguntas_bloque1`, `preguntas_bloque2`, `preguntas_bloque3`, `preguntas_bloque4`, `contestado`) VALUES
+('20-0013', 'NO', '----------', 'NO', '----------', 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 3, 4, 7, 4, 4, 4, 6, '01 02 06 10', '12 13 18 20', '21 23 28 29', '33 34 35 36 38 40', 1);
 
 -- --------------------------------------------------------
 
@@ -404,12 +464,12 @@ CREATE TABLE `trayectoria_cappt` (
   `o_vocacional` text DEFAULT NULL,
   `e_ortografia` text DEFAULT NULL,
   `e_redaccion` text DEFAULT NULL,
-  `nombre_curso1` text DEFAULT NULL,
-  `result_curso1` int(3) DEFAULT NULL,
-  `nombre_curso2` text DEFAULT NULL,
-  `result_curso2` int(3) DEFAULT NULL,
-  `nombre_curso3` text DEFAULT NULL,
-  `result_curso` int(3) DEFAULT NULL
+  `nombre_curso_1` text DEFAULT NULL,
+  `resultado_1` int(3) DEFAULT NULL,
+  `nombre_curso_2` text DEFAULT NULL,
+  `resultado_2` int(3) DEFAULT NULL,
+  `nombre_curso_3` text DEFAULT NULL,
+  `resultado_3` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -957,7 +1017,6 @@ ALTER TABLE `tabla_pedagogia`
 -- Indices de la tabla `tabla_posttest`
 --
 ALTER TABLE `tabla_posttest`
-  ADD UNIQUE KEY `escala_posttest_num_ficha_uindex` (`num_ficha`),
   ADD UNIQUE KEY `escala_posttest_num_control_uindex` (`num_control`);
 
 --

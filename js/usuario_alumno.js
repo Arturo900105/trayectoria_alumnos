@@ -1,7 +1,6 @@
 let Cookies2 = Cookies.noConflict();
-let mostrar = JSON.parse(Cookies2.get('usuario'));
+let mostrar = JSON.parse(Cookies2.get('usuAlumno'));
 
-$("#ficha").text("Ficha: " + mostrar.num_ficha + ".")
 $("#alumno").text("Alumno: " + mostrar.nombre + " " + mostrar.apellidos + ".")
 
 let carrera = "";
@@ -30,21 +29,17 @@ $("#ficha_alumno").val(mostrar.num_ficha)
 
 $(document).ready(function (){
     $("#cerrarPedagogia, #cerrarPsicologia, #cerrarMedica").on("click", function (){
-        Cookies2.remove('usuario');
+        Cookies2.remove('ALUMNO');
+        Cookies2.remove('usuAlumno');
         history.back();
     })
 })
 
 try {
-    $("#edo_civil").text("Estado Civil: " + mostrar.edo_civil + ".")
-    $("#sexo").text("Sexo: " + mostrar.sexo + ".")
-
     if (mostrar.sexo === "Masculino"){
         $("#solo-femenino").css({display:"none"})
         $("#gestacional").css({display:"none"})
     }
-
-    $("#indigena").text("Indígena: " + mostrar.indigena + ".")
 }
 catch (e) {}
 //console.log(mostrar.num_ficha);

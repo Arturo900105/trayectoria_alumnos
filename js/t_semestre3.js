@@ -3,10 +3,14 @@ let result_tcd1_3, result_tcd2_3, result_tcd3_3, result_tcd4_3, result_tcd5_3, r
 let result_tcd9_3, result_tcd10_3, result_tcd11_3, result_tcd12_3, result_tcd13_3, result_tcd14_3, result_tcd15_3;
 let creditoTutoria3, creditoCultural3, creditoDeportiva3, creditoComplementaria3;
 let newCrediTutoria3, newCrediCultural3, newCrediDeportiva3, newCrediComplementaria3;
+let materiasCursadas3, materiasReprobadas3;
 
 $(document).ready(function (){
     trayectoria3sem = $("#trayectoria3")
     trayectoria3sem[0].reset()
+    materiasCursadas3 = $("#cantidad_materias_3")
+    materiasReprobadas3 = $("#materias_reprobadas_3")
+
     $("#relIngles_3, .fila-materias_3, .relbeca_3, .materiarep_3, .folios_canal_3").hide()
 
     s_tuto3 = $("#tutoria_3")
@@ -116,6 +120,30 @@ $(document).ready(function (){
         }
     })
 
+    $(".folios_canal_3").on("change keypress paste focus textInput input", function (){
+        let fecha = new Date();
+        let year = fecha.getFullYear();
+        let digito = year.toString().substr(-2);
+
+        let folio = $(this).val()
+        folio = folio.replace(/\D/g, "")
+        if (folio[0] > 0){
+            $(this).val(0)
+        } else if (folio[1] > 8) {
+            $(this).val(folio[0]+8)
+        } else if (folio[1] < 1) {
+            $(this).val(folio[0]+1)
+        } else if (folio[2] > digito[0] || folio[2] < 1) {
+            $(this).val(folio[0]+folio[1]+digito[0])
+        } else if (folio[2] === digito[0] && folio[3] > digito[1]) {
+            $(this).val(folio[0]+folio[1]+digito[0]+digito[1])
+        } else if (folio[2]+folio[3] === "00") {
+            $(this).val(folio[0]+folio[1]+digito[0]+digito[1])
+        } else if (folio[4]+folio[5]+folio[6] === "000") {
+            $(this).val(folio[0]+folio[1]+folio[2]+folio[3]+folio[4]+folio[5]+1)
+        }
+    })
+
     $("[name = calificacion1_3]").on("click", function (){
         $("[name = calificacion1_3]").val("")
     })
@@ -148,11 +176,11 @@ $(document).ready(function (){
         }
 
 
-        if ($('#cantidad_materias_3').val().trim() === ""){
+        if (materiasCursadas3.val().trim() === ""){
             $(".fila-materias_3").hide()
             $(".materiaN_3").val("")
             $(".calificacionN_3").val("")
-        } else if ($("#cantidad_materias_3").val().trim() === "1"){
+        } else if (materiasCursadas3.val().trim() === "1"){
             $("#fila-materias1_3").show()
             $("#fila-materias2_3").hide()
             $("#fila-materias3_3").hide()
@@ -168,7 +196,7 @@ $(document).ready(function (){
             $("[name = materia6_3], [name = calificacion6_3]").val("")
             $("[name = materia7_3], [name = calificacion7_3]").val("")
 
-        } else if ($("#cantidad_materias_3").val().trim() === "2"){
+        } else if (materiasCursadas3.val().trim() === "2"){
             $("#fila-materias1_3").show()
             $("#fila-materias2_3").show()
             $("#fila-materias3_3").hide()
@@ -182,7 +210,7 @@ $(document).ready(function (){
             $("[name = materia5_3], [name = calificacion5_3]").val("")
             $("[name = materia6_3], [name = calificacion6_3]").val("")
             $("[name = materia7_3], [name = calificacion7_3]").val("")
-        } else if ($("#cantidad_materias_3").val().trim() === "3"){
+        } else if (materiasCursadas3.val().trim() === "3"){
             $("#fila-materias1_3").show()
             $("#fila-materias2_3").show()
             $("#fila-materias3_3").show()
@@ -195,7 +223,7 @@ $(document).ready(function (){
             $("[name = materia5_3], [name = calificacion5_3]").val("")
             $("[name = materia6_3], [name = calificacion6_3]").val("")
             $("[name = materia7_3], [name = calificacion7_3]").val("")
-        } else if ($("#cantidad_materias_3").val().trim() === "4"){
+        } else if (materiasCursadas3.val().trim() === "4"){
             $("#fila-materias1_3").show()
             $("#fila-materias2_3").show()
             $("#fila-materias3_3").show()
@@ -207,7 +235,7 @@ $(document).ready(function (){
             $("[name = materia5_3], [name = calificacion5_3]").val("")
             $("[name = materia6_3], [name = calificacion6_3]").val("")
             $("[name = materia7_3], [name = calificacion7_3]").val("")
-        } else if ($("#cantidad_materias_3").val().trim() === "5"){
+        } else if (materiasCursadas3.val().trim() === "5"){
             $("#fila-materias1_3").show()
             $("#fila-materias2_3").show()
             $("#fila-materias3_3").show()
@@ -218,7 +246,7 @@ $(document).ready(function (){
 
             $("[name = materia6_3], [name = calificacion6_3]").val("")
             $("[name = materia7_3], [name = calificacion7_3]").val("")
-        } else if ($("#cantidad_materias_3").val().trim() === "6"){
+        } else if (materiasCursadas3.val().trim() === "6"){
             $("#fila-materias1_3").show()
             $("#fila-materias2_3").show()
             $("#fila-materias3_3").show()
@@ -241,7 +269,7 @@ $(document).ready(function (){
         }
 
 
-        if ($('#materias_reprobadas_3').val().trim() === ''){
+        if (materiasReprobadas3.val().trim() === ''){
             $(".materiarep_3").hide().val("")
         } else if ($("#materias_reprobadas_3").val().trim() === '1'){
             $("#materiarep1_3").show();
@@ -251,7 +279,7 @@ $(document).ready(function (){
             $("#materiarep5_3").hide().val("")
             $("#materiarep6_3").hide().val("")
             $("#materiarep7_3").hide().val("")
-        } else if ($("#materias_reprobadas_3").val().trim() === '2'){
+        } else if (materiasReprobadas3.val().trim() === '2'){
             $("#materiarep1_3").show()
             $("#materiarep2_3").show()
             $("#materiarep3_3").hide().val("")
@@ -259,7 +287,7 @@ $(document).ready(function (){
             $("#materiarep5_3").hide().val("")
             $("#materiarep6_3").hide().val("")
             $("#materiarep7_3").hide().val("")
-        } else if ($("#materias_reprobadas_3").val().trim() === '3'){
+        } else if (materiasReprobadas3.val().trim() === '3'){
             $("#materiarep1_3").show()
             $("#materiarep2_3").show()
             $("#materiarep3_3").show()
@@ -267,7 +295,7 @@ $(document).ready(function (){
             $("#materiarep5_3").hide().val("")
             $("#materiarep6_3").hide().val("")
             $("#materiarep7_3").hide().val("")
-        } else if ($("#materias_reprobadas_3").val().trim() === '4'){
+        } else if (materiasReprobadas3.val().trim() === '4'){
             $("#materiarep1_3").show()
             $("#materiarep2_3").show()
             $("#materiarep3_3").show()
@@ -275,7 +303,7 @@ $(document).ready(function (){
             $("#materiarep5_3").hide().val("")
             $("#materiarep6_3").hide().val("")
             $("#materiarep7_3").hide().val("")
-        } else if ($("#materias_reprobadas_3").val().trim() === '5'){
+        } else if (materiasReprobadas3.val().trim() === '5'){
             $("#materiarep1_3").show()
             $("#materiarep2_3").show()
             $("#materiarep3_3").show()
@@ -283,7 +311,7 @@ $(document).ready(function (){
             $("#materiarep5_3").show()
             $("#materiarep6_3").hide().val("")
             $("#materiarep7_3").hide().val("")
-        } else if ($("#materias_reprobadas_3").val().trim() === '6'){
+        } else if (materiasReprobadas3.val().trim() === '6'){
             $("#materiarep1_3").show()
             $("#materiarep2_3").show()
             $("#materiarep3_3").show()
@@ -295,6 +323,13 @@ $(document).ready(function (){
             $(".materiarep_3").show()
         }
 
+        if (materiasCursadas3.val() === "") {
+            materiasReprobadas3.val("")
+            $(".materiarep_3").hide()
+        } else if (materiasCursadas3.val() < materiasReprobadas3.val()) {
+            materiasReprobadas3.val("")
+            $(".materiarep_3").hide()
+        }
 
         if ($("#canalizacion1_3").is(":checked")) {
             $("#folioAM_3").show()
@@ -325,9 +360,30 @@ $(document).ready(function (){
         } else {
             $("#folioOtra_3").hide().val("")
         }
-
-
     })
+
+    materiasReprobadas3.on("click", function (){
+        if (materiasReprobadas3.val() > materiasCursadas3.val()){
+            Swal.fire({
+                title: 'Fuera del rango de las Asignaturas Cursadas',
+                width: "40%",
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 1500,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+            materiasReprobadas3.val("")
+        } else if (materiasCursadas3.val() === "") {
+            Swal.fire({
+                title: 'Seleccione primero\nlas asignaturas cursadas\ndurante el semestre',
+                icon: "warning",
+                showConfirmButton: false,
+                timer: 2500,
+                backdrop: "rgba(0,0,0,0.4)"
+            });
+        }
+    })
+
 
     $("#CerrarVentana3").on("click", function (){
         parent.$("#v_modal_t3").hide()

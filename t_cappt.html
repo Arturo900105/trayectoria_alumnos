@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario (CAPT)</title>
+    <link rel="shortcut icon" href="iconos/semC.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos-tcappt.css">
 
     <script src="js/jquery_3.4.1.js"></script>
@@ -47,13 +48,13 @@
                     <th colspan="2" id="punt_exam" class="puntaje_examen">Puntaje del Examen de admisión:</th>
                 </tr>
                 <tr>
-                    <td class="puntaje_examen"><label>EXANI–II:<input type="text" class="punt_examen" id="exani" maxlength="4"></label></td>
-                    <td class="puntaje_examen"><label>COSNET:<input type="text" class="punt_examen" id="cosnet" maxlength="4"></label></td>
+                    <td class="puntaje_examen"><label>EXANI–II:<input type="text" class="punt_examen" id="exani" name="exani" maxlength="4"></label></td>
+                    <td class="puntaje_examen"><label>COSNET:<input type="text" class="punt_examen" id="cosnet" name="cosnet" maxlength="4"></label></td>
                 </tr>
             </table>
             <br>
 
-            <b>Hablante de la lengua P’urhepecha:</b>
+            <b>Hablante de la lengua P'urépecha:</b>
             <label class="hablante_pu"><input type="radio" name="hablante_purepecha" value="SÍ">Sí.</label>
             <label class="hablante_pu"><input type="radio" name="hablante_purepecha" value="NO">No.</label>
 
@@ -71,8 +72,8 @@
             </label>
 
             <div id="diagnosticos_pm">
-                <textarea name="" class="diagnosticos" cols="40" rows="3" title="Diagnóstico Psicológico" placeholder="Diagnóstico Psicológico:"></textarea>
-                <textarea name="" class="diagnosticos" cols="40" rows="3" title="Diagnóstico Médico" placeholder="Diagnóstico Médico:"></textarea>
+                <textarea name="diag_psico" class="diagnosticos" cols="40" rows="3" title="Diagnóstico Psicológico" placeholder="Diagnóstico Psicológico:"></textarea>
+                <textarea name="diag_medico" class="diagnosticos" cols="40" rows="3" title="Diagnóstico Médico" placeholder="Diagnóstico Médico:"></textarea>
             </div>
 
             <br>
@@ -152,10 +153,10 @@
             <br>
 
             <b>Orientación Vocacional:</b>
-            <label class="ori_voc"><input type="checkbox" name="bloque[]" value="1">Bloque 1.</label>
-            <label class="ori_voc"><input type="checkbox" name="bloque[]" value="2">Bloque 2.</label>
-            <label class="ori_voc"><input type="checkbox" name="bloque[]" value="3">Bloque 3.</label>
-            <label class="ori_voc"><input type="checkbox" name="bloque[]" value="4">Bloque 4.</label>
+            <label class="ori_voc"><input type="checkbox" name="bloque[]" class="bloque_ov" value="1">Bloque 1.</label>
+            <label class="ori_voc"><input type="checkbox" name="bloque[]" class="bloque_ov" value="2">Bloque 2.</label>
+            <label class="ori_voc"><input type="checkbox" name="bloque[]" class="bloque_ov" value="3">Bloque 3.</label>
+            <label class="ori_voc"><input type="checkbox" name="bloque[]" class="bloque_ov" value="4">Bloque 4.</label>
             <br><br>
 
             <label><b>Evaluación de ortografía:</b>
@@ -196,18 +197,18 @@
                 </tr>
                 <tr>
                     <td class="tdcursos1">Curso 1:</td>
-                    <td class="tdcursos2"><input type="text" class="nombre_curso" title="Nombre del curso 1"></td>
-                    <td class="tdcursos3"><input type="text" class="result_curso" minlength="1" maxlength="3" title="Calificación del curso 1"></td>
+                    <td class="tdcursos2"><input type="text" class="nombre_curso" name="nom_curso1" title="Nombre del curso 1"></td>
+                    <td class="tdcursos3"><input type="text" class="result_curso" name="res_curso1" minlength="1" maxlength="3" title="Calificación del curso 1"></td>
                 </tr>
                 <tr>
                     <td class="tdcursos1">Curso 2:</td>
-                    <td class="tdcursos2"><input type="text" class="nombre_curso" title="Nombre del curso 2"></td>
-                    <td class="tdcursos3"><input type="text" class="result_curso" minlength="1" maxlength="3" title="Calificación del curso 2"></td>
+                    <td class="tdcursos2"><input type="text" class="nombre_curso" name="nom_curso2" title="Nombre del curso 2"></td>
+                    <td class="tdcursos3"><input type="text" class="result_curso" name="res_curso2" minlength="1" maxlength="3" title="Calificación del curso 2"></td>
                 </tr>
                 <tr>
                     <td class="tdcursos1">Curso 3:</td>
-                    <td class="tdcursos2"><input type="text" class="nombre_curso" title="Nombre del curso 3"></td>
-                    <td class="tdcursos3"><input type="text" class="result_curso" minlength="1" maxlength="3" title="Calificación del curso 3"></td>
+                    <td class="tdcursos2"><input type="text" class="nombre_curso" name="nom_curso3" title="Nombre del curso 3"></td>
+                    <td class="tdcursos3"><input type="text" class="result_curso" name="res_curso3" minlength="1" maxlength="3" title="Calificación del curso 3"></td>
                 </tr>
             </table>
             <br>

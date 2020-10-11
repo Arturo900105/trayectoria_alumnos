@@ -1,8 +1,40 @@
+<?php
+require "php/BD_Connect.php";
+session_name("POST-TEST");
+session_start();
+$sessionPostTest = $_SESSION["ptestAlumno"];
+
+if ($sessionPostTest == null || $sessionPostTest == "") {
+    echo "<!doctype html>
+              <html lang='es' style='height: 100%; display: flex; align-items: center; justify-content: center;'>
+                  <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+                    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+                    <title>Escala POST-TEST</title>
+                    <link rel='shortcut icon' href='iconos/posttest.jpg' type='image/x-icon'>
+                  </head>
+                  <body style='text-align: center;'>
+                    <h1 style='font-family: Arial; margin: 0; font-size: 35px; color: red;'>
+                        DEBES INICIAR SESIÓN PARA PODER VER LA
+                        <br>ESCALA POST-TEST
+                    </h1>
+                    <img style='height: 15em; padding: 15px 0;' src='img/logo_itsp.png'>
+                    <h2 style='margin: 0; font-family: Arial; font-size: 30px;'>Coordinación Institucional de Tutoría Académica
+                    <br>Instituto Tecnológico Superior P'urhépecha
+                    </h2>
+                  </body>
+                </html>";
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Escala POST-TEST</title>
+    <link rel="shortcut icon" href="iconos/posttest.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos-post_test.css">
 
     <script src="js/jquery_3.4.1.js"></script>
@@ -16,10 +48,14 @@
 <body>
     <h1>Escala Hospitalaria Ansiedad y Depresión</h1>
     <form action="" method="" id="posttest_alumnos" autocomplete="off">
-        <h2>Núm. de Ficha:</h2>
-        <h2>Núm. de Control:</h2>
-        <h2>Nombre del Alumno:</h2>
+
+        <h2>Control: <?php echo $sessionPostTest; ?>.</h2>
+        <h2 id="alumno_posttest"></h2>
+        <h2 id="carrera_posttest"></h2>
+        <h2 id="generacion_posttest"></h2>
         <br>
+
+        <input type="hidden" name="control" id="control">
 
         <label><b>¿En qué semestre te encuentras?</b>
             <select name="sem_posttest" id="sem_posttest">
@@ -28,12 +64,13 @@
                 <option value="4to Semestre">4to Semestre</option>
                 <option value="5to Semestre">5to Semestre</option>
                 <option value="6to Semestre">6to Semestre</option>
-                <option value="6to Semestre">6to Semestre</option>
             </select>
         </label>
-        <br><br>
+        <br>
 
-        <p>A continuación, escribe en le columna de [POST-TEST] el número que más se acerque a lo que sientes, percibes o pienses:</p>
+        <p id="parrafoPT">A continuación;<br>
+            Escribe en le columna de [POST-TEST] el número que más se acerque a lo que sientes, percibes o pienses:
+        </p>
         <table>
             <tr>
                 <th class="escala_th" colspan="2">ANSIEDAD/DEPRESIÓN</th>
@@ -226,8 +263,9 @@
 
         <div id="botones_posttest">
             <input type="submit" value="GUARDAR" class="boton_posttest" id="guardarPostTest">
-            <input type="button" value="REGRESAR" class="boton_posttest" id="cerrarPostTest">
+            <a href="php/terminar_posttest.php"><input type="button" value="SALIR" class="boton_posttest" id="cerrarPostTest"></a>
         </div>
     </form>
+    <script src="js/usuario_posttest.js"></script>
 </body>
 </html>
