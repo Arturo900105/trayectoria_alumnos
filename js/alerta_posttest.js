@@ -224,7 +224,9 @@ $(document).ready(function () {
                                 title: (respuesta),
                                 showConfirmButton: false,
                                 timer: 1500
-                            })
+                            }).then(
+                                setTimeout("location.href ='php/terminar_posttest.php'",2000)
+                            )
                         },
                         error: function (error) {
                             swal.fire({
@@ -237,11 +239,10 @@ $(document).ready(function () {
                         }
                     })
                     form_posttest[0].reset()
+                    CookiesPostTest.remove('POST-TEST')
+                    CookiesPostTest.remove('Usu-PostTest')
                 }
             })
         }
     })
-
-
-
 })

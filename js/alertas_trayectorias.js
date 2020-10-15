@@ -1,6 +1,4 @@
-function abrirCAPPT() {
-    $("#v_modal_cappt").css({display:"block"})
-}
+
 function abrirT1semeste() {
     $("#v_modal_t1").css({display:"block"})
 }

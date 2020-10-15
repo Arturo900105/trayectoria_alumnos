@@ -31,8 +31,8 @@
     $resulCanali = mysqli_query($connect, $consultCanali);
     $fila = $resulCanali -> fetch_assoc();
 
-
     $pdf = new PDF("P", "mm","letter");
+    $pdf->SetTitle('Canalización '.$postFolio, isUTF8);
     $pdf->AddPage();
     $pdf->SetLeftMargin(20);
     $pdf->SetRightMargin(20);
@@ -160,5 +160,5 @@
     $pdf->Ln(5);
     $pdf->SetX(53);
     $pdf->Cell(105, 5, utf8_decode($fila["firma_encargado_ac"]), "B", 1,"C");
-    $pdf->Output();
+    $pdf->Output('','Canalización '.$postFolio.'.pdf',isUTF8);
 ?>

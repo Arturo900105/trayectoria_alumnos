@@ -18,11 +18,8 @@ $letSessionC = $_SESSION["usucoord"];
                         DEBES INICIAR SESIÓN PARA PODER VER EL CONTENIDO
                     </h1>
                     <img style='height: 15em; padding: 15px 0;' src='img/logo_itsp.png'>
-                    <h2 style='margin: 0; font-family: Arial; font-size: 30px;'>
-                        Atentamente:
-                        <br>la Coordinación Institucional de Tutoría Académica
-                        <br>del Instituto Tecnológico Superior P'urhépecha
-                    </h2>
+                    <h2 style='margin: 0; font-family: Arial; font-size: 30px;'>Coordinación Institucional de Tutoría Académica
+                    <br>Instituto Tecnológico Superior P'urhépecha</h2>
                   </body>
                 </html>";
         die();
@@ -62,9 +59,9 @@ $letSessionC = $_SESSION["usucoord"];
         <li id="misdatos"><a>MI PERFIL</a></li>
         <li><a>ARCHIVOS<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuCoordinador">
-                <li><a>CANALIZACIONES</a></li>
-                <li><a>REPORTES PARCIALES</a></li>
-                <li><a>REPORTES FINALES</a></li>
+                <li id="lista_canalizacion"><a>CANALIZACIONES</a></li>
+                <li id="lista_rparcial"><a>REPORTES PARCIALES</a></li>
+                <li id="lista_rfinal"><a>REPORTES FINALES</a></li>
             </ul>
         </li>
         <li><a>COORDINADORES<ion-icon name="caret-down-outline"></ion-icon></a>
@@ -80,9 +77,9 @@ $letSessionC = $_SESSION["usucoord"];
         <li><a>ALUMNOS<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuCoordinador">
                 <li id="mlistaAlumnos"><a>DATOS DEL ALUMNO</a></li>
-                <li><a>EXAMEN PEDAGÓGICO</a></li>
-                <li><a>EXAMEN PSICOLÓGICO</a></li>
-                <li><a>EXAMEN MÉDICO</a></li>
+                <li id="mlistaPedagogia"><a>EXAMEN PEDAGÓGICO</a></li>
+                <li id="mlistaPsicologia"><a>EXAMEN PSICOLÓGICO</a></li>
+                <li id="mlistaMedica"><a>EXAMEN MÉDICO</a></li>
                 <li><a>CARACTERIZACIÓN POR PARTE DEL TUTOR</a></li>
                 <li><a>NÚMERO DE CONTROL</a></li>
                 <li><a>TRAYECTORIA SEMESTRAL</a></li>
@@ -102,6 +99,18 @@ $letSessionC = $_SESSION["usucoord"];
         <br><ion-icon name="arrow-forward-outline"></ion-icon> Registro de los Reportes Finales realizados por el Tutor.
         <br><br>
     </p>
+
+    <div id="div_canalizaciones">
+        <iframe id="ventana_canalizacion" src="imprimir_canalizacion.php" frameborder="0"></iframe>
+    </div>
+
+    <div id="div_rparciales">
+        <iframe id="ventana_rparcial" src="imprimir_rparcial.php" frameborder="0"></iframe>
+    </div>
+
+    <div id="div_rfinales">
+        <iframe id="ventana_rfinal" src="imprimir_rfinal.php" frameborder="0"></iframe>
+    </div>
 
     <table id="tabla_usuCoord">
         <tr>
@@ -202,7 +211,7 @@ $letSessionC = $_SESSION["usucoord"];
         </tr>
 
         <?php
-        $consultaT = "SELECT nombre,apellido,tipo_tutoria,area_de,email,fecha_registro,hora_registro,usuario FROM tutor";
+        $consultaT = "SELECT * FROM tutor";
         $resultadoT = mysqli_query($connect, $consultaT);
         while ($filaT = $resultadoT->fetch_assoc()){
             if ($filaT['area_de'] == "IGEM"){
@@ -224,8 +233,8 @@ $letSessionC = $_SESSION["usucoord"];
             }
             ?>
             <tr>
-                <td class="td_tablaTutores"><?php echo $filaT['nombre']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['apellido']?></td>
+                <td class="td_tablaTutores"><?php echo $filaT['nombre_tut']?></td>
+                <td class="td_tablaTutores"><?php echo $filaT['apellido_tut']?></td>
                 <td class="td_tablaTutores"><?php echo $filaT['tipo_tutoria']?></td>
                 <td class="td_tablaTutores"><?php echo $filaT['area_de']?></td>
                 <td class="td_tablaTutores"><?php echo $filaT['email']?></td>
@@ -235,52 +244,23 @@ $letSessionC = $_SESSION["usucoord"];
             </tr>
         <?php }?>
     </table>
+    
+    <div id="ventanaAlumnos">
+        <iframe id="listaAlumnosITSP" src="mostrar_Adatos.php" frameborder="0"></iframe>
+    </div>
 
-    <table id="tabla_alumnos">
-        <tr>
-            <th colspan="14" id="thAlumnos">DATOS DE LOS ALUMNOS DEL ITSP</th>
-        </tr>
+    <div id="ventanaPedagogia" class="ventanasCoord">
+        <iframe class="listaCA" id="listaPedagogia" src="mostrar_Apedagogia.php" frameborder="0"></iframe>
+    </div>
 
-        <tr>
-            <th class="th_tablaAlumnos">Núm. de Ficha</th>
-            <th class="th_tablaAlumnos">Fecha de Registro</th>
-            <th class="th_tablaAlumnos">Apellidos</th>
-            <th class="th_tablaAlumnos">Nombre(s)</th>
-            <th class="th_tablaAlumnos">Fecha de Nacimiento</th>
-            <th class="th_tablaAlumnos">Sexo</th>
-            <th class="th_tablaAlumnos">Indígena</th>
-            <th class="th_tablaAlumnos">Edad</th>
-            <th class="th_tablaAlumnos">Estado Civil</th>
-            <th  class="th_tablaAlumnos">Teléfono o Celular</th>
-            <th  class="th_tablaAlumnos">E-mail</th>
-            <th  class="th_tablaAlumnos">Fecha cuando sacó Ficha</th>
-            <th  class="th_tablaAlumnos">Carrera</th>
-            <th  class="th_tablaAlumnos">Generación</th>
-        </tr>
+    <div id="ventanaPsicologia" class="ventanasCoord">
+        <iframe class="listaCA" id="listaPsicologia" src="mostrar_Apsicologia.php" frameborder="0"></iframe>
+    </div>
 
-        <?php
-        $consultaA = "SELECT * FROM alumno";
-        $resultadoA = mysqli_query($connect, $consultaA);
-        while ($filaA = $resultadoA->fetch_assoc()){
-            ?>
-            <tr>
-                <td id="td_tA1" class="td_tablaAlumnos"><?php echo $filaA['num_ficha']?></td>
-                <td id="td_tA2" class="td_tablaAlumnos"><?php echo $filaA['fecha_registro']?></td>
-                <td id="td_tA3" class="td_tablaAlumnos"><?php echo $filaA['apellidos']?></td>
-                <td id="td_tA4" class="td_tablaAlumnos"><?php echo $filaA['nombre']?></td>
-                <td id="td_tA5" class="td_tablaAlumnos"><?php echo $filaA['fecha_de_nacimiento']?></td>
-                <td id="td_tA6" class="td_tablaAlumnos"><?php echo $filaA['sexo']?></td>
-                <td id="td_tA7" class="td_tablaAlumnos"><?php echo $filaA['indigena']?></td>
-                <td id="td_tA8" class="td_tablaAlumnos"><?php echo $filaA['edad']?></td>
-                <td id="td_tA9" class="td_tablaAlumnos"><?php echo $filaA['edo_civil']?></td>
-                <td id="td_tA10" class="td_tablaAlumnos"><?php echo $filaA['tel_cel']?></td>
-                <td id="td_tA11" class="td_tablaAlumnos"><?php echo $filaA['email']?></td>
-                <td id="td_tA12" class="td_tablaAlumnos"><?php echo $filaA['fecha_ficha']?></td>
-                <td id="td_tA13" class="td_tablaAlumnos"><?php echo $filaA['carrera']?></td>
-                <td id="td_tA14" class="td_tablaAlumnos"><?php echo $filaA['generacion']?></td>
-            </tr>
-        <?php }?>
-    </table>
+    <div id="ventanaMedica" class="ventanasCoord">
+        <iframe class="listaCA" id="listaMedica" src="mostrar_Amedica.php" frameborder="0"></iframe>
+    </div>
+    
     <script src="js/usuario_coordinador.js"></script>
 </body>
 </html>

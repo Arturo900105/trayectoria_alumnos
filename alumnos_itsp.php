@@ -6,7 +6,6 @@ $letSession = $_SESSION["usututor"];
 $letCarrera = $_SESSION["carrera"];
 $letidTutor = $_SESSION["idTutor"];
 ?>
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -28,7 +27,27 @@ $letidTutor = $_SESSION["idTutor"];
     <script src="js/alerta_tutor.js"></script>
 </head>
 <body>
-    <h1>Alumnos de la carrera...</h1>
+    <?php
+    if ($letCarrera == "IGEM") {
+        $nomCarrera = "Ingeniería en Gestión Empresarial";
+    } elseif ($letCarrera == "IIND") {
+        $nomCarrera = "Ingeniería Industrial";
+    } elseif ($letCarrera == "ISIC") {
+        $nomCarrera = "Ingeniería en Sistemas Computacionales";
+    } elseif ($letCarrera == "IBIO") {
+        $nomCarrera = "Ingeniería Biomédica";
+    } elseif ($letCarrera == "IIAS") {
+        $nomCarrera = "Ingeniería en Innovación Agrícola Sustentable";
+    } elseif ($letCarrera == "IENR") {
+        $nomCarrera = "Ingeniería en Energías Renovables";
+    } elseif ($letCarrera == "IFOR") {
+        $nomCarrera = "Ingeniería Forestal";
+    } elseif ($letCarrera == "IAGR") {
+        $nomCarrera = "Ingeniería en Agronomía";
+    }
+    ?>
+
+    <h1>Alumnos de <?php echo $nomCarrera; ?></h1>
 
     <table id="alumnosITSP">
         <thead>
@@ -43,13 +62,15 @@ $letidTutor = $_SESSION["idTutor"];
         </thead>
         <tbody>
         <?php
-        $qAlumno = "SELECT * FROM alumno WHERE id_tutor = 0";
+        $qAlumno = "SELECT * FROM alumno WHERE carrera = '$letCarrera' AND id_tutor = 0";
         $rAlumno = mysqli_query($connect, $qAlumno);
         while ($fAlumno = $rAlumno->fetch_assoc()){
         ?>
             <tr>
                 <td class="td_alumnosITSP">
-                    <button class="agregar" onclick="agregarAlumno('<?php echo $fAlumno['num_ficha'] ?>', '<?php echo $letidTutor ?>');" >AGREGAR</button>
+                    <button class="agregar" onclick="agregarAlumno('<?php echo $fAlumno['num_ficha'] ?>', '<?php echo $letidTutor ?>');" title="Agregar <?php echo $fAlumno['num_ficha'] ?> a mi lista">
+                        AGREGAR
+                    </button>
                 </td>
                 <td class="td_alumnosITSP"><?php echo $fAlumno['num_ficha'] ?></td>
                 <td class="td_alumnosITSP"><?php echo $fAlumno['apellidos'] ?></td>

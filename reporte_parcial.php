@@ -7,7 +7,7 @@ require "php/BD_Connect.php";
     <meta charset="UTF-8">
     <title>REPORTE PARCIAL</title>
     <link rel="stylesheet" href="css/esitlo-reporteparcial.css">
-
+    <link rel="shortcut icon" href="iconos/icon3.png" type="image/x-icon">
     <script src="js/jquery_3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
@@ -272,6 +272,7 @@ require "php/BD_Connect.php";
             <input type="submit" value="GUARDAR" class="bot-generadores">
             <input type="button" value="IMPRIMIR" id="imprimirRP" class="bot-generadores">
             <input type="button" value="SALIR" class="bot-generadores" id="cerrarRParcial" onclick="history.back()">
+            <a id="id_rparcial_href" target="_blank" href=""></a>
         </div>
     </form>
     <br>

@@ -27,7 +27,7 @@
     $ge_PostTest = "INSERT INTO tabla_posttest VALUES ('$numControl','$semestre',
                                                        '$a_1','$a_2','$a_3','$a_4','$a_5','$a_6','$a_7',
                                                        '$d_1','$d_2','$d_3','$d_4','$d_5','$d_6','$d_7',
-                                                       '$ansiedad','$depresion','$suma_ad')";
+                                                       '$ansiedad','$depresion','$suma_ad',true)";
     $q_PostTest = mysqli_query($connect, $ge_PostTest);
 
     if (!$q_PostTest) {

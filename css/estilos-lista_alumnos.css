@@ -45,3 +45,73 @@ h1{
     cursor: pointer;
     background: #0fa703;
 }
+
+
+/*TABLA MIS ALUMNOS*/
+#tabla_misAlumnos, .th_misAlumnos, .td_misAlumnos{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+
+#tabla_misAlumnos{
+    margin: 1em auto;
+    width: auto;
+}
+
+.th_misAlumnos{
+    background: #f89b70;
+    font-size: 15px;
+    padding: 2px 5px;
+    height: 1.7em;
+}
+
+.th_misAlumnos:hover{
+    cursor: pointer;
+    background: #ff6800;
+}
+
+.td_misAlumnos{
+    padding: 2px 5px;
+    text-align: center;
+}
+
+
+/*BOTÓN PARA AGREGAR ALUMNOS A MI LISTA*/
+.agregar{
+    margin: 2px 0;
+    width: 9em;
+    height: 2em;
+}
+
+.agregar:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    background: #0fa703;
+}
+
+/*BOTÓN PARA ELIMINAR ALUMNOS DE MI LISTA*/
+.eliminar{
+    margin: 2px 0;
+    width: 9em;
+    height: 2em;
+}
+
+.eliminar:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    background: #f51d1d;
+}
+
+/*BOTONES DE LA FILA ALUMNOS*/
+.btn_alumno{
+    margin: 2px 0;
+    height: 2em;
+}
+
+.btn_alumno:hover{
+    cursor: pointer;
+    background: #0fa703;
+}
+

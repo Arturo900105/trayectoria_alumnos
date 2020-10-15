@@ -327,13 +327,11 @@ $(document).ready(function (){
                     }
                 })
                 formCappt[0].reset()
-                parent.$("#v_modal_cappt").hide()
             }
         })
     })
 
     $("#cerrarCAPPT").on("click", function (){
-        parent.$("#v_modal_cappt").hide()
         formCappt[0].reset()
     })
 

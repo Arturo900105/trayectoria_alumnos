@@ -8,13 +8,13 @@ require "BD_Connect.php";
 
     $anteHeredofamiliar = $_POST['ante_hered'];
     if (isset($anteHeredofamiliar)){
-        $anteHeredofamiliar = implode("\n", $anteHeredofamiliar);
+        $anteHeredofamiliar = implode(",\n", $anteHeredofamiliar);
     }
 
     $toxicomanias = $_POST['toxi'];
     $tipo_toxi = "";
     if (isset($_POST['toxicomanias'])){
-        $tipo_toxi = implode("\n", $_POST['toxicomanias']);
+        $tipo_toxi = implode(", ", $_POST['toxicomanias']);
     }
     $frecuencia = $_POST['tox_frecuencia'].".";
 
@@ -60,24 +60,20 @@ require "BD_Connect.php";
     $tel_obligatorio = $_POST['tel_obligatorio'];
     $tel_opcional = $_POST['tel_opcional'];
 
-    $tels_emergencia = $tel_obligatorio."\n".$tel_opcional;
-    if ($tel_opcional == ""){
-        $tels_emergencia = $tel_obligatorio;
-    }
 
     $medica = "INSERT INTO tabla_medica VALUES ('$fichaAlumno','$peso','$estatura','$tipo_sangre','$anteHeredofamiliar',
                                                 '$toxicomanias','$tipo_toxi','$frecuencia','$embarazo','$tiempo_embarazo',
                                                 '$act_fisica','$actividad','$tiempo','$alergia','$desc_alergias',
                                                 '$quir_cir','$transfusionales','$diabetes','$tipo_diabetes',
-                                                '$hipertencion','$convulsiones','$asma','$tels_emergencia')";
+                                                '$hipertencion','$convulsiones','$asma','$tel_obligatorio','$tel_opcional',true)";
     $q6 = mysqli_query($connect, $medica);
 
     if ($q6){
-        echo "HISTORIAL MÉDICO\nGUARDADO EXITOSAMENTE!!!";
+        echo "EXAMEN MÉDICO\nGUARDADO EXITOSAMENTE!!!";
     }
     else{
         printf("Errormessage: \n%s", mysqli_error($connect));
         http_response_code(404);
-        echo "\n\nNO SE PUDO GUARDAR\nEL HISTORIAL MÉDICO";
+        echo "\n\nNO SE PUDO GUARDAR\nEL EXAMEN MÉDICO";
     }
 

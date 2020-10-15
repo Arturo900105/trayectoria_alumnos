@@ -1,7 +1,8 @@
 <?php
     require "BD_Connect.php";
 
-    $alerta2 = "Sin acceso a la\nEscala Post-Test";
+    $postTest = $_POST['PostTest'];
+    $alerta = "Sin acceso a la\nEscala Post-Test";
     $acceso = $_POST['login_posttest'];
 
     $q_posttest = "SELECT cl.num_control, al.nombre, al.apellidos, al.carrera, al.generacion, psic.suma_ad
@@ -17,6 +18,18 @@
     if ($f_posttest > 0){
         http_response_code(200);
         while($fila_psicologia = $r_posttest->fetch_object()){
+            $postTest = 'escala_posttest.ph';
+
+            $q_pTest = "SELECT contestado FROM tabla_posttest WHERE num_control = '$acceso'";
+            $r_pTest = mysqli_query($connect, $q_pTest);
+            $f_pTest = $r_pTest->fetch_assoc();
+            if (!empty($f_pTest)){
+                if ($f_pTest['contestado'] == 1){
+                    http_response_code(404);
+                    echo "Usted ya realizó la\nEscala Post-Test";
+                    return;
+                }
+            }
             session_name("POST-TEST");
             session_start();
             $_SESSION["ptestAlumno"] = $acceso;
@@ -25,6 +38,6 @@
         }
     } else{
         http_response_code(404);
-        echo ($alerta2);
+        echo ($alerta);
     }
 ?>

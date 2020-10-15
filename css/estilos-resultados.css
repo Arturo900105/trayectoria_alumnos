@@ -1,0 +1,220 @@
+body{
+    font-family: Arial;
+}
+
+h1{
+    margin: 20px;
+    text-align: center;
+}
+
+h2{
+    margin: 0;
+}
+
+#tabla_datosAlumno{
+    margin: 0 auto;
+    padding: 1em;
+    width: 50em;
+    border-radius: 20px;
+    border: 2px solid #000000;
+}
+
+.tablas_ppm{
+    margin: 0 auto;
+    padding: 1em;
+    width: 60em;
+    border-radius: 20px;
+    border: 2px solid #000000;
+}
+
+
+/*TABLA DE RESULTADOS, PERSONALES*/
+#resultado_personales, .rth_personales, .rtd_personales{
+    margin-left: 5em;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_personales, .rtd_personales{
+    padding: 5px;
+    text-align: left;
+}
+
+
+/*TABLA DE RESULTADOS, DOMICILIO*/
+#resultado_domicilio, .rth_domicilio, .rtd_domicilio{
+    margin-left: 5em;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_domicilio, .rtd_domicilio{
+    padding: 5px;
+    text-align: left;
+}
+
+
+/*TABLA DE RESULTADOS, PROCEDENCIA*/
+#resultado_procedencia, .rth_procedencia, .rtd_procedencia{
+    margin-left: 5em;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_procedencia, .rtd_procedencia{
+    padding: 5px;
+    text-align: left;
+}
+
+#boton-datosAlumno{
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+#cerrar_rdatosAlumno{
+    background: #969b99;
+    font-family: "Arial Black";
+    color: black;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    height: 3em;
+    width: 10em;
+}
+#cerrar_rdatosAlumno:hover{
+    font-family: "Arial Black";
+    color: white;
+    background: red;
+}
+
+
+
+
+/*TABLA DE RESULTADOS, PEDAGOGÍA*/
+#resultados_pedagogia, .rth_pedagogia, .rtd_pedagogia{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_pedagogia{
+    text-align: left;
+    width: 30em;
+    padding: 5px;
+}
+.rtd_pedagogia{
+    height: 1.5em;
+    width: 25em;
+    padding: 5px;
+}
+#boton-pedagogia{
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+#cerrar_rpedagogia{
+    background: #969b99;
+    font-family: "Arial Black";
+    color: black;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    height: 3em;
+    width: 10em;
+}
+#cerrar_rpedagogia:hover{
+    font-family: "Arial Black";
+    color: white;
+    background: red;
+}
+
+/*TABLA DE RESULTADOS, PSICOLOGÍA*/
+#resultados_psicologia, .rth_psicologia, .rtd_psicologia{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_psicologia{
+    text-align: left;
+    width: 22em;
+    padding: 5px;
+}
+.rtd_psicologia{
+    height: 1.5em;
+    width: 20em;
+    padding: 5px;
+}
+#boton-psicologia{
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+#cerrar_rpsicologia{
+    background: #969b99;
+    font-family: "Arial Black";
+    color: black;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    height: 3em;
+    width: 10em;
+}
+#cerrar_rpsicologia:hover{
+    font-family: "Arial Black";
+    color: white;
+    background: red;
+}
+
+/*TABLA DE RESULTADOS, MÉDICO*/
+#resultado_medico, .rth_medico, .rtd_medico{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_medico{
+    text-align: left;
+    width: 16em;
+    padding: 5px;
+}
+.rtd_medico{
+    height: 1.5em;
+    width: 15em;
+    padding: 5px;
+}
+
+#boton-medico{
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+#cerrar_rmedico{
+    background: #969b99;
+    font-family: "Arial Black";
+    color: black;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    height: 3em;
+    width: 10em;
+}
+#cerrar_rmedico:hover{
+    font-family: "Arial Black";
+    color: white;
+    background: red;
+}

@@ -5,7 +5,7 @@ let iconoT = "", areade = "", titulo = "", imagenCarpeta;
 $(document).ready(function (){
     imagenCarpeta = $("#imgTut")
 
-    $("#nombreTut").text((mostrarT.nombre + " " + mostrarT.apellido).toUpperCase())
+    $("#nombreTut").text((mostrarT.nombre_tut + " " + mostrarT.apellido_tut).toUpperCase())
 
     switch (mostrarT.area_de) {
         case 'IGEM': iconoT = "iconos/icon_igem.png";
@@ -33,11 +33,11 @@ $(document).ready(function (){
                      titulo = "Ingeniería en Energías Renovables";
             break;
         case 'IFOR': iconoT = "img/icon_ifor.png";
-                     areade = "img/folder_ifor.png";
+                     areade = "img/folder_ifor2.png";
                      titulo = "Ingeniería Forestal";
             break;
         case 'IAGR': iconoT = "img/icon_iagr.png";
-                     areade = "img/folder_iagr.png";
+                     areade = "img/folder_iagr2.png";
                      titulo = "Ingeniería en Agronomía";
             break;
     }
@@ -54,8 +54,8 @@ $(document).ready(function (){
 
     $("#dato_carrera").text((titulo.toUpperCase()))
 
-    $("#usuTut_nombre").text(mostrarT.nombre)
-    $("#usuTut_apellidos").text(mostrarT.apellido)
+    $("#usuTut_nombre").text(mostrarT.nombre_tut)
+    $("#usuTut_apellidos").text(mostrarT.apellido_tut)
 
     if (mostrarT.sexo === "F") {
         $("#usuTut_sexo").text("Femenino")

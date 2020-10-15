@@ -347,7 +347,7 @@ function setLogin(e){
         $.ajax({
             url: "php/login-alumno.php",
             type: 'POST',
-            data: $("#contenido_area").serialize(),
+            data: $("#contenido_area").serialize()+'&Examen='+paginaAbrir,
             success: function (resultado) {
                 let Cookies2 = Cookies.noConflict();
                 Cookies2.set('usuAlumno', resultado);
@@ -404,7 +404,7 @@ function setPostTest(e) {
         $.ajax({
             url: "php/login-posttest.php",
             type: 'POST',
-            data: $("#contenido_posttest").serialize(),
+            data: $("#contenido_posttest").serialize()+'&PostTest='+paginaPostTest,
             success: function (resultado) {
                 let CookiesPostTest = Cookies.noConflict();
                 CookiesPostTest.set('Usu-PostTest', resultado);
@@ -421,5 +421,4 @@ function setPostTest(e) {
             }
         })
     }
-
 }

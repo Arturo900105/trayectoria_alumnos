@@ -67,7 +67,6 @@ if ($letSessionA == null || $letSessionA == "") {
                    minlength="10"
                    maxlength="10"
                    placeholder="Obligatorio"
-                   onkeypress="solo_tel(this)"
                    value="">
         </label>
         <label><b>ó</b>
@@ -77,7 +76,6 @@ if ($letSessionA == null || $letSessionA == "") {
                    minlength="0"
                    maxlength="10"
                    placeholder="Opcional"
-                   onkeypress="solo_tel(this)"
                    value="">
         </label>
         <br><br><br>

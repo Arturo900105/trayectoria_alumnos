@@ -1,6 +1,8 @@
 <?php
     require "BD_Connect.php";
 
+    $numFicha = $_POST['num_fichaAlumno'];
+
     $numControl = $_POST['num_control'];
     $trabaja = $_POST['trabaja'];
     $opcionITSP = $_POST['opciones'];
@@ -52,7 +54,7 @@
                                                          '$n_curso1','$r_curso1','$n_curso2','$r_curso2','$n_curso3','$r_curso3')";
         $q_CAPPT = mysqli_query($connect, $g_CAPPT);
 
-        echo "CARACTERIZACIÓN POR PARTE DEL TUTOR\nGUARDADA EXITOSAMENTE";
+        echo "CARACTERIZACIÓN\nPOR PARTE DEL TUTOR\nGUARDADA EXITOSAMENTE";
 
     } else {
         //printf("Errormessage: \n%s", mysqli_error($conectar));

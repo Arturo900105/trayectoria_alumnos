@@ -40,6 +40,7 @@
     $filaRParcial = $resulParcial -> fetch_assoc();
 
     $pdf = new PDF("P", "cm","letter");
+    $pdf->SetTitle('Reporte Parcial '.$parcialFolio,isUTF8);
     $pdf->AddPage();
     $pdf->SetLeftMargin(2);
     $pdf->SetRightMargin(2);
@@ -211,6 +212,6 @@
     Coordinadora(or) Institucional de Tutoría Académica"),"LR","C",0);
     $pdf->Cell(9, 0.6, utf8_decode(""), "LBR", 0,"C");
     $pdf->Cell(0, 0.6, utf8_decode(""), "LBR", 0,"C");
-    $pdf->Output();
+    $pdf->Output('','Reporte Parcial '.$parcialFolio.'.pdf');
 
     ?>

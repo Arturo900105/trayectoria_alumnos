@@ -62,7 +62,7 @@ require "fecha_hora.php";
 
     $tipo_bach = $_POST['tipo_area'];
     if (isset($tipo_bach)){
-        $tipo_bach = "─> ".implode(".\n─> ", $tipo_bach).".";
+        $tipo_bach = implode(", ", $tipo_bach).".";
     }
 
     $bach = $_POST['preparatoria'];
@@ -73,7 +73,7 @@ require "fecha_hora.php";
     $nom_bach = $_POST['nom_prepa'];
     $prom_bach = $_POST['prom_prepa'];
 
-    $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$fechaHoy','$apellidos','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_ficha','$carrera','$generacion',0)";
+    $guardar_alumno = "INSERT INTO alumno VALUES ('$ficha','$fechaHoy','$apellidos','$nombre','$fecha_nacimiento','$sexo','$indigena','$edad','$edo_civil','$tel_cel','$email','$fecha_ficha','$carrera','$generacion',false)";
     $query = mysqli_query($connect, $guardar_alumno);
 
     if ($query) {

@@ -1024,7 +1024,9 @@ $(document).ready(function () {
                             title: (respuesta),
                             showConfirmButton: false,
                             timer: 1500
-                        })
+                        }).then(
+                            setTimeout("location.href ='php/terminar_alumno.php'",2000)
+                        )
                     },
                     error: function (error) {
                         swal.fire({
@@ -1036,7 +1038,9 @@ $(document).ready(function () {
                         })
                     }
                 });
-                form_pedagogia[0].reset();
+                form_pedagogia[0].reset()
+                Cookies2.remove('ALUMNO')
+                Cookies2.remove('usuAlumno')
             }
         })
     })

@@ -191,13 +191,13 @@ $(document).ready(function () {
 
         Swal.fire({
             icon: "question",
-            title: "¿Guardar Canalización?",
+            title: "¿Imprimir Canalización?",
             text: "Después, no podrá realizar cambios en el formato",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#19980b',
             cancelButtonColor: '#910018',
-            confirmButtonText: 'GUARDAR',
+            confirmButtonText: 'IMPRIMIR',
             cancelButtonText: 'CANCELAR',
             backdrop: "rgba(35,220,0,0.7)"
 
@@ -210,15 +210,19 @@ $(document).ready(function () {
                     success: function (folio) {
                         Cookies3 = Cookies.noConflict();
                         Cookies3.set('numFolio', folio);
-
                         swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: "CANALIZACIÓN GUARDADA EXITOSAMENTE!!!",
+                            title: "CANALIZACIÓN LISTA PARA IMPRIMIR",
                             showConfirmButton: false,
                             timer: 1500
                         }).then(()=>{
-                            document.location = 'documentos/canalizacion.php?folio='+ folio;
+                            history.back();
+                            let id_canalizacion = $("#id_canali_href")
+                            id_canalizacion.attr("href", 'documentos/canalizacion.php?folio='+ folio);
+                            id_canalizacion[0].click();
+                            //console.log('documentos/canalizacion.php?folio='+ folio)
+                            //document.location = 'documentos/canalizacion.php?folio='+ folio;
                         });
                     },
                     error: function (error) {
@@ -372,7 +376,7 @@ $(document).ready(function () {
                         swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: "CANALIZACIÓN GUARDADA EXITOSAMENTE!!!",
+                            title: "CANALIZACIÓN GUARDADA\nEXITOSAMENTE!!!",
                             showConfirmButton: false,
                             timer: 1500
                         }).then(()=>{

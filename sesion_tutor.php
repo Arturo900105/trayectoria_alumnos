@@ -90,13 +90,13 @@ if ($letSession == null || $letSession == "") {
         </li>
         <li><a>CANALIZACIONES<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuTutor">
-                <li><a>CANALIZACIONES REALIZADAS</a></li>
+                <li id="lista_canalizacion"><a>CANALIZACIONES REALIZADAS</a></li>
             </ul>
         </li>
         <li><a>REPORTES<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuTutor">
-                <li><a>PARCIALES REALIZADOS</a></li>
-                <li><a>FINALES REALIZADOS</a></li>
+                <li id="lista_rparcial"><a>PARCIALES REALIZADOS</a></li>
+                <li id="lista_rfinal"><a>FINALES REALIZADOS</a></li>
             </ul>
         </li>
         <li id="cerrarST"><a href="php/terminar_tutor.php">CERRAR SESIÓN</a></li>
@@ -111,16 +111,13 @@ if ($letSession == null || $letSession == "") {
     </p>
 
 
-
     <div class="ventana_alumnos">
         <iframe id="lista_alumnosITSP" class="lista_alumnosITSP" src="alumnos_itsp.php"></iframe>
     </div>
 
-
     <div class="mis_alumnos">
         <iframe id="lista_misAlumnos" class="lista_alumnosITSP" src="mis_alumnos.php"></iframe>
     </div>
-
 
 
     <table id="tabla_usutUT">
@@ -163,7 +160,6 @@ if ($letSession == null || $letSession == "") {
 
     <div class="contentTutor">
         <p>
-            <a href="javascript:abrirCAPPT()">Caracterización por parte del Tutor</a><br>
             <a href="javascript:abrirT1semeste()">Trayectoria 1ro Semestre</a><br>
             <a href="javascript:abrirT2semeste()">Trayectoria 2do Semestre</a><br>
             <a href="javascript:abrirT3semeste()">Trayectoria 3ro Semestre</a><br>
@@ -175,10 +171,6 @@ if ($letSession == null || $letSession == "") {
             <a href="javascript:abrirT9semeste()">Trayectoria 9no Semestre</a><br>
             <a href="javascript:abrirTitulacion()">Proceso de Titulación</a>
         </p>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_cappt">
-        <iframe class="iframe_trayectoria" src="t_cappt.html"></iframe>
     </div>
 
     <div class="vmodal_trayectorias" id="v_modal_t1">
@@ -222,6 +214,20 @@ if ($letSession == null || $letSession == "") {
             <iframe id="iframe_titulacion" src="t_titulacion.html"></iframe>
         </div>
     </div>
+
+
+    <div id="div_canalizaciones">
+        <iframe id="ventana_canalizacion" src="imprimir_canalizacion.php" frameborder="0"></iframe>
+    </div>
+
+    <div id="div_rparciales">
+        <iframe id="ventana_rparcial" src="imprimir_rparcial.php" frameborder="0"></iframe>
+    </div>
+
+    <div id="div_rfinales">
+        <iframe id="ventana_rfinal" src="imprimir_rfinal.php" frameborder="0"></iframe>
+    </div>
+
 
     <script src="js/usuario_tutor.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>

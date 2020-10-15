@@ -394,11 +394,15 @@ $(document).ready(function () {
                         swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: "REPORTE PARCIAL LISTO PARA IMPRIMIR!!!",
+                            title: "REPORTE PARCIAL\nLISTO PARA IMPRIMIR",
                             showConfirmButton: false,
                             timer: 1500
                         }).then(()=>{
-                            document.location = 'documentos/reporte_parcial.php?id_rparcial='+ id_rparcial;
+                            history.back();
+                            let id_reporteParcial = $("#id_rparcial_href")
+                            id_reporteParcial.attr("href", 'documentos/reporte_parcial.php?id_rparcial='+id_rparcial);
+                            id_reporteParcial[0].click();
+                            //document.location = 'documentos/reporte_parcial.php?id_rparcial='+id_rparcial;
                         })
                     },
                     error: function (error) {

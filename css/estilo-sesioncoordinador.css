@@ -112,6 +112,63 @@ li{
     text-align: justify;
 }
 
+/*DIVS CANALIZACIONES*/
+#div_canalizaciones{
+    margin: 1em 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: none;
+}
+#ventana_canalizacion{
+    width: 95%;
+    height: 40em;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+
+/*DIVS REPORTES PARCIALES*/
+#div_rparciales{
+    margin: 1em 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: none;
+}
+#ventana_rparcial{
+    width: 95%;
+    height: 40em;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+
+/*DIVS REPORTES FINALES*/
+#div_rfinales{
+    margin: 1em 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: none;
+}
+#ventana_rfinal{
+    width: 95%;
+    height: 40em;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+
 /*TABLA USUARIO COORDINADOR*/
 #tabla_usuCoord, .th_tablausuCoord, .td_tablausuCoord{
     border: 1px solid #000000;
@@ -209,36 +266,38 @@ li{
 }
 
 /*TABLA DE ALUMNOS DEL ITSP*/
-#tabla_alumnos, .th_tablaAlumnos, .td_tablaAlumnos{
-    border: 1px solid #000000;
-    border-collapse: collapse;
-    font-size: 15px;
-    color: #000000;
+#ventanaAlumnos{
+    margin: 1em 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: none;
+}
+#listaAlumnosITSP{
+    width: 95%;
+    height: 40em;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #000000;
 }
 
-#tabla_alumnos{
-    margin: 1em auto;
-    width: auto;
+
+/*TABLAS DE CARACTERIZACIÓN ALUMNO*/
+.ventanasCoord{
+    margin: 1em 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: none;
 }
-
-#thAlumnos{
-    background: #ff5200;
-    color: #FFFFFF;
-    height: 2em;
-    text-align: center;
-}
-
-.th_tablaAlumnos{
-    font-size: 15px;
-    padding: 2px 5px;
-
-}
-
-.td_tablaAlumnos{
-    padding: 2px 5px;
-    text-align: center;
-}
-
-#td_tA2, #td_tA3, #td_tA4, #td_tA11{
-    text-align: left;
+.listaCA{
+    width: 95%;
+    height: 40em;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #000000;
 }

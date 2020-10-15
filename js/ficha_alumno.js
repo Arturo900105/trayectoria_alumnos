@@ -7,7 +7,7 @@ $(document).ready(function(){
     //comprobamos si se pulsa una tecla
     $("#comprobar").on("click",function(e){
         //obtenemos el texto introducido en el campo
-        consulta_ficha = $("#no_ficha");
+        consulta_ficha = $("#no_ficha")
 
         if (consulta_ficha.val().trim() === ""){
             Swal.fire({
@@ -32,7 +32,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "POST",
                 url: "php/comprobar_ficha.php",
-                data: "ficha="+consulta_ficha,
+                data: "ficha="+consulta_ficha.val(),
                 success: function(respuesta){
                     swal.fire({
                         title: (respuesta),
@@ -53,6 +53,7 @@ $(document).ready(function(){
                 }
             })
         }
+
     });
 
 });

@@ -356,8 +356,8 @@ $(document).ready(function () {
             showCancelButton: true,
             confirmButtonColor: '#19980b',
             cancelButtonColor: '#910018',
-            confirmButtonText: 'GUARDAR',
-            cancelButtonText: 'IMPRIMIR',
+            confirmButtonText: 'IMPRIMIR',
+            cancelButtonText: 'CANCELAR',
             width: "40%",
             backdrop: "rgba(0,84,150, 0.5)",
 
@@ -373,11 +373,15 @@ $(document).ready(function () {
                         swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: "REPORTE FINAL LISTO PARA IMPRIMIR!!!",
+                            title: "REPORTE FINAL\nLISTO PARA IMPRIMIR",
                             showConfirmButton: false,
                             timer: 1500
                         }).then(()=>{
-                            document.location = 'documentos/reporte_final.php?id_rfinal='+ id_rfinal;
+                            history.back();
+                            let id_reporteFinal = $("#id_rfinal_href")
+                            id_reporteFinal.attr("href", 'documentos/reporte_final.php?id_rfinal='+ id_rfinal);
+                            id_reporteFinal[0].click();
+                            //document.location = 'documentos/reporte_final.php?id_rfinal='+ id_rfinal;
                         });
                     },
                     error: function (error) {

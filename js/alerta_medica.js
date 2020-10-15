@@ -1,22 +1,4 @@
-let form_medica;
-
-function solo_tel(evt) {
-    let keynum = evt.which;
-    if (keynum>47 && keynum<58){
-        return true;
-    } else {
-        Swal.fire({
-            title: 'Ingresa solo números sin:\nEspacios, Parentecis, ni Guiones',
-            timer: 2500,
-            width: "40%",
-            showConfirmButton: false,
-            icon:"warning",
-            backdrop: "rgba(0,0,0,0.0)",
-            background:"#260101"
-        });
-        return false;
-    }
-}
+let form_medica, telefono;
 
 function filterFloat(evt,input) {
     let key = window.Event ? evt.which : evt.keyCode;
@@ -56,12 +38,32 @@ function filter(__val__) {
 
 $(document).ready(function () {
     form_medica = $("#medica_alumno")
+    telefono = $('.tel_em')
     form_medica[0].reset()
     $("#otro_hered, .label_toxic, .toxicomanias, .embarazo, .ejercicio, .alergias, .diab_tipo, .tipos").hide()
 
-    $('.tel_em').on('input', function () {
+    telefono.on('input', function () {
         this.value = this.value.replace(/[^0-9]/g,'');
-    });
+        if (!this.value.replace(/[^0-9]/g,'')){
+            Swal.fire({
+                title: 'Ingresa solo números sin:\nEspacios, Parentecis, ni Guiones',
+                timer: 2500,
+                width: "40%",
+                showConfirmButton: false,
+                icon:"warning",
+                backdrop: "rgba(0,0,0,0.0)",
+                background:"#260101"
+            });
+            return false;
+        }
+    })
+
+    $('[name=tel_obligatorio]').on("click", function (){
+        $('[name=tel_obligatorio]').val("")
+    })
+    $('[name=tel_opcional]').on("click", function (){
+        $('[name=tel_opcional]').val("")
+    })
 
     $('#otro_hered').on('input', function (e) {
         if (!/^[ a-záéíóúüñ]*$/i.test(this.value)) {
@@ -375,7 +377,7 @@ $(document).ready(function () {
         }
 
         Swal.fire({
-            title: "¿Guardar Historial Clínico?",
+            title: "¿Guardar Examen Médico?",
             text: "Descpués, ya no podrá hacer cambios en el Examen Médico",
             type: 'warning',
             icon: "question",
@@ -400,7 +402,9 @@ $(document).ready(function () {
                             title: (respuesta),
                             showConfirmButton: false,
                             timer: 1500
-                        })
+                        }).then(
+                            setTimeout("location.href ='php/terminar_alumno.php'",2000)
+                        )
                     },
                     error: function (error) {
                         swal.fire({
@@ -412,8 +416,9 @@ $(document).ready(function () {
                         })
                     }
                 });
-                form_medica[0].reset();
-                $("#otro_hered, .label_toxic, .toxicomanias, .embarazo, .ejercicio, .alergias, .diab_tipo, .tipos").hide()
+                form_medica[0].reset()
+                Cookies2.remove('ALUMNO')
+                Cookies2.remove('usuAlumno')
             }
         })
     })

@@ -1,0 +1,144 @@
+*{
+    font-family: Arial;
+}
+
+h1{
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+/*TABLA CANALIZACIÓN*/
+#tabla_canalizacion, .rth_canalizacion, .rtd_canalizacion, .rtd_canalizacion2{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_canalizacion{
+    font-size: 14px;
+    height: 2.2em;
+    padding: 0 5px;
+    background: #36db16;
+}
+.rth_canalizacion2{
+    font-size: 14px;
+    width: 9em;
+    color: white;
+    background: darkred;
+}
+.rth_canalizacion:hover{
+    cursor: pointer;
+    color: white;
+    background: #757575;
+}
+.rtd_canalizacion{
+    font-size: 12px;
+    padding: 6px;
+}
+.rtd_canalizacion2{
+    text-align: center;
+}
+#canali_folio, #canali_control, #canali_semestre{
+    text-align: center;
+}
+#imprimir_canalizacion{
+    margin: 2px 0;
+    background: #a9acac;
+    border: none;
+    height: 2em;
+    width: 7em;
+}
+#imprimir_canalizacion:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    color: white;
+    background: darkred;
+}
+
+
+/*TABLA REPORTES PARCIALES*/
+#tabla_rparcial, .rth_rparcial, .rtd_rparcial{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_rparcial{
+    height: 2.2em;
+    padding: 0 5px;
+    background: #ff7c10;
+}
+.rth_rparcial2{
+    color: white;
+    background: darkred;
+}
+.rth_rparcial:hover{
+    cursor: pointer;
+    color: white;
+    background: #757575;
+}
+.rtd_rparcial{
+    padding: 6px;
+    text-align: center;
+}
+#rparcial_fecha, #rparcial_periodo, #rparcial_tutor{
+    text-align: left;
+}
+#imprimir_rparcial{
+    background: #a9acac;
+    border: none;
+    height: 2em;
+    width: 7em;
+}
+#imprimir_rparcial:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    color: white;
+    background: darkred;
+}
+
+
+/*TABLA REPORTES FINALES*/
+#tabla_rfinal, .rth_rfinal, .rtd_rfinal{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.rth_rfinal{
+    height: 2.2em;
+    padding: 0 5px;
+    background: #1144bf;
+    color: white;
+}
+.rth_rfinal2{
+    background: darkred;
+    color: white;
+}
+.rth_rfinal:hover{
+    cursor: pointer;
+    background: #757575;
+}
+.rtd_rfinal{
+    padding: 6px;
+    text-align: center;
+}
+#rfinal_periodo, #rfinal_tutor, #rfinal_fecha{
+    text-align: left;
+}
+#imprimir_rfinal{
+    background: #a9acac;
+    border: none;
+    height: 2em;
+    width: 7em;
+}
+#imprimir_rfinal:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    color: white;
+    background: darkred;
+}

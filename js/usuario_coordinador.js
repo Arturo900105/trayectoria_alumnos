@@ -35,17 +35,17 @@ $(document).ready(function (){
             break;
         case 'IENR': iconoC = "iconos/icon_ienr.png";
                      coordDe = "Energías Renovables";
-                     coord_de = "img/folder_ienr.png";
+                     coord_de = "img/folder_ienr2.png";
                      tituloC = "Ingeniería en Energías Renovables";
             break;
         case 'IFOR': iconoC = "img/icon_ifor.png";
                      coordDe = "Forestal";
-                     coord_de = "img/folder_ifor.png";
+                     coord_de = "img/folder_ifor2.png";
                      tituloC = "Ingeniería Forestal";
             break;
         case 'IAGR': iconoC = "img/icon_iagr.png";
                      coordDe = "Agronomía";
-                     coord_de = "img/folder_iagr.png";
+                     coord_de = "img/folder_iagr2.png";
                      tituloC = "Ingeniería en Agronomía";
             break;
     }

@@ -8,6 +8,7 @@ require "fecha_hora.php";
 
     $fecha = $_POST["fecha_hoy"];
     $nomAlumno = $_POST["nom_alumno"];
+    $fecha_corta = date('d-m-Y');
 
     $carrera = $_POST["carrera"];
     $carreraNombre = '';
@@ -54,7 +55,7 @@ require "fecha_hora.php";
         $carreraNombre = 'iagr';
     }
 
-    $consultaFolio = "SELECT * FROM canalizacion WHERE $carreraNombre = 'X' and YEAR(STR_TO_DATE(fecha,'%d-%m-%Y')) = YEAR(NOW())";
+    $consultaFolio = "SELECT * FROM canalizacion WHERE $carreraNombre = 'X' and YEAR(STR_TO_DATE(fecha_corta,'%d-%m-%Y')) = YEAR(NOW())";
     $resulFolio = mysqli_query($connect, $consultaFolio);
     $filaF = mysqli_num_rows($resulFolio);
 
@@ -93,7 +94,7 @@ require "fecha_hora.php";
                                                         '$igem','$iind','$isic','$ibio','$iias','$ienr','$ifor','$iagr',
                                                         '$numControl','$semestre','$cicloEscolar',
                                                         '$psicologica','$pedagogica','$ases_acad','$medica','$otraCanalizacion',
-                                                        '$descProblematica','$firmaTP','$firmaCTPE','$firmaEAC')";
+                                                        '$descProblematica','$firmaTP','$firmaCTPE','$firmaEAC','$fecha_corta')";
     $qtcanali = mysqli_query($connect, $t_canalizacion);
 
     if (!$qtcanali){

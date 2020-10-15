@@ -1,0 +1,161 @@
+*{
+    font-family: Arial;
+}
+
+h1{
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+/*TABLA ALUMNOS ITSP*/
+#mostrarAlumnos, .mth_mostrarAlumnos, .mtd_mostrarAlumnos{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.mth_mostrarAlumnos{
+    padding: 5px;
+    background: #f89b70;
+}
+.mth_mostrarAlumnos:hover{
+    cursor: pointer;
+    background: #ff6800;
+}
+.mtd_mostrarAlumnos{
+    text-align: center;
+    padding: 5px;
+}
+
+
+/*TABLA PEDAGOGÍA ALUMNOS*/
+#mostrarPedagogia, .mth_mostrarPedagogia, .mtd_mostrarPedagogia{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.mth_mostrarPedagogia{
+    background: #f89b70;
+    padding: 5px;
+}
+.mth_mostrarPedagogia:hover{
+    cursor: pointer;
+    background: darkorange;
+}
+.mtd_mostrarPedagogia{
+    text-align: center;
+    padding: 5px;
+}
+
+/*TABLA PSICOLOGÍA ALUMNOS*/
+#mostrarPsicologia, .mth_mostrarPsicologia, .mtd_mostrarPsicologia{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.mth_mostrarPsicologia{
+    background: #f89b70;
+    padding: 5px;
+}
+.mth_mostrarPsicologia:hover{
+    cursor: pointer;
+    background: darkorange;
+}
+.mtd_mostrarPsicologia{
+    text-align: center;
+    padding: 5px;
+}
+
+/*TABLA MEDICA ALUMNOS*/
+#mostrarMedica, .mth_mostrarMedica, .mtd_mostrarMedica{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.mth_mostrarMedica{
+    background: #f89b70;
+    padding: 5px;
+}
+.mth_mostrarMedica:hover{
+    cursor: pointer;
+    background: darkorange;
+}
+.mtd_mostrarMedica{
+    text-align: center;
+    padding: 5px;
+}
+#mostRespMedico{
+    margin: 2px 0;
+    background: #969b99;
+    border-radius: 10px;
+    border: none;
+    width: 9em;
+    height: 2em;
+}
+#mostRespMedico:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    background: #0fa703;
+}
+
+/*TABLA MEDICA ALUMNOS 2*/
+.form_mostrarMedica2{
+    margin: 0 auto;
+    padding: 1em;
+    width: 60em;
+    border-radius: 20px;
+    border: 2px solid #000000;
+}
+
+#mostrarMedica2, .mth_mostrarMedica2, .mtd_mostrarMedica2{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.mth_mostrarMedica2{
+    text-align: left;
+    width: 16em;
+    padding: 5px;
+}
+.mtd_mostrarMedica2{
+    height: 1.5em;
+    width: 15em;
+    padding: 5px;
+}
+
+#boton-Medica2{
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+#cerrar_Medica2{
+    background: #969b99;
+    font-family: "Arial Black";
+    color: black;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    height: 3em;
+    width: 10em;
+}
+#cerrar_Medica2:hover{
+    font-family: "Arial Black";
+    color: white;
+    background: red;
+}
+
+
+
+/*TABLA POST-TEST ALUMNOS*/
