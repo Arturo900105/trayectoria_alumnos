@@ -81,7 +81,7 @@ $numFicha = $_GET["ficha_alumno"];
                 <td class="rtd_psicologia"><?php echo $ftPsicologia['preguntas_bloque1'] ?></td>
             </tr>
             <tr>
-                <th class="rth_psicologia">Total del Bloque1:</th>
+                <th class="rth_psicologia">Total del Bloque 1:</th>
                 <td class="rtd_psicologia"><?php echo $ftPsicologia['bloque1'] ?></td>
             </tr>
             <tr>
@@ -89,7 +89,7 @@ $numFicha = $_GET["ficha_alumno"];
                 <td class="rtd_psicologia"><?php echo $ftPsicologia['preguntas_bloque2'] ?></td>
             </tr>
             <tr>
-                <th class="rth_psicologia">Total del Bloque2:</th>
+                <th class="rth_psicologia">Total del Bloque 2:</th>
                 <td class="rtd_psicologia"><?php echo $ftPsicologia['bloque2'] ?></td>
             </tr>
             <tr>
@@ -97,7 +97,7 @@ $numFicha = $_GET["ficha_alumno"];
                 <td class="rtd_psicologia"><?php echo $ftPsicologia['preguntas_bloque3'] ?></td>
             </tr>
             <tr>
-                <th class="rth_psicologia">Total del Bloque3:</th>
+                <th class="rth_psicologia">Total del Bloque 3:</th>
                 <td class="rtd_psicologia"><?php echo $ftPsicologia['bloque3'] ?></td>
             </tr>
             <tr>
@@ -105,7 +105,7 @@ $numFicha = $_GET["ficha_alumno"];
                 <td class="rtd_psicologia"><?php echo $ftPsicologia['preguntas_bloque4'] ?></td>
             </tr>
             <tr>
-                <th class="rth_psicologia">Total del Bloque4:</th>
+                <th class="rth_psicologia">Total del Bloque 4:</th>
                 <td class="rtd_psicologia"><?php echo $ftPsicologia['bloque4'] ?></td>
             </tr>
         </table>

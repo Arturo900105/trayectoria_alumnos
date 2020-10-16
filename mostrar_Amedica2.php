@@ -17,7 +17,8 @@ $numFicha = $_GET["ficha_alumno"];
     $qMedica = "SELECT me.*,al.nombre,al.apellidos
                 FROM tabla_medica me
                 JOIN alumno al
-                ON me.num_ficha = al.num_ficha";
+                ON me.num_ficha = al.num_ficha
+                WHERE me.num_ficha = '$numFicha'";
     $rMedica = mysqli_query($connect, $qMedica);
     while ($fMedica = $rMedica->fetch_assoc()){
     ?>

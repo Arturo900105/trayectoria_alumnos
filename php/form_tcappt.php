@@ -20,7 +20,7 @@
 
     $e_Aprendizaje = $_POST['aprendizaje'];
     if (isset($e_Aprendizaje)){
-        $tipo_bach = implode(", ", $e_Aprendizaje);
+        $e_Aprendizaje = implode(", ", $e_Aprendizaje).".";
     }
 
     $he_Organizacion = $_POST['habitosOE'];
@@ -29,7 +29,7 @@
 
     $o_Vocacional = $_POST['bloque'];
     if (isset($o_Vocacional)){
-        $tipo_bach = implode(", ", $o_Vocacional);
+        $o_Vocacional = "Bloque: ".implode(", ", $o_Vocacional).".";
     }
 
     $e_Ortografica = $_POST['eval_ort'];

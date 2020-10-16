@@ -4,6 +4,7 @@ require "fecha_hora.php";
 
     $fechaHoy;
     $horaHoy;
+    $nomina = $_POST['nominaTutor'];
     $nombre = $_POST['nombre_tutor'];
     $apellido = $_POST['apepat_tutor']." ".$_POST['apemat_tutor'];
     $tutoria = $_POST['tipo_tutoria'];
@@ -14,8 +15,10 @@ require "fecha_hora.php";
     $passnormal = $_POST['pass_tutor'];
     //$password = password_hash($passnormal, PASSWORD_BCRYPT);
 
-    $t_tutor = "INSERT INTO tutor (nombre_tut,apellido_tut,sexo,tipo_tutoria,area_de,email,fecha_registro,hora_registro,usuario,pass_tutor)
-                VALUES ('$nombre','$apellido','$sexoTut','$tutoria','$area','$correo','$fechaHoy','$horaHoy','$usuario','$passnormal')";
+    $t_tutor = "INSERT INTO tutor VALUES ('$nomina','$nombre','$apellido','$sexoTut',
+                                          '$tutoria','$area','$correo',
+                                          '$fechaHoy','$horaHoy',
+                                          '$usuario','$passnormal')";
     $qt = mysqli_query($connect, $t_tutor);
 
     if (!$qt){

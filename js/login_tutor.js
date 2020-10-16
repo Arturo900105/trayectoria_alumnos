@@ -1,20 +1,68 @@
 let correo, area, tutoria, usuario, formularioTutor, usuTutor, passTutor;
-let alerta1, alerta2, alerta3, paginaTutor = '';
+let nominaTut, nombreTut, AapePTut, AapeMTut, paginaTutor = '';
 let mensaje1, mensaje2, mensaje3, mensaje4, mensaje5;
 
 
 function crearUsuario() {
-    correo = $("#email").val()
+    nominaTut = $("#nominaTutor").val()
+    nombreTut = $("#nombre_tutor").val()
+    AapePTut = $("#apepat_tutor").val()
+    AapeMTut = $("#apemat_tutor").val()
     area = $("#area_de").val()
     tutoria = $("#tipo-tutoria").val()
 
-    alerta1 = "Seleccione el tipo de Tutoría";
-    alerta2 = "Seleccione una área";
-    alerta3 = "Ingrese una dirección de E-mail";
+    if (nominaTut === ""){
+        Swal.fire({
+            title: "Ingrese su Núm de Nómina",
+            icon: "warning",
+            showConfirmButton: false,
+            backdrop: "rgba(85,0,0,0.7)",
+            timer: 1000
+        });
+        return false;
+    } else if (nominaTut === "000") {
+        Swal.fire({
+            title: "Núm de Nómina\nNo Válido",
+            icon: "warning",
+            showConfirmButton: false,
+            backdrop: "rgba(85,0,0,0.7)",
+            timer: 1000
+        });
+        return false;
+    }
+
+    if (nombreTut === ""){
+        Swal.fire({
+            title: "Ingrese su Nombre",
+            icon: "warning",
+            showConfirmButton: false,
+            backdrop: "rgba(85,0,0,0.7)",
+            timer: 1000
+        });
+        return false;
+    } else if (AapePTut === ""){
+        Swal.fire({
+            title: "Ingrese su Apellido Paterno",
+            icon: "warning",
+            showConfirmButton: false,
+            backdrop: "rgba(85,0,0,0.7)",
+            timer: 1000
+        });
+        return false;
+    } else if (AapeMTut === ""){
+        Swal.fire({
+            title: "Ingrese su Apellido Materno",
+            icon: "warning",
+            showConfirmButton: false,
+            backdrop: "rgba(85,0,0,0.7)",
+            timer: 1000
+        });
+        return false;
+    }
 
     if (tutoria === ""){
         Swal.fire({
-            title: alerta1,
+            title: "Seleccione el tipo de Tutoría",
             icon: "warning",
             showConfirmButton: false,
             backdrop: "rgba(85,0,0,0.7)",
@@ -34,7 +82,7 @@ function crearUsuario() {
 
     if (area === ""){
         Swal.fire({
-            title: alerta2,
+            title: "Seleccione una área",
             icon: "warning",
             showConfirmButton: false,
             backdrop: "rgba(85,0,0,0.7)",
@@ -62,18 +110,14 @@ function crearUsuario() {
         }
     }
 
-    if (correo === ""){
-        Swal.fire({
-            title: alerta3,
-            icon: "warning",
-            showConfirmButton: false,
-            backdrop: "rgba(85,0,0,0.7)",
-            timer: 1000
-        });
-        return false;
+    //Eliminación de acentos
+    const eliminaAcentos = (str) =>{
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g,"")
     }
 
-    usuario = correo.split('@')[0] + "." + tutoria.substring(undefined) + area.substring(undefined);
+    usuario = eliminaAcentos((nombreTut.split(' ')[0]+"."+AapePTut.substring(0,1)+AapeMTut.substring(0,1)).toLowerCase())+
+        nominaTut+ "_"+ tutoria.substring(undefined) + area.substring(undefined);
+
 
     $("#usu-tutor").val(usuario)
     $("#pass-tutor").val(generarPassword(10,'alf'))
@@ -84,6 +128,10 @@ $(document).ready(function () {
     formularioTutor = $('#formulario_tutor')
     formularioTutor[0].reset()
     $("#contenidoTutor")[0].reset()
+
+    $('#nominaTutor').on('input', function () {
+        this.value = this.value.replace(/[^0-9]/g,'');
+    })
 
     $("#nombre_tutor").on("click", function (){
         $("#nombre_tutor").val("")
@@ -100,7 +148,7 @@ $(document).ready(function () {
 
         area = $("#area_de").val()
         mensaje1 = "Por favor,\nGenere su Login";
-        mensaje2 = "Por favor,\nIngrese su Nombre(s)";
+        mensaje2 = "Por favor,\nIngrese su(s) Nombre(s)";
         mensaje3 = "Por favor,\nIngrese su Apellido Paterno";
         mensaje4 = "Por favor,\nIngrese su Apellido Materno";
         mensaje5 = "Por favor, Ingrese sus\nNombre(s) y Apellidos";
@@ -108,6 +156,17 @@ $(document).ready(function () {
         if ($('#usu-tutor').val().trim() === '' && $('#pass-tutor').val().trim() === '') {
             Swal.fire({
                 title: mensaje1,
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(85,0,0,0.7)",
+                timer: 1000
+            });
+            return false;
+        }
+
+        if ($("#email").val().trim() === "") {
+            Swal.fire({
+                title: "Ingrese su E-mail",
                 icon: "warning",
                 showConfirmButton: false,
                 backdrop: "rgba(85,0,0,0.7)",
@@ -282,7 +341,6 @@ $(document).ready(function () {
 
 
 })
-
 
 function accesoTutor(paginaT) {
     $("#modal-acceso").css({display:"block"})

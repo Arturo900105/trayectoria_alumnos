@@ -134,18 +134,20 @@ if ($letSessionA == null || $letSessionA == "") {
                 ¿Alguno de sus familiares ha sido diagnósticado con...?
             </div><br>
             <div class="enfermedades">
-                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Diabetes">: Diabetes</label>
+                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Diabetes">: Diabetes.</label>
                 <br>
-                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Hipertención">: Hipertensión</label>
+                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Hipertención">: Hipertensión.</label>
                 <br>
-                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Cancer">: Cancer</label>
+                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Cancer">: Cancer.</label>
                 <br>
-                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Enfermedad del Corazón">: Enfermedad del Corazón</label>
+                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Enfermedad del Corazón">: Enfermedad del Corazón.</label>
                 <br>
-                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Convulsión">: Convulsión</label>
+                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Convulsión">: Convulsión.</label>
                 <br>
-                <label class="label_anteherd"><input type="checkbox" class="ante_hered" id="otro_ante">&nbsp;&nbsp;Otro(s):</label>
-                <input id="otro_hered" type="text" name="ante_hered[]" placeholder="Especifíca!!!" value="">
+                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Ninguno">: Ninguno.</label>
+                <br>
+                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="" id="otro_ante">&nbsp;&nbsp;Otro(s):</label>
+                <input id="otro_hered" type="text" name="otro_hered" placeholder="Especifíca!!!" value="">
             </div>
         </div>
         <br><br>

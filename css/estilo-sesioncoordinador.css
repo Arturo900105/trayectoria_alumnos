@@ -108,7 +108,8 @@ li{
 }
 
 #parrafoCoord{
-    font-size: 20px;
+    margin: 1em 3em;
+    font-size: 25px;
     text-align: justify;
 }
 

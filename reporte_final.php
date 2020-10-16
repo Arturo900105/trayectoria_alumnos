@@ -45,7 +45,7 @@ require "php/BD_Connect.php";
             $consultaF = "SELECT * FROM tutor";
             $resultadoF = mysqli_query($connect, $consultaF);
             while ($tutor = $resultadoF->fetch_assoc()) {
-                echo "<option value='".$tutor['nombre']." ".$tutor['apellido']."_".$tutor['area_de']."'>".$tutor['nombre']." ".$tutor['apellido']."</option>";
+                echo "<option value='".$tutor['nombre_tut']." ".$tutor['apellido_tut']."_".$tutor['area_de']."'>".$tutor['nombre_tut']." ".$tutor['apellido_tut']."</option>";
             }
             ?>
         </select>

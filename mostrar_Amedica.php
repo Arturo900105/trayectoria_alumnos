@@ -25,15 +25,15 @@ require "php/BD_Connect.php";
                 <th class="mth_mostrarMedica">Tel. Opcional</th>
                 <th class="mth_mostrarMedica">Carrera</th>
                 <th class="mth_mostrarMedica">Generación</th>
-                <th class="mth_mostrarMedica">Más Resultados...</th>
+                <th class="mth_mostrarMedica">RESULTADOS</th>
             </tr>
         </thead>
         <tbody>
         <?php
         $qMedica = "SELECT me.*,al.nombre,al.apellidos,al.carrera,al.generacion
-                                FROM tabla_medica me
-                                JOIN alumno al
-                                ON me.num_ficha = al.num_ficha";
+                    FROM tabla_medica me
+                    JOIN alumno al
+                    ON me.num_ficha = al.num_ficha";
         $rMedica = mysqli_query($connect, $qMedica);
         while ($fMedica = $rMedica->fetch_assoc()){
         ?>
@@ -43,13 +43,13 @@ require "php/BD_Connect.php";
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['peso'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['estatura'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['tipo_sangre'] ?></td>
-                <td class="mtd_mostrarMedica"><?php echo $fMedica['tel_ obligatorio'] ?></td>
-                <td class="mtd_mostrarMedica"><?php echo $fMedica['tel_ opcional'] ?></td>
+                <td class="mtd_mostrarMedica"><?php echo $fMedica['tel_obligatorio'] ?></td>
+                <td class="mtd_mostrarMedica"><?php echo $fMedica['tel_opcional'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['carrera'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['generacion'] ?></td>
                 <td class="mtd_mostrarMedica">
                     <a href="mostrar_Amedica2.php?ficha_alumno=<?php echo $fMedica['num_ficha'] ?>" target="_blank">
-                        <input type="button" value="MÁS..." id="mostRespMedico" title="Mostar Historial Clínico de <?php echo $fMedica['nombre']." ".$fMedica['apellidos'] ?>.">
+                        <input type="button" value="MÁS RESULTADOS" id="mostRespMedico" title="Mostar más resultados de <?php echo $fMedica['nombre']." ".$fMedica['apellidos'] ?>.">
                     </a>
                 </td>
             </tr>

@@ -80,6 +80,7 @@ $letSessionC = $_SESSION["usucoord"];
                 <li id="mlistaPedagogia"><a>EXAMEN PEDAGÓGICO</a></li>
                 <li id="mlistaPsicologia"><a>EXAMEN PSICOLÓGICO</a></li>
                 <li id="mlistaMedica"><a>EXAMEN MÉDICO</a></li>
+                <li id="mlistaPostTest"><a>ALUMNOS A ESCALA POST-TEST</a></li>
                 <li><a>CARACTERIZACIÓN POR PARTE DEL TUTOR</a></li>
                 <li><a>NÚMERO DE CONTROL</a></li>
                 <li><a>TRAYECTORIA SEMESTRAL</a></li>
@@ -90,7 +91,7 @@ $letSessionC = $_SESSION["usucoord"];
     </ul>
 
     <p id="parrafoCoord">
-        Esta es la plataforma en donde usted como <a id="textoC"></a> de la carrera <a id="carreraC"></a>, podrá ver y llevar acabo:
+        Esta es la plataforma en donde usted como <a id="textoC"></a> de la carrera de <a id="carreraC"></a>, podrá ver y llevar acabo:
         <br>
         <br><ion-icon name="arrow-forward-outline"></ion-icon> Los registros de las trayectorias escolares de los Alumnos durante su estancia en el Tecnológico.
         <br><ion-icon name="arrow-forward-outline"></ion-icon> Lista de Tutores asignados a un grupo de cada carrera.
@@ -196,11 +197,12 @@ $letSessionC = $_SESSION["usucoord"];
 
     <table id="tabla_tutores">
         <tr>
-            <th colspan="8" id="thTUTORES">TUTORES DEL ITSP</th>
+            <th colspan="9" id="thTUTORES">TUTORES DEL ITSP</th>
         </tr>
 
         <tr>
-            <th class="th_tablaTutores">NOMBRE(S)</th>
+            <th class="th_tablaTutores">NOMINA</th>
+            <th class="th_tablaTutores">NOMBRE</th>
             <th class="th_tablaTutores">APELLIDOS</th>
             <th class="th_tablaTutores">TIPO DE TUTORÍA</th>
             <th class="th_tablaTutores">ÁREA</th>
@@ -233,6 +235,7 @@ $letSessionC = $_SESSION["usucoord"];
             }
             ?>
             <tr>
+                <td class="td_tablaTutores"><?php echo $filaT['id_tutor']?></td>
                 <td class="td_tablaTutores"><?php echo $filaT['nombre_tut']?></td>
                 <td class="td_tablaTutores"><?php echo $filaT['apellido_tut']?></td>
                 <td class="td_tablaTutores"><?php echo $filaT['tipo_tutoria']?></td>
@@ -259,6 +262,10 @@ $letSessionC = $_SESSION["usucoord"];
 
     <div id="ventanaMedica" class="ventanasCoord">
         <iframe class="listaCA" id="listaMedica" src="mostrar_Amedica.php" frameborder="0"></iframe>
+    </div>
+
+    <div id="ventanaPostTest" class="ventanasCoord">
+        <iframe class="listaCA" id="listaPostTest" src="mostrar_PostTest.php" frameborder="0"></iframe>
     </div>
     
     <script src="js/usuario_coordinador.js"></script>

@@ -169,6 +169,17 @@ $(document).ready(function () {
             return false;
         }
 
+        if (!$(".ante_hered").is(":checked")){
+            Swal.fire({
+                title: "Seleccione una opción de:\nAntecedente Heredofamiliar",
+                icon: "warning",
+                showConfirmButton: false,
+                backdrop: "rgba(0,0,0,0.0)",
+                timer: 2000
+            });
+            return false;
+        }
+
         if ($("#otro_ante").is(":checked")){
             if ($("#otro_hered").val().trim() === "") {
                 Swal.fire({

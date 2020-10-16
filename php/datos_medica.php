@@ -6,15 +6,22 @@ require "BD_Connect.php";
     $estatura = $_POST['talla']." m.";
     $tipo_sangre = $_POST['sangre'];
 
-    $anteHeredofamiliar = $_POST['ante_hered'];
-    if (isset($anteHeredofamiliar)){
-        $anteHeredofamiliar = implode(",\n", $anteHeredofamiliar);
+    $anteHeredofamiliar = "";
+    if (isset($_POST['ante_hered'])){
+        $anteHeredofamiliar = implode(', ', $_POST['ante_hered']);
+        if (isset($_POST['otro_hered']) && strlen($_POST['otro_hered'])  > 0) {
+            $anteHeredofamiliar.= $_POST['otro_hered'];
+        }
+    } else {
+        if (isset($_POST['otro_hered']) && strlen($_POST['otro_hered'])  > 0) {
+            $anteHeredofamiliar.= $_POST['otro_hered'];
+        }
     }
 
     $toxicomanias = $_POST['toxi'];
     $tipo_toxi = "";
     if (isset($_POST['toxicomanias'])){
-        $tipo_toxi = implode(", ", $_POST['toxicomanias']);
+        $tipo_toxi = implode(', ', $_POST['toxicomanias']);
     }
     $frecuencia = $_POST['tox_frecuencia'].".";
 

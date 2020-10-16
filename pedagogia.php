@@ -16,8 +16,8 @@ if ($letSessionA == null || $letSessionA == "") {
                   </head>
                   <body style='text-align: center;'>
                     <h1 style='font-family: Arial; margin: 0; font-size: 35px; color: red;'>
-                        DEBES INICIAR SESIÓN PARA PODER VER EL
-                        <br>EXAMEN DE PEDAGOGÍA
+                        DEBES INICIAR SESIÓN PARA PODER VER LA
+                        <br>EVALUACIÓN DE PEDAGOGÍA
                     </h1>
                     <img style='height: 15em; padding: 15px 0;' src='img/logo_itsp.png'>
                     <h2 style='margin: 0; font-family: Arial; font-size: 30px;'>Coordinación Institucional de Tutoría Académica

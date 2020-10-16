@@ -106,5 +106,12 @@ $(document).ready(function (){
         $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
         $("#ventanaAlumnos, #div_canalizaciones, #div_rparciales, #div_rfinales").hide()
     })
+    $("#mlistaPostTest").on("click",function (){
+        $("#ventanaPostTest").show()
+        $("#parrafoCoord").hide()
+        $("#ventanaPedagogia, #ventanaPsicologia ,#ventanaMedica").hide()
+        $("#tabla_usuCoord, #tabla_coordinadores, #tabla_tutores").hide()
+        $("#ventanaAlumnos, #div_canalizaciones, #div_rparciales, #div_rfinales").hide()
+    })
 
 })

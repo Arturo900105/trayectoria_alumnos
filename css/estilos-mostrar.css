@@ -97,8 +97,8 @@ h1{
     background: #969b99;
     border-radius: 10px;
     border: none;
-    width: 9em;
-    height: 2em;
+    width: 12em;
+    height: 2.2em;
 }
 #mostRespMedico:hover{
     font-family: "Arial Black";
@@ -156,6 +156,23 @@ h1{
     background: red;
 }
 
-
-
 /*TABLA POST-TEST ALUMNOS*/
+#mostrarPostTest, .mth_mostrarPostTest, .mtd_mostrarPostTest{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.mth_mostrarPostTest{
+    background: #f89b70;
+    padding: 5px;
+}
+.mth_mostrarPostTest:hover{
+    cursor: pointer;
+    background: darkorange;
+}
+.mtd_mostrarPostTest{
+    text-align: center;
+    padding: 5px;
+}

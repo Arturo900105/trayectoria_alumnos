@@ -134,11 +134,11 @@ $numFicha = $_GET["ficha_alumno"];
             </tr>
             <tr>
                 <th class="rth_medico">Teléfono de Emergencia 1:</th>
-                <td class="rtd_medico"><?php echo $ftMedica['tel_ obligatorio'] ?></td>
+                <td class="rtd_medico"><?php echo $ftMedica['tel_obligatorio'] ?></td>
             </tr>
             <tr>
                 <th class="rth_medico">Teléfono de Emergencia 2:</th>
-                <td class="rtd_medico"><?php echo $ftMedica['tel_ opcional'] ?></td>
+                <td class="rtd_medico"><?php echo $ftMedica['tel_opcional'] ?></td>
             </tr>
         </table>
         <?php } ?>

@@ -52,7 +52,5 @@ require "php/BD_Connect.php";
             <?php } ?>
         </tbody>
     </table>
-
-
 </body>
 </html>

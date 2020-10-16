@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-10-2020 a las 10:02:15
+-- Tiempo de generación: 16-10-2020 a las 07:42:17
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -51,6 +51,7 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`num_ficha`, `fecha_registro`, `apellidos`, `nombre`, `fecha_de_nacimiento`, `sexo`, `indigena`, `edad`, `edo_civil`, `tel_cel`, `email`, `fecha_ficha`, `carrera`, `generacion`, `id_tutor`) VALUES
+('20-0003', 'Jueves, 15 de Octubre de 2020', 'Morales Avilés', 'Alma Yudill', '2003-01-01', 'Femenino', 'Si', 17, 'Soltera', '4522026543', 'alma_morales@gmail.com', '2020-06-04', 'IGEM', 2020, 0),
 ('20-0004', 'Martes, 13 de Octubre de 2020', 'Rodríguez Molina', 'Jose Luis', '2004-03-10', 'Masculino', 'No', 17, 'Soltero', '5514767739', 'jl_rodriguez@outlook.com', '2020-04-07', 'IBIO', 2020, 0);
 
 -- --------------------------------------------------------
@@ -73,7 +74,8 @@ CREATE TABLE `alumno_domicilio` (
 --
 
 INSERT INTO `alumno_domicilio` (`num_ficha`, `domicilio`, `colonia`, `codigo_postal`, `localidad`, `procedencia`) VALUES
-('20-0004', '18 de Marzo #207', 'Centro', 60280, 'Nahuatzen', 'Nahuatzen; Mich.');
+('20-0004', '18 de Marzo #207', 'Centro', 60280, 'Nahuatzen', 'Nahuatzen; Mich.'),
+('20-0003', 'Miguel de Cervantes Saavedra #463', 'Centro', 60280, 'Nahuatzen', 'Nahuatzen; Mich.');
 
 -- --------------------------------------------------------
 
@@ -94,7 +96,8 @@ CREATE TABLE `alumno_procedencia` (
 --
 
 INSERT INTO `alumno_procedencia` (`num_ficha`, `bach`, `tipo_bach`, `nom_bach`, `promedio_bach`) VALUES
-('20-0004', 'CBTA', 'Químico-Biológico.', 'CBTA No. 2038', 8.5);
+('20-0004', 'CBTA', 'Químico-Biológico.', 'CBTA No. 2038', 8.5),
+('20-0003', 'CECYTE', 'Físico-Matemático, Histórico-Social.', 'CECYTEM No. 18 ', 8.7);
 
 -- --------------------------------------------------------
 
@@ -130,14 +133,6 @@ CREATE TABLE `canalizacion` (
   `fecha_corta` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `canalizacion`
---
-
-INSERT INTO `canalizacion` (`folio`, `fecha`, `hora`, `nom_estudiante`, `igem`, `iind`, `isic`, `ibio`, `iias`, `ienr`, `ifor`, `iagr`, `num_control`, `semestre`, `ciclo_escolar`, `canalizacion_psicologica`, `canalizacion_pedagogica`, `canalizacion_ases_acad`, `canalizacion_medica`, `otra_canalizacion`, `des_problematica`, `firma_tutor`, `firma_ctpe`, `firma_encargado_ac`, `fecha_corta`) VALUES
-('0320001', 'Martes, 13 de Octubre de 2020', '12:16 am.', 'Gabriel Abraham Sánchez Fonseca', '', '', 'X', '', '', '', '', '', '1503080', 4, 'Enero - Junio', '', '', 'X', '', '', 'Dificultad con la materia de Contabilidad Financiera', 'Elpidio Jiménez Crúz', 'María Janacua Benites', 'Miriam Rodríguez Madrigal', '13-10-2020'),
-('0420001', 'Martes, 13 de Octubre de 2020', '02:22 pm.', 'Gabriela Velázquez Fonseca', '', '', '', 'X', '', '', '', '', '1704009', 4, 'Enero - Junio', '', '', '', 'X', '', 'Alergias a medicamentos', 'María Janacua Benites', 'María Janacua Benites', 'María Janacua Benites', '13-10-2020');
-
 -- --------------------------------------------------------
 
 --
@@ -164,7 +159,8 @@ CREATE TABLE `coordinador` (
 INSERT INTO `coordinador` (`id_coordinador`, `nombre`, `apellidos`, `sexo`, `coordinacion`, `email`, `fecha_registro`, `hora_registro`, `usuario`, `pass_coord`) VALUES
 (2, 'Arturo', 'Sánchez Fonseca', 'M', 'ISIC', 'fonck.five@gmail.com', 'Lunes, 28 de Septiembre de 2020', '01:42 pm.', 'a.sanchezf_03', 5504),
 (3, 'María', 'Janacua Benites', 'F', 'IIND', 'vientoafavor@hotmail.com', 'Viernes, 2 de Octubre de 2020', '11:18 pm.', 'm.janacuab_02', 9197),
-(4, 'Karla Georgina', 'Olivo Bernal', 'F', 'IENR', 'karla_ob@outlook.com', 'Martes, 13 de Octubre de 2020', '02:36 pm.', 'kg.olivob_06', 5495);
+(4, 'Karla Georgina', 'Olivo Bernal', 'F', 'IENR', 'karla_ob@outlook.com', 'Martes, 13 de Octubre de 2020', '02:36 pm.', 'kg.olivob_06', 5495),
+(5, 'Gabriel Abraham', 'Sánchez Fonseca', 'M', 'IFOR', 'ga.sanzfons@gmail.com', 'Jueves, 15 de Octubre de 2020', '01:18 pm.', 'ga.sanchezf_07', 2219);
 
 -- --------------------------------------------------------
 
@@ -321,8 +317,8 @@ CREATE TABLE `tabla_medica` (
   `hipertencion` varchar(3) DEFAULT NULL,
   `convulsiones` varchar(3) DEFAULT NULL,
   `asma` varchar(3) DEFAULT NULL,
-  `tel_ obligatorio` text DEFAULT NULL,
-  `tel_ opcional` text DEFAULT NULL,
+  `tel_obligatorio` text DEFAULT NULL,
+  `tel_opcional` text DEFAULT NULL,
   `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -330,8 +326,9 @@ CREATE TABLE `tabla_medica` (
 -- Volcado de datos para la tabla `tabla_medica`
 --
 
-INSERT INTO `tabla_medica` (`num_ficha`, `peso`, `estatura`, `tipo_sangre`, `antes_hered`, `toxicomanias`, `tipo_toxicomanias`, `frecuencia`, `embarazo`, `tiempo_embarazo`, `act_fisica`, `actividad`, `tiempo`, `alergias`, `desc_alergias`, `quir_cir`, `transfusionales`, `diabetes`, `tipo_diabetes`, `hipertencion`, `convulsiones`, `asma`, `tel_ obligatorio`, `tel_ opcional`, `contestado`) VALUES
-('20-0004', '50 kg.', '1.56 m.', 'O POSITIVO', '', 'NO', '----------', '----------', '', '', 'NO', '----------', '----------', 'NO', '----------', 'NO', 'NO', 'NO', '----------', 'NO', 'NO', 'NO', '5514767739', '5514767739', 1);
+INSERT INTO `tabla_medica` (`num_ficha`, `peso`, `estatura`, `tipo_sangre`, `antes_hered`, `toxicomanias`, `tipo_toxicomanias`, `frecuencia`, `embarazo`, `tiempo_embarazo`, `act_fisica`, `actividad`, `tiempo`, `alergias`, `desc_alergias`, `quir_cir`, `transfusionales`, `diabetes`, `tipo_diabetes`, `hipertencion`, `convulsiones`, `asma`, `tel_obligatorio`, `tel_opcional`, `contestado`) VALUES
+('20-0004', '50 kg.', '1.56 m.', 'O POSITIVO', '', 'NO', '----------', '----------', '', '', 'NO', '----------', '----------', 'NO', '----------', 'NO', 'NO', 'NO', '----------', 'NO', 'NO', 'NO', '5514767739', '5514767739', 1),
+('20-0003', '46 kg.', '1.54 m.', 'AB POSITIVO', 'Diabetes, Hipertención', 'NO', '----------', '----------', 'NO', '----------', 'NO', '----------', '----------', 'NO', '----------', 'NO', 'NO', 'SÍ', 'Diabetes Mellitus 1', 'NO', 'NO', 'NO', '5540123856', '', 1);
 
 -- --------------------------------------------------------
 
@@ -379,7 +376,8 @@ CREATE TABLE `tabla_pedagogia` (
 --
 
 INSERT INTO `tabla_pedagogia` (`num_ficha`, `isea_1`, `isea_2`, `isea_3`, `isea_4`, `isea_5`, `isea_6`, `isea_7`, `isea_8`, `isea_9`, `isea_10`, `isea_11`, `isea_12`, `isea_13`, `isea_14`, `isea_15`, `isea_16`, `isea_17`, `isea_18`, `isea_19`, `isea_20`, `isea_21`, `aprendizaje_visual`, `aprendizaje_auditivo`, `aprendizaje_kinestesico`, `organizacion_estudio`, `tecnicas_estudio`, `motivacion_estudio`, `preguntas_oe`, `preguntas_te`, `preguntas_me`, `contestado`) VALUES
-('20-0004', 1, 3, 2, 2, 3, 4, 5, 3, 3, 2, 3, 3, 3, 3, 2, 2, 4, 2, 4, 1, 1, 18, 16, 22, 13, 16, 16, 'A C E F H I J K L O R S T', 'A B C D E F G I K L M N P Q S T', 'A B C D E F H I J L M N O R S T', 1);
+('20-0004', 1, 3, 2, 2, 3, 4, 5, 3, 3, 2, 3, 3, 3, 3, 2, 2, 4, 2, 4, 1, 1, 18, 16, 22, 13, 16, 16, 'A C E F H I J K L O R S T', 'A B C D E F G I K L M N P Q S T', 'A B C D E F H I J L M N O R S T', 1),
+('20-0003', 5, 3, 4, 2, 2, 4, 3, 5, 4, 3, 5, 3, 4, 5, 4, 1, 5, 1, 4, 3, 5, 30, 17, 28, 13, 11, 14, 'A C E G I J K L N O Q R T', 'A C D E F G J K O P Q', 'A C D E F H I J N O Q R S T', 1);
 
 -- --------------------------------------------------------
 
@@ -455,7 +453,8 @@ CREATE TABLE `tabla_psicologia` (
 --
 
 INSERT INTO `tabla_psicologia` (`num_ficha`, `pregunta1`, `respuesta1`, `pregunta2`, `respuesta2`, `a_1`, `a_2`, `a_3`, `a_4`, `a_5`, `a_6`, `a_7`, `d_1`, `d_2`, `d_3`, `d_4`, `d_5`, `d_6`, `d_7`, `ansiedad`, `depresion`, `suma_ad`, `bloque1`, `bloque2`, `bloque3`, `bloque4`, `preguntas_bloque1`, `preguntas_bloque2`, `preguntas_bloque3`, `preguntas_bloque4`, `contestado`) VALUES
-('20-0004', 'NO', '----------', 'NO', '----------', 1, 2, 1, 1, 1, 1, 2, 2, 3, 0, 1, 1, 1, 0, 9, 8, 17, 9, 9, 7, 6, '01 02 03 04 06 07 08 09 10', '12 13 14 15 16 17 18 19 20', '21 22 23 24 28 29 30', '31 32 34 35 37 39', 1);
+('20-0004', 'NO', '----------', 'NO', '----------', 1, 2, 1, 1, 1, 1, 2, 2, 3, 0, 1, 1, 1, 0, 9, 8, 17, 9, 9, 7, 6, '01 02 03 04 06 07 08 09 10', '12 13 14 15 16 17 18 19 20', '21 22 23 24 28 29 30', '31 32 34 35 37 39', 1),
+('20-0003', 'NO', '----------', 'NO', '----------', 1, 2, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 8, 2, 10, 6, 4, 4, 6, '01 02 03 05 09 10', '14 16 19 20', '23 25 28 30', '31 32 34 35 36 40', 1);
 
 -- --------------------------------------------------------
 
@@ -939,7 +938,7 @@ CREATE TABLE `trayectoria_titulacion` (
 --
 
 CREATE TABLE `tutor` (
-  `id_tutor` int(11) NOT NULL,
+  `id_tutor` varchar(3) NOT NULL,
   `nombre_tut` text DEFAULT NULL,
   `apellido_tut` text DEFAULT NULL,
   `sexo` varchar(1) DEFAULT NULL,
@@ -957,9 +956,9 @@ CREATE TABLE `tutor` (
 --
 
 INSERT INTO `tutor` (`id_tutor`, `nombre_tut`, `apellido_tut`, `sexo`, `tipo_tutoria`, `area_de`, `email`, `fecha_registro`, `hora_registro`, `usuario`, `pass_tutor`) VALUES
-(1, 'Gabriel Abraham', 'Sánchez Fonseca', 'M', 'Tutoría Grupal', 'ISIC', 'gabraham_sf@outlook.com', 'Jueves, 24 de Septiembre de 2020', '11:52 pm.', 'gabraham_sf.103', '7bj5RHFABB'),
-(2, 'Lourdes Ma. Elvia', 'Fonseca Nava', 'F', 'Tutoría Grupal', 'IGEM', 'fonsecanava.elvia@gmail.com', 'Sábado, 26 de Septiembre de 2020', '11:58 pm.', 'fonsecanava.elvia.101', 'qN63wpqgHc'),
-(3, 'Miriam Yeraldin', 'Cano Rodríguez', 'F', 'Tutoría Generacional', 'IBIO', 'yeraldin.cano.rodriguez@gmail.com', 'Domingo, 27 de Septiembre de 2020', '06:27 pm.', 'yeraldin.cano.rodriguez.204', 'tW9g6B2ajA');
+('050', 'Liliana', 'León Lucas', 'F', 'Tutoría Grupal', 'IGEM', 'liliana.ll@gmail.com', 'Jueves, 15 de Octubre de 2020', '11:25 pm.', 'liliana.ll050_101', 'V62y0HOEGn'),
+('060', 'Miriam Yeraldin', 'Cano Rodíguez', 'F', 'Tutoría Grupal', 'IBIO', 'my.canorod@gmail.com', 'Jueves, 15 de Octubre de 2020', '11:24 pm.', 'miriam.cr060_104', 'L8yiSkPZLn'),
+('070', 'Gabriel Abraham', 'Sánchez Fonseca', 'M', 'Tutoría Grupal', 'ISIC', 'ga.sanzfons@gmail.com', 'Jueves, 15 de Octubre de 2020', '11:11 pm.', 'gabriel.sf070_103', '47mkQDvUM8');
 
 --
 -- Índices para tablas volcadas
@@ -1121,12 +1120,6 @@ ALTER TABLE `tutor`
 --
 
 --
--- AUTO_INCREMENT de la tabla `coordinador`
---
-ALTER TABLE `coordinador`
-  MODIFY `id_coordinador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT de la tabla `reporte_final`
 --
 ALTER TABLE `reporte_final`
@@ -1137,12 +1130,6 @@ ALTER TABLE `reporte_final`
 --
 ALTER TABLE `reporte_parcial`
   MODIFY `id_rparcial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `tutor`
---
-ALTER TABLE `tutor`
-  MODIFY `id_tutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -1161,6 +1148,12 @@ ALTER TABLE `alumno_procedencia`
   ADD CONSTRAINT `alumno_procedencia_ibfk_1` FOREIGN KEY (`num_ficha`) REFERENCES `alumno` (`num_ficha`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `num_control_alumno`
+--
+ALTER TABLE `num_control_alumno`
+  ADD CONSTRAINT `num_control_alumno_ibfk_1` FOREIGN KEY (`num_ficha`) REFERENCES `alumno` (`num_ficha`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `tabla_medica`
 --
 ALTER TABLE `tabla_medica`
@@ -1173,10 +1166,82 @@ ALTER TABLE `tabla_pedagogia`
   ADD CONSTRAINT `tabla_pedagogia_ibfk` FOREIGN KEY (`num_ficha`) REFERENCES `alumno` (`num_ficha`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `tabla_posttest`
+--
+ALTER TABLE `tabla_posttest`
+  ADD CONSTRAINT `tabla_posttest_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `tabla_psicologia`
 --
 ALTER TABLE `tabla_psicologia`
   ADD CONSTRAINT `tabla_psicologia_ibfk` FOREIGN KEY (`num_ficha`) REFERENCES `alumno` (`num_ficha`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_cappt`
+--
+ALTER TABLE `trayectoria_cappt`
+  ADD CONSTRAINT `trayectoria_cappt_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem1`
+--
+ALTER TABLE `trayectoria_sem1`
+  ADD CONSTRAINT `trayectoria_sem1_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem2`
+--
+ALTER TABLE `trayectoria_sem2`
+  ADD CONSTRAINT `trayectoria_sem2_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem3`
+--
+ALTER TABLE `trayectoria_sem3`
+  ADD CONSTRAINT `trayectoria_sem3_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem4`
+--
+ALTER TABLE `trayectoria_sem4`
+  ADD CONSTRAINT `trayectoria_sem4_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem5`
+--
+ALTER TABLE `trayectoria_sem5`
+  ADD CONSTRAINT `trayectoria_sem5_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem6`
+--
+ALTER TABLE `trayectoria_sem6`
+  ADD CONSTRAINT `trayectoria_sem6_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem7`
+--
+ALTER TABLE `trayectoria_sem7`
+  ADD CONSTRAINT `trayectoria_sem7_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem8`
+--
+ALTER TABLE `trayectoria_sem8`
+  ADD CONSTRAINT `trayectoria_sem8_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_sem9`
+--
+ALTER TABLE `trayectoria_sem9`
+  ADD CONSTRAINT `trayectoria_sem9_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `trayectoria_titulacion`
+--
+ALTER TABLE `trayectoria_titulacion`
+  ADD CONSTRAINT `trayectoria_titulacion_ibfk_1` FOREIGN KEY (`num_control`) REFERENCES `num_control_alumno` (`num_control`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
