@@ -146,108 +146,17 @@ $letSessionC = $_SESSION["usucoord"];
         </tr>
     </table>
 
-    <table id="tabla_coordinadores">
-        <tr>
-            <th colspan="8" id="thCOORDS">COORDINADORES DEL ITSP</th>
-        </tr>
-        <tr>
-            <th class="th_tablaCoords">NÓMINA</th>
-            <th class="th_tablaCoords">NOMBRE</th>
-            <th class="th_tablaCoords">APELLIDOS</th>
-            <th class="th_tablaCoords">COORDINADOR DE...</th>
-            <th class="th_tablaCoords">E-MAIL</th>
-            <th class="th_tablaCoords">FECHA DE REGISTRO</th>
-            <th class="th_tablaCoords">HORA DE REGISTRO</th>
-            <th class="th_tablaCoords">USUARIO</th>
-        </tr>
 
-        <?php
-        $consultaC = "SELECT * FROM coordinador";
-        $resultadoC = mysqli_query($connect, $consultaC);
-        while ($filaC = $resultadoC->fetch_assoc()){
-            if ($filaC['coordinacion'] == "IGEM"){
-                $filaC['coordinacion'] = "Ingeniería en Gestión Empresarial";
-            } elseif ($filaC['coordinacion'] == "IIND"){
-                $filaC['coordinacion'] = "Ingeniería Industrial";
-            }elseif ($filaC['coordinacion'] == "ISIC"){
-                $filaC['coordinacion'] = "Ingeniería en Sistemas Computacionales";
-            }elseif ($filaC['coordinacion'] == "IBIO"){
-                $filaC['coordinacion'] = "Ingeniería Biomédica";
-            }elseif ($filaC['coordinacion'] == "IIAS"){
-                $filaC['coordinacion'] = "Ingeniería en Innovación Agrícola Sustentable";
-            }elseif ($filaC['coordinacion'] == "IENR"){
-                $filaC['coordinacion'] = "Ingeniería en Energías Renovables";
-            }elseif ($filaC['coordinacion'] == "IFOR"){
-                $filaC['coordinacion'] = "Ingeniería Forestal";
-            }elseif ($filaC['coordinacion'] == "IAGR"){
-                $filaC['coordinacion'] = "Ingeniería en Agronomía";
-            }
-        ?>
-        <tr>
-            <td class="td_tablaCoords"><?php echo $filaC['id_coordinador'] ?></td>
-            <td class="td_tablaCoords"><?php echo $filaC['nombre'] ?></td>
-            <td class="td_tablaCoords"><?php echo $filaC['apellidos'] ?></td>
-            <td class="td_tablaCoords"><?php echo $filaC['coordinacion'] ?></td>
-            <td class="td_tablaCoords"><?php echo $filaC['email'] ?></td>
-            <td class="td_tablaCoords"><?php echo $filaC['fecha_registro'] ?></td>
-            <td class="td_tablaCoords"><?php echo $filaC['hora_registro'] ?></td>
-            <td class="td_tablaCoords"><?php echo $filaC['usuario'] ?></td>
-        </tr>
-        <?php }?>
-    </table>
 
-    <table id="tabla_tutores">
-        <tr>
-            <th colspan="9" id="thTUTORES">TUTORES DEL ITSP</th>
-        </tr>
+    <div id="ventanaCoordinador" class="ventanasCoord2">
+        <iframe class="listaCA" id="listaCoorITSP" src="lista_coordinadores.php" frameborder="0"></iframe>
+    </div>
 
-        <tr>
-            <th class="th_tablaTutores">NOMINA</th>
-            <th class="th_tablaTutores">NOMBRE</th>
-            <th class="th_tablaTutores">APELLIDOS</th>
-            <th class="th_tablaTutores">TIPO DE TUTORÍA</th>
-            <th class="th_tablaTutores">ÁREA</th>
-            <th class="th_tablaTutores">E-MAIL</th>
-            <th class="th_tablaTutores">FECHA DE REGISTRO</th>
-            <th class="th_tablaTutores">HORA DE REGISTRO</th>
-            <th class="th_tablaTutores">USUARIO</th>
-        </tr>
+    <div id="ventanaTutor" class="ventanasCoord2">
+        <iframe class="listaCA" id="listaTutorITSP" src="lista_tutores.php" frameborder="0"></iframe>
+    </div>
 
-        <?php
-        $consultaT = "SELECT * FROM tutor";
-        $resultadoT = mysqli_query($connect, $consultaT);
-        while ($filaT = $resultadoT->fetch_assoc()){
-            if ($filaT['area_de'] == "IGEM"){
-                $filaT['area_de'] = "Ingeniería en Gestión Empresarial";
-            } elseif ($filaT['area_de'] == "IIND"){
-                $filaT['area_de'] = "Ingeniería Industrial";
-            }elseif ($filaT['area_de'] == "ISIC"){
-                $filaT['area_de'] = "Ingeniería en Sistemas Computacionales";
-            }elseif ($filaT['area_de'] == "IBIO"){
-                $filaT['area_de'] = "Ingeniería Biomédica";
-            }elseif ($filaT['area_de'] == "IIAS"){
-                $filaT['area_de'] = "Ingeniería en Innovación Agrícola Sustentable";
-            }elseif ($filaT['area_de'] == "IENR"){
-                $filaT['area_de'] = "Ingeniería en Energías Renovables";
-            }elseif ($filaT['area_de'] == "IFOR"){
-                $filaT['area_de'] = "Ingeniería Forestal";
-            }elseif ($filaT['area_de'] == "IAGR"){
-                $filaT['area_de'] = "Ingeniería en Agronomía";
-            }
-            ?>
-            <tr>
-                <td class="td_tablaTutores"><?php echo $filaT['id_tutor']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['nombre_tut']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['apellido_tut']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['tipo_tutoria']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['area_de']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['email']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['fecha_registro']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['hora_registro']?></td>
-                <td class="td_tablaTutores"><?php echo $filaT['usuario']?></td>
-            </tr>
-        <?php }?>
-    </table>
+
     
     <div id="ventanaAlumnos" class="ventanasCoord">
         <iframe id="listaAlumnosITSP" src="mostrar_Adatos.php" frameborder="0"></iframe>

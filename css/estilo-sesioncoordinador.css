@@ -11,6 +11,13 @@ h1{
     padding: 0 0 0.5em;
 }
 
+.tpersonal{
+    margin-top: 20px;
+    font-size: 35px;
+    text-align: center;
+    padding: 0 0 0.5em;
+}
+
 h2{
     margin: 0;
     text-align: center;
@@ -208,19 +215,12 @@ li{
 #tabla_coordinadores, .th_tablaCoords, .td_tablaCoords{
     border: 1px solid #000000;
     border-collapse: collapse;
-    font-size: 15px;
     color: #000000;
 }
 
 #tabla_coordinadores{
-    margin: 1em auto;
+    margin: 0 auto;
     width: auto;
-}
-
-#thCOORDS{
-    background: #790000;
-    color: #FFFFFF;
-    height: 2em;
 }
 
 .th_tablaCoords, .td_tablaCoords{
@@ -228,30 +228,26 @@ li{
 }
 
 .th_tablaCoords{
-    font-size: 15px;
+    background: #790000;
+    color: #FFFFFF;
+}
+.th_tablaCoords:hover{
+    cursor: pointer;
+    background: #fdc200;
+    color: black;
 }
 
-.td_tablaCoords{
-    font-size: 12px;
-}
 
 /*TABLA DE TUTORES DEL ITSP*/
 #tabla_tutores, .th_tablaTutores, .td_tablaTutores{
     border: 1px solid #000000;
     border-collapse: collapse;
-    font-size: 15px;
     color: #000000;
 }
 
 #tabla_tutores{
-    margin: 1em auto;
+    margin: 0 auto;
     width: auto;
-}
-
-#thTUTORES{
-    background: #790000;
-    color: #FFFFFF;
-    height: 2em;
 }
 
 .th_tablaTutores, .td_tablaTutores{
@@ -259,12 +255,15 @@ li{
 }
 
 .th_tablaTutores{
-    font-size: 15px;
+    background: #790000;
+    color: #FFFFFF;
+}
+.th_tablaTutores:hover{
+    cursor: pointer;
+    background: #fdc200;
+    color: black;
 }
 
-.td_tablaTutores{
-    font-size: 12px;
-}
 
 /*TABLA DE ALUMNOS DEL ITSP*/
 #ventanaAlumnos{
@@ -286,7 +285,7 @@ li{
 
 
 /*TABLAS DE CARACTERIZACIÓN ALUMNO*/
-.ventanasCoord{
+.ventanasCoord, .ventanasCoord2{
     margin: 1em 0 0;
     display: flex;
     align-items: center;

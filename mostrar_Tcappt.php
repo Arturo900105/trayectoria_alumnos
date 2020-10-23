@@ -116,8 +116,8 @@ $letidTutor = $_SESSION["idTutor"];
                 <td class="rtd_cappt"><?php echo $fAlumnoT['carrera'] ?></td>
                 <td class="rtd_cappt"><?php echo $fAlumnoT['generacion'] ?></td>
             </tr>
+            <?php } ?>
         </tbody>
-        <?php } ?>
     </table>
 </body>
 </html>

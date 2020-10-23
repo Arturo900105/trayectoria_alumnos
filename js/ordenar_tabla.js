@@ -12,4 +12,7 @@ $(document).ready(function (){
     $('.tabla_estadistica').tablesorter();
     $('.tabla_trayectorias').tablesorter();
 
+    $('#tabla_coordinadores').tablesorter();
+    $('#tabla_tutores').tablesorter();
+
 })

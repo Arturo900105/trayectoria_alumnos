@@ -5,7 +5,6 @@ window.addEventListener('message', function(event) {
         document.getElementById('ventana_canalizacion').contentDocument.location.reload(true);
         document.getElementById('ventana_rparcial').contentDocument.location.reload(true);
         document.getElementById('ventana_rfinal').contentDocument.location.reload(true);
-
         document.getElementById('listaAlumnosITSP').contentDocument.location.reload(true);
         document.getElementsByClassName('listaCA').contentDocument.location.reload(true);
     }
@@ -17,14 +16,14 @@ $(document).ready(function (){
     fechaHoy = new Date(); //Fecha actual
     yearActual = fechaHoy.getFullYear(); //obteniendo año
 
-    $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+    $("#tabla_usuCoord").hide()
     $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
-    $(".ventanasCoord").hide()
+    $(".ventanasCoord, .ventanasCoord2").hide()
 
 
     $("#inicioC").on("click",function (){
-        $(".ventanasCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord, .ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#parrafoCoord").show()
 
@@ -33,8 +32,7 @@ $(document).ready(function (){
 
     $("#misdatos").on("click",function (){
         $("#parrafoCoord").hide()
-        $(".ventanasCoord").hide()
-        $("#tabla_coordinadores,#tabla_tutores").hide()
+        $(".ventanasCoord, .ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#tabla_usuCoord").show()
     })
@@ -42,24 +40,24 @@ $(document).ready(function (){
 
     $("#lista_canalizacion").on("click",function (){
         $("#parrafoCoord").hide()
-        $(".ventanasCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord, .ventanasCoord2").hide()
         $("#div_rparciales, #div_rfinales").hide()
         $("#div_canalizaciones").show()
 
     })
     $("#lista_rparcial").on("click",function (){
         $("#parrafoCoord").hide()
-        $(".ventanasCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord, .ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rfinales").hide()
         $("#div_rparciales").show()
 
     })
     $("#lista_rfinal").on("click",function (){
         $("#parrafoCoord").hide()
-        $(".ventanasCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord, .ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales").hide()
         $("#div_rfinales").show()
 
@@ -68,59 +66,66 @@ $(document).ready(function (){
 
     $("#mostrarListaC").on("click",function (){
         $("#parrafoCoord").hide()
+        $("#tabla_usuCoord").hide()
         $(".ventanasCoord").hide()
-        $("#tabla_usuCoord, #tabla_tutores").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
-        $("#tabla_coordinadores").show()
+        $("#ventanaTutor").hide()
+        $("#ventanaCoordinador").show()
     })
     $("#mostrarListaT").on("click",function (){
         $("#parrafoCoord").hide()
+        $("#tabla_usuCoord").hide()
         $(".ventanasCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
-        $("#tabla_tutores").show()
+        $("#ventanaCoordinador").hide()
+        $("#ventanaTutor").show()
     })
 
 
     $("#mlistaAlumnos").on("click",function (){
         $("#parrafoCoord").hide()
-        $(".ventanasCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#ventanaPedagogia, #ventanaPsicologia, #ventanaMedica, #ventanaPostTest, #ventanaCAPPT").hide()
         $("#ventanaAlumnos").show()
     })
     $("#mlistaPedagogia").on("click",function (){
         $("#parrafoCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#ventanaAlumnos, #ventanaPsicologia, #ventanaMedica, #ventanaPostTest, #ventanaCAPPT").hide()
         $("#ventanaPedagogia").show()
     })
     $("#mlistaPsicologia").on("click",function (){
         $("#parrafoCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#ventanaAlumnos, #ventanaPedagogia, #ventanaMedica, #ventanaPostTest, #ventanaCAPPT").hide()
         $("#ventanaPsicologia").show()
     })
     $("#mlistaMedica").on("click",function (){
         $("#parrafoCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#ventanaAlumnos, #ventanaPedagogia, #ventanaPsicologia, #ventanaPostTest, #ventanaCAPPT").hide()
         $("#ventanaMedica").show()
     })
     $("#mlistaPostTest").on("click",function (){
         $("#parrafoCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#ventanaAlumnos, #ventanaPedagogia, #ventanaPsicologia, #ventanaMedica, #ventanaCAPPT").hide()
         $("#ventanaPostTest").show()
     })
     $("#mlistaCAPPT").on("click",function (){
         $("#parrafoCoord").hide()
-        $("#tabla_usuCoord, #tabla_coordinadores,#tabla_tutores").hide()
+        $("#tabla_usuCoord").hide()
+        $(".ventanasCoord2").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#ventanaAlumnos, #ventanaPedagogia, #ventanaPsicologia, #ventanaMedica, #ventanaPostTest").hide()
         $("#ventanaCAPPT").show()
