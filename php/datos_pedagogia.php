@@ -44,6 +44,8 @@
                   $_POST['marcaXK3'] + $_POST['marcaXL3'] + $_POST['marcaXM3'] + $_POST['marcaXN3'] + $_POST['marcaXO3'] +
                   $_POST['marcaXP3'] + $_POST['marcaXQ3'] + $_POST['marcaXR3'] + $_POST['marcaXS3'] + $_POST['marcaXT3'];
 
+    $suma_otme = $sumatoria1 + $sumatoria2 + $sumatoria3;
+
     $pregutas1 = $_POST['cadena1'];
     $pregutas2 = $_POST['cadena2'];
     $pregutas3 = $_POST['cadena3'];
@@ -53,7 +55,7 @@
                                                       '$isea_8','$isea_9','$isea_10','$isea_11','$isea_12','$isea_13','$isea_14',
                                                       '$isea_15','$isea_16','$isea_17','$isea_18','$isea_19','$isea_20','$isea_21',
                                                       '$sumaVisual','$sumaAuditiva','$sumaKinestesica',
-                                                      '$sumatoria1','$sumatoria2','$sumatoria3',
+                                                      '$sumatoria1','$sumatoria2','$sumatoria3','$suma_otme',
                                                       '$pregutas1','$pregutas2','$pregutas3',true)";
     $q4 = mysqli_query($connect, $pedagogia);
 

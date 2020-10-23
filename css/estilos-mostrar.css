@@ -9,7 +9,7 @@ h1{
 
 
 /*TABLA ALUMNOS ITSP*/
-#mostrarAlumnos, .mth_mostrarAlumnos, .mtd_mostrarAlumnos{
+#mostrarAlumnos, .mth_mostrarAlumnos, .mtd_mostrarAlumnos, .mtd_mostrarAlumnos2{
     margin: 1em auto;
     border: 1px solid #000000;
     border-collapse: collapse;
@@ -28,10 +28,14 @@ h1{
     text-align: center;
     padding: 5px;
 }
+.mtd_mostrarAlumnos2{
+    text-align: left;
+    padding: 5px;
+}
 
 
 /*TABLA PEDAGOGÍA ALUMNOS*/
-#mostrarPedagogia, .mth_mostrarPedagogia, .mtd_mostrarPedagogia{
+#mostrarPedagogia, .mth_mostrarPedagogia, .mtd_mostrarPedagogia, .mtd_mostrarPedagogia2{
     margin: 1em auto;
     border: 1px solid #000000;
     border-collapse: collapse;
@@ -50,9 +54,13 @@ h1{
     text-align: center;
     padding: 5px;
 }
+.mtd_mostrarPedagogia2{
+    text-align: left;
+    padding: 5px;
+}
 
 /*TABLA PSICOLOGÍA ALUMNOS*/
-#mostrarPsicologia, .mth_mostrarPsicologia, .mtd_mostrarPsicologia{
+#mostrarPsicologia, .mth_mostrarPsicologia, .mtd_mostrarPsicologia, .mtd_mostrarPsicologia2{
     margin: 1em auto;
     border: 1px solid #000000;
     border-collapse: collapse;
@@ -71,9 +79,14 @@ h1{
     text-align: center;
     padding: 5px;
 }
+.mtd_mostrarPsicologia2{
+    text-align: left;
+    padding: 5px;
+}
+
 
 /*TABLA MEDICA ALUMNOS*/
-#mostrarMedica, .mth_mostrarMedica, .mtd_mostrarMedica{
+#mostrarMedica, .mth_mostrarMedica, .mtd_mostrarMedica, .mtd_mostrarMedica2{
     margin: 1em auto;
     border: 1px solid #000000;
     border-collapse: collapse;
@@ -90,6 +103,10 @@ h1{
 }
 .mtd_mostrarMedica{
     text-align: center;
+    padding: 5px;
+}
+.mtd_mostrarMedica2{
+    text-align: left;
     padding: 5px;
 }
 #mostRespMedico{
@@ -157,7 +174,7 @@ h1{
 }
 
 /*TABLA POST-TEST ALUMNOS*/
-#mostrarPostTest, .mth_mostrarPostTest, .mtd_mostrarPostTest{
+#mostrarPostTest, .mth_mostrarPostTest, .mtd_mostrarPostTest, .mtd_mostrarPostTest2{
     margin: 1em auto;
     border: 1px solid #000000;
     border-collapse: collapse;
@@ -174,5 +191,9 @@ h1{
 }
 .mtd_mostrarPostTest{
     text-align: center;
+    padding: 5px;
+}
+.mtd_mostrarPostTest2{
+    text-align: left;
     padding: 5px;
 }

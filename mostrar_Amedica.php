@@ -10,6 +10,10 @@ require "php/BD_Connect.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tabla Médica</title>
     <link rel="stylesheet" href="css/estilos-mostrar.css">
+
+    <script src="js/jquery_3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/sweetalert2@9.10.12,npm/tablesorter@2.31.3"></script>
+    <script src="js/ordenar_tabla.js"></script>
 </head>
 <body>
     <h1>RESULTADOS DEL EXAMEN MÉDICO</h1>
@@ -39,7 +43,7 @@ require "php/BD_Connect.php";
         ?>
             <tr>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['num_ficha'] ?></td>
-                <td class="mtd_mostrarMedica"><?php echo $fMedica['nombre']." ".$fMedica['apellidos'] ?></td>
+                <td class="mtd_mostrarMedica2"><?php echo $fMedica['nombre']." ".$fMedica['apellidos'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['peso'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['estatura'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['tipo_sangre'] ?></td>

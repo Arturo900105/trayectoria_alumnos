@@ -4,6 +4,7 @@ require "fecha_hora.php";
 
     $fechaHoy;
     $horaHoy;
+    $nominaCoord = $_POST['nominaCoord'];
     $nombre = $_POST['nombreCoord'];
     $apellidos = $_POST['apePat']." ".$_POST['apeMat'];
     $sexoCoord = $_POST['sexoCoord'];
@@ -12,8 +13,10 @@ require "fecha_hora.php";
     $usuario = $_POST['usuarioCoord'];
     $password = $_POST['passCoord'];
 
-    $t_coordinador = "INSERT INTO coordinador (nombre,apellidos,sexo,coordinacion,email,fecha_registro,hora_registro,usuario,pass_coord)
-                      VALUES ('$nombre','$apellidos','$sexoCoord','$coordinacion','$email','$fechaHoy','$horaHoy','$usuario','$password')";
+    $t_coordinador = "INSERT INTO coordinador VALUES ('$nominaCoord','$nombre','$apellidos','$sexoCoord',
+                                                      '$coordinacion','$email',
+                                                      '$fechaHoy','$horaHoy',
+                                                      '$usuario','$password')";
     $qtcoord = mysqli_query($connect, $t_coordinador);
 
     if (!$qtcoord){

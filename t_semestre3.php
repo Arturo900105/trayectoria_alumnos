@@ -1,3 +1,7 @@
+<?php
+require "php/BD_Connect.php";
+$numControl = $_GET["matricula_alumno"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,10 +23,21 @@
     <form autocomplete="off" id="trayectoria3">
         <h1>Trayectoria de 3er Semestre</h1>
         <br>
-
-        <h2>Control:</h2>
-        <h2>Alumno:</h2>
-
+        <?php
+        $q_Alumno = "SELECT al.apellidos, al.nombre, tut.apellido_tut, tut.nombre_tut FROM alumno al
+                     JOIN num_control_alumno ctr
+                     ON ctr.num_ficha = al.num_ficha
+                     JOIN tutor tut
+                     ON al.id_tutor = tut.id_tutor
+                     WHERE num_control = '$numControl'";
+        $R_Alumno = mysqli_query($connect, $q_Alumno);
+        while ($F_Alumno = $R_Alumno->fetch_assoc()){
+        ?>
+        <h2>Control: <?php echo $numControl ?></h2>
+        <h2>Alumno: <?php echo $F_Alumno['nombre']." ".$F_Alumno['apellidos'] ?></h2>
+        <input type="hidden" name="ctrAlumno" value="<?php echo $numControl ?>">
+        <input type="hidden" name="nombreTutor" value="<?php echo $F_Alumno['nombre_tut']." ".$F_Alumno['apellido_tut'] ?>">
+        <?php } ?>
         <table id="tabla_ingles_3">
             <tr>
                 <td id="inglesth_3">
@@ -85,6 +100,54 @@
                 </td>
                 <td id="creditostd4_3" class="creditostd_3">
                     <input type="text" id="suma_tcdc_3" name="suma_tcdc_3" readonly>
+                </td>
+            </tr>
+            <tr id="fila1">
+                <td class="creditostd2" colspan="4">
+                    <select name="actCultural" id="actCultural" class="nomActividad">
+                        <option value="">Act. Extraescolar Cultural:</option>
+                        <option value="Danza">Danza.</option>
+                        <option value="Ajedrez">Ajedrez.</option>
+                        <option value="Banda de guerra">Banda de Guerra.</option>
+                        <option value="Pintura y artes plásticas">Pintura y Artes Plásticas.</option>
+                        <option value="otra">Otra Actividad</option>
+                    </select>
+                    <input type="text" value="" name="otraCult" id="otraCult" class="otraActividad" placeholder="Nombre de la Actividad">
+                </td>
+            </tr>
+            <tr id="fila2">
+                <td class="creditostd2" colspan="4">
+                    <select name="actDeportiva" id="actDeportiva" class="nomActividad">
+                        <option value="">Act. Extraescolar Deportiva:</option>
+                        <option value="Fútbol">Fútbol.</option>
+                        <option value="Básquetbol">Básquetbol.</option>
+                        <option value="Voleibol">Voleibol.</option>
+                        <option value="Atletismo">Atletismo.</option>
+                        <option value="otra">Otra Actividad</option>
+                    </select>
+                    <input type="text" value="" name="otraDepor" id="otraDepor" class="otraActividad" placeholder="Nombre de la Actividad">
+                </td>
+            </tr>
+            <tr id="fila3">
+                <td class="creditostd3" colspan="4">
+                    <select name="actComple" id="actComple">
+                        <option value="">Nombre de la Actividad Complementaria:</option>
+                        <option value="Apoyo a proyectos de investigación">Apoyo a proyectos de investigación.</option>
+                        <option value="Producción de invernadero">Producción de invernadero.</option>
+                        <option value="Programa de alto rendimiento académico">Programa de alto rendimiento académico.</option>
+                        <option value="Club de robótica (ISIC)">Club de robótica (ISIC).</option>
+                        <option value="Eventos académicos">Eventos académicos.</option>
+                        <option value="Taller de prototipos (ISIC)">Taller de prototipos (ISIC).</option>
+                        <option value="Mantenimiento y operación de la planta purificadora del ITSP">Mantenimiento y operación de la planta purificadora del ITSP.</option>
+                        <option value="Cursos y talleres sobre temas a fines a (IIND)">Cursos y talleres sobre temas a fines a (IIND).</option>
+                        <option value="Club de energías renovables (IENR)">Club de energías renovables (IENR).</option>
+                        <option value="E-SPORTS">E-SPORTS.</option>
+                        <option value="Apoyo al sistema de gestión ambiental">Apoyo al sistema de gestión ambiental.</option>
+                        <option value="Apoyo al sistema de gestión de la calidad">Apoyo al sistema de gestión de la calidad.</option>
+                        <option value="otra">Otra Actividad Complementaria</option>
+                    </select>
+                    <br>
+                    <input type="text" value="" name="otraComple" id="otraComple" placeholder="Nombre de la Actividad Complementaria">
                 </td>
             </tr>
         </table>

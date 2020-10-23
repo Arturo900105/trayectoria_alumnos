@@ -136,7 +136,7 @@ if ($letSessionA == null || $letSessionA == "") {
             <div class="enfermedades">
                 <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Diabetes">: Diabetes.</label>
                 <br>
-                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Hipertención">: Hipertensión.</label>
+                <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Hipertensión">: Hipertensión.</label>
                 <br>
                 <label class="label_anteherd"><input type="checkbox" class="ante_hered" name="ante_hered[]" value="Cancer">: Cancer.</label>
                 <br>

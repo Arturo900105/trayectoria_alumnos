@@ -10,6 +10,10 @@ require "php/BD_Connect.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tabla Psicología</title>
     <link rel="stylesheet" href="css/estilos-mostrar.css">
+
+    <script src="js/jquery_3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/sweetalert2@9.10.12,npm/tablesorter@2.31.3"></script>
+    <script src="js/ordenar_tabla.js"></script>
 </head>
 <body>
     <h1>RESULTADOS DEL EXAMEN DE PSICOLOGÍA</h1>
@@ -42,7 +46,7 @@ require "php/BD_Connect.php";
             ?>
             <tr>
                 <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['num_ficha'] ?></td>
-                <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['nombre']." ".$fPsicologia['apellidos'] ?></td>
+                <td class="mtd_mostrarPsicologia2"><?php echo $fPsicologia['nombre']." ".$fPsicologia['apellidos'] ?></td>
                 <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['respuesta1'] ?></td>
                 <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['respuesta2'] ?></td>
                 <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['ansiedad'] ?></td>

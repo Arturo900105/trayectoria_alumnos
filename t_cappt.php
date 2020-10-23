@@ -6,7 +6,7 @@ $numFicha = $_GET["ficha_alumno"];
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario (CAPT)</title>
+    <title>Formulario CAPPT</title>
     <link rel="shortcut icon" href="iconos/semC.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos-tcappt.css">
 
@@ -24,13 +24,18 @@ $numFicha = $_GET["ficha_alumno"];
             <h1 >Caracterización del Alumno por Parte del Tutor</h1>
             <br>
             <?php
-                $q_Alumno = "SELECT num_ficha,apellidos,nombre FROM alumno WHERE num_ficha = '$numFicha'";
+                $q_Alumno = "SELECT al.num_ficha,al.apellidos,al.nombre,tut.nombre_tut,tut.apellido_tut
+                             FROM alumno al
+                                 JOIN tutor tut
+                                    ON al.id_tutor = tut.id_tutor
+                             WHERE num_ficha = '$numFicha'";
                 $R_Alumno = mysqli_query($connect, $q_Alumno);
                 while ($F_Alumno = $R_Alumno->fetch_assoc()){
             ?>
-                    <h2>Ficha: <?php echo $F_Alumno['num_ficha'] ?>.</h2>
+                    <h2>Ficha: <?php echo $numFicha ?>.</h2>
                     <h2>Alumno: <?php echo $F_Alumno['nombre']." ".$F_Alumno['apellidos'] ?>.</h2>
                     <input type="hidden" name="num_fichaAlumno" value="<?php echo $F_Alumno['num_ficha'] ?>">
+                    <input type="hidden" name="nombreTutor" value="<?php echo $F_Alumno['nombre_tut']." ".$F_Alumno['apellido_tut'] ?>">
 
             <?php } ?>
             <br><br>

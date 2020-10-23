@@ -22,7 +22,7 @@ $numFicha = $_GET["ficha_alumno"];
     $rMedica = mysqli_query($connect, $qMedica);
     while ($fMedica = $rMedica->fetch_assoc()){
     ?>
-    <h1>Resultado Médico de: <?php echo $fMedica['nombre']." ".$fMedica['apellidos'] ?>.</h1>
+    <h1>Resultado Médico de <?php echo $fMedica['nombre']." ".$fMedica['apellidos'] ?>:</h1>
     <form class="form_mostrarMedica2">
         <table id="mostrarMedica2">
             <tr>

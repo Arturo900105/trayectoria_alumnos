@@ -88,17 +88,14 @@ $(document).ready(function (){
                         }
                     })
                     form_titulacion[0].reset()
-                    parent.$("#v_modal_titulacion").hide()
+                    setTimeout('window.close()',5000)
                 }
             })
         }
     })
 
-
     $("#cerrarTitulacion").on("click", function (){
-        parent.$("#v_modal_titulacion").hide()
         form_titulacion[0].reset()
+        window.close();
     })
-
-
 })

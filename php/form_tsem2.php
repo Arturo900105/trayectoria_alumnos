@@ -1,7 +1,8 @@
 <?php
     require "BD_Connect.php";
+    require "fecha_hora.php";
 
-    $numControl = $_POST[''];
+    $numControl = $_POST['ctrAlumno'];
 
     $c_ingles = $_POST['ingles_2'];
     $n_ingles = $_POST['nivel_ingles_2'];
@@ -15,6 +16,15 @@
     $credito_C = $_POST['cultural_2'];
     $credito_D = $_POST['deportiva_2'];
     $sumaCreditos = $_POST['suma_tcd_2'];
+
+    $nomCult = $_POST['actCultural'];
+    if ($nomCult == "otra"){
+        $nomCult = $_POST['otraCult'];
+    }
+    $nomDepor = $_POST['actDeportiva'];
+    if ($nomDepor == "otra"){
+        $nomDepor = $_POST['otraDepor'];
+    }
 
     $asignatura1 = $_POST['materia1_2'];
     $asignatura2 = $_POST['materia2_2'];
@@ -53,10 +63,11 @@
     $c_otraCanalizacion = $_POST['folioTInd_2'];
 
     $observaciones = $_POST['observaciones_2'];
-
+    $nomTutor = $_POST['nombreTutor'];
 
     $g_trayectoria2 = "INSERT INTO trayectoria_sem2 VALUE ('$numControl','$c_ingles','$n_ingles','$e_ingles',
                                                            '$credito_T','$credito_C','$credito_D','$sumaCreditos',
+                                                           '$nomCult','$nomDepor',
                                                            '$asignatura1','$calificacion1',
                                                            '$asignatura2','$calificacion2',
                                                            '$asignatura3','$calificacion3',
@@ -67,7 +78,7 @@
                                                            '$beca','$tipo_beca',
                                                            '$rep_materia1','$rep_materia2','$rep_materia3','$rep_materia4','$rep_materia5','$rep_materia6','$rep_materia7',
                                                            '$c_areaMedica','$c_areaPsicologica','$c_asesoriaPares','$c_tutoriaIndividual','$c_otraCanalizacion',
-                                                           '$observaciones',)";
+                                                           '$observaciones','$nomTutor','$fechaHoy','$horaHoy',true)";
     $q_T2 = mysqli_query($connect, $g_trayectoria2);
 
     if (!$q_T2) {

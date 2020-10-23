@@ -1,0 +1,86 @@
+body{
+    font-family: Arial;
+}
+
+h1{
+    text-align: center;
+}
+
+/*TABLA RESULTADOS TC*/
+#resultados_cappt, .th_rcappt, .td_rcappt{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.th_rcappt{
+    padding: 5px;
+    text-align: left;
+}
+.td_rcappt{
+    padding: 5px;
+}
+
+
+/*TABLA RESULTADOS TRAYECTORIAS SEMESTRALES 1, 2, 3, 4, 5, 6, 7, 8, 9.*/
+#resultados_tsem, .th_rtsem, .td_rtsem{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.th_rtsem{
+    padding: 5px;
+    text-align: left;
+}
+.td_rtsem{
+    padding: 5px;
+}
+
+
+/*TABLA TRAYECTORIAS*/
+.tabla_trayectorias, .th_tratectorias, .td_tratectorias, .td_tratectorias2{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.th_tratectorias{
+    background: #00ae0e;
+    padding: 5px;
+}
+.th_tratectorias:hover{
+    cursor: pointer;
+    background: #22d600;
+}
+.td_tratectorias{
+    text-align: center;
+    padding: 5px;
+}
+.td_tratectorias2{
+    text-align: left;
+    padding: 5px;
+}
+.btn_tsem, .btn_tsemI, .btn_tsemP{
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #969b99;
+    height: 2.5em;
+    width: 2.5em;
+}
+.btn_tsem:hover{
+    font-family: "Arial Black";
+    background: #0eb801;
+}
+.btn_tsemI:hover{
+    font-family: "Arial Black";
+    background: #ff5a00;
+}
+.btn_tsemP:hover{
+    font-family: "Arial Black";
+    background: #0f8af5;
+}

@@ -1,5 +1,6 @@
 <?php
     require "BD_Connect.php";
+    require "fecha_hora.php";
 
     $numFicha = $_POST['num_fichaAlumno'];
 
@@ -43,6 +44,8 @@
     $r_curso2 = $_POST['res_curso2'];
     $r_curso3 = $_POST['res_curso3'];
 
+    $nomTutor = $_POST['nombreTutor'];
+
     $g_numControl = "INSERT INTO num_control_alumno VALUE ('$numControl','$numFicha')";
     $q_nControl = mysqli_query($connect, $g_numControl);
 
@@ -51,7 +54,8 @@
                                                          '$discapacidad','$diagPsicologico','$diagMedico','$riesgoSalud',
                                                          '$e_Aprendizaje','$he_Organizacion','$he_Tecnicas','$he_Motivacion',
                                                          '$o_Vocacional','$e_Ortografica','$e_Redaccion',
-                                                         '$n_curso1','$r_curso1','$n_curso2','$r_curso2','$n_curso3','$r_curso3')";
+                                                         '$n_curso1','$r_curso1','$n_curso2','$r_curso2','$n_curso3','$r_curso3',
+                                                         '$nomTutor','$fechaHoy','$horaHoy',true)";
         $q_CAPPT = mysqli_query($connect, $g_CAPPT);
 
         echo "CARACTERIZACIÓN\nPOR PARTE DEL TUTOR\nGUARDADA EXITOSAMENTE";

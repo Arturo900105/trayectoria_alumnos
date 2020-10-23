@@ -1,3 +1,7 @@
+<?php
+require "php/BD_Connect.php";
+$numControl = $_GET["matricula_alumno"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,10 +23,21 @@
     <form autocomplete="off" id="trayectoria2">
         <h1>Trayectoria de 2do Semestre</h1>
         <br>
-
-        <h2>Control:</h2>
-        <h2>Alumno:</h2>
-
+        <?php
+        $q_Alumno = "SELECT al.apellidos, al.nombre, tut.apellido_tut, tut.nombre_tut FROM alumno al
+                     JOIN num_control_alumno ctr
+                     ON ctr.num_ficha = al.num_ficha
+                     JOIN tutor tut
+                     ON al.id_tutor = tut.id_tutor
+                     WHERE num_control = '$numControl'";
+        $R_Alumno = mysqli_query($connect, $q_Alumno);
+        while ($F_Alumno = $R_Alumno->fetch_assoc()){
+        ?>
+        <h2>Control: <?php echo $numControl ?></h2>
+        <h2>Alumno: <?php echo $F_Alumno['nombre']." ".$F_Alumno['apellidos'] ?></h2>
+        <input type="hidden" name="ctrAlumno" value="<?php echo $numControl ?>">
+        <input type="hidden" name="nombreTutor" value="<?php echo $F_Alumno['nombre_tut']." ".$F_Alumno['apellido_tut'] ?>">
+        <?php } ?>
         <table id="tabla_ingles_2">
             <tr>
                 <td id="inglesth_2">
@@ -90,6 +105,34 @@
                 </td>
                 <td class="creditostd_2">
                     <input type="text" id="suma_tcd_2" name="suma_tcd_2" readonly>
+                </td>
+            </tr>
+            <tr>
+                <th class="creditostd2">Act. Extraescolar Cultural:</th>
+                <td class="creditostd2" colspan="2">
+                    <select name="actCultural" id="actCultural" class="nomActividad">
+                        <option value="">----------</option>
+                        <option value="Danza">Danza.</option>
+                        <option value="Ajedrez">Ajedrez.</option>
+                        <option value="Banda de guerra">Banda de Guerra.</option>
+                        <option value="Pintura y artes plásticas">Pintura y Artes Plásticas.</option>
+                        <option value="otra">Otra Actividad</option>
+                    </select>
+                    <input type="text" value="" name="otraCult" id="otraCult" class="otraActividad" placeholder="Nombre de la Actividad">
+                </td>
+            </tr>
+            <tr>
+                <th class="creditostd2">Act. Extraescolar Deportiva:</th>
+                <td class="creditostd2" colspan="2">
+                    <select name="actDeportiva" id="actDeportiva" class="nomActividad">
+                        <option value="">----------</option>
+                        <option value="Fútbol">Fútbol.</option>
+                        <option value="Básquetbol">Básquetbol.</option>
+                        <option value="Voleibol">Voleibol.</option>
+                        <option value="Atletismo">Atletismo.</option>
+                        <option value="otra">Otra Actividad</option>
+                    </select>
+                    <input type="text" value="" name="otraDepor" id="otraDepor" class="otraActividad" placeholder="Nombre de la Actividad">
                 </td>
             </tr>
         </table>

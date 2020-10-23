@@ -10,6 +10,10 @@ require "php/BD_Connect.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Alumnos ITSP</title>
     <link rel="stylesheet" href="css/estilos-mostrar.css">
+
+    <script src="js/jquery_3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/sweetalert2@9.10.12,npm/tablesorter@2.31.3"></script>
+    <script src="js/ordenar_tabla.js"></script>
 </head>
 <body>
     <h1>ALUMNOS DEL ITSP</h1>
@@ -42,15 +46,15 @@ require "php/BD_Connect.php";
                 <td class="mtd_mostrarAlumnos" title="Fecha de registro: <?php echo $filaA['fecha_registro'] ?>">
                     <?php echo $filaA['num_ficha'] ?>
                 </td>
-                <td class="mtd_mostrarAlumnos"><?php echo $filaA['nombre'] ?></td>
-                <td class="mtd_mostrarAlumnos"><?php echo $filaA['apellidos'] ?></td>
+                <td class="mtd_mostrarAlumnos2"><?php echo $filaA['nombre'] ?></td>
+                <td class="mtd_mostrarAlumnos2"><?php echo $filaA['apellidos'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['fecha_de_nacimiento'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['sexo'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['indigena'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['edad'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['edo_civil'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['tel_cel'] ?></td>
-                <td class="mtd_mostrarAlumnos"><?php echo $filaA['email'] ?></td>
+                <td class="mtd_mostrarAlumnos2"><?php echo $filaA['email'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['fecha_ficha'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['carrera'] ?></td>
                 <td class="mtd_mostrarAlumnos"><?php echo $filaA['generacion'] ?></td>

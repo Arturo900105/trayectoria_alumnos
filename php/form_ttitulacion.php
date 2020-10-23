@@ -1,18 +1,17 @@
 <?php
     require "BD_Connect.php";
+    require "fecha_hora.php";
 
-    $numControl = $_POST[''];
+    $numControl = $_POST['ctrAlumno'];
     $temaProyecto = $_POST['tema'];
     $inglesAcreditado = $_POST['ingles_acreditado'];
     $creditoCumplido = $_POST['creditos_cumplidos'];
     $fechaExamenP = $_POST['fecha_examen'];
+    $nomTutor = $_POST['nombreTutor'];
 
-
-    $g_trayectoriaT = "INSERT INTO trayectoria_titulacion VALUE ('$numControl',
-                                                                 '$temaProyecto',
-                                                                 '$inglesAcreditado',
-                                                                 '$creditoCumplido',
-                                                                 '$fechaExamenP')";
+    $g_trayectoriaT = "INSERT INTO trayectoria_titulacion VALUE ('$numControl','$temaProyecto','$inglesAcreditado',
+                                                                 '$creditoCumplido','$fechaExamenP','$nomTutor',
+                                                                 '$fechaHoy','$horaHoy',true)";
     $q_Titulacion = mysqli_query($connect, $g_trayectoriaT);
 
     if ($q_Titulacion) {

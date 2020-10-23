@@ -106,14 +106,14 @@ require "php/BD_Connect.php";
         </div>
 
         <div class="modal-fondo" id="fondo_nip">
-            <div id="solo_nip">
-                <input type="password" placeholder="Ingrese NIP autorizado" id="pass-nip" maxlength="10">
-
-                <a href="javascript:confirmarLoginNip()">
+            <form id="solo_nip">
+                <input type="password" placeholder="Ingrese NIP autorizado" id="pass-nip" name="pass-nip" maxlength="10">
+                <br><br>
+                <a href="javascript:confirmarLoginNip()" id="btn_formcita">
                     <input type="button" value="ENTRAR" class="boton_formcita">
                 </a>
                 <input type="button" value="CANCELAR" class="boton_formcita" onclick="cerrarNipCITA()">
-            </div>
+            </form>
         </div>
 
         <div class="modal-fondo" id="ventana_modal_cita">
@@ -127,6 +127,8 @@ require "php/BD_Connect.php";
                     <input type="text" name="apePat" id="apePat" placeholder="Apellido Paterno:" class="cita_apellidos">
                     <input type="text" name="apeMat" id="apeMat" placeholder="Apellido Materno:" class="cita_apellidos">
                     <br><br>
+
+                    <input type="text" id="nominaCoord" name="nominaCoord" placeholder="No. Trab.:" maxlength="3" minlength="3">
 
                     <b id="titleSexo">Sexo:</b>
                     <label class="seCoord"><input type="radio" name="sexoCoord" value="M">Masculino</label>
@@ -145,14 +147,14 @@ require "php/BD_Connect.php";
                         <option value="IAGR">Ingeniería en Agronomía</option>
                     </select>
                     <input type="email" placeholder="E-mail:" name="cita_email" id="cita_email">
-                    <br>
+                    <br><br>
 
                     <input type="button" id="generarLogin" value="Generar Login" class="boton_formcita">
                     <input type="text" name="usuarioCoord" id="usuarioCoord" placeholder="Usuario:" class="cita_login" readonly>
                     <input type="text" name="passCoord" id="passCoord" placeholder="Contraseña:" class="cita_login" readonly>
-                    <br>
+                    <br><br>
 
-                    <input type="submit" value="REGISTRAR" class="boton_formcita">
+                    <input type="submit" value="REGISTRAR" class="boton_formcita">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="javascript:cerrarLoginNip()">
                         <input type="button" value="CANCELAR" class="boton_formcita" onclick="cerrarLoginNip()">
                     </a>

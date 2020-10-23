@@ -42,7 +42,6 @@ if ($letSession == null || $letSession == "") {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
-    <script src="js/alertas_trayectorias.js"></script>
     <script src="js/alerta_tutor.js"></script>
 </head>
 <body>
@@ -68,24 +67,8 @@ if ($letSession == null || $letSession == "") {
         </li>
         <li><a>TRAYECTORIAS<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuTutor">
-                <li><a>CARACTERIZACIÓN A ALUMNOS</a></li>
-                <li><a>SEMESTRAL<ion-icon name="caret-forward-outline"></ion-icon></a>
-                    <ul class="submenuTutor2">
-                        <li><a>1er Semestre</a></li>
-                        <li><a>2do Semestre</a></li>
-                        <li><a>3er Semestre</a></li>
-                        <li><a>4to Semestre</a></li>
-                        <li><a>5to Semestre</a></li>
-                        <li><a>6to Semestre</a></li>
-                        <li><a>7mo Semestre</a></li>
-                        <li><a>8vo Semestre</a></li>
-                        <li><a>9no Semestre</a></li>
-                        <li><a>10mo Semestre</a></li>
-                        <li><a>11vo Semestre</a></li>
-                        <li><a>12vo Semestre</a></li>
-                    </ul>
-                </li>
-                <li><a>PROCESO DE TITULACIÓN</a></li>
+                <li id="cappt_misAlumnos"><a>CARACTERIZACIÓN A ALUMNOS</a></li>
+                <li id="tsems_misAlumnos"><a>SEMESTRAL</a></li>
             </ul>
         </li>
         <li><a>CANALIZACIONES<ion-icon name="caret-down-outline"></ion-icon></a>
@@ -119,6 +102,13 @@ if ($letSession == null || $letSession == "") {
         <iframe id="lista_misAlumnos" class="lista_alumnosITSP" src="mis_alumnos.php"></iframe>
     </div>
 
+    <div class="cappt_alumnos">
+        <iframe id="tabla_cappt" class="lista_alumnosITSP" src="mostrar_Tcappt.php"></iframe>
+    </div>
+
+    <div class="trayectoria_alumnos">
+        <iframe id="tabla_cappt" class="lista_alumnosITSP" src="zt_trayectorias2.php"></iframe>
+    </div>
 
     <table id="tabla_usutUT">
         <tr>
@@ -157,64 +147,6 @@ if ($letSession == null || $letSession == "") {
             <td class="td_tablausuTut"><div class="datos_usuTut" id="usuTut_password"></div></td>
         </tr>
     </table>
-
-    <div class="contentTutor">
-        <p>
-            <a href="javascript:abrirT1semeste()">Trayectoria 1ro Semestre</a><br>
-            <a href="javascript:abrirT2semeste()">Trayectoria 2do Semestre</a><br>
-            <a href="javascript:abrirT3semeste()">Trayectoria 3ro Semestre</a><br>
-            <a href="javascript:abrirT4semeste()">Trayectoria 4to Semestre</a><br>
-            <a href="javascript:abrirT5semeste()">Trayectoria 5to Semestre</a><br>
-            <a href="javascript:abrirT6semeste()">Trayectoria 6to Semestre</a><br>
-            <a href="javascript:abrirT7semeste()">Trayectoria 7mo Semestre</a><br>
-            <a href="javascript:abrirT8semeste()">Trayectoria 8vo Semestre</a><br>
-            <a href="javascript:abrirT9semeste()">Trayectoria 9no Semestre</a><br>
-            <a href="javascript:abrirTitulacion()">Proceso de Titulación</a>
-        </p>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t1">
-        <iframe class="iframe_trayectoria" src="t_semestre1.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t2">
-        <iframe class="iframe_trayectoria" src="t_semestre2.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t3">
-        <iframe class="iframe_trayectoria" src="t_semestre3.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t4">
-        <iframe class="iframe_trayectoria" src="t_semestre4.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t5">
-        <iframe class="iframe_trayectoria" src="t_semestre5.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t6">
-        <iframe class="iframe_trayectoria" src="t_semestre6.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t7">
-        <iframe class="iframe_trayectoria" src="t_semestre7.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t8">
-        <iframe class="iframe_trayectoria" src="t_semestre8.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_t9">
-        <iframe class="iframe_trayectoria" src="t_semestre9.html"></iframe>
-    </div>
-
-    <div class="vmodal_trayectorias" id="v_modal_titulacion">
-        <div id="modalTitulacion">
-            <iframe id="iframe_titulacion" src="t_titulacion.html"></iframe>
-        </div>
-    </div>
-
 
     <div id="div_canalizaciones">
         <iframe id="ventana_canalizacion" src="imprimir_canalizacion.php" frameborder="0"></iframe>

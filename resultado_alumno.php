@@ -9,11 +9,11 @@ $numFicha = $_GET["ficha_alumno"];
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Datos del Alumno</title>
+    <title>Datos de <?php echo $numFicha ?></title>
     <link rel="stylesheet" href="css/estilos-resultados.css">
 </head>
 <body>
-    <h1>Datos del Alumno</h1>
+    <h1>Datos de <?php echo $numFicha ?></h1>
     <form id="tabla_datosAlumno">
         <?php
         $Qtabla_Alumno = "SELECT al.*,dom.*,pro.* FROM alumno al
@@ -42,7 +42,6 @@ $numFicha = $_GET["ficha_alumno"];
             $ftAlumno['carrera'] = "Ingeniería en Agronomía";
         }
         ?>
-        <h2>Ficha: <?php echo $ftAlumno['num_ficha'] ?></h2>
         <h2>Nombre: <?php echo $ftAlumno['nombre']." ".$ftAlumno['apellidos'] ?></h2>
         <h2>Carrera: <?php echo $ftAlumno['carrera'] ?></h2>
         <h2>Generación: <?php echo $ftAlumno['generacion'] ?></h2>

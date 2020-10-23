@@ -7,7 +7,7 @@ h1{
 }
 
 /*TABLA DE ALUMNOS DEL ITSP*/
-#alumnosITSP, .th_alumnosITSP, .td_alumnosITSP{
+#alumnosITSP, .th_alumnosITSP, .td_alumnosITSP, .td_alumnosITSP2{
     margin: 0 auto;
     border: 1px solid #000000;
     border-collapse: collapse;
@@ -32,6 +32,11 @@ h1{
     padding: 2px 5px;
     text-align: center;
 }
+.td_alumnosITSP2{
+    padding: 2px 5px;
+    text-align: left;
+}
+
 
 /*BOTÓN PARA AGREGAR ALUMNOS A MI LISTA*/
 .agregar{
@@ -48,7 +53,7 @@ h1{
 
 
 /*TABLA MIS ALUMNOS*/
-#tabla_misAlumnos, .th_misAlumnos, .td_misAlumnos{
+#tabla_misAlumnos, .th_misAlumnos, .td_misAlumnos, .td_misAlumnos2{
     border: 1px solid #000000;
     border-collapse: collapse;
     font-size: 15px;
@@ -76,6 +81,10 @@ h1{
     padding: 2px 5px;
     text-align: center;
 }
+.td_misAlumnos2{
+    padding: 2px 5px;
+    text-align: left;
+}
 
 
 /*BOTÓN PARA AGREGAR ALUMNOS A MI LISTA*/
@@ -93,6 +102,9 @@ h1{
 
 /*BOTÓN PARA ELIMINAR ALUMNOS DE MI LISTA*/
 .eliminar{
+    border-radius: 2px;
+    border: none;
+    background: #969b99;
     margin: 2px 0;
     width: 9em;
     height: 2em;
@@ -106,6 +118,9 @@ h1{
 
 /*BOTONES DE LA FILA ALUMNOS*/
 .btn_alumno{
+    border-radius: 2px;
+    border: none;
+    background: #969b99;
     margin: 2px 0;
     height: 2em;
 }
@@ -115,3 +130,59 @@ h1{
     background: #0fa703;
 }
 
+
+/*TABLA CARACTERIZACIÓN POR PARTE DEL TUTOR*/
+.tabla_cappt, .rth_cappt, .rtd_cappt{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+
+.rth_cappt{
+    background: #0068db;
+    color: white;
+    padding: 5px;
+}
+.rth_cappt:hover{
+    cursor: pointer;
+    background: #00279d;
+}
+
+.rtd_cappt{
+    text-align: center;
+    padding: 5px;
+}
+#cappt_nombre{
+    text-align: left;
+}
+
+.boton_cappt{
+    font-family: "Arial Black";
+    border: none;
+    background: #006700;
+    color: white;
+    border-radius: 5px;
+    height: 2em;
+    width: 2em;
+}
+.boton_cappt:hover{
+
+    cursor: pointer;
+    background: #04dd04;
+}
+
+
+.boton_tsem{
+    border: none;
+    background: #969b99;
+    border-radius: 5px;
+    height: 2em;
+    width: 2em;
+}
+.boton_tsem:hover{
+    font-family: "Arial Black";
+    cursor: pointer;
+    background: #04dd04;
+}

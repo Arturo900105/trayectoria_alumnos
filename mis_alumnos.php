@@ -38,7 +38,6 @@ $letidTutor = $_SESSION["idTutor"];
                 <th class="th_misAlumnos">Nombre(s)</th>
                 <th class="th_misAlumnos">Carrera</th>
                 <th class="th_misAlumnos">Generación</th>
-                <th class="th_misAlumnos">Fecha cuando sacó Ficha</th>
                 <th class="th_misAlumnos" colspan="4">Caracterización Personalizada del Estudiante</th>
                 <th class="th_misAlumnos">Núm de Control</th>
                 <th class="th_misAlumnos">¿Eliminar de mis Alumnos?</th>
@@ -51,13 +50,14 @@ $letidTutor = $_SESSION["idTutor"];
             $rmisAlumno = mysqli_query($connect, $qmisAlumno);
             while ($fmisAlumno = $rmisAlumno->fetch_assoc()){
                 ?>
+                <input type="hidden" id="numFicha" value="<?php echo $fmisAlumno['num_ficha'] ?>">
                 <tr>
-                    <td class="td_misAlumnos"><?php echo $fmisAlumno['num_ficha'] ?></td>
-                    <td class="td_misAlumnos"><?php echo $fmisAlumno['apellidos'] ?></td>
-                    <td class="td_misAlumnos"><?php echo $fmisAlumno['nombre'] ?></td>
+                    <td class="td_misAlumnos" title="Fecha cuando sacó la Ficha: <?php echo $fmisAlumno['fecha_ficha'] ?>">
+                        <?php echo $fmisAlumno['num_ficha'] ?></td>
+                    <td class="td_misAlumnos2"><?php echo $fmisAlumno['apellidos'] ?></td>
+                    <td class="td_misAlumnos2"><?php echo $fmisAlumno['nombre'] ?></td>
                     <td class="td_misAlumnos"><?php echo $fmisAlumno['carrera'] ?></td>
                     <td class="td_misAlumnos"><?php echo $fmisAlumno['generacion'] ?></td>
-                    <td class="td_misAlumnos"><?php echo $fmisAlumno['fecha_ficha'] ?></td>
 
                     <td class="td_misAlumnos">
                         <a href="resultado_alumno.php?ficha_alumno=<?php echo $fmisAlumno['num_ficha'] ?>" target="_blank">
@@ -83,11 +83,14 @@ $letidTutor = $_SESSION["idTutor"];
                         </a>
                     </td>
 
+
+
                     <td class="td_misAlumnos">
-                        <a href="t_cappt.php?ficha_alumno=<?php echo $fmisAlumno['num_ficha'] ?>" target="_blank">
-                            <input class="btn_alumno" type="button" value="MATRÍCULA" title="Agregar matrícula a <?php echo $fmisAlumno['num_ficha'] ?>">
-                        </a>
+                        <input class="btn_alumno" onclick="setCAPPT(event, '<?php echo $fmisAlumno['num_ficha'] ?>')" type="button" value="MATRÍCULA" title="Agregar matrícula a <?php echo $fmisAlumno['num_ficha'] ?>">
+                        <a id="acceso_cappt" target="_blank" href="t_cappt.php?ficha_alumno=<?php echo $fmisAlumno['num_ficha'] ?>"></a>
                     </td>
+
+
 
                     <td class="td_misAlumnos">
                         <button class="eliminar" onclick="eliminarAlumno('<?php echo $fmisAlumno['num_ficha'] ?>', 0);" title="Eliminar a <?php echo $fmisAlumno['num_ficha'] ?>">

@@ -327,12 +327,14 @@ $(document).ready(function (){
                     }
                 })
                 formCappt[0].reset()
+                setTimeout('window.close()',5000)
             }
         })
     })
 
     $("#cerrarCAPPT").on("click", function (){
         formCappt[0].reset()
+        window.close();
     })
 
 })

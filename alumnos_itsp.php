@@ -73,8 +73,8 @@ $letidTutor = $_SESSION["idTutor"];
                     </button>
                 </td>
                 <td class="td_alumnosITSP"><?php echo $fAlumno['num_ficha'] ?></td>
-                <td class="td_alumnosITSP"><?php echo $fAlumno['apellidos'] ?></td>
-                <td class="td_alumnosITSP"><?php echo $fAlumno['nombre'] ?></td>
+                <td class="td_alumnosITSP2"><?php echo $fAlumno['apellidos'] ?></td>
+                <td class="td_alumnosITSP2"><?php echo $fAlumno['nombre'] ?></td>
                 <td class="td_alumnosITSP"><?php echo $fAlumno['carrera'] ?></td>
                 <td class="td_alumnosITSP"><?php echo $fAlumno['generacion'] ?></td>
                 <?php } ?>

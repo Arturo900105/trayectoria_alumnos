@@ -1,7 +1,8 @@
 <?php
     require "BD_Connect.php";
+    require "fecha_hora.php";
 
-    $numControl = $_POST[''];
+    $numControl = $_POST['ctrAlumno'];
 
     $c_ingles = $_POST['ingles_4'];
     $n_ingles = $_POST['nivel_ingles_4'];
@@ -16,6 +17,19 @@
     $credito_D = $_POST['deportiva_4'];
     $credito_AC = $_POST['complementaria_4'];
     $sumaCreditos = $_POST['suma_tcdc_4'];
+
+    $nomCult = $_POST['actCultural'];
+    if ($nomCult == "otra"){
+        $nomCult = $_POST['otraCult'];
+    }
+    $nomDepor = $_POST['actDeportiva'];
+    if ($nomDepor == "otra"){
+        $nomDepor = $_POST['otraDepor'];
+    }
+    $nomComple = $_POST['actComple'];
+    if ($nomComple == "otra"){
+        $nomComple = $_POST['otraComple'];
+    }
 
     $asignatura1 = $_POST['materia1_4'];
     $asignatura2 = $_POST['materia2_4'];
@@ -54,10 +68,11 @@
     $c_otraCanalizacion = $_POST['folioTInd_4'];
 
     $observaciones = $_POST['observaciones_4'];
-
+    $nomTutor = $_POST['nombreTutor'];
 
     $g_trayectoria4 = "INSERT INTO trayectoria_sem4 VALUE ('$numControl','$c_ingles','$n_ingles','$e_ingles',
                                                            '$credito_T','$credito_C','$credito_D','$credito_AC','$sumaCreditos',
+                                                           '$nomCult','$nomDepor','$nomComple',
                                                            '$asignatura1','$calificacion1',
                                                            '$asignatura2','$calificacion2',
                                                            '$asignatura3','$calificacion3',
@@ -68,7 +83,7 @@
                                                            '$beca','$tipo_beca',
                                                            '$rep_materia1','$rep_materia2','$rep_materia3','$rep_materia4','$rep_materia5','$rep_materia6','$rep_materia7',
                                                            '$c_areaMedica','$c_areaPsicologica','$c_asesoriaPares','$c_tutoriaIndividual','$c_otraCanalizacion',
-                                                           '$observaciones',)";
+                                                           '$observaciones','$nomTutor','$fechaHoy','$horaHoy',true)";
     $q_T4 = mysqli_query($connect, $g_trayectoria4);
 
     if (!$q_T4) {

@@ -12,6 +12,7 @@ $(document).ready(function (){
     materiasReprobadas4 = $("#materias_reprobadas_4")
 
     $("#relIngles_4, .fila-materias_4, .relbeca_4, .materiarep_4, .folios_canal_4").hide()
+    $("#fila1, #fila2, #fila3, .otraActividad, #otraComple").hide()
 
     s_tuto4 = $("#tutoria_4")
     s_cult4 = $("#cultural_4")
@@ -108,15 +109,56 @@ $(document).ready(function (){
         } else {
             $("#suma_tcdc_4").val(result_tcd15_4)
         }
+
+        if (s_cult4.val() === "1") {
+            $("#fila1").show()
+        } else {
+            $("#fila1").hide()
+            $("#actCultural").val("")
+            $("#otraCult").hide().val("")
+        }
+
+        if (s_depor4.val() === "1") {
+            $("#fila2").show()
+        } else {
+            $("#fila2").hide()
+            $("#actDeportiva").val("")
+            $("#otraDepor").hide().val("")
+        }
+
+        if (s_compl4.val() === "1") {
+            $("#fila3").show()
+        } else {
+            $("#fila3").hide()
+            $("#actComple").val("")
+            $("#otraComple").hide().val("")
+        }
     })
 
     $(".calificacionN_4").on("change keypress paste focus textInput input",function() {
         calificacion4 = $(this).val()
         nuevaCalificacion4 = calificacion4.replace(/\D/g, "")
+
         if (nuevaCalificacion4 > 100) {
             $(this).val(nuevaCalificacion4[0]+nuevaCalificacion4[1])
-        } else {
-            $(this).val(nuevaCalificacion4.replace(/^0+/, ''))
+
+        } else if (nuevaCalificacion4 < 70 && nuevaCalificacion4 >= 20) {
+            $(this).val(0)
+
+        } else if (nuevaCalificacion4 >= 10 && nuevaCalificacion4 < 20) {
+            $(this).val(100)
+
+        } else if (nuevaCalificacion4 === 0) {
+            $(this).val(0)
+
+        } else if (nuevaCalificacion4 === "00") {
+            $(this).val(0)
+
+        } else if (nuevaCalificacion4 === "000") {
+            $(this).val(0)
+
+        } else if (nuevaCalificacion4[0] === "0" && nuevaCalificacion4[1] > 0) {
+            $(this).val(0)
         }
     })
 
@@ -175,6 +217,21 @@ $(document).ready(function (){
             $("input[name = ubicacion_4]").prop("checked", false)
         }
 
+        if ($("#actCultural").val().trim() === "otra") {
+            $("#otraCult").show()
+        } else {
+            $("#otraCult").hide().val("")
+        }
+        if ($("#actDeportiva").val().trim() === "otra") {
+            $("#otraDepor").show()
+        } else {
+            $("#otraDepor").hide().val("")
+        }
+        if ($("#actComple").val().trim() === "otra") {
+            $("#otraComple").show()
+        } else {
+            $("#otraComple").hide().val("")
+        }
 
         if (materiasCursadas4.val().trim() === ""){
             $(".fila-materias_4").hide()
@@ -420,6 +477,76 @@ $(document).ready(function (){
             }
         }
 
+        if (s_cult4.val() === "1") {
+            if ($("#actCultural").val().trim() === "") {
+                Swal.fire({
+                    title: "Seleccione el nombre de la\nActividad Cultural",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            } else if ($("#actCultural").val().trim() === "otra") {
+                if ($("#otraCult").val().trim() === "") {
+                    Swal.fire({
+                        title: "Defina el nombre de la\nActividad Cultural",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+        if (s_depor4.val() === "1") {
+            if ($("#actDeportiva").val().trim() === "") {
+                Swal.fire({
+                    title: "Seleccione el nombre de la\nActividad Deportiva",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            } else if ($("#actDeportiva").val().trim() === "otra") {
+                if ($("#otraDepor").val().trim() === "") {
+                    Swal.fire({
+                        title: "Defina el nombre de la\nActividad Deportiva",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+        if (s_compl4.val() === "1") {
+            if ($("#actComple").val().trim() === "") {
+                Swal.fire({
+                    title: "Seleccione el nombre de la\nActividad Complementaria",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    backdrop: "rgba(0,0,0,0.4)"
+                });
+                return false;
+            } else if ($("#actComple").val().trim() === "otra") {
+                if ($("#otraComple").val().trim() === "") {
+                    Swal.fire({
+                        title: "Defina el nombre de la\nActividad Complementaria",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                }
+            }
+        }
+
         if ($("#cantidad_materias_4").val().trim() === "") {
             Swal.fire({
                 title: "Seleccione el número de Asignaturas Cursadas",
@@ -594,16 +721,16 @@ $(document).ready(function (){
                         })
                     }
                 })
-                parent.$("#v_modal_t4").hide()
                 trayectoria4sem[0].reset()
+                setTimeout('window.close()',5000)
             }
         })
 
     })
 
     $("#CerrarVentana4").on("click", function (){
-        parent.$("#v_modal_t4").hide()
         trayectoria4sem[0].reset()
+        window.close();
     })
 
 

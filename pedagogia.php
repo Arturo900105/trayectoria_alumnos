@@ -504,7 +504,7 @@ if ($letSessionA == null || $letSessionA == "") {
             </tr>
             <tr>
                 <td class="no_pregunta2">M.-</td>
-                <td class="preguntas2">¿Te preparas a veces para un evaluación memorizando fórmulas, definiciones o reglas que no entiendes con claridad?</td>
+                <td class="preguntas2">¿Te preparas a veces para una evaluación memorizando fórmulas, definiciones o reglas que no entiendes con claridad?</td>
                 <td class="si_no"><input type="radio" name="marcaXM2" class="marca_x" value="0"></td>
                 <td class="si_no"><input type="radio" name="marcaXM2" class="marca_x" value="1"></td>
             </tr>

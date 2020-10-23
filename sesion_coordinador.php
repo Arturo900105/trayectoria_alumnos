@@ -80,11 +80,10 @@ $letSessionC = $_SESSION["usucoord"];
                 <li id="mlistaPedagogia"><a>EXAMEN PEDAGÓGICO</a></li>
                 <li id="mlistaPsicologia"><a>EXAMEN PSICOLÓGICO</a></li>
                 <li id="mlistaMedica"><a>EXAMEN MÉDICO</a></li>
-                <li id="mlistaPostTest"><a>ALUMNOS A ESCALA POST-TEST</a></li>
-                <li><a>CARACTERIZACIÓN POR PARTE DEL TUTOR</a></li>
-                <li><a>NÚMERO DE CONTROL</a></li>
-                <li><a>TRAYECTORIA SEMESTRAL</a></li>
-                <li><a>PROCESO DE TITULACIÓN</a></li>
+                <li id="mlistaPostTest"><a>A ESCALA POST-TEST</a></li>
+                <li id="mlistaCAPPT"><a>TRAYECTORIAS</a></li>
+                <li id="mostrar_HE"><a>INTERPRETACIÓN: HABILIDADES DE ESTUDIO</a></li>
+                <li id="mostrar_EA"><a>INTERPRETACIÓN: ESTILOS DE APRENDIZAJE</a></li>
             </ul>
         </li>
         <li id="cerrarSC"><a href="php/terminar_coordinador.php">CERRAR SESIÓN</a></li>
@@ -149,10 +148,11 @@ $letSessionC = $_SESSION["usucoord"];
 
     <table id="tabla_coordinadores">
         <tr>
-            <th colspan="7" id="thCOORDS">COORDINADORES DEL ITSP</th>
+            <th colspan="8" id="thCOORDS">COORDINADORES DEL ITSP</th>
         </tr>
         <tr>
-            <th class="th_tablaCoords">NOMBRE(S)</th>
+            <th class="th_tablaCoords">NÓMINA</th>
+            <th class="th_tablaCoords">NOMBRE</th>
             <th class="th_tablaCoords">APELLIDOS</th>
             <th class="th_tablaCoords">COORDINADOR DE...</th>
             <th class="th_tablaCoords">E-MAIL</th>
@@ -162,7 +162,7 @@ $letSessionC = $_SESSION["usucoord"];
         </tr>
 
         <?php
-        $consultaC = "SELECT nombre,apellidos,sexo,coordinacion,email,fecha_registro,hora_registro,usuario FROM coordinador";
+        $consultaC = "SELECT * FROM coordinador";
         $resultadoC = mysqli_query($connect, $consultaC);
         while ($filaC = $resultadoC->fetch_assoc()){
             if ($filaC['coordinacion'] == "IGEM"){
@@ -184,6 +184,7 @@ $letSessionC = $_SESSION["usucoord"];
             }
         ?>
         <tr>
+            <td class="td_tablaCoords"><?php echo $filaC['id_coordinador'] ?></td>
             <td class="td_tablaCoords"><?php echo $filaC['nombre'] ?></td>
             <td class="td_tablaCoords"><?php echo $filaC['apellidos'] ?></td>
             <td class="td_tablaCoords"><?php echo $filaC['coordinacion'] ?></td>
@@ -248,7 +249,7 @@ $letSessionC = $_SESSION["usucoord"];
         <?php }?>
     </table>
     
-    <div id="ventanaAlumnos">
+    <div id="ventanaAlumnos" class="ventanasCoord">
         <iframe id="listaAlumnosITSP" src="mostrar_Adatos.php" frameborder="0"></iframe>
     </div>
 
@@ -266,6 +267,10 @@ $letSessionC = $_SESSION["usucoord"];
 
     <div id="ventanaPostTest" class="ventanasCoord">
         <iframe class="listaCA" id="listaPostTest" src="mostrar_PostTest.php" frameborder="0"></iframe>
+    </div>
+
+    <div id="ventanaCAPPT" class="ventanasCoord">
+        <iframe class="listaCA" id="listaTrayectorias" src="zt_trayectorias.php" frameborder="0"></iframe>
     </div>
     
     <script src="js/usuario_coordinador.js"></script>

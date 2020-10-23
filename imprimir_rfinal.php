@@ -18,7 +18,7 @@ require "php/BD_Connect.php";
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
-    <script src="js/registro_canalizacion.js"></script>
+    <script src="js/ordenar_tabla.js"></script>
 </head>
 <body>
     <h1>REPORTES FINALES</h1>

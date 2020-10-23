@@ -68,7 +68,20 @@ h2{
     height: 2em;
 }
 
-#creditos, .creditosth, .creditostd{
+.nomActividad{
+    margin-right: 10px;
+    width: 15em;
+    height: 2em;
+    text-align: center;
+}
+
+.otraActividad{
+    width: 20em;
+    height: 2em;
+    text-align: center;
+}
+
+#creditos, .creditosth, .creditostd, .creditostd2{
     border: 1px solid #000000;
     border-collapse: collapse;
     margin: 0 auto;
@@ -82,10 +95,12 @@ h2{
     background: #ff5a00;
     height: 3em;
 }
-
 .creditostd{
     height: 5em;
-
+}
+.creditostd2{
+    padding: 5px;
+    text-align: left;
 }
 
 .credito{

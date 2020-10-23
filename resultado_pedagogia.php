@@ -9,11 +9,11 @@ $numFicha = $_GET["ficha_alumno"];
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Resultados E. Pedagogía</title>
+    <title>E. Pedagógico de <?php echo $numFicha ?></title>
     <link rel="stylesheet" href="css/estilos-resultados.css">
 </head>
 <body>
-    <h1>Resultados del Examen Pedagógico</h1>
+    <h1>Examen Pedagógico de <?php echo $numFicha ?></h1>
     <form class="tablas_ppm">
         <?php
         $Qtabla_Pedagogia = "SELECT tp.*,al.nombre,al.apellidos,al.carrera,al.generacion
@@ -42,7 +42,6 @@ $numFicha = $_GET["ficha_alumno"];
             }
         ?>
 
-        <h2>Ficha: <?php echo $ftPedagogia['num_ficha'] ?></h2>
         <h2>Nombre: <?php echo $ftPedagogia['nombre']." ".$ftPedagogia['apellidos'] ?></h2>
         <h2>Carrera: <?php echo $ftPedagogia['carrera'] ?></h2>
         <h2>Generación: <?php echo $ftPedagogia['generacion'] ?></h2>

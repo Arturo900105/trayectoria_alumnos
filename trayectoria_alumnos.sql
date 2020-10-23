@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2020 a las 07:42:17
+-- Tiempo de generación: 23-10-2020 a las 06:42:36
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -43,7 +43,7 @@ CREATE TABLE `alumno` (
   `fecha_ficha` date DEFAULT NULL,
   `carrera` varchar(4) DEFAULT NULL,
   `generacion` int(4) DEFAULT NULL,
-  `id_tutor` int(11) DEFAULT NULL
+  `id_tutor` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -51,8 +51,11 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`num_ficha`, `fecha_registro`, `apellidos`, `nombre`, `fecha_de_nacimiento`, `sexo`, `indigena`, `edad`, `edo_civil`, `tel_cel`, `email`, `fecha_ficha`, `carrera`, `generacion`, `id_tutor`) VALUES
-('20-0003', 'Jueves, 15 de Octubre de 2020', 'Morales Avilés', 'Alma Yudill', '2003-01-01', 'Femenino', 'Si', 17, 'Soltera', '4522026543', 'alma_morales@gmail.com', '2020-06-04', 'IGEM', 2020, 0),
-('20-0004', 'Martes, 13 de Octubre de 2020', 'Rodríguez Molina', 'Jose Luis', '2004-03-10', 'Masculino', 'No', 17, 'Soltero', '5514767739', 'jl_rodriguez@outlook.com', '2020-04-07', 'IBIO', 2020, 0);
+('20-0001', 'Miércoles, 21 de Octubre de 2020', 'Sánchez Fonseca', 'Gabriel Abraham', '1994-10-22', 'Masculino', 'No', 25, 'Soltero', '5540734715', 'ga.sanzfons@gmail.com', '2020-07-13', 'ISIC', 2020, '0'),
+('20-0002', 'Miércoles, 21 de Octubre de 2020', 'Velázquez Fonseca', 'Gabriela', '1996-01-22', 'Femenino', 'No', 24, 'Casada', '7220364519', 'gabriela_vf@outlook.com', '2020-07-14', 'ISIC', 2020, '0'),
+('20-0003', 'Jueves, 15 de Octubre de 2020', 'Morales Avilés', 'Alma Yudill', '2003-01-01', 'Femenino', 'Si', 17, 'Soltera', '4522026543', 'alma_morales@gmail.com', '2020-06-04', 'ISIC', 2020, '070'),
+('20-0004', 'Martes, 13 de Octubre de 2020', 'Rodríguez Molina', 'Jose Luis', '2004-03-10', 'Masculino', 'No', 17, 'Soltero', '5514767739', 'jl_rodriguez@outlook.com', '2020-04-07', 'ISIC', 2020, '070'),
+('20-0006', 'Miércoles, 21 de Octubre de 2020', 'García Morales', 'Yaneth', '1985-09-15', 'Femenino', 'No', 35, 'Casada', '4521712852', 'yanet.gm@gmail.com', '2020-08-04', 'ISIC', 2020, '070');
 
 -- --------------------------------------------------------
 
@@ -75,7 +78,10 @@ CREATE TABLE `alumno_domicilio` (
 
 INSERT INTO `alumno_domicilio` (`num_ficha`, `domicilio`, `colonia`, `codigo_postal`, `localidad`, `procedencia`) VALUES
 ('20-0004', '18 de Marzo #207', 'Centro', 60280, 'Nahuatzen', 'Nahuatzen; Mich.'),
-('20-0003', 'Miguel de Cervantes Saavedra #463', 'Centro', 60280, 'Nahuatzen', 'Nahuatzen; Mich.');
+('20-0003', 'Miguel de Cervantes Saavedra #463', 'Centro', 60280, 'Nahuatzen', 'Nahuatzen; Mich.'),
+('20-0001', 'Fco. Gozález Bocanegra #592', 'Villicaña', 52060, 'Nahuatzen', 'Nahuatzen; Mich.'),
+('20-0002', 'Privada primero de mayo #22', 'Centro', 52060, 'Xonacatlán', 'Xonacatlán; Edo. Méx.'),
+('20-0006', 'Francisco J. Mujica #15', 'Barrio 4to', 60280, 'Nahuatzen', 'Nahuatzen; Mich.');
 
 -- --------------------------------------------------------
 
@@ -97,7 +103,10 @@ CREATE TABLE `alumno_procedencia` (
 
 INSERT INTO `alumno_procedencia` (`num_ficha`, `bach`, `tipo_bach`, `nom_bach`, `promedio_bach`) VALUES
 ('20-0004', 'CBTA', 'Químico-Biológico.', 'CBTA No. 2038', 8.5),
-('20-0003', 'CECYTE', 'Físico-Matemático, Histórico-Social.', 'CECYTEM No. 18 ', 8.7);
+('20-0003', 'CECYTE', 'Físico-Matemático, Histórico-Social.', 'CECYTEM No. 18 ', 8.7),
+('20-0001', 'CBTA', 'Físico-Matemático, Químico-Biológico.', 'CBTA No. 238', 8.5),
+('20-0002', 'PREPARATORIA', 'Químico-Biológico.', 'Preparatoria No. 3 Plantel Xonacatlán', 8),
+('20-0006', 'CBTA', 'Químico-Biológico.', 'CBTA No. 238', 9);
 
 -- --------------------------------------------------------
 
@@ -140,7 +149,7 @@ CREATE TABLE `canalizacion` (
 --
 
 CREATE TABLE `coordinador` (
-  `id_coordinador` int(11) NOT NULL,
+  `id_coordinador` varchar(3) NOT NULL,
   `nombre` text DEFAULT NULL,
   `apellidos` text DEFAULT NULL,
   `sexo` varchar(1) DEFAULT NULL,
@@ -157,10 +166,9 @@ CREATE TABLE `coordinador` (
 --
 
 INSERT INTO `coordinador` (`id_coordinador`, `nombre`, `apellidos`, `sexo`, `coordinacion`, `email`, `fecha_registro`, `hora_registro`, `usuario`, `pass_coord`) VALUES
-(2, 'Arturo', 'Sánchez Fonseca', 'M', 'ISIC', 'fonck.five@gmail.com', 'Lunes, 28 de Septiembre de 2020', '01:42 pm.', 'a.sanchezf_03', 5504),
-(3, 'María', 'Janacua Benites', 'F', 'IIND', 'vientoafavor@hotmail.com', 'Viernes, 2 de Octubre de 2020', '11:18 pm.', 'm.janacuab_02', 9197),
-(4, 'Karla Georgina', 'Olivo Bernal', 'F', 'IENR', 'karla_ob@outlook.com', 'Martes, 13 de Octubre de 2020', '02:36 pm.', 'kg.olivob_06', 5495),
-(5, 'Gabriel Abraham', 'Sánchez Fonseca', 'M', 'IFOR', 'ga.sanzfons@gmail.com', 'Jueves, 15 de Octubre de 2020', '01:18 pm.', 'ga.sanchezf_07', 2219);
+('073', 'Gabriel Abraham', 'Sánchez Fonseca', 'M', 'ISIC', 'ga.sanzfons@gmail.com', 'Sábado, 17 de Octubre de 2020', '12:30 pm.', 'ga.sanchezf_03', 7631),
+('077', 'María', 'Janacua Benites', 'F', 'IIND', 'maria_jb@outloo.com', 'Lunes, 19 de Octubre de 2020', '11:19 am.', 'm.janacuab_02', 9975),
+('080', 'Elpidio', 'Jiménez Cruz', 'M', 'IGEM', 'e.jimenezc@gmail.com', 'Lunes, 19 de Octubre de 2020', '11:23 am.', 'e.jimenezc_01', 4762);
 
 -- --------------------------------------------------------
 
@@ -172,6 +180,15 @@ CREATE TABLE `num_control_alumno` (
   `num_control` varchar(7) NOT NULL,
   `num_ficha` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `num_control_alumno`
+--
+
+INSERT INTO `num_control_alumno` (`num_control`, `num_ficha`) VALUES
+('2003031', '20-0003'),
+('2003032', '20-0004'),
+('2003033', '20-0006');
 
 -- --------------------------------------------------------
 
@@ -327,8 +344,8 @@ CREATE TABLE `tabla_medica` (
 --
 
 INSERT INTO `tabla_medica` (`num_ficha`, `peso`, `estatura`, `tipo_sangre`, `antes_hered`, `toxicomanias`, `tipo_toxicomanias`, `frecuencia`, `embarazo`, `tiempo_embarazo`, `act_fisica`, `actividad`, `tiempo`, `alergias`, `desc_alergias`, `quir_cir`, `transfusionales`, `diabetes`, `tipo_diabetes`, `hipertencion`, `convulsiones`, `asma`, `tel_obligatorio`, `tel_opcional`, `contestado`) VALUES
-('20-0004', '50 kg.', '1.56 m.', 'O POSITIVO', '', 'NO', '----------', '----------', '', '', 'NO', '----------', '----------', 'NO', '----------', 'NO', 'NO', 'NO', '----------', 'NO', 'NO', 'NO', '5514767739', '5514767739', 1),
-('20-0003', '46 kg.', '1.54 m.', 'AB POSITIVO', 'Diabetes, Hipertención', 'NO', '----------', '----------', 'NO', '----------', 'NO', '----------', '----------', 'NO', '----------', 'NO', 'NO', 'SÍ', 'Diabetes Mellitus 1', 'NO', 'NO', 'NO', '5540123856', '', 1);
+('20-0003', '49 kg.', '1.54 m.', 'AB POSITIVO', 'Diabetes', 'NO', '----------', '----------', 'NO', '----------', 'NO', '----------', '----------', 'NO', '----------', 'NO', 'NO', 'SÍ', 'Diabetes Mellitus 1', 'NO', 'NO', 'NO', '4522026542', '4522026544', 1),
+('20-0004', '50 kg.', '1.56 m.', 'O POSITIVO', 'Ninguno', 'NO', '----------', '----------', '', '', 'NO', '----------', '----------', 'NO', '----------', 'NO', 'NO', 'NO', '----------', 'NO', 'NO', 'NO', '5514767737', '5514767738', 1);
 
 -- --------------------------------------------------------
 
@@ -365,6 +382,7 @@ CREATE TABLE `tabla_pedagogia` (
   `organizacion_estudio` int(2) DEFAULT NULL,
   `tecnicas_estudio` int(2) DEFAULT NULL,
   `motivacion_estudio` int(2) DEFAULT NULL,
+  `suma_otme` int(2) DEFAULT NULL,
   `preguntas_oe` text DEFAULT NULL,
   `preguntas_te` text DEFAULT NULL,
   `preguntas_me` text DEFAULT NULL,
@@ -375,9 +393,12 @@ CREATE TABLE `tabla_pedagogia` (
 -- Volcado de datos para la tabla `tabla_pedagogia`
 --
 
-INSERT INTO `tabla_pedagogia` (`num_ficha`, `isea_1`, `isea_2`, `isea_3`, `isea_4`, `isea_5`, `isea_6`, `isea_7`, `isea_8`, `isea_9`, `isea_10`, `isea_11`, `isea_12`, `isea_13`, `isea_14`, `isea_15`, `isea_16`, `isea_17`, `isea_18`, `isea_19`, `isea_20`, `isea_21`, `aprendizaje_visual`, `aprendizaje_auditivo`, `aprendizaje_kinestesico`, `organizacion_estudio`, `tecnicas_estudio`, `motivacion_estudio`, `preguntas_oe`, `preguntas_te`, `preguntas_me`, `contestado`) VALUES
-('20-0004', 1, 3, 2, 2, 3, 4, 5, 3, 3, 2, 3, 3, 3, 3, 2, 2, 4, 2, 4, 1, 1, 18, 16, 22, 13, 16, 16, 'A C E F H I J K L O R S T', 'A B C D E F G I K L M N P Q S T', 'A B C D E F H I J L M N O R S T', 1),
-('20-0003', 5, 3, 4, 2, 2, 4, 3, 5, 4, 3, 5, 3, 4, 5, 4, 1, 5, 1, 4, 3, 5, 30, 17, 28, 13, 11, 14, 'A C E G I J K L N O Q R T', 'A C D E F G J K O P Q', 'A C D E F H I J N O Q R S T', 1);
+INSERT INTO `tabla_pedagogia` (`num_ficha`, `isea_1`, `isea_2`, `isea_3`, `isea_4`, `isea_5`, `isea_6`, `isea_7`, `isea_8`, `isea_9`, `isea_10`, `isea_11`, `isea_12`, `isea_13`, `isea_14`, `isea_15`, `isea_16`, `isea_17`, `isea_18`, `isea_19`, `isea_20`, `isea_21`, `aprendizaje_visual`, `aprendizaje_auditivo`, `aprendizaje_kinestesico`, `organizacion_estudio`, `tecnicas_estudio`, `motivacion_estudio`, `suma_otme`, `preguntas_oe`, `preguntas_te`, `preguntas_me`, `contestado`) VALUES
+('20-0004', 1, 3, 2, 2, 3, 4, 5, 3, 3, 2, 3, 3, 3, 3, 2, 2, 4, 2, 4, 1, 1, 18, 16, 22, 13, 16, 16, 45, 'A C E F H I J K L O R S T', 'A B C D E F G I K L M N P Q S T', 'A B C D E F H I J L M N O R S T', 1),
+('20-0003', 5, 3, 4, 2, 2, 4, 3, 5, 4, 3, 5, 3, 4, 5, 4, 1, 5, 1, 4, 3, 5, 30, 17, 28, 13, 11, 14, 38, 'A C E G I J K L N O Q R T', 'A C D E F G J K O P Q', 'A C D E F H I J N O Q R S T', 1),
+('20-0001', 4, 5, 4, 3, 3, 2, 2, 4, 5, 3, 5, 5, 5, 3, 4, 4, 3, 2, 4, 3, 4, 26, 26, 25, 10, 10, 11, 31, 'A D E F H K L M N R', 'B C E G H I K N Q S', 'A B D F H I K L M Q R', 1),
+('20-0002', 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 18, 22, 23, 10, 9, 10, 29, 'A C E G I K O P Q T', 'D E F J K L P Q S', 'B D E F I M N P Q R', 1),
+('20-0006', 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1, 24, 20, 19, 10, 9, 8, 27, 'A B C F J K M N Q S', 'D E G H J K L Q T', 'D E F J K O P S', 1);
 
 -- --------------------------------------------------------
 
@@ -485,8 +506,21 @@ CREATE TABLE `trayectoria_cappt` (
   `nombre_curso_2` text DEFAULT NULL,
   `resultado_2` int(3) DEFAULT NULL,
   `nombre_curso_3` text DEFAULT NULL,
-  `resultado_3` int(3) DEFAULT NULL
+  `resultado_3` int(3) DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `trayectoria_cappt`
+--
+
+INSERT INTO `trayectoria_cappt` (`num_control`, `trabaja`, `itsp_opcion`, `exani_ii`, `cosnet`, `hablante_pu`, `discapacidad`, `diag_psicologico`, `diag_medico`, `riesgo_salud`, `estilo_aprendizaje`, `h_organizacion`, `h_tecnicas`, `h_motivacion`, `o_vocacional`, `e_ortografia`, `e_redaccion`, `nombre_curso_1`, `resultado_1`, `nombre_curso_2`, `resultado_2`, `nombre_curso_3`, `resultado_3`, `nombre_tutor`, `fecha_registro`, `hora`, `contestado`) VALUES
+('2003031', 'NO', '2da opción', '', '995', 'NO', 'Ninguna', 'Presencia de ansiedad.', 'Presencia de diabetes tipo 1.', 'Riesgo Leve', 'Visual.', 'PB', 'B', 'PDP', 'Bloque: 1, 4.', 'P', 'P', 'CURSO 1', 70, 'CURSO 2', 83, 'CURSO 3', 95, 'Gabriel Abraham Sánchez Fonseca', 'Jueves, 22 de Octubre de 2020', '12:42 pm.', 1),
+('2003032', 'NO', '3ra opción', '800', '', 'NO', 'Ninguna', 'Presencia de ansiedad y depresión', 'Normal', 'Riesgo Leve', 'Kinestésico.', 'PB', 'PA', 'P', 'Bloque: 1, 2.', 'P', 'P', 'CURSO 1', 85, 'CURSO 2', 96, 'CURSO 3', 100, 'Gabriel Abraham Sánchez Fonseca', 'Jueves, 22 de Octubre de 2020', '01:37 pm.', 1),
+('2003033', 'NO', '2da opción', '800', '', 'SÍ', 'Ninguna', 'Ninguno Ninguno', 'Ninguno Ninguno', 'Riesgo Leve', 'Visual, Auditivo, Kinestésico.', 'PEP', 'PB', 'P', 'Bloque: 1, 2, 3, 4.', 'P', 'P', 'CURSO P 1', 80, 'CURSO P 2', 96, 'CURSO P 3', 75, 'Gabriel Abraham Sánchez Fonseca', 'Jueves, 22 de Octubre de 2020', '08:19 pm.', 1);
 
 -- --------------------------------------------------------
 
@@ -503,6 +537,8 @@ CREATE TABLE `trayectoria_sem1` (
   `credito_cultural` int(1) DEFAULT NULL,
   `credito_deportiva` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
   `calificacion_1` varchar(3) DEFAULT NULL,
   `asignatura_2` text DEFAULT NULL,
@@ -517,7 +553,7 @@ CREATE TABLE `trayectoria_sem1` (
   `calificacion_6` varchar(3) DEFAULT NULL,
   `asignatura_7` text DEFAULT NULL,
   `calificacion_7` varchar(3) DEFAULT NULL,
-  `becado` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
   `tipo_beca` text DEFAULT NULL,
   `recursar_materia_1` text DEFAULT NULL,
   `recursar_materia_2` text DEFAULT NULL,
@@ -531,7 +567,11 @@ CREATE TABLE `trayectoria_sem1` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ago_dic` text DEFAULT NULL
+  `observacion_ago_dic` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -549,6 +589,8 @@ CREATE TABLE `trayectoria_sem2` (
   `credito_cultural` int(1) DEFAULT NULL,
   `credito_deportiva` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
   `calificacion_1` varchar(3) DEFAULT NULL,
   `asignatura_2` text DEFAULT NULL,
@@ -563,7 +605,7 @@ CREATE TABLE `trayectoria_sem2` (
   `calificacion_6` varchar(3) DEFAULT NULL,
   `asignatura_7` text DEFAULT NULL,
   `calificacion_7` varchar(3) DEFAULT NULL,
-  `becado` varchar(3) DEFAULT NULL,
+  `beca` varchar(3) DEFAULT NULL,
   `tipo_beca` text DEFAULT NULL,
   `recursar_materia_1` text DEFAULT NULL,
   `recursar_materia_2` text DEFAULT NULL,
@@ -577,7 +619,11 @@ CREATE TABLE `trayectoria_sem2` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ene_jun` text DEFAULT NULL
+  `observacion_ene_jun` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -596,6 +642,9 @@ CREATE TABLE `trayectoria_sem3` (
   `credito_deportiva` int(1) DEFAULT NULL,
   `credito_actcom` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
+  `nombre_actcom` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
   `calificacion_1` varchar(3) DEFAULT NULL,
   `asignatura_2` text DEFAULT NULL,
@@ -624,7 +673,11 @@ CREATE TABLE `trayectoria_sem3` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ago_dic` text DEFAULT NULL
+  `observacion_ago_dic` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -643,6 +696,9 @@ CREATE TABLE `trayectoria_sem4` (
   `credito_deportiva` int(1) DEFAULT NULL,
   `credito_actcom` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
+  `nombre_actcom` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
   `calificacion_1` varchar(3) DEFAULT NULL,
   `asignatura_2` text DEFAULT NULL,
@@ -671,7 +727,11 @@ CREATE TABLE `trayectoria_sem4` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ene_jun` text DEFAULT NULL
+  `observacion_ene_jun` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -690,6 +750,9 @@ CREATE TABLE `trayectoria_sem5` (
   `credito_deportiva` int(1) DEFAULT NULL,
   `credito_actcom` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
+  `nombre_actcom` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
   `calificacion_1` varchar(3) DEFAULT NULL,
   `asignatura_2` text DEFAULT NULL,
@@ -718,7 +781,11 @@ CREATE TABLE `trayectoria_sem5` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ago_dic` text DEFAULT NULL
+  `observacion_ago_dic` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -737,6 +804,9 @@ CREATE TABLE `trayectoria_sem6` (
   `credito_deportiva` int(1) DEFAULT NULL,
   `credito_actcom` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
+  `nombre_actcom` text DEFAULT NULL,
   `servicio_social` varchar(3) DEFAULT NULL,
   `lugar_servsocial` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
@@ -767,7 +837,11 @@ CREATE TABLE `trayectoria_sem6` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ene_jun` text DEFAULT NULL
+  `observacion_ene_jun` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -786,6 +860,9 @@ CREATE TABLE `trayectoria_sem7` (
   `credito_deportiva` int(1) DEFAULT NULL,
   `credito_actcom` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
+  `nombre_actcom` text DEFAULT NULL,
   `servicio_social` varchar(3) DEFAULT NULL,
   `lugar_servsocial` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
@@ -816,7 +893,11 @@ CREATE TABLE `trayectoria_sem7` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ago_dic` text DEFAULT NULL
+  `observacion_ago_dic` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -835,6 +916,9 @@ CREATE TABLE `trayectoria_sem8` (
   `credito_deportiva` int(1) DEFAULT NULL,
   `credito_actcom` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
+  `nombre_actcom` text DEFAULT NULL,
   `servicio_social` varchar(3) DEFAULT NULL,
   `lugar_servsocial` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
@@ -865,7 +949,11 @@ CREATE TABLE `trayectoria_sem8` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ene_jun` text DEFAULT NULL
+  `observacion_ene_jun` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `column_46` text DEFAULT NULL,
+  `column_47` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -884,6 +972,9 @@ CREATE TABLE `trayectoria_sem9` (
   `credito_deportiva` int(1) DEFAULT NULL,
   `credito_actcom` int(1) DEFAULT NULL,
   `suma_creditos` int(1) DEFAULT NULL,
+  `nombre_cultural` text DEFAULT NULL,
+  `nombre_deportiva` text DEFAULT NULL,
+  `nombre_actcom` text DEFAULT NULL,
   `residencia_profesional` varchar(3) DEFAULT NULL,
   `lugar_resiprof` text DEFAULT NULL,
   `asignatura_1` text DEFAULT NULL,
@@ -914,7 +1005,11 @@ CREATE TABLE `trayectoria_sem9` (
   `asesoria_pares` varchar(7) DEFAULT NULL,
   `tutorias_individuales` varchar(7) DEFAULT NULL,
   `otra_canalizacion` varchar(7) DEFAULT NULL,
-  `observacion_ago_dic` text DEFAULT NULL
+  `observacion_ago_dic` text DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `column_47` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -928,7 +1023,11 @@ CREATE TABLE `trayectoria_titulacion` (
   `tema_proyecto` text DEFAULT NULL,
   `ingles_acreditado` varchar(3) DEFAULT NULL,
   `creditos_cumplidos` int(3) DEFAULT NULL,
-  `examen_protocolario` date DEFAULT NULL
+  `examen_protocolario` date DEFAULT NULL,
+  `nombre_tutor` text DEFAULT NULL,
+  `fecha_registro` text DEFAULT NULL,
+  `hora_registro` varchar(9) DEFAULT NULL,
+  `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -959,6 +1058,24 @@ INSERT INTO `tutor` (`id_tutor`, `nombre_tut`, `apellido_tut`, `sexo`, `tipo_tut
 ('050', 'Liliana', 'León Lucas', 'F', 'Tutoría Grupal', 'IGEM', 'liliana.ll@gmail.com', 'Jueves, 15 de Octubre de 2020', '11:25 pm.', 'liliana.ll050_101', 'V62y0HOEGn'),
 ('060', 'Miriam Yeraldin', 'Cano Rodíguez', 'F', 'Tutoría Grupal', 'IBIO', 'my.canorod@gmail.com', 'Jueves, 15 de Octubre de 2020', '11:24 pm.', 'miriam.cr060_104', 'L8yiSkPZLn'),
 ('070', 'Gabriel Abraham', 'Sánchez Fonseca', 'M', 'Tutoría Grupal', 'ISIC', 'ga.sanzfons@gmail.com', 'Jueves, 15 de Octubre de 2020', '11:11 pm.', 'gabriel.sf070_103', '47mkQDvUM8');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `z_form_coord`
+--
+
+CREATE TABLE `z_form_coord` (
+  `pass_formCord` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `z_form_coord`
+--
+
+INSERT INTO `z_form_coord` (`pass_formCord`) VALUES
+('cita20itsp'),
+('CITA20ITSP');
 
 --
 -- Índices para tablas volcadas

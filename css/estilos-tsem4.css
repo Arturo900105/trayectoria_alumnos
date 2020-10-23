@@ -57,7 +57,31 @@ h2{
     margin-left: 20px;
 }
 
-#creditos_4, .creditosth_4, .creditostd_4{
+
+.nomActividad{
+    margin-right: 2em;
+    width: 20em;
+    height: 2em;
+    text-align: center;
+}
+.otraActividad{
+    width: 20em;
+    height: 2em;
+    text-align: center;
+}
+#actComple{
+    text-align: center;
+    height: 2em;
+    width: 30em;
+}
+#otraComple{
+    margin-top: 1em;
+    text-align: center;
+    height: 2em;
+    width: 30em;
+}
+
+#creditos_4, .creditosth_4, .creditostd_4, .creditostd2, .creditostd3{
     border: 1px solid #000000;
     border-collapse: collapse;
     margin: 0 auto;
@@ -73,6 +97,16 @@ h2{
 
 .creditostd_4{
     height: 5em;
+}
+
+.creditostd2{
+    height: 2em;
+    text-align: left;
+    padding: 5px 0 5px 4em;
+}
+.creditostd3{
+    height: 6em;
+    padding: 5px;
 }
 
 #creditostd1_4{

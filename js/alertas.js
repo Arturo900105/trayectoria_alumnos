@@ -20,10 +20,7 @@ function cerrarNipCITA() {
 function confirmarLoginNip() {
     passCITA = $("#pass-nip").val()
 
-    if (passCITA === "CITA20ITSP" || passCITA === "cita20itsp"){
-        $("#ventana_modal_cita").css({display:"block"})
-        return cerrarNipCITA();
-    } else  if (passCITA === ""){
+    if (passCITA === ""){
         Swal.fire({
             title: "Porfavor,\nIntrodusca la Clave de Seguridad",
             position: 'top',
@@ -32,17 +29,27 @@ function confirmarLoginNip() {
             icon: "warning",
             backdrop: "rgba(0,0,0,0)"
         });
-
     } else {
-        Swal.fire({
-            title: "Clave Incorrecta!!!",
-            position: 'top',
-            showConfirmButton: false,
-            timer: 700,
-            icon: "warning",
-            backdrop: "rgba(0,0,0,0)"
-        });
+        $.ajax({
+            url: "php/login-zformCoord.php",
+            type: 'POST',
+            data: $("#solo_nip").serialize(),
+            success: function () {
+                $("#ventana_modal_cita").css({display:"block"})
+                return cerrarNipCITA();
+            },
+            error: function (error) {
+                swal.fire({
+                    position: 'top',
+                    icon: 'question',
+                    title: (error.responseText),
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        })
     }
+
 }
 function cerrarLoginNip() {
     $("#ventana_modal_cita").css({display:"none"})
@@ -50,10 +57,9 @@ function cerrarLoginNip() {
 
 
 $(document).ready(function () {
+    passCITA = $("#pass-nip")
     try {
-        $("#formulario_cita")[0].reset()
-        $("#form")[0].reset()
-        $("#pass-nip").val("")
+        $("#v_modal ,#v_modal_nip, #solo_nip, #formulario_cita, #")[0].reset()
     } catch (e) {}
 
     $(document).on("keydown", function (e) {
@@ -62,10 +68,23 @@ $(document).ready(function () {
         }
     })
 
-    $("#pass-nip").on("keypress", function (e) {
+    passCITA.on("keypress", function (e) {
         if(e.which === 13){
-            return confirmarLoginNip();
+            return false;
         }
+    })
+    passCITA.on("click", function (e) {
+        $("#pass-nip").val("")
+    })
+    passCITA.on("input", function (e) {
+        this.value = this.value.replace(/[^0-9a-zA-Z]/g,'');
+    })
+
+    $('.cita_nombre, .cita_apellidos').on('input', function () {
+        this.value = this.value.replace(/[^- a-zA-ZÑñáéíóúÁÉÍÓÚ.]/g,'');
+    })
+    $('#nominaCoord').on('input', function () {
+        this.value = this.value.replace(/[^0-9]/g,'');
     })
 
     alertaCITA1 = "Por favor,\nIngrese su Nombre";
@@ -274,6 +293,18 @@ $(document).ready(function () {
             return false;
         }
 
+        if ($("#nominaCoord").val().trim() === "") {
+            Swal.fire({
+                title: "Ingrese su Núm. de Nómina",
+                icon: "warning",
+                position: "top",
+                backdrop: "rgba(0,0,0,0)",
+                showConfirmButton: false,
+                timer: 1000
+            });
+            return false;
+        }
+
         if (!$("[name=sexoCoord]:radio").is(":checked")) {
             Swal.fire({
                 title: "Seleccione su sexo",
@@ -361,7 +392,7 @@ $(document).ready(function () {
                 });
                 $("#formulario_cita")[0].reset()
                 $("#pass-nip").val("")
-                return cerrarLoginNip();
+                setInterval(cerrarLoginNip,3000)
             }
         });
 

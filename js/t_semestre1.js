@@ -7,7 +7,7 @@ $(document).ready(function () {
     trayectoria1sem[0].reset()
     materiasCursadas = $("#cantidad_materias")
     materiasReprobadas = $("#materias_reprobadas")
-    $("#relIngles, .fila-materias, #creditos, .relbeca, .materiarep, .folios_canal").hide()
+    $("#relIngles, .nomActividad, .otraActividad, .fila-materias, #creditos, .relbeca, .materiarep, .folios_canal").hide()
 
     s_tuto1 = $("#tutoria1")
     s_cult1 = $("#cultural1")
@@ -54,15 +54,44 @@ $(document).ready(function () {
         } else {
             $("#suma_tcd").val(result_tcd7)
         }
+
+        if (s_cult1.val() === "1") {
+            $("#actCultural").show()
+        } else {
+            $("#actCultural, #otraCult").hide().val("")
+        }
+
+        if (s_depor1.val() === "1") {
+            $("#actDeportiva").show()
+        } else {
+            $("#actDeportiva, #otraDepor").hide().val("")
+        }
     })
 
     $(".calificacionN").on("change keypress paste focus textInput input",function(){
         calificacion1 = $(this).val()
         nuevaCalificacion1 = calificacion1.replace(/\D/g, "")
+
         if (nuevaCalificacion1 > 100) {
             $(this).val(nuevaCalificacion1[0]+nuevaCalificacion1[1])
-        } else {
-            $(this).val(nuevaCalificacion1.replace(/^0+/, ''))
+
+        } else if (nuevaCalificacion1 < 70 && nuevaCalificacion1 >= 20) {
+            $(this).val(0)
+
+        } else if (nuevaCalificacion1 >= 10 && nuevaCalificacion1 < 20) {
+            $(this).val(100)
+
+        } else if (nuevaCalificacion1 === 0) {
+            $(this).val(0)
+
+        } else if (nuevaCalificacion1 === "00") {
+            $(this).val(0)
+
+        } else if (nuevaCalificacion1 === "000") {
+            $(this).val(0)
+
+        } else if (nuevaCalificacion1[0] === "0" && nuevaCalificacion1[1] > 0) {
+            $(this).val(0)
         }
     })
 
@@ -129,6 +158,19 @@ $(document).ready(function () {
             $("#cultural1").val("")
             $("#deportiva1").val("")
             $("#suma_tcd").val("")
+            $("#actCultural, #otraCult").hide().val("")
+            $("#actDeportiva, #otraDepor").hide().val("")
+        }
+
+        if ($('#actCultural').val().trim() === "otra") {
+            $("#otraCult").show()
+        } else {
+            $("#otraCult").hide().val("")
+        }
+        if ($('#actDeportiva').val().trim() === "otra") {
+            $("#otraDepor").show()
+        } else {
+            $("#otraDepor").hide().val("")
         }
 
         if ($("[name = beca]:checked").val() === "SÍ"){
@@ -391,6 +433,53 @@ $(document).ready(function () {
                 backdrop: "rgba(0,0,0,0.4)"
             });
             return false;
+        } else if ($('#creditos_extras').val().trim() === "SÍ") {
+            if (s_cult1.val() === "1") {
+                if ($('#actCultural').val().trim() === ""){
+                    Swal.fire({
+                        title: "Seleccione nombre de la\nActividad Cultural",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                } else if ($('#actCultural').val().trim() === "otra") {
+                    if ($('#otraCult').val().trim() === "") {
+                        Swal.fire({
+                            title: "Defina nombre de la\nActividad Cultural",
+                            icon: "warning",
+                            showConfirmButton: false,
+                            timer: 1500,
+                            backdrop: "rgba(0,0,0,0.4)"
+                        });
+                        return false;
+                    }
+                }
+            }
+            if (s_depor1.val() === "1") {
+                if ($('#actDeportiva').val().trim() === ""){
+                    Swal.fire({
+                        title: "Seleccione nombre de la\nActividad Deportiva",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        backdrop: "rgba(0,0,0,0.4)"
+                    });
+                    return false;
+                } else if ($('#actDeportiva').val().trim() === "otra") {
+                    if ($('#otraDepor').val().trim() === "") {
+                        Swal.fire({
+                            title: "Defina nombre de la\nActividad Deportiva",
+                            icon: "warning",
+                            showConfirmButton: false,
+                            timer: 1500,
+                            backdrop: "rgba(0,0,0,0.4)"
+                        });
+                        return false;
+                    }
+                }
+            }
         }
 
         if ($("#cantidad_materias").val().trim() === "") {
@@ -567,16 +656,16 @@ $(document).ready(function () {
                         })
                     }
                 })
-                parent.$("#v_modal_t1").hide()
                 trayectoria1sem[0].reset()
+                setTimeout('window.close()',5000)
             }
         })
 
     })
 
     $("#CerrarVentana1").on("click", function (){
-        parent.$("#v_modal_t1").hide()
         trayectoria1sem[0].reset()
+        window.close();
     })
 
 })

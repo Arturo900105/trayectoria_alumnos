@@ -282,7 +282,6 @@ h2{
 }
 
 .boton_formcita{
-    margin: 1.7em 10px 0;
     color: #FFFFFF;
     border-radius: 10px;
     border: 2px solid #ffffff;
@@ -290,6 +289,12 @@ h2{
     width: 10em;
     height: 3em;
     text-align: center;
+}
+
+#btn_formcita{
+    margin-right: 1em;
+    padding: 0;
+    text-decoration: none;
 }
 
 .boton_formcita:hover{
@@ -338,6 +343,16 @@ h2{
     margin-left: 1em;
     font-size: 15px;
     width: 15em;
+    height: 2em;
+    text-align: center;
+}
+
+#nominaCoord{
+    margin-right: 5em;
+    border: 2px solid #ffffff;
+    color: #FFFFFF;
+    background: none;
+    font-size: 15px;
     height: 2em;
     text-align: center;
 }
@@ -397,8 +412,8 @@ cite{
     color: #FFFFFF;
 }
 
-/*
-.modal-fondo2{
+
+/*.modal-fondo2{
     background: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
@@ -408,5 +423,4 @@ cite{
     width: 100%;
     height: 100%;
     display: block;
-}
-*/
+}*/

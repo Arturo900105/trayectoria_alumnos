@@ -9,11 +9,11 @@ $numFicha = $_GET["ficha_alumno"];
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Resultados E. Médico</title>
+    <title>E. Médico de <?php echo $numFicha ?></title>
     <link rel="stylesheet" href="css/estilos-resultados.css">
 </head>
 <body>
-    <h1>Resultados del Examen Médico</h1>
+    <h1>Examen Médico de <?php echo $numFicha ?></h1>
     <form class="tablas_ppm">
         <?php
         $Qtabla_Medica = "SELECT tm.*,al.nombre,al.apellidos,al.carrera,al.generacion
@@ -41,7 +41,6 @@ $numFicha = $_GET["ficha_alumno"];
                 $ftMedica['carrera'] = "Ingeniería en Agronomía";
             }
         ?>
-        <h2>Ficha: <?php echo $ftMedica['num_ficha'] ?></h2>
         <h2>Nombre: <?php echo $ftMedica['nombre']." ".$ftMedica['apellidos'] ?></h2>
         <h2>Carrera: <?php echo $ftMedica['carrera'] ?></h2>
         <h2>Generación: <?php echo $ftMedica['generacion'] ?></h2>

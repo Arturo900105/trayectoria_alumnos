@@ -1,0 +1,144 @@
+*{
+    font-family: Arial;
+}
+
+h1{
+    margin: 10px 0;
+    text-align: center;
+}
+
+/*TABLA ESTADÍSTICA ESTILOS DE APRENDIZAJE*/
+#estadistica_EA, .th_EA, .th_EA2, .td_EA{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.th_EA{
+    width: 13em;
+    padding: 5px;
+    background: #f87d24;
+}
+.th_EA1{
+    padding: 0 12px;
+    background: #f87d24;
+}
+.th_EA2{
+    padding: 5px;
+    background: #f87d24;
+}
+.th_EA:hover, .th_EA1:hover, .th_EA2:hover{
+    cursor: pointer;
+    background: #ff5400;
+    color: white;
+}
+.td_EA{
+    text-align: center;
+    padding: 5px;
+}
+
+.fila_igem2:hover .td_EA{
+    background: #800080;
+    color: white;
+}
+
+.fila_iind2:hover .td_EA{
+    background: #013779;
+    color: white;
+}
+
+.fila_isic2:hover{
+    background: #00B7EF;
+
+}
+
+.fila_ibio2:hover{
+    background: #c4bebe;
+
+}
+
+.fila_iias2:hover .td_EA{
+    background: #007F32;
+    color: white;
+}
+
+.fila_ienr2:hover{
+    background: #E6DC04;
+
+}
+
+.fila_ifor2:hover .td_EA{
+    background: #993300;
+    color: white;
+}
+
+.fila_iagr2:hover{
+    background: #92D050;
+}
+
+
+
+
+/*TABLA ESTADÍSTICA HABILIDADES DE ESTUDIO*/
+#estadistica_HE, .th_HE, .td_HE{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.th_HE{
+    padding: 5px;
+    width: 7em;
+    background: #f87d24;
+}
+.th_HE:hover{
+    cursor: pointer;
+    background: #ff5400;
+    color: white;
+}
+.td_HE{
+    text-align: center;
+    padding: 5px;
+}
+
+.fila_igem:hover .td_HE{
+    background: #800080;
+    color: white;
+}
+
+.fila_iind:hover .td_HE{
+    background: #013779;
+    color: white;
+}
+
+.fila_isic:hover{
+    background: #00B7EF;
+
+}
+
+.fila_ibio:hover{
+    background: #c4bebe;
+
+}
+
+.fila_iias:hover .td_HE{
+    background: #007F32;
+    color: white;
+}
+
+.fila_ienr:hover{
+    background: #E6DC04;
+
+}
+
+.fila_ifor:hover .td_HE{
+    background: #993300;
+    color: white;
+}
+
+.fila_iagr:hover{
+    background: #92D050;
+}
+

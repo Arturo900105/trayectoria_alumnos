@@ -1,3 +1,7 @@
+<?php
+require "php/BD_Connect.php";
+$numControl = $_GET["matricula_alumno"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,9 +23,21 @@
     <form id="proceso_titulacion" autocomplete="off">
         <h1>Proceso de Titulación</h1>
         <br>
-
-        <h2>Control:</h2>
-        <h2>Alumno:</h2>
+        <?php
+        $q_Alumno = "SELECT al.apellidos, al.nombre, tut.apellido_tut, tut.nombre_tut FROM alumno al
+                     JOIN num_control_alumno ctr
+                     ON ctr.num_ficha = al.num_ficha
+                     JOIN tutor tut
+                     ON al.id_tutor = tut.id_tutor
+                     WHERE num_control = '$numControl'";
+        $R_Alumno = mysqli_query($connect, $q_Alumno);
+        while ($F_Alumno = $R_Alumno->fetch_assoc()){
+        ?>
+        <h2>Control: <?php echo $numControl ?></h2>
+        <h2>Alumno: <?php echo $F_Alumno['nombre']." ".$F_Alumno['apellidos'] ?></h2>
+        <input type="hidden" name="ctrAlumno" value="<?php echo $numControl ?>">
+        <input type="hidden" name="nombreTutor" value="<?php echo $F_Alumno['nombre_tut']." ".$F_Alumno['apellido_tut'] ?>">
+        <?php } ?>
         <br><br>
 
         <label>Tema de Proyecto de Investigación:

@@ -302,3 +302,13 @@ li{
     border-radius: 10px;
     border: 2px solid #000000;
 }
+
+#consultaEA{
+    width: 7em;
+    text-align: center;
+}
+
+#consultaHE{
+    width: 7em;
+    text-align: center;
+}
