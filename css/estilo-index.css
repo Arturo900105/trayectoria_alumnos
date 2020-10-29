@@ -70,6 +70,7 @@ h2{
 }
 
 .boton_acceso:hover{
+    font-family: "Arial Black";
     cursor:pointer;
     background: darkgreen;
     color: #ffffff;
@@ -77,6 +78,7 @@ h2{
 }
 
 .boton_acceso-salir:hover{
+    font-family: "Arial Black";
     cursor:pointer;
     background: #900000;
     color: #FFFFFF;

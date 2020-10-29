@@ -27,11 +27,11 @@ require "php/BD_Connect.php";
         <img src="img/logo_cita2.png" title="Coordinación Institucional de Tutoría Académica" id="itsp_logo">
         <br>
 
-        <a href="caracterizacion.html"><input type="button" value="ALUMNOS" class="boton_acceso" title="Formularios para Alumnos de Nuevo Ingreso"></a>
-        <a href="javascript:Confirmar_Acceso('sesion_tutor.php')"><input type="button" value="TRAYECTORIAS" class="boton_acceso" title="Acceso para Tutores"></a>
+        <a href="caracterizacion.html"><input type="button" value="ALUMNO" class="boton_acceso" title="Formularios de Caracterización Personalizada del Estudiante"></a>
+        <a href="javascript:Confirmar_Acceso('sesion_tutor.php')"><input type="button" value="TRAYECTORIA" class="boton_acceso" title="Acceso para Tutores"></a>
         <a href="canalizacion.html"><input type="button" value="CANALIZACIÓN" class="boton_acceso" title="Canalizar Problema Presentado"></a>
-        <a href="javascript:Confirmar_Acceso_Reportes()"><input type="button" value="REALIZAR REPORTES" class="boton_acceso" title="Generar Reporte Parcial o Final"></a>
-        <a href="javascript:accesoCITA('sesion_coordinador.php')"><input type="button" value="PERSONAL DE LA CITA" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
+        <a href="javascript:Confirmar_Acceso_Reportes()"><input type="button" value="REALIZAR REPORTE" class="boton_acceso" title="Generar Reporte Parcial o Final"></a>
+        <a href="javascript:accesoCITA('sesion_coordinador.php')"><input type="button" value="COORDINADOR" class="boton_acceso" title="Acceso solo para el Personal de Tutaría Académica"></a>
         <button class="boton_acceso-salir" title="Salir de la Aplicación" onclick="history.back()">SALIR</button>
         <!--<a href="http://its-purhepecha.edu.mx/"> <input type="button" class="boton_acceso-salir" title="Salir de la Aplicación" value="SALIR"></a>-->
         <br><br><br>

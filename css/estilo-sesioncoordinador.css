@@ -119,6 +119,19 @@ li{
     font-size: 25px;
     text-align: justify;
 }
+#parrafoCoord2{
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+}
+#diagramaC{
+    margin: 0 auto;
+    width: 70%;
+}
+
+
 
 /*DIVS CANALIZACIONES*/
 #div_canalizaciones{
@@ -302,12 +315,7 @@ li{
     border: 2px solid #000000;
 }
 
-#consultaEA{
-    width: 7em;
-    text-align: center;
-}
-
-#consultaHE{
+#consultaEA, #consultaHE, #consulta_oe, #consulta_te, #consulta_me{
     width: 7em;
     text-align: center;
 }

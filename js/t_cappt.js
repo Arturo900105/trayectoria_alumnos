@@ -49,8 +49,24 @@ $(document).ready(function (){
         nuevaCalifCurso = calificacionCurso.replace(/\D/g, "")
         if (nuevaCalifCurso > 100) {
             $(this).val(nuevaCalifCurso[0]+nuevaCalifCurso[1])
-        } else {
-            $(this).val(nuevaCalifCurso.replace(/^0+/, ''))
+
+        } else if (nuevaCalifCurso < 70 && nuevaCalifCurso >= 20) {
+            $(this).val(0)
+
+        } else if (nuevaCalifCurso >= 10 && nuevaCalifCurso < 20) {
+            $(this).val(100)
+
+        } else if (nuevaCalifCurso === 0) {
+            $(this).val(0)
+
+        } else if (nuevaCalifCurso === "00") {
+            $(this).val(0)
+
+        } else if (nuevaCalifCurso === "000") {
+            $(this).val(0)
+
+        } else if (nuevaCalifCurso[0] === "0" && nuevaCalifCurso[1] > 0) {
+            $(this).val(0)
         }
     })
 

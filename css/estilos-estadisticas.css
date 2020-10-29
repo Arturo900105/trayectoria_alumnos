@@ -8,7 +8,7 @@ h1{
 }
 
 /*TABLA ESTADÍSTICA ESTILOS DE APRENDIZAJE*/
-#estadistica_EA, .th_EA, .th_EA2, .td_EA{
+#estadistica_EA, .th_EA, .td_EA{
     margin: 1em auto;
     border: 1px solid #000000;
     border-collapse: collapse;
@@ -16,15 +16,7 @@ h1{
     color: #000000;
 }
 .th_EA{
-    width: 13em;
-    padding: 5px;
-    background: #f87d24;
-}
-.th_EA1{
-    padding: 0 12px;
-    background: #f87d24;
-}
-.th_EA2{
+    width: 10em;
     padding: 5px;
     background: #f87d24;
 }
@@ -76,8 +68,6 @@ h1{
 .fila_iagr2:hover{
     background: #92D050;
 }
-
-
 
 
 /*TABLA ESTADÍSTICA HABILIDADES DE ESTUDIO*/
@@ -142,3 +132,64 @@ h1{
     background: #92D050;
 }
 
+
+/*TABLAS DE INTERPRETACIONES OTM-E*/
+.tablas_otme, .th_otme, .td_otme{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.th_otme{
+    padding: 5px;
+    width: 7em;
+    background: #f87d24;
+}
+.th_otme:hover{
+    cursor: pointer;
+    background: #ff5400;
+    color: white;
+}
+.td_otme{
+    text-align: center;
+    padding: 5px;
+}
+.otme_igem:hover .td_otme{
+    background: #800080;
+    color: white;
+}
+
+.otme_iind:hover .td_otme{
+    background: #013779;
+    color: white;
+}
+
+.otme_isic:hover{
+    background: #00B7EF;
+
+}
+
+.otme_ibio:hover{
+    background: #c4bebe;
+
+}
+
+.otme_iias:hover .td_otme{
+    background: #007F32;
+    color: white;
+}
+
+.otme_ienr:hover{
+    background: #E6DC04;
+
+}
+
+.otme_ifor:hover .td_otme{
+    background: #993300;
+    color: white;
+}
+
+.otme_iagr:hover{
+    background: #92D050;
+}

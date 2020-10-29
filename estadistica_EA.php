@@ -21,8 +21,7 @@ $generacion = $_GET["generacion"];
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 
     <script src="js/ordenar_tabla.js"></script>
-    <script src="js/alerta_estadistica.js"></script>
-</head>
+    </head>
 <body>
     <h1>INTERPRETACIÓN GENERAL SOBRE ESTILOS DE APRENDIZAJE
         <br>GENERACIÓN <?php echo $generacion ?>:</h1>
@@ -30,14 +29,15 @@ $generacion = $_GET["generacion"];
     <table id="estadistica_EA" class="tabla_estadistica">
         <thead>
             <tr>
-                <th class="th_EA1">CARRERA</th>
+                <th class="th_EA">CARRERA</th>
                 <th class="th_EA">VISUAL</th>
                 <th class="th_EA">AUDITIVO</th>
                 <th class="th_EA">KINESTÉSICO</th>
-                <th class="th_EA">VISUAL - AUDITIVO</th>
-                <th class="th_EA">VISUAL - KINESTÉSICO</th>
-                <th class="th_EA">AUDITIVO - KINESTÉSICO</th>
-                <th class="th_EA2">VISUAL - AUDITIVO - KINESTÉSICO</th>
+                <th class="th_EA">VISUAL<br>AUDITIVO</th>
+                <th class="th_EA">VISUAL<br>KINESTÉSICO</th>
+                <th class="th_EA">AUDITIVO<br>KINESTÉSICO</th>
+                <th class="th_EA">VISUAL<br>AUDITIVO<br>KINESTÉSICO</th>
+                <th class="th_EA" title="Total de alumnos por carrera">TOTAL</th>
             </tr>
         </thead>
         <tbody>
@@ -119,6 +119,9 @@ $generacion = $_GET["generacion"];
                 <td class="td_EA"><?php echo $IGEM[4]; ?></td>
                 <td class="td_EA"><?php echo $IGEM[5]; ?></td>
                 <td class="td_EA"><?php echo $IGEM[6]; ?></td>
+                <td class="td_EA">
+                    <b><?php echo $IGEM[0]+$IGEM[1]+$IGEM[2]+$IGEM[3]+$IGEM[4]+$IGEM[5]+$IGEM[6] ?></b>
+                </td>
             </tr>
             <tr class="fila_iind2">
                 <th class="td_EA" title="Ingeniería Industrial">IIND</th>
@@ -129,6 +132,9 @@ $generacion = $_GET["generacion"];
                 <td class="td_EA"><?php echo $IIND[4]; ?></td>
                 <td class="td_EA"><?php echo $IIND[5]; ?></td>
                 <td class="td_EA"><?php echo $IIND[6]; ?></td>
+                <td class="td_EA">
+                    <b><?php echo $IIND[0]+$IIND[1]+$IIND[2]+$IIND[3]+$IIND[4]+$IIND[5]+$IIND[6] ?></b>
+                </td>
             </tr>
             <tr class="fila_isic2">
                 <th class="td_EA" title="Ingeniería en Sistemas Computacionales">ISIC</th>
@@ -139,6 +145,9 @@ $generacion = $_GET["generacion"];
                 <td class="td_EA"><?php echo $ISIC[4]; ?></td>
                 <td class="td_EA"><?php echo $ISIC[5]; ?></td>
                 <td class="td_EA"><?php echo $ISIC[6]; ?></td>
+                <td class="td_EA">
+                    <b><?php echo $ISIC[0]+$ISIC[1]+$ISIC[2]+$ISIC[3]+$ISIC[4]+$ISIC[5]+$ISIC[6] ?></b>
+                </td>
             </tr>
             <tr class="fila_ibio2">
                 <th class="td_EA" title="Ingeniería Biomédica">IBIO</th>
@@ -149,6 +158,9 @@ $generacion = $_GET["generacion"];
                 <td class="td_EA"><?php echo $IBIO[4]; ?></td>
                 <td class="td_EA"><?php echo $IBIO[5]; ?></td>
                 <td class="td_EA"><?php echo $IBIO[6]; ?></td>
+                <td class="td_EA">
+                    <b><?php echo $IBIO[0]+$IBIO[1]+$IBIO[2]+$IBIO[3]+$IBIO[4]+$IBIO[5]+$IBIO[6] ?></b>
+                </td>
             </tr>
             <tr class="fila_iias2">
                 <th class="td_EA" title="Ingeniería en Innovación Agrícola Sustentable">IIAS</th>
@@ -159,6 +171,9 @@ $generacion = $_GET["generacion"];
                 <td class="td_EA"><?php echo $IIAS[4]; ?></td>
                 <td class="td_EA"><?php echo $IIAS[5]; ?></td>
                 <td class="td_EA"><?php echo $IIAS[6]; ?></td>
+                <td class="td_EA">
+                    <b><?php echo $IIAS[0]+$IIAS[1]+$IIAS[2]+$IIAS[3]+$IIAS[4]+$IIAS[5]+$IIAS[6] ?></b>
+                </td>
             </tr>
             <tr class="fila_ienr2">
                 <th class="td_EA" title="Ingeniería en Energías Renovables">IENR</th>
@@ -169,6 +184,9 @@ $generacion = $_GET["generacion"];
                 <td class="td_EA"><?php echo $IENR[4]; ?></td>
                 <td class="td_EA"><?php echo $IENR[5]; ?></td>
                 <td class="td_EA"><?php echo $IENR[6]; ?></td>
+                <td class="td_EA">
+                    <b><?php echo $IENR[0]+$IENR[1]+$IENR[2]+$IENR[3]+$IENR[4]+$IENR[5]+$IENR[6] ?></b>
+                </td>
             </tr>
             <tr class="fila_ifor2">
                 <th class="td_EA" title="Ingeniería Forestal">IFOR</th>
@@ -179,6 +197,9 @@ $generacion = $_GET["generacion"];
                 <td class="td_EA"><?php echo $IFOR[4]; ?></td>
                 <td class="td_EA"><?php echo $IFOR[5]; ?></td>
                 <td class="td_EA"><?php echo $IFOR[6]; ?></td>
+                <td class="td_EA">
+                    <b><?php echo $IFOR[0]+$IFOR[1]+$IFOR[2]+$IFOR[3]+$IFOR[4]+$IFOR[5]+$IFOR[6] ?></b>
+                </td>
             </tr>
             <tr class="fila_iagr2">
                 <th class="td_EA" title="Ingeniería en Agronomía">IAGR</th>
@@ -189,6 +210,9 @@ $generacion = $_GET["generacion"];
                 <td class="td_EA"><?php echo $IAGR[4]; ?></td>
                 <td class="td_EA"><?php echo $IAGR[5]; ?></td>
                 <td class="td_EA"><?php echo $IAGR[6]; ?></td>
+                <td class="td_EA">
+                    <b><?php echo $IAGR[0]+$IAGR[1]+$IAGR[2]+$IAGR[3]+$IAGR[4]+$IAGR[5]+$IAGR[6] ?></b>
+                </td>
             </tr>
         </tbody>
     </table>

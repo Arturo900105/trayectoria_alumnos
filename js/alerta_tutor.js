@@ -77,11 +77,11 @@ $(document).ready(function (){
         $("#tabla_usutUT").hide()
         $(".mis_alumnos, .ventana_alumnos, .cappt_alumnos, .trayectoria_alumnos").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
-        $("#parrafoTut").show()
+        $(".parrafoTut").show()
     })
 
     $("#misdatosT").on("click", function (){
-        $("#parrafoTut").hide()
+        $(".parrafoTut").hide()
         $(".mis_alumnos, .ventana_alumnos, .cappt_alumnos, .trayectoria_alumnos").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $("#tabla_usutUT").show()
@@ -89,14 +89,14 @@ $(document).ready(function (){
 
 
     $("#misAlumnos").on("click", function (){
-        $("#parrafoTut").hide()
+        $(".parrafoTut").hide()
         $("#tabla_usutUT").hide()
         $(".ventana_alumnos, .cappt_alumnos, .trayectoria_alumnos").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
         $(".mis_alumnos").show()
     })
     $("#todosAlumnos").on("click", function (){
-        $("#parrafoTut").hide()
+        $(".parrafoTut").hide()
         $("#tabla_usutUT").hide()
         $(".mis_alumnos, .cappt_alumnos, .trayectoria_alumnos").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
@@ -105,7 +105,7 @@ $(document).ready(function (){
 
 
     $("#cappt_misAlumnos").on("click", function (){
-        $("#parrafoTut").hide()
+        $(".parrafoTut").hide()
         $("#tabla_usutUT").hide()
         $(".mis_alumnos, .ventana_alumnos, .trayectoria_alumnos").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
@@ -113,7 +113,7 @@ $(document).ready(function (){
         $(".cappt_alumnos").show()
     })
     $("#tsems_misAlumnos").on("click", function (){
-        $("#parrafoTut").hide()
+        $(".parrafoTut").hide()
         $("#tabla_usutUT").hide()
         $(".mis_alumnos, .ventana_alumnos").hide()
         $("#div_canalizaciones, #div_rparciales, #div_rfinales").hide()
@@ -123,21 +123,21 @@ $(document).ready(function (){
 
 
     $("#lista_canalizacion").on("click",function (){
-        $("#parrafoTut").hide()
+        $(".parrafoTut").hide()
         $("#tabla_usutUT").hide()
         $(".mis_alumnos, .ventana_alumnos, .cappt_alumnos, .trayectoria_alumnos").hide()
         $("#div_rparciales, #div_rfinales").hide()
         $("#div_canalizaciones").show()
     })
     $("#lista_rparcial").on("click",function (){
-        $("#parrafoTut").hide()
+        $(".parrafoTut").hide()
         $("#tabla_usutUT").hide()
         $(".mis_alumnos, .ventana_alumnos, .cappt_alumnos, .trayectoria_alumnos").hide()
         $("#div_canalizaciones, #div_rfinales").hide()
         $("#div_rparciales").show()
     })
     $("#lista_rfinal").on("click",function (){
-        $("#parrafoTut").hide()
+        $(".parrafoTut").hide()
         $("#tabla_usutUT").hide()
         $(".mis_alumnos, .ventana_alumnos, .cappt_alumnos, .trayectoria_alumnos").hide()
         $("#div_canalizaciones, #div_rparciales").hide()

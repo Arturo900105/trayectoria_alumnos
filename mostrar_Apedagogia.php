@@ -43,7 +43,7 @@ require "php/BD_Connect.php";
             ?>
             <tr>
                 <td class="mtd_mostrarPedagogia"><?php echo $fPedagogia['num_ficha'] ?></td>
-                <td class="mtd_mostrarPedagogia2"><?php echo $fPedagogia['nombre']." ".$fPedagogia['apellidos'] ?></td>
+                <td class="mtd_mostrarPedagogia2"><?php echo $fPedagogia['apellidos']." ".$fPedagogia['nombre'] ?></td>
                 <td class="mtd_mostrarPedagogia"><?php echo $fPedagogia['aprendizaje_visual'] ?></td>
                 <td class="mtd_mostrarPedagogia"><?php echo $fPedagogia['aprendizaje_auditivo'] ?></td>
                 <td class="mtd_mostrarPedagogia"><?php echo $fPedagogia['aprendizaje_kinestesico'] ?></td>

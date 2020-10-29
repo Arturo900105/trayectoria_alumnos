@@ -26,18 +26,16 @@ require "php/BD_Connect.php";
         <tbody>
         <?php
         $qPostTest = "SELECT cl.num_control, al.nombre, al.apellidos, al.carrera, al.generacion, psic.suma_ad
-                        FROM num_control_alumno cl
-                            JOIN alumno al
-                                ON cl.num_ficha = al.num_ficha
-                            JOIN tabla_psicologia psic
-                                ON al.num_ficha = psic.num_ficha
-                            WHERE psic.suma_ad > 10";
+                      FROM num_control_alumno cl
+                      JOIN alumno al ON cl.num_ficha = al.num_ficha
+                      JOIN tabla_psicologia psic ON al.num_ficha = psic.num_ficha
+                      WHERE psic.suma_ad > 10";
         $rPostTest = mysqli_query($connect, $qPostTest);
         while ($fPostTest = $rPostTest->fetch_assoc()){
         ?>
             <tr>
                 <td class="mtd_mostrarPostTest"><?php echo $fPostTest['num_control'] ?></td>
-                <td class="mtd_mostrarPostTest2"><?php echo $fPostTest['nombre']." ".$fPostTest['apellidos'] ?></td>
+                <td class="mtd_mostrarPostTest2"><?php echo $fPostTest['apellidos']." ".$fPostTest['nombre'] ?></td>
                 <td class="mtd_mostrarPostTest"><?php echo $fPostTest['suma_ad'] ?></td>
                 <td class="mtd_mostrarPostTest"><?php echo $fPostTest['carrera'] ?></td>
                 <td class="mtd_mostrarPostTest"><?php echo $fPostTest['generacion'] ?></td>

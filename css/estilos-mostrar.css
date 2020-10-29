@@ -197,3 +197,24 @@ h1{
     text-align: left;
     padding: 5px;
 }
+
+/*TABLA RESULTADOS POST-TEST ALUMNOS*/
+#resultadoPostTest, .mth_resultadoPostTest, .mtd_resultadoPostTest{
+    margin: 1em auto;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000000;
+}
+.mth_resultadoPostTest{
+    background: #f89b70;
+    padding: 5px;
+}
+.mth_resultadoPostTest:hover{
+    cursor: pointer;
+    background: darkorange;
+}
+.mtd_resultadoPostTest{
+    text-align: center;
+    padding: 5px;
+}

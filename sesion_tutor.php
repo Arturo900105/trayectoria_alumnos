@@ -85,13 +85,16 @@ if ($letSession == null || $letSession == "") {
         <li id="cerrarST"><a href="php/terminar_tutor.php">CERRAR SESIÓN</a></li>
     </ul>
 
-    <p id="parrafoTut">
+    <p id="parrafoTut" class="parrafoTut">
         Esta es la plataforma en donde usted como <a id="sexoTutor"></a> podrá:<br><br>
         <ion-icon name="arrow-forward-outline"></ion-icon> Registrar la trayectoria escolar de un grupo de alumnos de <a id="alumnosTutor"></a>.<br>
         <ion-icon name="arrow-forward-outline"></ion-icon> Tener registro de las Canalizaciones realizadas.<br>
         <ion-icon name="arrow-forward-outline"></ion-icon> Tener registro de los Reportes Parciales realizados.<br>
         <ion-icon name="arrow-forward-outline"></ion-icon> Tener registro de los Reportes Finales realizados.
     </p>
+    <div id="parrafoTut2" class="parrafoTut">
+        <img src="img/diagrama.png" title="" id="diagramaT">
+    </div>
 
 
     <div class="ventana_alumnos">

@@ -77,19 +77,24 @@ $letSessionC = $_SESSION["usucoord"];
         <li><a>ALUMNOS<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuCoordinador">
                 <li id="mlistaAlumnos"><a>DATOS DEL ALUMNO</a></li>
-                <li id="mlistaPedagogia"><a>EXAMEN PEDAGÓGICO</a></li>
-                <li id="mlistaPsicologia"><a>EXAMEN PSICOLÓGICO</a></li>
-                <li id="mlistaMedica"><a>EXAMEN MÉDICO</a></li>
-                <li id="mlistaPostTest"><a>A ESCALA POST-TEST</a></li>
-                <li id="mlistaCAPPT"><a>TRAYECTORIAS</a></li>
-                <li id="mostrar_HE"><a>INTERPRETACIÓN: HABILIDADES DE ESTUDIO</a></li>
-                <li id="mostrar_EA"><a>INTERPRETACIÓN: ESTILOS DE APRENDIZAJE</a></li>
+                <li id="mlistaPedagogia"><a>R. EXAMEN PEDAGÓGICO</a></li>
+                <li id="mlistaPsicologia"><a>R. EXAMEN PSICOLÓGICO</a></li>
+                <li id="mlistaMedica"><a>R. EXAMEN MÉDICO</a></li>
+                <li id="mlistaPostTest" title="Se requiere matrícula del alumno"><a>REQUIEREN ESCALA POST-TEST</a></li>
+                <li id="mresultPostTest"><a>R. ESCALA POST-TEST</a></li>
+                <li id="mlistaCAPPT" title="Se requiere matrícula del alumno"><a>TRAYECTORIAS</a></li>
+                <li id="mostrar_EA" title="Para ver resultados, se requiere el formulario de la
+Caracterización del alumno por parte del tutor (CAPPT) realizado."><a>R. ESTILOS DE APRENDIZAJE</a></li>
+                <li id="mostrar_HE"><a>I. HABILIDADES DE ESTUDIO</a></li>
+                <li id="mostrar_oe"><a>I. ORGANIZACIÓN DEL ESTUDIO</a></li>
+                <li id="mostrar_te"><a>I. TÉCNICAS DE ESTUDIO</a></li>
+                <li id="mostrar_me"><a>I. MOTIVACIÓN PARA EL ESTUDIO</a></li>
             </ul>
         </li>
         <li id="cerrarSC"><a href="php/terminar_coordinador.php">CERRAR SESIÓN</a></li>
     </ul>
 
-    <p id="parrafoCoord">
+    <p id="parrafoCoord" class="parrafoCoord">
         Esta es la plataforma en donde usted como <a id="textoC"></a> de la carrera de <a id="carreraC"></a>, podrá ver y llevar acabo:
         <br>
         <br><ion-icon name="arrow-forward-outline"></ion-icon> Los registros de las trayectorias escolares de los Alumnos durante su estancia en el Tecnológico.
@@ -97,8 +102,10 @@ $letSessionC = $_SESSION["usucoord"];
         <br><ion-icon name="arrow-forward-outline"></ion-icon> Registro de las Canalizaciones realizadas durante el semestre.
         <br><ion-icon name="arrow-forward-outline"></ion-icon> Registro de los Reportes Parciales realizados por el Tutor.
         <br><ion-icon name="arrow-forward-outline"></ion-icon> Registro de los Reportes Finales realizados por el Tutor.
-        <br><br>
     </p>
+    <div id="parrafoCoord2" class="parrafoCoord">
+        <img src="img/diagrama.png" title="Diagrama del proceso de Tutoría Académica" id="diagramaC">
+    </div>
 
     <div id="div_canalizaciones">
         <iframe id="ventana_canalizacion" src="imprimir_canalizacion.php" frameborder="0"></iframe>
@@ -176,6 +183,10 @@ $letSessionC = $_SESSION["usucoord"];
 
     <div id="ventanaPostTest" class="ventanasCoord">
         <iframe class="listaCA" id="listaPostTest" src="mostrar_PostTest.php" frameborder="0"></iframe>
+    </div>
+
+    <div id="ventanaPostTest2" class="ventanasCoord">
+        <iframe class="listaCA" id="listaPostTest2" src="mostrar_Aposttest.php" frameborder="0"></iframe>
     </div>
 
     <div id="ventanaCAPPT" class="ventanasCoord">

@@ -46,7 +46,7 @@ require "php/BD_Connect.php";
             ?>
             <tr>
                 <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['num_ficha'] ?></td>
-                <td class="mtd_mostrarPsicologia2"><?php echo $fPsicologia['nombre']." ".$fPsicologia['apellidos'] ?></td>
+                <td class="mtd_mostrarPsicologia2"><?php echo $fPsicologia['apellidos']." ".$fPsicologia['nombre'] ?></td>
                 <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['respuesta1'] ?></td>
                 <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['respuesta2'] ?></td>
                 <td class="mtd_mostrarPsicologia"><?php echo $fPsicologia['ansiedad'] ?></td>

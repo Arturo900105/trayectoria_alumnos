@@ -17,7 +17,7 @@ $(document).ready(function (){
         e.preventDefault();
         if ($('#usuarioTutor').val().trim() === "" && $('#passTutor').val().trim() === ""){
             Swal.fire({
-                title: "Ingresa tu Usuario y tu\nContraseña de 10 digitos",
+                title: "Ingrese su Usuario y \nContraseña de 10 digitos",
                 icon: "warning",
                 position: "top",
                 backdrop: "rgba(0,0,0,0)",
@@ -27,7 +27,7 @@ $(document).ready(function (){
             return false
         } else if ($('#usuarioTutor').val().trim() === "") {
             Swal.fire({
-                title: "Ingresa tu Usuario",
+                title: "Ingrese su Usuario",
                 icon: "warning",
                 position: "top",
                 backdrop: "rgba(0,0,0,0)",
@@ -37,7 +37,7 @@ $(document).ready(function (){
             return false
         } else if ($('#passTutor').val().trim() === "") {
             Swal.fire({
-                title: "Ingresa tu\nContraseña de 10 digitos",
+                title: "Ingrese su\nContraseña de 10 digitos",
                 icon: "warning",
                 position: "top",
                 backdrop: "rgba(0,0,0,0)",

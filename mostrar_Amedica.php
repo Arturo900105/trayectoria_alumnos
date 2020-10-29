@@ -43,7 +43,7 @@ require "php/BD_Connect.php";
         ?>
             <tr>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['num_ficha'] ?></td>
-                <td class="mtd_mostrarMedica2"><?php echo $fMedica['nombre']." ".$fMedica['apellidos'] ?></td>
+                <td class="mtd_mostrarMedica2"><?php echo $fMedica['apellidos']." ".$fMedica['nombre'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['peso'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['estatura'] ?></td>
                 <td class="mtd_mostrarMedica"><?php echo $fMedica['tipo_sangre'] ?></td>

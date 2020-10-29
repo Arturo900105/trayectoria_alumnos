@@ -15,4 +15,6 @@ $(document).ready(function (){
     $('#tabla_coordinadores').tablesorter();
     $('#tabla_tutores').tablesorter();
 
+    $('.tablas_otme').tablesorter();
+
 })
