@@ -4,6 +4,7 @@ require "php/BD_Connect.php";
 <!doctype html>
 <html lang="es">
 <head>
+    <META HTTP-EQUIV="REFRESH" CONTENT="10">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -29,7 +30,9 @@ require "php/BD_Connect.php";
                       FROM num_control_alumno cl
                       JOIN alumno al ON cl.num_ficha = al.num_ficha
                       JOIN tabla_psicologia psic ON al.num_ficha = psic.num_ficha
-                      WHERE psic.suma_ad > 10";
+                      WHERE psic.suma_ad > 10 AND NOT EXISTS (SELECT NULL
+                      FROM tabla_posttest tpt
+                      WHERE tpt.num_control = cl.num_control)";
         $rPostTest = mysqli_query($connect, $qPostTest);
         while ($fPostTest = $rPostTest->fetch_assoc()){
         ?>

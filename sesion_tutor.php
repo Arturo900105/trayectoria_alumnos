@@ -59,19 +59,19 @@ if ($letSession == null || $letSession == "") {
     <ul class="menuTutor">
         <li id="inicioT"><a>INICIO</a></li>
         <li id="misdatosT"><a>MI PERFIL</a></li>
-        <li><a>ALUMNOS<ion-icon name="caret-down-outline"></ion-icon></a>
+        <li><a>ALUMNO<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuTutor">
                 <li id="misAlumnos"><a>MIS ALUMNOS</a></li>
-                <li id="todosAlumnos"><a>TODOS LOS ALUMNOS</a></li>
+                <li id="todosAlumnos"><a>MÁS ALUMNOS DE <?php echo $letCarrera; ?></a></li>
             </ul>
         </li>
-        <li><a>TRAYECTORIAS<ion-icon name="caret-down-outline"></ion-icon></a>
+        <li><a>TRAYECTORIA<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuTutor">
                 <li id="cappt_misAlumnos"><a>CARACTERIZACIÓN A ALUMNOS</a></li>
                 <li id="tsems_misAlumnos"><a>SEMESTRAL</a></li>
             </ul>
         </li>
-        <li><a>CANALIZACIONES<ion-icon name="caret-down-outline"></ion-icon></a>
+        <li><a>CANALIZACIÓN<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuTutor">
                 <li id="lista_canalizacion"><a>CANALIZACIONES REALIZADAS</a></li>
             </ul>

@@ -33,6 +33,8 @@ $letSessionC = $_SESSION["usucoord"];
     <link rel="shortcut icon" id="iconoCoord" type="image/x-icon">
     <link rel="stylesheet" href="css/estilo-sesioncoordinador.css">
 
+    <!--<META HTTP-EQUIV="REFRESH" CONTENT="5">-->
+
     <script src="js/jquery_3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
@@ -64,17 +66,17 @@ $letSessionC = $_SESSION["usucoord"];
                 <li id="lista_rfinal"><a>REPORTES FINALES</a></li>
             </ul>
         </li>
-        <li><a>COORDINADORES<ion-icon name="caret-down-outline"></ion-icon></a>
+        <li><a>COORDINADOR<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuCoordinador">
                 <li id="mostrarListaC"><a>LISTA DE COORDINADORES</a></li>
             </ul>
         </li>
-        <li><a>TUTORES<ion-icon name="caret-down-outline"></ion-icon></a>
+        <li><a>TUTOR<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuCoordinador">
                 <li id="mostrarListaT"><a>LISTA DE TUTORES</a></li>
             </ul>
         </li>
-        <li><a>ALUMNOS<ion-icon name="caret-down-outline"></ion-icon></a>
+        <li><a>ALUMNO<ion-icon name="caret-down-outline"></ion-icon></a>
             <ul class="submenuCoordinador">
                 <li id="mlistaAlumnos"><a>DATOS DEL ALUMNO</a></li>
                 <li id="mlistaPedagogia"><a>R. EXAMEN PEDAGÓGICO</a></li>

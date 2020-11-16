@@ -4,6 +4,7 @@ require "php/BD_Connect.php";
 <!doctype html>
 <html lang="es">
 <head>
+    <META HTTP-EQUIV="REFRESH" CONTENT="10">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">

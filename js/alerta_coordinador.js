@@ -1,15 +1,5 @@
 let caracter, new_caracter, fechaHoy, yearActual, consultGeneracion, qEA, qHE, qOE, qTE, qME;
 
-window.addEventListener('message', function(event) {
-        if(event.origin === 'http://itsp_cita.com') {
-            document.getElementById('ventana_canalizacion').contentDocument.location.reload(true);
-            document.getElementById('ventana_rparcial').contentDocument.location.reload(true);
-            document.getElementById('ventana_rfinal').contentDocument.location.reload(true);
-            document.getElementById('listaAlumnosITSP').contentDocument.location.reload(true);
-            //document.getElementsByClassName('listaCA').contentDocument.location.reload(true);
-        }
-    }, false);
-
 $(document).ready(function (){
     fechaHoy = new Date(); //Fecha actual
     yearActual = fechaHoy.getFullYear(); //obteniendo año
