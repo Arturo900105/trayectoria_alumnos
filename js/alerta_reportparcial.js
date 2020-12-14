@@ -402,7 +402,6 @@ $(document).ready(function () {
                             let id_reporteParcial = $("#id_rparcial_href")
                             id_reporteParcial.attr("href", 'documentos/reporte_parcial.php?id_rparcial='+id_rparcial);
                             id_reporteParcial[0].click();
-                            //document.location = 'documentos/reporte_parcial.php?id_rparcial='+id_rparcial;
                         })
                     },
                     error: function (error) {

@@ -221,8 +221,6 @@ $(document).ready(function () {
                             let id_canalizacion = $("#id_canali_href")
                             id_canalizacion.attr("href", 'documentos/canalizacion.php?folio='+ folio);
                             id_canalizacion[0].click();
-                            //console.log('documentos/canalizacion.php?folio='+ folio)
-                            //document.location = 'documentos/canalizacion.php?folio='+ folio;
                         });
                     },
                     error: function (error) {

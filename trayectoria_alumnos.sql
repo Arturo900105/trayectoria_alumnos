@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-10-2020 a las 06:42:36
+-- Tiempo de generación: 13-11-2020 a las 08:15:46
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -397,8 +397,7 @@ INSERT INTO `tabla_pedagogia` (`num_ficha`, `isea_1`, `isea_2`, `isea_3`, `isea_
 ('20-0004', 1, 3, 2, 2, 3, 4, 5, 3, 3, 2, 3, 3, 3, 3, 2, 2, 4, 2, 4, 1, 1, 18, 16, 22, 13, 16, 16, 45, 'A C E F H I J K L O R S T', 'A B C D E F G I K L M N P Q S T', 'A B C D E F H I J L M N O R S T', 1),
 ('20-0003', 5, 3, 4, 2, 2, 4, 3, 5, 4, 3, 5, 3, 4, 5, 4, 1, 5, 1, 4, 3, 5, 30, 17, 28, 13, 11, 14, 38, 'A C E G I J K L N O Q R T', 'A C D E F G J K O P Q', 'A C D E F H I J N O Q R S T', 1),
 ('20-0001', 4, 5, 4, 3, 3, 2, 2, 4, 5, 3, 5, 5, 5, 3, 4, 4, 3, 2, 4, 3, 4, 26, 26, 25, 10, 10, 11, 31, 'A D E F H K L M N R', 'B C E G H I K N Q S', 'A B D F H I K L M Q R', 1),
-('20-0002', 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 18, 22, 23, 10, 9, 10, 29, 'A C E G I K O P Q T', 'D E F J K L P Q S', 'B D E F I M N P Q R', 1),
-('20-0006', 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1, 24, 20, 19, 10, 9, 8, 27, 'A B C F J K M N Q S', 'D E G H J K L Q T', 'D E F J K O P S', 1);
+('20-0002', 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 18, 22, 23, 10, 9, 10, 29, 'A C E G I K O P Q T', 'D E F J K L P Q S', 'B D E F I M N P Q R', 1);
 
 -- --------------------------------------------------------
 
@@ -426,6 +425,8 @@ CREATE TABLE `tabla_posttest` (
   `ansiedad` int(2) DEFAULT NULL,
   `depresion` int(2) DEFAULT NULL,
   `suma_ad` int(2) DEFAULT NULL,
+  `fecha` text DEFAULT NULL,
+  `hora` varchar(9) DEFAULT NULL,
   `contestado` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
