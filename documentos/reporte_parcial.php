@@ -40,7 +40,7 @@
     $filaRParcial = $resulParcial -> fetch_assoc();
 
     $pdf = new PDF("P", "cm","letter");
-    $pdf->SetTitle('Reporte Parcial '.$parcialFolio,isUTF8);
+    $pdf->SetTitle('Reporte Parcial '.$parcialFolio,true);
     $pdf->AddPage();
     $pdf->SetLeftMargin(2);
     $pdf->SetRightMargin(2);
